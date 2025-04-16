@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": "admin001",
+      "name": "ÃÂÃÂ¯ÃÂÃÂ± ÃÂ§ÃÂÃÂÃÂ¸ÃÂ§ÃÂ",
+      "email": "latifboudihir1@gmail.com",
+      "password": "dingring2010",
+      "role": "admin",
+      "approved": true,
+      "created_at": "2023-01-01T10:00:00Z"
+    },
+    {
+      "id": "1e0e0220-34ed-4691-9dca-b8a5c94cddf0",
+      "name": "binou",
+      "email": "latifboud@gmail.com",
+      "password": "123456",
+      "role": "user",
+      "approved": true,
+      "created_at": "2025-04-16T12:27:05.299Z"
+    }
+  ],
+  "last_updated": "2025-04-16T12:27:37.626Z"
+}

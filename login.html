@@ -1,0 +1,2275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نظام تسجيل دخول - منصة التعليم الجزائري</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap">
+  <style>
+    :root {
+      --primary-color: #6366f1;
+      --primary-dark: #4f46e5;
+      --primary-light: #818cf8;
+      --secondary-color: #06b6d4;
+      --secondary-dark: #0891b2;
+      --secondary-light: #22d3ee;
+      --accent-color: #f59e0b;
+      --accent-dark: #d97706;
+      --accent-light: #fcd34d;
+      --success-color: #10b981;
+      --error-color: #ef4444;
+      --background-light: #ffffff;
+      --background-dark: #1f2937;
+      --text-light: #111827;
+      --text-dark: #f3f4f6;
+      --github-color: #24292e;
+      --github-hover: #0d1117;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .dark {
+      --primary-color: #818cf8;
+      --primary-dark: #6366f1;
+      --primary-light: #a5b4fc;
+      --accent-color: #fbbf24;
+    }
+
+    /* Custom animated backgrounds */
+    .bg-gradient-animated {
+      background: linear-gradient(-45deg, #6366f1, #06b6d4, #f59e0b, #10b981);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Blurry card effect */
+    .card-glass {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .card-glass:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .dark .card-glass {
+      background-color: rgba(31, 41, 55, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Custom inputs */
+    .input-animated {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid transparent;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      width: 100%;
+      color: var(--text-light);
+    }
+
+    .dark .input-animated {
+      background-color: rgba(31, 41, 55, 0.5);
+      color: var(--text-dark);
+    }
+
+    .input-animated:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+      outline: none;
+    }
+
+    .input-animated::placeholder {
+      color: rgba(107, 114, 128, 0.8);
+    }
+
+    .dark .input-animated::placeholder {
+      color: rgba(209, 213, 219, 0.5);
+    }
+
+    /* Custom buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 24px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(99, 102, 241, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transform: translateX(-100%);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 14px rgba(99, 102, 241, 0.3);
+    }
+
+    .btn-primary:hover::after {
+      transform: translateX(100%);
+      transition: transform 0.8s ease;
+    }
+
+    .btn-secondary {
+      background: rgba(209, 213, 219, 0.5);
+      color: var(--text-light);
+      border: none;
+      border-radius: 12px;
+      padding: 12px 24px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .dark .btn-secondary {
+      background: rgba(55, 65, 81, 0.5);
+      color: var(--text-dark);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(209, 213, 219, 0.8);
+      transform: translateY(-2px);
+    }
+
+    .dark .btn-secondary:hover {
+      background: rgba(55, 65, 81, 0.8);
+    }
+
+    .btn-danger {
+      background: linear-gradient(135deg, var(--error-color), #b91c1c);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 24px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-danger:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 14px rgba(239, 68, 68, 0.3);
+    }
+
+    /* Animated toggle */
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 52px;
+      height: 26px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .toggle-slider {
+      background-color: var(--primary-color);
+    }
+
+    input:checked + .toggle-slider:before {
+      transform: translateX(26px);
+    }
+
+    /* Page transitions */
+    .page-container {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .page-container.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Status badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      white-space: nowrap;
+    }
+
+    .badge-success {
+      background-color: rgba(16, 185, 129, 0.1);
+      color: var(--success-color);
+    }
+
+    .badge-warning {
+      background-color: rgba(245, 158, 11, 0.1);
+      color: var(--accent-color);
+    }
+
+    .badge-info {
+      background-color: rgba(59, 130, 246, 0.1);
+      color: #3b82f6;
+    }
+
+    .badge-danger {
+      background-color: rgba(239, 68, 68, 0.1);
+      color: var(--error-color);
+    }
+
+    /* Loading animation */
+    .loading-dots {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .loading-dots span {
+      height: 8px;
+      width: 8px;
+      margin: 0 1px;
+      border-radius: 50%;
+      background-color: currentColor;
+      animation: dots-bounce 1.4s infinite ease-in-out both;
+    }
+
+    .loading-dots span:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    .loading-dots span:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+
+    @keyframes dots-bounce {
+      0%, 80%, 100% {
+        transform: scale(0);
+        opacity: 0.5;
+      }
+      40% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Notification */
+    .notification {
+      position: fixed;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100%);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      background-color: white;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      z-index: 50;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      max-width: 90%;
+      width: auto;
+    }
+
+    .dark .notification {
+      background-color: var(--background-dark);
+      color: var(--text-dark);
+    }
+
+    .notification.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    .notification-success {
+      border-right: 4px solid var(--success-color);
+    }
+
+    .notification-error {
+      border-right: 4px solid var(--error-color);
+    }
+
+    .notification-info {
+      border-right: 4px solid var(--primary-color);
+    }
+
+    /* Admin dashboard improvements */
+    .dashboard-card {
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .dashboard-card:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .dark .dashboard-card {
+      background-color: rgba(31, 41, 55, 0.8);
+    }
+
+    /* Modal animation */
+    .modal {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 50;
+      background-color: rgba(0, 0, 0, 0.5);
+      visibility: hidden;
+    }
+
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+
+    .modal.active .modal-content {
+      transform: scale(1);
+    }
+    
+    /* GitHub settings styles */
+    .github-settings-card {
+      background-color: rgba(36, 41, 46, 0.05);
+      border-right: 3px solid #24292e;
+    }
+    
+    .dark .github-settings-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-right: 3px solid #6e7681;
+    }
+  </style>
+</head>
+<body class="antialiased transition-colors duration-300">
+  <!-- dark/light mode toggle -->
+  <div class="fixed top-4 left-4 z-50">
+    <label class="toggle-switch">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle-slider"></span>
+    </label>
+  </div>
+
+  <!-- loading screen -->
+  <div id="loading-screen" class="fixed inset-0 bg-white dark:bg-gray-900 z-50 flex flex-col items-center justify-center">
+    <div class="relative w-24 h-24">
+      <div class="absolute inset-0 rounded-full border-8 border-r-transparent border-indigo-500 animate-spin"></div>
+      <div class="absolute inset-0 rounded-full border-8 border-b-transparent border-t-transparent border-sky-400 animate-spin" style="animation-duration: 1.5s;"></div>
+    </div>
+    <h2 class="mt-6 text-xl font-bold text-gray-900 dark:text-white">جاري تحميل المنصة...</h2>
+  </div>
+
+  <!-- main container -->
+  <div id="app" class="min-h-screen">
+    <!-- login page -->
+    <div id="login-page" class="page-container min-h-screen bg-gradient-animated flex items-center justify-center px-4">
+      <div class="card-glass p-8 w-full max-w-md">
+        <div class="text-center mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">مرحبًا بك</h2>
+          <p class="text-white/80">سجل دخولك إلى منصة التعليم الجزائري</p>
+        </div>
+        
+        <div class="space-y-4">
+          <div id="login-form">
+            <div class="mb-4">
+              <label for="login-email" class="block text-white mb-1">البريد الإلكتروني</label>
+              <input type="email" id="login-email" class="input-animated" placeholder="أدخل بريدك الإلكتروني">
+            </div>
+            <div class="mb-4">
+              <label for="login-password" class="block text-white mb-1">كلمة المرور</label>
+              <input type="password" id="login-password" class="input-animated" placeholder="أدخل كلمة المرور">
+            </div>
+            <button id="loginButton" class="btn-primary w-full">
+              <i class="fas fa-sign-in-alt ml-2"></i>
+              تسجيل الدخول
+            </button>
+            
+            <div class="my-4 relative">
+              <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-white/20"></div>
+              </div>
+              <div class="relative flex justify-center">
+                <span class="px-3 text-sm text-white/60 bg-transparent">أو</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <p class="text-white/80">ليس لديك حساب؟</p>
+          </div>
+          
+          <button id="switchToRegisterButton" class="btn-secondary w-full">
+            <i class="fas fa-user-plus ml-2"></i>
+            تسجيل حساب جديد
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- register page -->
+    <div id="register-page" class="page-container min-h-screen bg-gradient-animated flex items-center justify-center px-4 hidden">
+      <div class="card-glass p-8 w-full max-w-md">
+        <div class="text-center mb-6">
+          <h2 class="text-3xl font-bold text-white mb-2">إنشاء حساب جديد</h2>
+          <p class="text-white/80">سجل في منصة التعليم الجزائري</p>
+        </div>
+        
+        <div class="space-y-4">
+          <div id="register-form">
+            <div class="mb-4">
+              <label for="register-name" class="block text-white mb-1">الاسم الكامل</label>
+              <input type="text" id="register-name" class="input-animated" placeholder="أدخل اسمك الكامل">
+            </div>
+            <div class="mb-4">
+              <label for="register-email" class="block text-white mb-1">البريد الإلكتروني</label>
+              <input type="email" id="register-email" class="input-animated" placeholder="أدخل بريدك الإلكتروني">
+            </div>
+            <div class="mb-4">
+              <label for="register-password" class="block text-white mb-1">كلمة المرور</label>
+              <input type="password" id="register-password" class="input-animated" placeholder="أدخل كلمة المرور">
+            </div>
+            <div class="mb-4">
+              <label for="register-confirm-password" class="block text-white mb-1">تأكيد كلمة المرور</label>
+              <input type="password" id="register-confirm-password" class="input-animated" placeholder="أكد كلمة المرور">
+            </div>
+            <button id="registerButton" class="btn-primary w-full">
+              <i class="fas fa-user-plus ml-2"></i>
+              تسجيل حساب جديد
+            </button>
+          </div>
+          
+          <div class="text-center">
+            <p class="text-white/80">لديك حساب بالفعل؟</p>
+          </div>
+          
+          <button id="switchToLoginButton" class="btn-secondary w-full">
+            <i class="fas fa-sign-in-alt ml-2"></i>
+            تسجيل الدخول
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- not approved page -->
+    <div id="not-approved-page" class="page-container min-h-screen bg-gradient-to-br from-blue-900 to-indigo-900 flex items-center justify-center px-4 hidden">
+      <div class="card-glass p-8 w-full max-w-md text-center">
+        <div class="icon-waiting mb-6 text-amber-300 flex justify-center">
+          <div class="relative">
+            <i class="fas fa-hourglass-half text-6xl"></i>
+            <div class="absolute inset-0 rounded-full bg-amber-300/30 animate-ping" style="animation-duration: 2s;"></div>
+          </div>
+        </div>
+        <h3 class="text-3xl font-bold text-white mb-4">حسابك قيد المراجعة</h3>
+        <p class="text-white/80 mb-6">شكراً لتسجيلك في المنصة. سيتم تفعيل حسابك بعد موافقة الأدمن. يرجى المحاولة لاحقاً.</p>
+        <button class="btn-secondary" onclick="logoutUser()">
+          <i class="fas fa-sign-out-alt ml-2"></i>
+          تسجيل الخروج
+        </button>
+      </div>
+    </div>
+
+    <!-- admin panel page -->
+    <div id="admin-panel-page" class="page-container dark:bg-gray-900 bg-gray-50 min-h-screen flex flex-col hidden">
+      <!-- header -->
+      <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+          <div class="flex flex-wrap justify-between items-center">
+            <h1 class="text-2xl font-bold flex items-center">
+              <i class="fas fa-user-shield ml-2"></i>
+              لوحة تحكم الأدمن
+            </h1>
+            <div class="flex space-x-2 space-x-reverse mt-2 sm:mt-0">
+              <button onclick="goToSite()" class="btn-secondary text-sm px-3 py-2">
+                <i class="fas fa-home ml-1"></i>
+                <span class="hidden sm:inline">الموقع الرئيسي</span>
+              </button>
+              <button onclick="logoutUser()" class="btn-danger text-sm px-3 py-2">
+                <i class="fas fa-sign-out-alt ml-1"></i>
+                <span class="hidden sm:inline">تسجيل الخروج</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- navigation -->
+      <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-30">
+        <div class="container mx-auto px-4 py-3 overflow-x-auto">
+          <div class="flex flex-nowrap gap-2 whitespace-nowrap">
+            <button onclick="showAdminTab('users')" id="tab-btn-users" class="btn-primary text-sm px-3 py-2">
+              <i class="fas fa-users ml-1"></i>
+              إدارة المستخدمين
+            </button>
+            <button onclick="showAdminTab('settings')" id="tab-btn-settings" class="btn-secondary text-sm px-3 py-2">
+              <i class="fas fa-cog ml-1"></i>
+              إعدادات GitHub
+            </button>
+            <button onclick="showAdminTab('logs')" id="tab-btn-logs" class="btn-secondary text-sm px-3 py-2">
+              <i class="fas fa-history ml-1"></i>
+              سجل العمليات
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- main content -->
+      <main class="container mx-auto px-4 py-6 flex-grow">
+        <!-- users tab -->
+        <div id="tab-users" class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6 dashboard-card">
+          <div class="flex flex-wrap justify-between items-center mb-6">
+            <h2 class="text-xl font-bold text-gray-800 dark:text-white flex items-center">
+              <i class="fas fa-users ml-2 text-indigo-600 dark:text-indigo-400"></i>
+              قائمة المستخدمين
+            </h2>
+            <div class="relative mt-2 sm:mt-0">
+              <input type="text" id="searchUsers" placeholder="البحث عن مستخدم..." 
+                   class="input-animated pl-9 pr-4 py-2 text-sm w-full sm:w-auto">
+              <i class="fas fa-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+          </div>
+          
+          <div class="flex mb-4 justify-between items-center">
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+              <span id="usersCount">0</span> مستخدم مسجل | 
+              <span id="pendingCount">0</span> بانتظار الموافقة
+            </div>
+            <div>
+              <button onclick="syncWithGitHub()" class="btn-primary text-sm px-3 py-2">
+                <i class="fab fa-github ml-1"></i>
+                <span>مزامنة مع GitHub</span>
+              </button>
+            </div>
+          </div>
+          
+          <div class="overflow-x-auto rounded-lg">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <thead class="bg-gray-50 dark:bg-gray-700">
+                <tr>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">اسم المستخدم</th>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">البريد الإلكتروني</th>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">تاريخ التسجيل</th>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">الحالة</th>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">الدور</th>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">الإجراء</th>
+                </tr>
+              </thead>
+              <tbody id="userTable" class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700"></tbody>
+            </table>
+            
+            <!-- loading state -->
+            <div id="users-loading" class="py-12 text-center hidden">
+              <div class="inline-block">
+                <div class="loading-dots text-indigo-600 dark:text-indigo-400">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <p class="mt-2 text-gray-500 dark:text-gray-400">جاري تحميل بيانات المستخدمين...</p>
+              </div>
+            </div>
+            
+            <!-- empty state -->
+            <div id="users-empty" class="py-12 text-center hidden">
+              <div class="inline-block">
+                <i class="fas fa-users text-4xl text-gray-400 dark:text-gray-600 mb-3"></i>
+                <p class="text-gray-500 dark:text-gray-400">لا يوجد مستخدمين مسجلين حاليًا</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- settings tab -->
+        <div id="tab-settings" class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6 dashboard-card hidden">
+          <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+            <i class="fab fa-github ml-2 text-indigo-600 dark:text-indigo-400"></i>
+            إعدادات ربط GitHub
+          </h2>
+          
+          <div class="max-w-lg mx-auto">
+            <div class="mb-6 p-4 rounded-lg github-settings-card">
+              <h4 class="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">معلومات عن ربط GitHub:</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                يتم تخزين بيانات المستخدمين في ملف JSON في مستودع GitHub الخاص بك. يتم تحديث الملف تلقائيًا عند تغيير حالة المستخدمين أو إضافة مستخدمين جدد.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="mb-4">
+                <label for="github-owner" class="block text-gray-700 dark:text-gray-300 mb-1">اسم المالك أو المنظمة</label>
+                <input type="text" id="github-owner" class="input-animated" placeholder="مثال: yourusername">
+              </div>
+
+              <div class="mb-4">
+                <label for="github-repo" class="block text-gray-700 dark:text-gray-300 mb-1">اسم المستودع</label>
+                <input type="text" id="github-repo" class="input-animated" placeholder="مثال: algerian-edu-platform">
+              </div>
+
+              <div class="mb-4">
+                <label for="github-path" class="block text-gray-700 dark:text-gray-300 mb-1">مسار ملف المستخدمين</label>
+                <input type="text" id="github-path" class="input-animated" placeholder="مثال: data/users.json">
+              </div>
+
+              <div class="mb-4">
+                <label for="github-token" class="block text-gray-700 dark:text-gray-300 mb-1">
+                  توكن الوصول الشخصي (Personal Access Token)
+                  <a href="https://github.com/settings/tokens" target="_blank" class="text-indigo-500 hover:underline">
+                    <i class="fas fa-external-link-alt ml-1"></i>
+                  </a>
+                </label>
+                <input type="password" id="github-token" class="input-animated" placeholder="ghp_...">
+                <p class="text-xs text-amber-500 dark:text-amber-400 mt-1">
+                  <i class="fas fa-exclamation-triangle ml-1"></i>
+                  تأكد من منح التوكن صلاحيات "repo" للوصول الكامل إلى المستودع
+                </p>
+              </div>
+              
+              <div class="mt-6 flex justify-between">
+                <button onclick="testGitHubConnection()" class="btn-secondary">
+                  <i class="fas fa-vial ml-1"></i>
+                  اختبار الاتصال
+                </button>
+                <button onclick="saveGitHubSettings()" class="btn-primary">
+                  <i class="fas fa-save ml-1"></i>
+                  حفظ الإعدادات
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- logs tab -->
+        <div id="tab-logs" class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6 dashboard-card hidden">
+          <div class="flex flex-wrap justify-between items-center mb-6">
+            <h2 class="text-xl font-bold text-gray-800 dark:text-white flex items-center">
+              <i class="fas fa-history ml-2 text-indigo-600 dark:text-indigo-400"></i>
+              سجل العمليات
+            </h2>
+            <div class="flex gap-2">
+              <button onclick="refreshLogs()" class="btn-secondary text-sm px-3 py-2">
+                <i class="fas fa-sync-alt ml-1"></i>
+                <span>تحديث</span>
+              </button>
+              <button onclick="exportLogs()" class="btn-primary text-sm px-3 py-2">
+                <i class="fas fa-file-export ml-1"></i>
+                <span>تصدير</span>
+              </button>
+            </div>
+          </div>
+          
+          <div class="mb-4">
+            <div class="flex flex-wrap gap-2">
+              <button onclick="filterLogs('all')" class="badge badge-info" id="filter-all">الكل</button>
+              <button onclick="filterLogs('user')" class="badge badge-secondary" id="filter-user">المستخدمين</button>
+              <button onclick="filterLogs('auth')" class="badge badge-secondary" id="filter-auth">تسجيل الدخول</button>
+              <button onclick="filterLogs('github')" class="badge badge-secondary" id="filter-github">GitHub</button>
+            </div>
+          </div>
+          
+          <div class="overflow-x-auto rounded-lg mt-4">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <thead class="bg-gray-50 dark:bg-gray-700">
+                <tr>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">الوقت</th>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">النوع</th>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">الوصف</th>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">المشغل</th>
+                </tr>
+              </thead>
+              <tbody id="logsTable" class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700"></tbody>
+            </table>
+            
+            <!-- loading state -->
+            <div id="logs-loading" class="py-12 text-center hidden">
+              <div class="inline-block">
+                <div class="loading-dots text-indigo-600 dark:text-indigo-400">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <p class="mt-2 text-gray-500 dark:text-gray-400">جاري تحميل سجل العمليات...</p>
+              </div>
+            </div>
+            
+            <!-- empty state -->
+            <div id="logs-empty" class="py-12 text-center hidden">
+              <div class="inline-block">
+                <i class="fas fa-history text-4xl text-gray-400 dark:text-gray-600 mb-3"></i>
+                <p class="text-gray-500 dark:text-gray-400">سجل العمليات فارغ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <footer class="bg-gray-800 text-white py-6 text-center">
+        <div class="container mx-auto px-4">
+          <p>© 2025 منصة التعليم الجزائري - جميع الحقوق محفوظة</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- modals -->
+    <div id="confirmationModal" class="modal">
+      <div class="modal-content bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
+        <div class="mb-4">
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white" id="confirmationModalTitle">تأكيد العملية</h3>
+        </div>
+        
+        <div class="mb-6" id="confirmationModalContent">
+          <!-- محتوى التأكيد سيعرض هنا -->
+        </div>
+        
+        <div class="flex justify-end space-x-2 space-x-reverse">
+          <button id="cancelConfirmationButton" class="btn-secondary">إلغاء</button>
+          <button id="confirmButton" class="btn-primary">تأكيد</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- notification -->
+    <div id="notification" class="notification">
+      <div class="flex items-center">
+        <i class="fas fa-info-circle text-xl ml-2"></i>
+        <span id="notification-text"></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // تكوين التطبيق والمتغيرات العامة
+    const app = {
+      currentPage: 'login-page',
+      currentAdminTab: 'users',
+      isDarkMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
+      currentUser: null,
+      users: [],
+      logs: [],
+      gitHubSettings: {
+        owner: '',
+        repo: '',
+        path: 'data/users.json',
+        token: ''
+      },
+      filteredLogType: 'all',
+      // مؤشر للتحقق من حالة التوجيه
+      authState: {
+        lastLoginAttempt: 0,
+        attemptCount: 0,
+        isRedirecting: false,
+        redirectCount: 0
+      }
+    };
+
+    // دالة مساعدة لإنشاء معرف فريد
+    function generateUUID() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    }
+
+    // عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', function() {
+      // تهيئة الوضع الداكن
+      if (app.isDarkMode) {
+        document.documentElement.classList.add('dark');
+        document.getElementById('darkModeToggle').checked = true;
+      }
+
+      // تفعيل تبديل زر الوضع الداكن
+      document.getElementById('darkModeToggle').addEventListener('change', toggleDarkMode);
+
+      // إخفاء شاشة التحميل بعد التأخير
+      setTimeout(() => {
+        document.getElementById('loading-screen').style.opacity = 0;
+        document.getElementById('loading-screen').style.transition = 'opacity 0.5s ease';
+        
+        setTimeout(() => {
+          document.getElementById('loading-screen').style.display = 'none';
+          
+          // تهيئة التطبيق وفحص حالة تسجيل الدخول
+          initializeApp();
+        }, 500);
+      }, 1000);
+
+      // إعداد أزرار التسجيل وتسجيل الدخول
+      document.getElementById('loginButton').addEventListener('click', loginUser);
+      document.getElementById('registerButton').addEventListener('click', registerUser);
+      document.getElementById('switchToRegisterButton').addEventListener('click', () => showPage('register-page'));
+      document.getElementById('switchToLoginButton').addEventListener('click', () => showPage('login-page'));
+      
+      // إعداد محركات البحث
+      document.getElementById('searchUsers').addEventListener('input', filterUsers);
+      
+      // إعداد أزرار التأكيد
+      document.getElementById('cancelConfirmationButton').addEventListener('click', closeConfirmationModal);
+      
+      // تحميل إعدادات GitHub
+      loadGitHubSettings();
+
+      // التحقق من وجود علامة توجيه من index.html
+      const urlParams = new URLSearchParams(window.location.hash.substring(1));
+      if (urlParams.has('admin')) {
+        // تم التوجيه من الصفحة الرئيسية للوحة التحكم
+        setTimeout(() => {
+          checkLoggedInUser(true);
+        }, 500);
+      }
+    });
+
+    // تهيئة التطبيق
+    function initializeApp() {
+      console.log("تهيئة التطبيق");
+      
+      // تطهير أي بيانات جلسة قديمة
+      const hasAuthToken = sessionStorage.getItem('authToken');
+      const currentTime = new Date().getTime();
+      
+      // إذا كانت هناك علامة توجيه، نتحقق مما إذا كانت حديثة
+      if (hasAuthToken) {
+        const lastAuth = parseInt(sessionStorage.getItem('lastAuth') || '0');
+        // إذا كان آخر مصادقة منذ أكثر من 30 دقيقة، نقوم بتطهير البيانات
+        if (currentTime - lastAuth > 30 * 60 * 1000) {
+          sessionStorage.removeItem('authToken');
+          sessionStorage.removeItem('lastAuth');
+          sessionStorage.removeItem('redirected');
+          sessionStorage.removeItem('redirectCount');
+        }
+      }
+      
+      // فحص حالة تسجيل الدخول
+      checkLoggedInUser();
+    }
+
+    // التحقق من المستخدم المسجل دخوله
+    async function checkLoggedInUser(forceAdmin = false) {
+      console.log("فحص حالة تسجيل الدخول...");
+      
+      // التحقق من عدد التوجيهات لمنع الحلقة المفرغة
+      const redirectCount = parseInt(sessionStorage.getItem('redirectCount') || '0');
+      if (redirectCount > 3) {
+        // تجاوز الحد الأقصى من التوجيهات، نقوم بإعادة تعيين كل شيء
+        console.log("تم اكتشاف حلقة توجيه! إعادة تعيين الكل...");
+        localStorage.removeItem('currentUser');
+        sessionStorage.clear();
+        showNotification('تم اكتشاف مشكلة في تسجيل الدخول. يرجى المحاولة مجددًا.', 'error');
+        showPage('login-page');
+        return;
+      }
+      
+      try {
+        // استرداد بيانات المستخدم المخزنة
+        const savedUserData = localStorage.getItem('currentUser');
+        const authToken = sessionStorage.getItem('authToken');
+        
+        // فحص إذا كان المستخدم متصل
+        if (!savedUserData || !authToken) {
+          console.log("لم يتم العثور على بيانات المستخدم، عرض صفحة تسجيل الدخول");
+          showPage('login-page');
+          return;
+        }
+        
+        app.currentUser = JSON.parse(savedUserData);
+        console.log("تم العثور على مستخدم:", app.currentUser);
+        
+        // تحديث وقت آخر مصادقة
+        sessionStorage.setItem('lastAuth', new Date().getTime().toString());
+        
+        // تحقق من وجود المستخدم في قاعدة البيانات
+        await loadUsersData();
+        const existingUser = app.users.find(u => u.id === app.currentUser.id);
+        
+        if (!existingUser) {
+          console.log("المستخدم غير موجود في قاعدة البيانات");
+          throw new Error('User not found in database');
+        }
+        
+        // تحديث بيانات المستخدم المحلية إذا تغيرت
+        if (existingUser.approved !== app.currentUser.approved || 
+            existingUser.role !== app.currentUser.role) {
+          console.log("تحديث بيانات المستخدم من قاعدة البيانات");
+          app.currentUser = existingUser;
+          localStorage.setItem('currentUser', JSON.stringify(app.currentUser));
+        }
+        
+        // التوجيه إلى الصفحة المناسبة
+        if (forceAdmin && (app.currentUser.role === 'admin')) {
+          showNotification('مرحبًا بك في لوحة التحكم', 'success');
+          showPage('admin-panel-page');
+          return;
+        } else if (app.currentUser.role === 'admin') {
+          if (window.location.hash === '#admin') {
+            showNotification('مرحبًا بك في لوحة التحكم', 'success');
+            showPage('admin-panel-page');
+          } else {
+            redirectToIndex();
+          }
+          return;
+        } else if (app.currentUser.approved) {
+          // مستخدم عادي معتمد
+          redirectToIndex();
+          return;
+        } else {
+          // مستخدم عادي غير معتمد
+          showPage('not-approved-page');
+          return;
+        }
+      } catch (error) {
+        console.error("خطأ في التحقق من حالة المستخدم:", error);
+        
+        // تنظيف البيانات في حالة الخطأ
+        sessionStorage.removeItem('authToken');
+        sessionStorage.removeItem('lastAuth');
+        sessionStorage.removeItem('redirected');
+        localStorage.removeItem('currentUser');
+        
+        showNotification('حدث خطأ في التحقق من حالة تسجيل الدخول. يرجى تسجيل الدخول مرة أخرى.', 'error');
+        showPage('login-page');
+      }
+    }
+
+    // التوجيه إلى الصفحة الرئيسية
+    function redirectToIndex() {
+      if (app.authState.isRedirecting) {
+        // تجنب التوجيه المتكرر
+        return;
+      }
+      
+      // تسجيل هذا التوجيه
+      app.authState.isRedirecting = true;
+      const redirectCount = parseInt(sessionStorage.getItem('redirectCount') || '0');
+      sessionStorage.setItem('redirectCount', (redirectCount + 1).toString());
+      
+      showNotification('تم تسجيل الدخول بنجاح، جاري التوجيه للصفحة الرئيسية...', 'success');
+      
+      // وضع علامة للتوجيه من صفحة تسجيل الدخول
+      sessionStorage.setItem('redirected', 'true');
+      
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 1500);
+    }
+
+    // تبديل الوضع الداكن/الفاتح
+    function toggleDarkMode() {
+      if (document.getElementById('darkModeToggle').checked) {
+        document.documentElement.classList.add('dark');
+        app.isDarkMode = true;
+      } else {
+        document.documentElement.classList.remove('dark');
+        app.isDarkMode = false;
+      }
+    }
+
+    // عرض صفحة معينة
+    function showPage(pageId) {
+      console.log("عرض الصفحة:", pageId);
+      
+      // إخفاء جميع الصفحات
+      document.querySelectorAll('.page-container').forEach(page => {
+        page.classList.add('hidden');
+        page.classList.remove('active');
+      });
+      
+      // عرض الصفحة المطلوبة
+      const page = document.getElementById(pageId);
+      if (page) {
+        page.classList.remove('hidden');
+        
+        // تأثير الظهور التدريجي
+        setTimeout(() => {
+          page.classList.add('active');
+        }, 10);
+        
+        // تحديث الصفحة الحالية
+        app.currentPage = pageId;
+        
+        // إذا كانت الصفحة هي لوحة التحكم، تحميل البيانات
+        if (pageId === 'admin-panel-page') {
+          loadUsers();
+          loadLogs();
+        }
+      } else {
+        console.error("لم يتم العثور على الصفحة:", pageId);
+      }
+    }
+
+    // تسجيل الدخول
+    async function loginUser() {
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+      
+      if (!email || !password) {
+        showNotification('يرجى ملء جميع الحقول المطلوبة', 'error');
+        return;
+      }
+      
+      // تحديث حالة المصادقة لمنع المحاولات المتكررة
+      const currentTime = new Date().getTime();
+      if (currentTime - app.authState.lastLoginAttempt < 2000) {
+        // تجاهل النقرات المتكررة
+        return;
+      }
+      
+      app.authState.lastLoginAttempt = currentTime;
+      app.authState.attemptCount++;
+      
+      // عرض حالة التحميل
+      document.getElementById('loginButton').innerHTML = `
+        <div class="loading-dots text-white">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      `;
+      document.getElementById('loginButton').disabled = true;
+      
+      try {
+        // تحميل المستخدمين
+        await loadUsersData();
+        
+        // البحث عن المستخدم بالبريد الإلكتروني وكلمة المرور
+        const user = app.users.find(u => u.email === email && u.password === password);
+        
+        if (!user) {
+          throw new Error('Invalid credentials');
+        }
+        
+        // تخزين المستخدم وتوكن المصادقة
+        app.currentUser = user;
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        
+        // إنشاء رمز مصادقة وتخزينه
+        const authToken = generateUUID();
+        sessionStorage.setItem('authToken', authToken);
+        sessionStorage.setItem('lastAuth', new Date().getTime().toString());
+        
+        // إعادة تعيين عداد التوجيه
+        sessionStorage.setItem('redirectCount', '0');
+        sessionStorage.removeItem('redirected');
+        
+        // إضافة سجل تسجيل الدخول
+        await addLogEntry({
+          type: 'auth',
+          action: 'login',
+          details: `تسجيل دخول بالبريد الإلكتروني: ${email}`,
+          user_id: user.id,
+          user_name: user.name
+        });
+        
+        // التحقق من نوع المستخدم وحالته
+        if (user.role === 'admin') {
+          showNotification('تم تسجيل الدخول كمشرف بنجاح ✓', 'success');
+          setTimeout(() => {
+            showPage('admin-panel-page');
+          }, 1000);
+        } else if (user.approved) {
+          redirectToIndex();
+        } else {
+          setTimeout(() => {
+            showPage('not-approved-page');
+          }, 1000);
+        }
+      } catch (error) {
+        console.error('Login error:', error);
+        let errorMessage = 'حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى.';
+        
+        if (error.message === 'Invalid credentials') {
+          errorMessage = 'البريد الإلكتروني أو كلمة المرور غير صحيحة';
+        } else if (error.message.includes('Network Error')) {
+          errorMessage = 'خطأ في الاتصال بالخادم. تأكد من اتصالك بالإنترنت';
+        }
+        
+        showNotification(errorMessage, 'error');
+      } finally {
+        // إعادة تعيين زر تسجيل الدخول
+        document.getElementById('loginButton').innerHTML = `
+          <i class="fas fa-sign-in-alt ml-2"></i>
+          تسجيل الدخول
+        `;
+        document.getElementById('loginButton').disabled = false;
+      }
+    }
+
+    // تحميل بيانات المستخدمين
+    async function loadUsersData() {
+      try {
+        // محاولة تحميل البيانات من GitHub
+        await fetchUsersFromGitHub();
+        return app.users;
+      } catch (error) {
+        console.log("استخدام البيانات التجريبية بسبب خطأ:", error);
+        // استخدام البيانات التجريبية في حالة الخطأ
+        app.users = getDemoUsers();
+        return app.users;
+      }
+    }
+
+    // تسجيل مستخدم جديد
+    async function registerUser() {
+      const name = document.getElementById('register-name').value.trim();
+      const email = document.getElementById('register-email').value.trim();
+      const password = document.getElementById('register-password').value;
+      const confirmPassword = document.getElementById('register-confirm-password').value;
+      
+      if (!name || !email || !password || !confirmPassword) {
+        showNotification('يرجى ملء جميع الحقول المطلوبة', 'error');
+        return;
+      }
+      
+      if (password !== confirmPassword) {
+        showNotification('كلمات المرور غير متطابقة', 'error');
+        return;
+      }
+      
+      if (password.length < 6) {
+        showNotification('يجب أن تكون كلمة المرور 6 أحرف على الأقل', 'error');
+        return;
+      }
+      
+      // عرض حالة التحميل
+      document.getElementById('registerButton').innerHTML = `
+        <div class="loading-dots text-white">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      `;
+      document.getElementById('registerButton').disabled = true;
+      
+      try {
+        // تحميل المستخدمين
+        await loadUsersData();
+        
+        // التحقق من أن البريد الإلكتروني غير مستخدم
+        if (app.users.some(u => u.email === email)) {
+          throw new Error('Email already exists');
+        }
+        
+        // إنشاء مستخدم جديد
+        const newUser = {
+          id: generateUUID(),
+          name: name,
+          email: email,
+          password: password, // في التطبيق الحقيقي يجب تشفير كلمات المرور
+          role: 'user',
+          approved: false,
+          created_at: new Date().toISOString()
+        };
+        
+        // إضافة المستخدم إلى القائمة
+        app.users.push(newUser);
+        
+        // حفظ التغييرات في GitHub
+        await saveUsersToGitHub();
+        
+        // إضافة سجل بالعملية
+        await addLogEntry({
+          type: 'user',
+          action: 'register',
+          details: `تسجيل مستخدم جديد: ${name} (${email})`,
+          user_id: newUser.id,
+          user_name: newUser.name
+        });
+        
+        // تخزين المستخدم الحالي
+        app.currentUser = newUser;
+        localStorage.setItem('currentUser', JSON.stringify(newUser));
+        
+        // إنشاء توكن مصادقة
+        const authToken = generateUUID();
+        sessionStorage.setItem('authToken', authToken);
+        sessionStorage.setItem('lastAuth', new Date().getTime().toString());
+        sessionStorage.setItem('redirectCount', '0');
+        sessionStorage.removeItem('redirected');
+        
+        showNotification('تم إنشاء الحساب بنجاح، بانتظار موافقة الأدمن', 'success');
+        
+        setTimeout(() => {
+          showPage('not-approved-page');
+        }, 1000);
+      } catch (error) {
+        console.error('Registration error:', error);
+        let errorMessage = 'حدث خطأ أثناء التسجيل. يرجى المحاولة مرة أخرى.';
+        
+        if (error.message === 'Email already exists') {
+          errorMessage = 'البريد الإلكتروني مستخدم بالفعل';
+        } else if (error.message.includes('Network Error')) {
+          errorMessage = 'خطأ في الاتصال بالخادم. تأكد من اتصالك بالإنترنت';
+        }
+        
+        showNotification(errorMessage, 'error');
+      } finally {
+        // إعادة تعيين زر التسجيل
+        document.getElementById('registerButton').innerHTML = `
+          <i class="fas fa-user-plus ml-2"></i>
+          تسجيل حساب جديد
+        `;
+        document.getElementById('registerButton').disabled = false;
+      }
+    }
+
+    // دالة تسجيل الخروج
+    function logoutUser() {
+      // إزالة بيانات المستخدم
+      app.currentUser = null;
+      localStorage.removeItem('currentUser');
+      sessionStorage.removeItem('authToken');
+      sessionStorage.removeItem('lastAuth');
+      sessionStorage.removeItem('redirected');
+      sessionStorage.removeItem('redirectCount');
+      
+      // إعادة تعيين حالة المصادقة
+      app.authState = {
+        lastLoginAttempt: 0,
+        attemptCount: 0,
+        isRedirecting: false,
+        redirectCount: 0
+      };
+      
+      showNotification('تم تسجيل الخروج بنجاح', 'success');
+      showPage('login-page');
+    }
+
+    // دالة الانتقال إلى الموقع الرئيسي
+    function goToSite() {
+      // وضع علامة التوجيه ورقم صفر للتوجيهات
+      sessionStorage.setItem('redirected', 'true');
+      sessionStorage.setItem('redirectCount', '0');
+      window.location.href = "index.html";
+    }
+
+    // عرض علامة تبويب في لوحة التحكم
+    function showAdminTab(tabId) {
+      // إخفاء جميع علامات التبويب
+      document.getElementById('tab-users').classList.add('hidden');
+      document.getElementById('tab-settings').classList.add('hidden');
+      document.getElementById('tab-logs').classList.add('hidden');
+      
+      // إعادة تعيين أزرار التبويب
+      document.getElementById('tab-btn-users').classList.remove('btn-primary');
+      document.getElementById('tab-btn-users').classList.add('btn-secondary');
+      document.getElementById('tab-btn-settings').classList.remove('btn-primary');
+      document.getElementById('tab-btn-settings').classList.add('btn-secondary');
+      document.getElementById('tab-btn-logs').classList.remove('btn-primary');
+      document.getElementById('tab-btn-logs').classList.add('btn-secondary');
+      
+      // عرض علامة التبويب المحددة
+      document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+      document.getElementById(`tab-btn-${tabId}`).classList.remove('btn-secondary');
+      document.getElementById(`tab-btn-${tabId}`).classList.add('btn-primary');
+      
+      // تحديث علامة التبويب الحالية
+      app.currentAdminTab = tabId;
+    }
+
+    // جلب المستخدمين من GitHub
+    async function fetchUsersFromGitHub() {
+      try {
+        // التحقق من إعدادات GitHub
+        if (!app.gitHubSettings.owner || !app.gitHubSettings.repo || !app.gitHubSettings.path || !app.gitHubSettings.token) {
+          console.log('GitHub settings not configured, using demo mode');
+          app.users = getDemoUsers();
+          return;
+        }
+        
+        const apiUrl = `https://api.github.com/repos/${app.gitHubSettings.owner}/${app.gitHubSettings.repo}/contents/${app.gitHubSettings.path}`;
+        
+        const response = await fetch(apiUrl, {
+          headers: {
+            'Authorization': `token ${app.gitHubSettings.token}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        });
+        
+        if (!response.ok) {
+          throw new Error(`GitHub API error: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        // فك ترميز المحتوى من Base64
+        const content = atob(data.content);
+        const usersData = JSON.parse(content);
+        
+        app.users = usersData.users || [];
+        return true;
+      } catch (error) {
+        console.error('Error fetching users from GitHub:', error);
+        
+        // في حالة الخطأ، استخدم مستخدمين افتراضيين للعرض
+        app.users = getDemoUsers();
+        throw error;
+      }
+    }
+
+    // حفظ المستخدمين إلى GitHub
+    async function saveUsersToGitHub() {
+      try {
+        // التحقق من إعدادات GitHub
+        if (!app.gitHubSettings.owner || !app.gitHubSettings.repo || !app.gitHubSettings.path || !app.gitHubSettings.token) {
+          console.log('GitHub settings not configured, using demo mode');
+          return true;
+        }
+        
+        // تجهيز البيانات للحفظ
+        const usersData = {
+          users: app.users,
+          last_updated: new Date().toISOString()
+        };
+        
+        const content = JSON.stringify(usersData, null, 2);
+        const encodedContent = btoa(unescape(encodeURIComponent(content)));
+        
+        // الحصول على SHA للملف الحالي
+        const apiUrl = `https://api.github.com/repos/${app.gitHubSettings.owner}/${app.gitHubSettings.repo}/contents/${app.gitHubSettings.path}`;
+        
+        const getResponse = await fetch(apiUrl, {
+          headers: {
+            'Authorization': `token ${app.gitHubSettings.token}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        });
+        
+        let sha = '';
+        if (getResponse.ok) {
+          const fileData = await getResponse.json();
+          sha = fileData.sha;
+        }
+        
+        // تحديث الملف
+        const updateResponse = await fetch(apiUrl, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `token ${app.gitHubSettings.token}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: `تحديث قائمة المستخدمين - ${new Date().toLocaleString('ar')}`,
+            content: encodedContent,
+            sha: sha
+          })
+        });
+        
+        if (!updateResponse.ok) {
+          throw new Error(`GitHub API error: ${updateResponse.status}`);
+        }
+        
+        return true;
+      } catch (error) {
+        console.error('Error saving users to GitHub:', error);
+        throw error;
+      }
+    }
+
+    // جلب سجل العمليات من GitHub
+    async function fetchLogsFromGitHub() {
+      try {
+        // التحقق من إعدادات GitHub
+        if (!app.gitHubSettings.owner || !app.gitHubSettings.repo || !app.gitHubSettings.token) {
+          // إذا لم تكن الإعدادات متوفرة، استخدم سجلات افتراضية
+          app.logs = getDemoLogs();
+          return;
+        }
+        
+        const logsPath = 'data/logs.json';
+        const apiUrl = `https://api.github.com/repos/${app.gitHubSettings.owner}/${app.gitHubSettings.repo}/contents/${logsPath}`;
+        
+        const response = await fetch(apiUrl, {
+          headers: {
+            'Authorization': `token ${app.gitHubSettings.token}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        });
+        
+        if (response.status === 404) {
+          // إذا لم يكن الملف موجوداً، أنشئ سجلات افتراضية
+          app.logs = [];
+          return;
+        }
+        
+        if (!response.ok) {
+          throw new Error(`GitHub API error: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        // فك ترميز المحتوى من Base64
+        const content = atob(data.content);
+        const logsData = JSON.parse(content);
+        
+        app.logs = logsData.logs || [];
+      } catch (error) {
+        console.error('Error fetching logs from GitHub:', error);
+        
+        // في حالة الخطأ، استخدم سجلات افتراضية
+        app.logs = getDemoLogs();
+      }
+    }
+
+    // إضافة سجل جديد
+    async function addLogEntry(logEntry) {
+      try {
+        // إضافة معرف ووقت للسجل
+        const entry = {
+          id: generateUUID(),
+          timestamp: new Date().toISOString(),
+          ...logEntry
+        };
+        
+        // إضافة إلى السجلات المحلية
+        app.logs.unshift(entry);
+        
+        // التحقق من إعدادات GitHub
+        if (!app.gitHubSettings.owner || !app.gitHubSettings.repo || !app.gitHubSettings.token) {
+          console.log('GitHub settings not configured, using demo mode');
+          return true;
+        }
+        
+        const logsPath = 'data/logs.json';
+        const apiUrl = `https://api.github.com/repos/${app.gitHubSettings.owner}/${app.gitHubSettings.repo}/contents/${logsPath}`;
+        
+        // الحصول على SHA للملف الحالي (إذا كان موجوداً)
+        let sha = '';
+        let existingLogs = [];
+        
+        const getResponse = await fetch(apiUrl, {
+          headers: {
+            'Authorization': `token ${app.gitHubSettings.token}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        });
+        
+        if (getResponse.ok) {
+          const fileData = await getResponse.json();
+          sha = fileData.sha;
+          
+          // فك ترميز المحتوى من Base64
+          const content = atob(fileData.content);
+          const logsData = JSON.parse(content);
+          existingLogs = logsData.logs || [];
+        }
+        
+        // دمج السجل الجديد مع السجلات الموجودة
+        existingLogs.unshift(entry);
+        
+        // الاحتفاظ بآخر 100 سجل فقط
+        if (existingLogs.length > 100) {
+          existingLogs = existingLogs.slice(0, 100);
+        }
+        
+        // تجهيز البيانات للحفظ
+        const logsData = {
+          logs: existingLogs,
+          last_updated: new Date().toISOString()
+        };
+        
+        const content = JSON.stringify(logsData, null, 2);
+        const encodedContent = btoa(unescape(encodeURIComponent(content)));
+        
+        // حفظ السجلات
+        const updateResponse = await fetch(apiUrl, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `token ${app.gitHubSettings.token}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: `إضافة سجل عملية جديد - ${new Date().toLocaleString('ar')}`,
+            content: encodedContent,
+            sha: sha
+          })
+        });
+        
+        if (!updateResponse.ok) {
+          throw new Error(`GitHub API error: ${updateResponse.status}`);
+        }
+        
+        return true;
+      } catch (error) {
+        console.error('Error adding log entry:', error);
+        return false;
+      }
+    }
+
+    // تحميل المستخدمين
+    async function loadUsers() {
+      // عرض حالة التحميل
+      document.getElementById('userTable').innerHTML = '';
+      document.getElementById('users-loading').classList.remove('hidden');
+      document.getElementById('users-empty').classList.add('hidden');
+      
+      try {
+        // جلب المستخدمين من GitHub
+        await fetchUsersFromGitHub();
+        
+        // إخفاء حالة التحميل
+        document.getElementById('users-loading').classList.add('hidden');
+        
+        // التحقق مما إذا كان لا توجد بيانات
+        if (!app.users || app.users.length === 0) {
+          document.getElementById('users-empty').classList.remove('hidden');
+          document.getElementById('usersCount').textContent = '0';
+          document.getElementById('pendingCount').textContent = '0';
+          return;
+        }
+        
+        // تحديث عداد المستخدمين
+        document.getElementById('usersCount').textContent = app.users.length;
+        document.getElementById('pendingCount').textContent = app.users.filter(user => !user.approved).length;
+        
+        // عرض المستخدمين
+        const tbody = document.getElementById('userTable');
+        
+        app.users.forEach(user => {
+          const row = document.createElement('tr');
+          row.className = 'table-row';
+          row.setAttribute('data-user-id', user.id);
+          
+          const isAdmin = user.role === 'admin';
+          const isApproved = user.approved || false;
+          
+          row.innerHTML = `
+            <td class="px-6 py-4 whitespace-nowrap">
+              <div class="flex items-center">
+                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center">
+                  <i class="fas fa-user text-indigo-600 dark:text-indigo-400"></i>
+                </div>
+                <div class="mr-4">
+                  <div class="text-sm font-medium text-gray-900 dark:text-white">${user.name || 'مستخدم'}</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <div class="text-sm text-gray-900 dark:text-gray-200">${user.email || 'غير متوفر'}</div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <div class="text-sm text-gray-500 dark:text-gray-400">${formatDate(user.created_at)}</div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <span class="badge ${isApproved ? 'badge-success' : 'badge-warning'}">
+                <i class="fas ${isApproved ? 'fa-check-circle' : 'fa-clock'} ml-1"></i>
+                ${isApproved ? 'مقبول' : 'بانتظار الموافقة'}
+              </span>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <span class="badge ${isAdmin ? 'badge-info' : 'badge-secondary'}">
+                <i class="fas ${isAdmin ? 'fa-shield-alt' : 'fa-user'} ml-1"></i>
+                ${isAdmin ? 'مشرف' : 'مستخدم عادي'}
+              </span>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-left space-x-2 space-x-reverse">
+              ${isApproved ? `
+              <button onclick="rejectUser('${user.id}')" class="btn-danger text-xs px-2 py-1">
+                <i class="fas fa-ban ml-1"></i>
+                إلغاء القبول
+              </button>` : `
+              <button onclick="approveUser('${user.id}')" class="btn-primary text-xs px-2 py-1">
+                <i class="fas fa-check ml-1"></i>
+                موافقة
+              </button>`}
+              <button onclick="deleteUser('${user.id}')" class="btn-danger text-xs px-2 py-1">
+                <i class="fas fa-trash-alt ml-1"></i>
+                حذف
+              </button>
+            </td>
+          `;
+          tbody.appendChild(row);
+        });
+      } catch (error) {
+        console.error('Error loading users:', error);
+        document.getElementById('users-loading').classList.add('hidden');
+        showNotification('خطأ في تحميل بيانات المستخدمين', 'error');
+      }
+    }
+
+    // تحميل سجل العمليات
+    async function loadLogs() {
+      // عرض حالة التحميل
+      document.getElementById('logsTable').innerHTML = '';
+      document.getElementById('logs-loading').classList.remove('hidden');
+      document.getElementById('logs-empty').classList.add('hidden');
+      
+      try {
+        // جلب السجلات من GitHub
+        await fetchLogsFromGitHub();
+        
+        // إخفاء حالة التحميل
+        document.getElementById('logs-loading').classList.add('hidden');
+        
+        // التحقق مما إذا كان لا توجد بيانات
+        if (!app.logs || app.logs.length === 0) {
+          document.getElementById('logs-empty').classList.remove('hidden');
+          return;
+        }
+        
+        // عرض السجلات المفلترة
+        displayFilteredLogs();
+      } catch (error) {
+        console.error('Error loading logs:', error);
+        document.getElementById('logs-loading').classList.add('hidden');
+        showNotification('خطأ في تحميل سجل العمليات', 'error');
+      }
+    }
+
+    // عرض السجلات المفلترة
+    function displayFilteredLogs() {
+      const filteredLogs = app.filteredLogType === 'all' 
+        ? app.logs 
+        : app.logs.filter(log => log.type === app.filteredLogType);
+        
+      const tbody = document.getElementById('logsTable');
+      tbody.innerHTML = '';
+      
+      if (filteredLogs.length === 0) {
+        document.getElementById('logs-empty').classList.remove('hidden');
+        return;
+      }
+      
+      document.getElementById('logs-empty').classList.add('hidden');
+      
+      filteredLogs.forEach(log => {
+        const row = document.createElement('tr');
+        row.className = 'table-row';
+        
+        // تحديد لون ونوع السجل
+        let typeClass = 'badge-secondary';
+        let typeIcon = 'fa-info-circle';
+        
+        if (log.type === 'user') {
+          typeClass = 'badge-primary';
+          typeIcon = 'fa-user';
+        } else if (log.type === 'auth') {
+          typeClass = 'badge-info';
+          typeIcon = 'fa-key';
+        } else if (log.type === 'github') {
+          typeClass = 'badge-info';
+          typeIcon = 'fa-github';
+        } else if (log.action && log.action.includes('delete')) {
+          typeClass = 'badge-danger';
+          typeIcon = 'fa-trash-alt';
+        } else if (log.action && log.action.includes('approve')) {
+          typeClass = 'badge-success';
+          typeIcon = 'fa-check-circle';
+        }
+        
+        row.innerHTML = `
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-gray-500 dark:text-gray-400">${formatDate(log.timestamp)}</div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="badge ${typeClass}">
+              <i class="fas ${typeIcon} ml-1"></i>
+              ${getLogTypeText(log.type)}
+            </span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-gray-900 dark:text-gray-200">${log.details || ''}</div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-gray-500 dark:text-gray-400">${log.user_name || 'النظام'}</div>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    // الحصول على نص نوع السجل
+    function getLogTypeText(type) {
+      switch (type) {
+        case 'user':
+          return 'مستخدم';
+        case 'auth':
+          return 'تسجيل دخول';
+        case 'github':
+          return 'GitHub';
+        default:
+          return 'عام';
+      }
+    }
+
+    // تصفية المستخدمين حسب البحث
+    function filterUsers() {
+      const searchTerm = document.getElementById('searchUsers').value.toLowerCase();
+      const rows = document.getElementById('userTable').querySelectorAll('tr');
+      
+      rows.forEach(row => {
+        const username = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+        const email = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+        
+        if (username.includes(searchTerm) || email.includes(searchTerm)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    // تصفية السجلات حسب النوع
+    function filterLogs(type) {
+      app.filteredLogType = type;
+      
+      // تحديث حالة الأزرار
+      document.querySelectorAll('[id^="filter-"]').forEach(btn => {
+        btn.classList.remove('badge-info');
+        btn.classList.add('badge-secondary');
+      });
+      
+      document.getElementById(`filter-${type}`).classList.remove('badge-secondary');
+      document.getElementById(`filter-${type}`).classList.add('badge-info');
+      
+      // عرض السجلات المفلترة
+      displayFilteredLogs();
+    }
+
+    // الموافقة على مستخدم
+    function approveUser(userId) {
+      // تعيين معلومات التأكيد
+      document.getElementById('confirmationModalTitle').textContent = 'تأكيد الموافقة على المستخدم';
+      document.getElementById('confirmationModalContent').innerHTML = `
+        <p class="text-gray-700 dark:text-gray-300">هل أنت متأكد من موافقتك على هذا المستخدم؟</p>
+        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">بعد الموافقة، سيتمكن المستخدم من الوصول إلى المنصة.</p>
+      `;
+      
+      // تعيين دالة التأكيد
+      document.getElementById('confirmButton').onclick = async () => {
+        closeConfirmationModal();
+        
+        try {
+          showNotification('جاري تحديث حالة المستخدم...', 'info');
+          
+          // البحث عن المستخدم وتحديث حالته
+          const userIndex = app.users.findIndex(u => u.id === userId);
+          
+          if (userIndex === -1) {
+            throw new Error('User not found');
+          }
+          
+          const user = app.users[userIndex];
+          user.approved = true;
+          
+          // حفظ التغييرات في GitHub
+          await saveUsersToGitHub();
+          
+          // إضافة سجل بالعملية
+          await addLogEntry({
+            type: 'user',
+            action: 'approve',
+            details: `الموافقة على المستخدم: ${user.name} (${user.email})`,
+            user_id: app.currentUser?.id || 'system',
+            user_name: app.currentUser?.name || 'النظام'
+          });
+          
+          // تحديث واجهة المستخدم
+          const userRow = document.querySelector(`tr[data-user-id="${userId}"]`);
+          if (userRow) {
+            const statusCell = userRow.querySelector('td:nth-child(4)');
+            const actionCell = userRow.querySelector('td:nth-child(6)');
+            
+            statusCell.innerHTML = `
+              <span class="badge badge-success">
+                <i class="fas fa-check-circle ml-1"></i>
+                مقبول
+              </span>
+            `;
+            
+            actionCell.innerHTML = `
+              <button onclick="rejectUser('${userId}')" class="btn-danger text-xs px-2 py-1">
+                <i class="fas fa-ban ml-1"></i>
+                إلغاء القبول
+              </button>
+              <button onclick="deleteUser('${userId}')" class="btn-danger text-xs px-2 py-1">
+                <i class="fas fa-trash-alt ml-1"></i>
+                حذف
+              </button>
+            `;
+          }
+          
+          // تحديث عداد المستخدمين
+          document.getElementById('pendingCount').textContent = app.users.filter(user => !user.approved).length;
+          
+          showNotification('تمت الموافقة على المستخدم بنجاح ✓', 'success');
+        } catch (error) {
+          console.error('Error approving user:', error);
+          showNotification('خطأ في تحديث حالة المستخدم', 'error');
+        }
+      };
+      
+      // عرض مربع التأكيد
+      document.getElementById('confirmationModal').classList.add('active');
+    }
+
+    // رفض أو إلغاء قبول مستخدم
+    function rejectUser(userId) {
+      // تعيين معلومات التأكيد
+      document.getElementById('confirmationModalTitle').textContent = 'تأكيد إلغاء قبول المستخدم';
+      document.getElementById('confirmationModalContent').innerHTML = `
+        <p class="text-gray-700 dark:text-gray-300">هل أنت متأكد من رغبتك في إلغاء قبول هذا المستخدم؟</p>
+        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">بعد إلغاء القبول، لن يتمكن المستخدم من الوصول إلى المنصة.</p>
+      `;
+      
+      // تعيين دالة التأكيد
+      document.getElementById('confirmButton').onclick = async () => {
+        closeConfirmationModal();
+        
+        try {
+          showNotification('جاري تحديث حالة المستخدم...', 'info');
+          
+          // البحث عن المستخدم وتحديث حالته
+          const userIndex = app.users.findIndex(u => u.id === userId);
+          
+          if (userIndex === -1) {
+            throw new Error('User not found');
+          }
+          
+          const user = app.users[userIndex];
+          user.approved = false;
+          
+          // حفظ التغييرات في GitHub
+          await saveUsersToGitHub();
+          
+          // إضافة سجل بالعملية
+          await addLogEntry({
+            type: 'user',
+            action: 'reject',
+            details: `إلغاء قبول المستخدم: ${user.name} (${user.email})`,
+            user_id: app.currentUser?.id || 'system',
+            user_name: app.currentUser?.name || 'النظام'
+          });
+          
+          // تحديث واجهة المستخدم
+          const userRow = document.querySelector(`tr[data-user-id="${userId}"]`);
+          if (userRow) {
+            const statusCell = userRow.querySelector('td:nth-child(4)');
+            const actionCell = userRow.querySelector('td:nth-child(6)');
+            
+            statusCell.innerHTML = `
+              <span class="badge badge-warning">
+                <i class="fas fa-clock ml-1"></i>
+                بانتظار الموافقة
+              </span>
+            `;
+            
+            actionCell.innerHTML = `
+              <button onclick="approveUser('${userId}')" class="btn-primary text-xs px-2 py-1">
+                <i class="fas fa-check ml-1"></i>
+                موافقة
+              </button>
+              <button onclick="deleteUser('${userId}')" class="btn-danger text-xs px-2 py-1">
+                <i class="fas fa-trash-alt ml-1"></i>
+                حذف
+              </button>
+            `;
+          }
+          
+          // تحديث عداد المستخدمين
+          document.getElementById('pendingCount').textContent = app.users.filter(user => !user.approved).length;
+          
+          showNotification('تم إلغاء قبول المستخدم بنجاح ✓', 'success');
+        } catch (error) {
+          console.error('Error rejecting user:', error);
+          showNotification('خطأ في تحديث حالة المستخدم', 'error');
+        }
+      };
+      
+      // عرض مربع التأكيد
+      document.getElementById('confirmationModal').classList.add('active');
+    }
+
+    // حذف مستخدم
+    function deleteUser(userId) {
+      // تعيين معلومات التأكيد
+      document.getElementById('confirmationModalTitle').textContent = 'تأكيد حذف المستخدم';
+      document.getElementById('confirmationModalContent').innerHTML = `
+        <p class="text-gray-700 dark:text-gray-300">هل أنت متأكد من رغبتك في حذف هذا المستخدم؟</p>
+        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">لا يمكن التراجع عن هذه العملية.</p>
+      `;
+      
+      // تعيين دالة التأكيد
+      document.getElementById('confirmButton').onclick = async () => {
+        closeConfirmationModal();
+        
+        try {
+          showNotification('جاري حذف المستخدم...', 'info');
+          
+          // البحث عن المستخدم
+          const userIndex = app.users.findIndex(u => u.id === userId);
+          
+          if (userIndex === -1) {
+            throw new Error('User not found');
+          }
+          
+          const deletedUser = app.users[userIndex];
+          
+          // حذف المستخدم من المصفوفة
+          app.users.splice(userIndex, 1);
+          
+          // حفظ التغييرات في GitHub
+          await saveUsersToGitHub();
+          
+          // إضافة سجل بالعملية
+          await addLogEntry({
+            type: 'user',
+            action: 'delete',
+            details: `حذف المستخدم: ${deletedUser.name} (${deletedUser.email})`,
+            user_id: app.currentUser?.id || 'system',
+            user_name: app.currentUser?.name || 'النظام'
+          });
+          
+          // حذف صف المستخدم من الجدول
+          const userRow = document.querySelector(`tr[data-user-id="${userId}"]`);
+          if (userRow) {
+            userRow.remove();
+          }
+          
+          // تحديث عداد المستخدمين
+          document.getElementById('usersCount').textContent = app.users.length;
+          document.getElementById('pendingCount').textContent = app.users.filter(user => !user.approved).length;
+          
+          // التحقق مما إذا كان الجدول فارغًا الآن
+          if (app.users.length === 0) {
+            document.getElementById('users-empty').classList.remove('hidden');
+          }
+          
+          showNotification('تم حذف المستخدم بنجاح ✓', 'success');
+        } catch (error) {
+          console.error('Error deleting user:', error);
+          showNotification('خطأ في حذف المستخدم', 'error');
+        }
+      };
+      
+      // عرض مربع التأكيد
+      document.getElementById('confirmationModal').classList.add('active');
+    }
+
+    // مزامنة مع GitHub
+    async function syncWithGitHub() {
+      // التحقق من إعدادات GitHub
+      if (!app.gitHubSettings.owner || !app.gitHubSettings.repo || !app.gitHubSettings.path || !app.gitHubSettings.token) {
+        showNotification('يرجى تكوين إعدادات GitHub أولاً', 'error');
+        showAdminTab('settings');
+        return;
+      }
+      
+      showNotification('جاري المزامنة مع GitHub...', 'info');
+      
+      try {
+        // إعادة تحميل البيانات من GitHub
+        await fetchUsersFromGitHub();
+        await fetchLogsFromGitHub();
+        
+        // إضافة سجل بالعملية
+        await addLogEntry({
+          type: 'github',
+          action: 'sync',
+          details: 'مزامنة البيانات مع GitHub',
+          user_id: app.currentUser?.id || 'system',
+          user_name: app.currentUser?.name || 'النظام'
+        });
+        
+        // تحديث واجهة المستخدم
+        loadUsers();
+        
+        showNotification('تمت المزامنة بنجاح ✓', 'success');
+      } catch (error) {
+        console.error('Error syncing with GitHub:', error);
+        showNotification('خطأ في المزامنة مع GitHub', 'error');
+      }
+    }
+
+    // تحديث سجل العمليات
+    function refreshLogs() {
+      loadLogs();
+    }
+
+    // تصدير سجل العمليات
+    function exportLogs() {
+      try {
+        // تنسيق السجلات كنص JSON
+        const logsData = JSON.stringify(app.logs, null, 2);
+        
+        // عرض السجلات في إشعار
+        showNotification('تم نسخ السجلات بنجاح. استخدم Ctrl+V للصقها في ملف.', 'success');
+        
+        // محاولة نسخ البيانات إلى الحافظة
+        navigator.clipboard.writeText(logsData).catch(err => {
+          console.error('Failed to copy:', err);
+        });
+      } catch (error) {
+        console.error('Error exporting logs:', error);
+        showNotification('خطأ في تصدير السجلات', 'error');
+      }
+    }
+
+    // تحميل إعدادات GitHub
+    function loadGitHubSettings() {
+      const savedSettings = localStorage.getItem('gitHubSettings');
+      
+      if (savedSettings) {
+        app.gitHubSettings = JSON.parse(savedSettings);
+        
+        // تعبئة حقول النموذج
+        document.getElementById('github-owner').value = app.gitHubSettings.owner || '';
+        document.getElementById('github-repo').value = app.gitHubSettings.repo || '';
+        document.getElementById('github-path').value = app.gitHubSettings.path || 'data/users.json';
+        document.getElementById('github-token').value = app.gitHubSettings.token || '';
+      }
+    }
+
+    // حفظ إعدادات GitHub
+    function saveGitHubSettings() {
+      // قراءة القيم من النموذج
+      const owner = document.getElementById('github-owner').value.trim();
+      const repo = document.getElementById('github-repo').value.trim();
+      const path = document.getElementById('github-path').value.trim() || 'data/users.json';
+      const token = document.getElementById('github-token').value.trim();
+      
+      if (!owner || !repo || !token) {
+        showNotification('يرجى ملء جميع الحقول المطلوبة', 'error');
+        return;
+      }
+      
+      // تحديث الإعدادات
+      app.gitHubSettings = {
+        owner,
+        repo,
+        path,
+        token
+      };
+      
+      // حفظ الإعدادات في التخزين المحلي
+      localStorage.setItem('gitHubSettings', JSON.stringify(app.gitHubSettings));
+      
+      showNotification('تم حفظ إعدادات GitHub بنجاح ✓', 'success');
+    }
+
+    // اختبار الاتصال بـ GitHub
+    async function testGitHubConnection() {
+      const owner = document.getElementById('github-owner').value.trim();
+      const repo = document.getElementById('github-repo').value.trim();
+      const token = document.getElementById('github-token').value.trim();
+      
+      if (!owner || !repo || !token) {
+        showNotification('يرجى ملء جميع الحقول المطلوبة', 'error');
+        return;
+      }
+      
+      showNotification('جاري اختبار الاتصال...', 'info');
+      
+      try {
+        // محاولة الوصول إلى المستودع
+        const apiUrl = `https://api.github.com/repos/${owner}/${repo}`;
+        
+        const response = await fetch(apiUrl, {
+          headers: {
+            'Authorization': `token ${token}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        });
+        
+        if (!response.ok) {
+          throw new Error(`GitHub API error: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        showNotification(`تم الاتصال بنجاح بمستودع: ${data.name} ✓`, 'success');
+      } catch (error) {
+        console.error('GitHub connection test error:', error);
+        showNotification('فشل الاتصال. تأكد من صحة المعلومات والتوكن', 'error');
+      }
+    }
+
+    // إغلاق نافذة التأكيد
+    function closeConfirmationModal() {
+      document.getElementById('confirmationModal').classList.remove('active');
+    }
+
+    // تنسيق التاريخ
+    function formatDate(dateString) {
+      if (!dateString) return 'غير معروف';
+      
+      const date = new Date(dateString);
+      
+      if (isNaN(date.getTime())) {
+        return dateString;
+      }
+      
+      return new Intl.DateTimeFormat('ar', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      }).format(date);
+    }
+
+    // إنشاء مستخدمين افتراضيين للعرض التوضيحي
+    function getDemoUsers() {
+      return [
+        {
+          id: 'admin001',
+          name: 'مدير النظام',
+          email: 'admin@example.com',
+          password: 'admin123',
+          role: 'admin',
+          approved: true,
+          created_at: '2023-01-01T10:00:00Z'
+        },
+        {
+          id: 'user001',
+          name: 'أحمد محمد',
+          email: 'ahmed@example.com',
+          password: 'password123',
+          role: 'user',
+          approved: true,
+          created_at: '2023-01-15T14:30:00Z'
+        },
+        {
+          id: 'user002',
+          name: 'فاطمة علي',
+          email: 'fatima@example.com',
+          password: 'password123',
+          role: 'user',
+          approved: false,
+          created_at: '2023-02-20T09:15:00Z'
+        }
+      ];
+    }
+
+    // إنشاء سجلات افتراضية للعرض التوضيحي
+    function getDemoLogs() {
+      return [
+        {
+          id: 'log001',
+          timestamp: '2023-06-15T10:30:00Z',
+          type: 'user',
+          action: 'approve',
+          details: 'الموافقة على المستخدم: محمد سعيد (mohamed@example.com)',
+          user_id: 'admin001',
+          user_name: 'مدير النظام'
+        },
+        {
+          id: 'log002',
+          timestamp: '2023-06-10T14:20:00Z',
+          type: 'auth',
+          action: 'login',
+          details: 'تسجيل دخول بالبريد الإلكتروني: admin@example.com',
+          user_id: 'admin001',
+          user_name: 'مدير النظام'
+        },
+        {
+          id: 'log003',
+          timestamp: '2023-06-05T09:15:00Z',
+          type: 'user',
+          action: 'register',
+          details: 'تسجيل مستخدم جديد: فاطمة علي (fatima@example.com)',
+          user_id: 'user002',
+          user_name: 'فاطمة علي'
+        }
+      ];
+    }
+
+    // عرض الإشعارات
+    function showNotification(message, type = 'info') {
+      const notification = document.getElementById('notification');
+      const notificationText = document.getElementById('notification-text');
+      
+      // تعيين النص والنوع
+      notificationText.textContent = message;
+      
+      // إزالة جميع فئات النوع القديمة
+      notification.classList.remove('notification-success', 'notification-error', 'notification-info');
+      
+      // إضافة فئة النوع الجديدة
+      notification.classList.add(`notification-${type}`);
+      
+      // عرض الإشعار
+      notification.classList.add('show');
+      
+      // إخفاء الإشعار بعد 3 ثوان
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
