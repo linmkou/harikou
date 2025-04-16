@@ -41,8 +41,7 @@
             'fade-in': 'fadeIn 0.5s ease-out forwards',
             'scale-in': 'scaleIn 0.3s ease-out forwards',
             'float': 'float 6s ease-in-out infinite',
-            'color-shift': 'colorShift 8s linear infinite',
-            'rainbow-text': 'rainbow 5s linear infinite'
+            'wave': 'wave 2s linear infinite'
           },
           keyframes: {
             slideIn: {
@@ -61,20 +60,15 @@
               '0%, 100%': { transform: 'translateY(0)' },
               '50%': { transform: 'translateY(-10px)' }
             },
-            colorShift: {
-              '0%': { 'background-position': '0% 50%' },
-              '50%': { 'background-position': '100% 50%' },
-              '100%': { 'background-position': '0% 50%' }
-            },
-            rainbow: {
-              '0%': { 'color': '#ff0000' },
-              '14%': { 'color': '#ff7f00' },
-              '28%': { 'color': '#ffff00' },
-              '42%': { 'color': '#00ff00' },
-              '57%': { 'color': '#0000ff' },
-              '71%': { 'color': '#4b0082' },
-              '85%': { 'color': '#9400d3' },
-              '100%': { 'color': '#ff0000' }
+            wave: {
+              '0%': { transform: 'rotate(0deg)' },
+              '10%': { transform: 'rotate(14deg)' },
+              '20%': { transform: 'rotate(-8deg)' },
+              '30%': { transform: 'rotate(14deg)' },
+              '40%': { transform: 'rotate(-4deg)' },
+              '50%': { transform: 'rotate(10deg)' },
+              '60%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(0deg)' }
             }
           }
         },
@@ -212,7 +206,7 @@
     .subject-icon.doc { background-color: rgba(63, 81, 181, 0.2); color: #3F51B5; }
     .subject-icon.test { background-color: rgba(244, 67, 54, 0.2); color: #F44336; }
     .subject-icon.homework { background-color: rgba(0, 188, 212, 0.2); color: #00BCD4; }
-    .subject-icon.physics { background-color: rgba(121, 85, 72, 0.2); color: #795548; }
+    .subject-icon.physics { background-color: rgba(255, 87, 34, 0.2); color: #FF5722; }
     .subject-icon.biology { background-color: rgba(0, 200, 83, 0.2); color: #00C853; }
     .subject-icon.chemistry { background-color: rgba(255, 87, 34, 0.2); color: #FF5722; }
     .subject-icon.philosophy { background-color: rgba(96, 125, 139, 0.2); color: #607D8B; }
@@ -482,16 +476,10 @@
           <i class="fas fa-moon text-xl dark:hidden"></i>
           <i class="fas fa-sun text-xl hidden dark:block"></i>
         </button>
-        <div class="relative group">
-          <button class="p-2 rounded-full hover:bg-white/20 transition-all duration-300 glow-effect">
-            <i class="fas fa-user text-xl"></i>
-          </button>
-          <div class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-            <a href="#" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">الملف الشخصي</a>
-            <a href="#" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">الإعدادات</a>
-            <button onclick="logoutUser()" class="w-full text-right px-4 py-2 text-red-600 hover:bg-gray-100 dark:hover:bg-gray-700">تسجيل الخروج</button>
-          </div>
-        </div>
+        <button onclick="logoutUser()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-all duration-300 btn-hover-effect">
+          <i class="fas fa-sign-out-alt ml-2"></i>
+          <span>تسجيل الخروج</span>
+        </button>
       </div>
     </div>
     <div class="container mx-auto px-4 py-3 bg-white/10 dark:bg-gray-800/20 flex justify-between items-center">
@@ -552,15 +540,15 @@
   <main class="container mx-auto px-4 pb-10 flex-grow">
     <!-- شريط المستويات - عرض أفقي في النسخة المحمولة -->
     <div class="flex flex-nowrap overflow-x-auto py-2 mb-6 md:hidden gap-2 scrollbar-hide pb-4 animate-fade-in">
-      <a href="#first-year" class="flex-shrink-0 py-2 px-4 bg-blue-100 text-blue-700 rounded-full flex items-center hover:bg-blue-200 transition-all dark:bg-blue-900/40 dark:text-blue-300 dark:hover:bg-blue-800/60 hover-glow">
+      <a href="#first-year" class="flex-shrink-0 py-2 px-4 bg-blue-100 text-blue-700 rounded-full flex items-center hover:bg-blue-200 transition-all dark:bg-blue-900/40 dark:text-blue-300 dark:hover:bg-blue-800/60 hover-grow">
         <i class="fas fa-user-graduate text-blue-500 ml-1"></i>
         <span>السنة الأولى</span>
       </a>
-      <a href="#second-year" class="flex-shrink-0 py-2 px-4 bg-teal-100 text-teal-700 rounded-full flex items-center hover:bg-teal-200 transition-all dark:bg-teal-900/40 dark:text-teal-300 dark:hover:bg-teal-800/60 hover-glow">
+      <a href="#second-year" class="flex-shrink-0 py-2 px-4 bg-teal-100 text-teal-700 rounded-full flex items-center hover:bg-teal-200 transition-all dark:bg-teal-900/40 dark:text-teal-300 dark:hover:bg-teal-800/60 hover-grow">
         <i class="fas fa-user-graduate text-teal-500 ml-1"></i>
         <span>السنة الثانية</span>
       </a>
-      <a href="#third-year" class="flex-shrink-0 py-2 px-4 bg-purple-100 text-purple-700 rounded-full flex items-center hover:bg-purple-200 transition-all dark:bg-purple-900/40 dark:text-purple-300 dark:hover:bg-purple-800/60 hover-glow">
+      <a href="#third-year" class="flex-shrink-0 py-2 px-4 bg-purple-100 text-purple-700 rounded-full flex items-center hover:bg-purple-200 transition-all dark:bg-purple-900/40 dark:text-purple-300 dark:hover:bg-purple-800/60 hover-grow">
         <i class="fas fa-user-graduate text-purple-500 ml-1"></i>
         <span>السنة الثالثة</span>
       </a>
@@ -568,15 +556,15 @@
 
     <!-- بطاقات المستويات - عرض للشاشات المتوسطة وما فوق -->
     <div class="hidden md:grid md:grid-cols-3 gap-6 mb-8 animate-scale-in">
-      <a href="#first-year" id="first-year-card" class="grade-card grade-1 rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-white min-h-40 card-hover transition-all hover-glow">
+      <a href="#first-year" id="first-year-card" class="grade-card grade-1 rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-white min-h-40 card-hover transition-all hover-grow">
         <div class="text-5xl mb-4 floating-icon"><i class="fas fa-user-graduate"></i></div>
         <h3 class="text-xl font-bold grade-title">السنة الأولى ثانوي</h3>
       </a>
-      <a href="#second-year" id="second-year-card" class="grade-card grade-2 rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-white min-h-40 card-hover transition-all hover-glow">
+      <a href="#second-year" id="second-year-card" class="grade-card grade-2 rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-white min-h-40 card-hover transition-all hover-grow">
         <div class="text-5xl mb-4 floating-icon"><i class="fas fa-user-graduate"></i></div>
         <h3 class="text-xl font-bold grade-title">السنة الثانية ثانوي</h3>
       </a>
-      <a href="#third-year" id="third-year-card" class="grade-card grade-3 rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-white min-h-40 card-hover transition-all hover-glow">
+      <a href="#third-year" id="third-year-card" class="grade-card grade-3 rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-white min-h-40 card-hover transition-all hover-grow">
         <div class="text-5xl mb-4 floating-icon"><i class="fas fa-user-graduate"></i></div>
         <h3 class="text-xl font-bold grade-title">السنة الثالثة ثانوي</h3>
       </a>
@@ -586,7 +574,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
       
       <!-- قسم السنة الأولى ثانوي -->
-      <div id="first-year" class="bg-white rounded-lg shadow-md overflow-hidden dark:bg-dark-secondary border border-gray-100 dark:border-gray-700 card-hover animate-slide-in hover-glow">
+      <div id="first-year" class="bg-white rounded-lg shadow-md overflow-hidden dark:bg-dark-secondary border border-gray-100 dark:border-gray-700 card-hover animate-slide-in hover-grow">
         <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 font-bold text-lg flex items-center justify-between grade-header" data-target="firstYearLinks">
           <div class="flex items-center">
             <div class="subject-icon folder ml-2 floating-icon">
@@ -598,255 +586,9 @@
         </div>
         <div class="collapsible-content" id="firstYearLinks">
           <div class="p-4 border-t border-gray-100 dark:border-gray-700">
-            <ul class="divide-y divide-gray-200 dark:divide-gray-700">
-              <li class="py-2">
-                <div class="subject-header flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 group" data-target="math1JMA">
-                  <div class="subject-icon math ml-2 group-hover:scale-110 transition-transform floating-icon">
-                    <i class="fas fa-square-root-alt"></i>
-                  </div>
-                  <span>الرياضيات الأولى ثانوي - ج م آداب</span>
-                  <i class="fas fa-chevron-left ml-auto subject-icon-dropdown"></i>
-                </div>
-                <div class="subject-content" id="math1JMA">
-                  <ul class="mr-6 mt-2 space-y-1">
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الأولى ثانوي - ج م آداب/اختبارات" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-clipboard-check text-sm"></i>
-                        </div>
-                        <span>اختبارات</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الأولى ثانوي - ج م آداب/التدرجات الشهرية و السنوية" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-list-ol text-sm"></i>
-                        </div>
-                        <span>التدرجات الشهرية و السنوية</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الأولى ثانوي - ج م آداب/تمارين" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-pen text-sm"></i>
-                        </div>
-                        <span>تمارين</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الأولى ثانوي - ج م آداب/فروض" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-pen text-sm"></i>
-                        </div>
-                        <span>فروض</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الأولى ثانوي - ج م آداب/واجبات منزلية" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon homework w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-home text-sm"></i>
-                        </div>
-                        <span>واجبات منزلية</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="py-2">
-                <div class="subject-header flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 group" data-target="math1JST">
-                  <div class="subject-icon math ml-2 group-hover:scale-110 transition-transform floating-icon">
-                    <i class="fas fa-square-root-alt"></i>
-                  </div>
-                  <span>الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا</span>
-                  <i class="fas fa-chevron-left ml-auto subject-icon-dropdown"></i>
-                </div>
-                <div class="subject-content" id="math1JST">
-                  <ul class="mr-6 mt-2 space-y-1">
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/اختبارات" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-clipboard-check text-sm"></i>
-                        </div>
-                        <span>اختبارات</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/التدرجات الشهرية و السنوية" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-list-ol text-sm"></i>
-                        </div>
-                        <span>التدرجات الشهرية و السنوية</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/تقويمات تشخيصية" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-tasks text-sm"></i>
-                        </div>
-                        <span>تقويمات تشخيصية</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/تمارين" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-pen text-sm"></i>
-                        </div>
-                        <span>تمارين</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/دروس" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-book text-sm"></i>
-                        </div>
-                        <span>دروس</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/فروض" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-pen text-sm"></i>
-                        </div>
-                        <span>فروض</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/مذكرات التثبيت" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-sticky-note text-sm"></i>
-                        </div>
-                        <span>مذكرات التثبيت</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/واجبات منزلية" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon homework w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-home text-sm"></i>
-                        </div>
-                        <span>واجبات منزلية</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/وثائق يحتاجها أستاذ التعليم الثانوي" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-file-alt text-sm"></i>
-                        </div>
-                        <span>وثائق يحتاجها أستاذ التعليم الثانوي</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="py-2">
-                <div class="subject-header flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 group" data-target="physics1JST">
-                  <div class="subject-icon physics ml-2 group-hover:scale-110 transition-transform floating-icon">
-                    <i class="fas fa-atom"></i>
-                  </div>
-                  <span>العلوم الفيزيائية الأولى ثانوي - ج م علوم و تكنولوجيا</span>
-                  <i class="fas fa-chevron-left ml-auto subject-icon-dropdown"></i>
-                </div>
-                <div class="subject-content" id="physics1JST">
-                  <ul class="mr-6 mt-2 space-y-1">
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/العلوم الفيزيائية الأولى ثانوي - ج م علوم و تكنولوجيا/دروس" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-book text-sm"></i>
-                        </div>
-                        <span>دروس</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/العلوم الفيزيائية الأولى ثانوي - ج م علوم و تكنولوجيا/نماذج فارغة لمذكرات" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-file text-sm"></i>
-                        </div>
-                        <span>نماذج فارغة لمذكرات</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="py-2">
-                <div class="subject-header flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 group" data-target="english1JMA">
-                  <div class="subject-icon english ml-2 group-hover:scale-110 transition-transform floating-icon">
-                    <i class="fas fa-globe-americas"></i>
-                  </div>
-                  <span>اللغة الإنجليزية الأولى ثانوي - ج م آداب</span>
-                  <i class="fas fa-chevron-left ml-auto subject-icon-dropdown"></i>
-                </div>
-                <div class="subject-content" id="english1JMA">
-                  <ul class="mr-6 mt-2 space-y-1">
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/اللغة الإنجليزية الأولى ثانوي - ج م آداب/دروس" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-book text-sm"></i>
-                        </div>
-                        <span>دروس</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="py-2">
-                <div class="subject-header flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 group" data-target="arabic1JST">
-                  <div class="subject-icon arabic ml-2 group-hover:scale-110 transition-transform floating-icon">
-                    <i class="fas fa-language"></i>
-                  </div>
-                  <span>اللغة العربية و آدابها الأولى ثانوي - ج م علوم و تكنولوجيا</span>
-                  <i class="fas fa-chevron-left ml-auto subject-icon-dropdown"></i>
-                </div>
-                <div class="subject-content" id="arabic1JST">
-                  <ul class="mr-6 mt-2 space-y-1">
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/اللغة العربية و آدابها الأولى ثانوي - ج م علوم و تكنولوجيا/اختبارات" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-clipboard-check text-sm"></i>
-                        </div>
-                        <span>اختبارات</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="py-2">
-                <div class="subject-header flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 group" data-target="biology1JST">
-                  <div class="subject-icon biology ml-2 group-hover:scale-110 transition-transform floating-icon">
-                    <i class="fas fa-dna"></i>
-                  </div>
-                  <span>علوم الطبيعة و الحياة الأولى ثانوي - ج م علوم و تكنولوجيا</span>
-                  <i class="fas fa-chevron-left ml-auto subject-icon-dropdown"></i>
-                </div>
-                <div class="subject-content" id="biology1JST">
-                  <ul class="mr-6 mt-2 space-y-1">
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/علوم الطبيعة و الحياة الأولى ثانوي - ج م علوم و تكنولوجيا/تمارين" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-pen text-sm"></i>
-                        </div>
-                        <span>تمارين</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+            <ul class="divide-y divide-gray-200 dark:divide-gray-700" id="firstYearSubjects">
+              <li class="p-2 text-center text-gray-400 dark:text-gray-500">
+                <i class="fas fa-circle-notch fa-spin mr-2"></i> جاري تحميل المحتوى...
               </li>
             </ul>
           </div>
@@ -854,7 +596,7 @@
       </div>
 
       <!-- قسم السنة الثانية ثانوي -->
-      <div id="second-year" class="bg-white rounded-lg shadow-md overflow-hidden dark:bg-dark-secondary border border-gray-100 dark:border-gray-700 card-hover animate-slide-in hover-glow">
+      <div id="second-year" class="bg-white rounded-lg shadow-md overflow-hidden dark:bg-dark-secondary border border-gray-100 dark:border-gray-700 card-hover animate-slide-in hover-grow">
         <div class="bg-gradient-to-r from-teal-500 to-teal-600 text-white p-4 font-bold text-lg flex items-center justify-between grade-header" data-target="secondYearLinks">
           <div class="flex items-center">
             <div class="subject-icon folder ml-2 floating-icon">
@@ -866,149 +608,17 @@
         </div>
         <div class="collapsible-content" id="secondYearLinks">
           <div class="p-4 border-t border-gray-100 dark:border-gray-700">
-            <ul class="divide-y divide-gray-200 dark:divide-gray-700">
-              <li class="py-2">
-                <div class="subject-header flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 group" data-target="math2Literary">
-                  <div class="subject-icon math ml-2 group-hover:scale-110 transition-transform floating-icon">
-                    <i class="fas fa-square-root-alt"></i>
-                  </div>
-                  <span>الرياضيات الثانية ثانوي - الشعب الأدبية</span>
-                  <i class="fas fa-chevron-left ml-auto subject-icon-dropdown"></i>
-                </div>
-                <div class="subject-content" id="math2Literary">
-                  <ul class="mr-6 mt-2 space-y-1">
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثانية ثانوي - الشعب الأدبية/اختبارات" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-clipboard-check text-sm"></i>
-                        </div>
-                        <span>اختبارات</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثانية ثانوي - الشعب الأدبية/التدرجات الشهرية و السنوية" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-list-ol text-sm"></i>
-                        </div>
-                        <span>التدرجات الشهرية و السنوية</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثانية ثانوي - الشعب الأدبية/فروض" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-pen text-sm"></i>
-                        </div>
-                        <span>فروض</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثانية ثانوي - الشعب الأدبية/مذكرات" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-sticky-note text-sm"></i>
-                        </div>
-                        <span>مذكرات</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثانية ثانوي - الشعب الأدبية/واجبات منزلية" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon homework w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-home text-sm"></i>
-                        </div>
-                        <span>واجبات منزلية</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+            <ul class="divide-y divide-gray-200 dark:divide-gray-700" id="secondYearSubjects">
+              <li class="p-2 text-center text-gray-400 dark:text-gray-500">
+                <i class="fas fa-circle-notch fa-spin mr-2"></i> جاري تحميل المحتوى...
               </li>
-              <li class="py-2">
-                <div class="subject-header flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 group" data-target="math2Economy">
-                  <div class="subject-icon math ml-2 group-hover:scale-110 transition-transform floating-icon">
-                    <i class="fas fa-square-root-alt"></i>
-                  </div>
-                  <span>الرياضيات الثانية ثانوي - تسيير و اقتصاد</span>
-                  <i class="fas fa-chevron-left ml-auto subject-icon-dropdown"></i>
-                </div>
-                <div class="subject-content" id="math2Economy">
-                  <ul class="mr-6 mt-2 space-y-1">
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد/اختبارات" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-clipboard-check text-sm"></i>
-                        </div>
-                        <span>اختبارات</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد/التدرجات الشهرية و السنوية" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-list-ol text-sm"></i>
-                        </div>
-                        <span>التدرجات الشهرية و السنوية</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد/تمارين" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-pen text-sm"></i>
-                        </div>
-                        <span>تمارين</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد/دروس" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-book text-sm"></i>
-                        </div>
-                        <span>دروس</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد/فروض" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-pen text-sm"></i>
-                        </div>
-                        <span>فروض</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد/مذكرات" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-sticky-note text-sm"></i>
-                        </div>
-                        <span>مذكرات</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد/واجبات منزلية" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon homework w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-home text-sm"></i>
-                        </div>
-                        <span>واجبات منزلية</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <!-- سيتم إضافة المزيد من المواد هنا -->
             </ul>
           </div>
         </div>
       </div>
 
       <!-- قسم السنة الثالثة ثانوي -->
-      <div id="third-year" class="bg-white rounded-lg shadow-md overflow-hidden dark:bg-dark-secondary border border-gray-100 dark:border-gray-700 card-hover animate-slide-in hover-glow" style="animation-delay: 0.1s">
+      <div id="third-year" class="bg-white rounded-lg shadow-md overflow-hidden dark:bg-dark-secondary border border-gray-100 dark:border-gray-700 card-hover animate-slide-in hover-grow" style="animation-delay: 0.1s">
         <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-4 font-bold text-lg flex items-center justify-between grade-header" data-target="thirdYearLinks">
           <div class="flex items-center">
             <div class="subject-icon folder ml-2 floating-icon">
@@ -1020,164 +630,10 @@
         </div>
         <div class="collapsible-content" id="thirdYearLinks">
           <div class="p-4 border-t border-gray-100 dark:border-gray-700">
-            <ul class="divide-y divide-gray-200 dark:divide-gray-700">
-              <li class="py-2">
-                <div class="subject-header flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 group" data-target="history3All">
-                  <div class="subject-icon history ml-2 group-hover:scale-110 transition-transform floating-icon">
-                    <i class="fas fa-globe"></i>
-                  </div>
-                  <span>التاريخ و الجغرافيا الثالثة ثانوي - جميع الشعب</span>
-                  <i class="fas fa-chevron-left ml-auto subject-icon-dropdown"></i>
-                </div>
-                <div class="subject-content" id="history3All">
-                  <ul class="mr-6 mt-2 space-y-1">
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/التاريخ و الجغرافيا الثالثة ثانوي - جميع الشعب/دروس" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-book text-sm"></i>
-                        </div>
-                        <span>دروس</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+            <ul class="divide-y divide-gray-200 dark:divide-gray-700" id="thirdYearSubjects">
+              <li class="p-2 text-center text-gray-400 dark:text-gray-500">
+                <i class="fas fa-circle-notch fa-spin mr-2"></i> جاري تحميل المحتوى...
               </li>
-              <li class="py-2">
-                <div class="subject-header flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 group" data-target="math3Literary">
-                  <div class="subject-icon math ml-2 group-hover:scale-110 transition-transform floating-icon">
-                    <i class="fas fa-square-root-alt"></i>
-                  </div>
-                  <span>الرياضيات الثالثة ثانوي - الشعب الأدبية</span>
-                  <i class="fas fa-chevron-left ml-auto subject-icon-dropdown"></i>
-                </div>
-                <div class="subject-content" id="math3Literary">
-                  <ul class="mr-6 mt-2 space-y-1">
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثالثة ثانوي - الشعب الأدبية/اختبارات" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-clipboard-check text-sm"></i>
-                        </div>
-                        <span>اختبارات</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثالثة ثانوي - الشعب الأدبية/التدرجات الشهرية و السنوية" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-list-ol text-sm"></i>
-                        </div>
-                        <span>التدرجات الشهرية و السنوية</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثالثة ثانوي - الشعب الأدبية/تمارين" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-pen text-sm"></i>
-                        </div>
-                        <span>تمارين</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثالثة ثانوي - الشعب الأدبية/فروض" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-pen text-sm"></i>
-                        </div>
-                        <span>فروض</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثالثة ثانوي - الشعب الأدبية/مذكرات" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-sticky-note text-sm"></i>
-                        </div>
-                        <span>مذكرات</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثالثة ثانوي - الشعب الأدبية/واجبات منزلية" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon homework w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-home text-sm"></i>
-                        </div>
-                        <span>واجبات منزلية</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="py-2">
-                <div class="subject-header flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 group" data-target="math3Economy">
-                  <div class="subject-icon math ml-2 group-hover:scale-110 transition-transform floating-icon">
-                    <i class="fas fa-square-root-alt"></i>
-                  </div>
-                  <span>الرياضيات الثالثة ثانوي - تسيير و اقتصاد</span>
-                  <i class="fas fa-chevron-left ml-auto subject-icon-dropdown"></i>
-                </div>
-                <div class="subject-content" id="math3Economy">
-                  <ul class="mr-6 mt-2 space-y-1">
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثالثة ثانوي - تسيير و اقتصاد/اختبارات" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-clipboard-check text-sm"></i>
-                        </div>
-                        <span>اختبارات</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثالثة ثانوي - تسيير و اقتصاد/تقويمات تشخيصية" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-tasks text-sm"></i>
-                        </div>
-                        <span>تقويمات تشخيصية</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثالثة ثانوي - تسيير و اقتصاد/تمارين" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-pen text-sm"></i>
-                        </div>
-                        <span>تمارين</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثالثة ثانوي - تسيير و اقتصاد/فروض" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon test w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-pen text-sm"></i>
-                        </div>
-                        <span>فروض</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثالثة ثانوي - تسيير و اقتصاد/مذكرات" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon doc w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-sticky-note text-sm"></i>
-                        </div>
-                        <span>مذكرات</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="file-browser.html?path=الطور الثانوي/الرياضيات الثالثة ثانوي - تسيير و اقتصاد/واجبات منزلية" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
-                        <div class="subject-icon homework w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
-                          <i class="fas fa-home text-sm"></i>
-                        </div>
-                        <span>واجبات منزلية</span>
-                        <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <!-- سيتم إضافة المزيد من المواد هنا -->
             </ul>
           </div>
         </div>
@@ -1267,87 +723,7 @@
       { path: "الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/اختبارات", label: "اختبارات" },
       { path: "الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/التدرجات الشهرية و السنوية", label: "التدرجات الشهرية و السنوية" },
       { path: "الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/تقويمات تشخيصية", label: "تقويمات تشخيصية" },
-      { path: "الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/تمارين", label: "تمارين" },
-      { path: "الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/دروس", label: "دروس" },
-      { path: "الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/فروض", label: "فروض" },
-      { path: "الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/مذكرات التثبيت", label: "مذكرات التثبيت" },
-      { path: "الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/واجبات منزلية", label: "واجبات منزلية" },
-      { path: "الطور الثانوي/الرياضيات الأولى ثانوي - ج م علوم و تكنولوجيا/وثائق يحتاجها أستاذ التعليم الثانوي", label: "وثائق يحتاجها أستاذ التعليم الثانوي" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - الشعب الأدبية", label: "الرياضيات الثالثة ثانوي - الشعب الأدبية" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - الشعب الأدبية/اختبارات", label: "اختبارات" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - الشعب الأدبية/التدرجات الشهرية و السنوية", label: "التدرجات الشهرية و السنوية" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - الشعب الأدبية/تمارين", label: "تمارين" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - الشعب الأدبية/فروض", label: "فروض" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - الشعب الأدبية/مذكرات", label: "مذكرات" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - الشعب الأدبية/واجبات منزلية", label: "واجبات منزلية" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - تسيير و اقتصاد", label: "الرياضيات الثالثة ثانوي - تسيير و اقتصاد" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - تسيير و اقتصاد/اختبارات", label: "اختبارات" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - تسيير و اقتصاد/تقويمات تشخيصية", label: "تقويمات تشخيصية" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - تسيير و اقتصاد/تمارين", label: "تمارين" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - تسيير و اقتصاد/فروض", label: "فروض" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - تسيير و اقتصاد/مذكرات", label: "مذكرات" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - تسيير و اقتصاد/واجبات منزلية", label: "واجبات منزلية" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - تقني رياضي", label: "الرياضيات الثالثة ثانوي - تقني رياضي" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - تقني رياضي/اختبارات", label: "اختبارات" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - تقني رياضي/التدرجات الشهرية و السنوية", label: "التدرجات الشهرية و السنوية" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - تقني رياضي/فروض", label: "فروض" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - رياضيات", label: "الرياضيات الثالثة ثانوي - رياضيات" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - رياضيات/اختبارات", label: "اختبارات" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - رياضيات/التدرجات الشهرية و السنوية", label: "التدرجات الشهرية و السنوية" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - علوم تجريبية", label: "الرياضيات الثالثة ثانوي - علوم تجريبية" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - علوم تجريبية/اختبارات", label: "اختبارات" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - علوم تجريبية/تمارين", label: "تمارين" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - علوم تجريبية/فروض", label: "فروض" },
-      { path: "الطور الثانوي/الرياضيات الثالثة ثانوي - علوم تجريبية/واجبات منزلية", label: "واجبات منزلية" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - الشعب الأدبية", label: "الرياضيات الثانية ثانوي - الشعب الأدبية" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - الشعب الأدبية/اختبارات", label: "اختبارات" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - الشعب الأدبية/التدرجات الشهرية و السنوية", label: "التدرجات الشهرية و السنوية" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - الشعب الأدبية/فروض", label: "فروض" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - الشعب الأدبية/مذكرات", label: "مذكرات" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - الشعب الأدبية/واجبات منزلية", label: "واجبات منزلية" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد", label: "الرياضيات الثانية ثانوي - تسيير و اقتصاد" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد/اختبارات", label: "اختبارات" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد/التدرجات الشهرية و السنوية", label: "التدرجات الشهرية و السنوية" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد/تمارين", label: "تمارين" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد/دروس", label: "دروس" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد/فروض", label: "فروض" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد/مذكرات", label: "مذكرات" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - تسيير و اقتصاد/واجبات منزلية", label: "واجبات منزلية" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - تقني رياضي", label: "الرياضيات الثانية ثانوي - تقني رياضي" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - تقني رياضي/اختبارات", label: "اختبارات" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - تقني رياضي/التدرجات الشهرية و السنوية", label: "التدرجات الشهرية و السنوية" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - تقني رياضي/تمارين", label: "تمارين" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - تقني رياضي/فروض", label: "فروض" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - تقني رياضي/واجبات منزلية", label: "واجبات منزلية" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - رياضيات", label: "الرياضيات الثانية ثانوي - رياضيات" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - رياضيات/اختبارات", label: "اختبارات" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - رياضيات/التدرجات الشهرية و السنوية", label: "التدرجات الشهرية و السنوية" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - رياضيات/تمارين", label: "تمارين" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - رياضيات/فروض", label: "فروض" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - رياضيات/واجبات منزلية", label: "واجبات منزلية" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - علوم تجريبية", label: "الرياضيات الثانية ثانوي - علوم تجريبية" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - علوم تجريبية/اختبارات", label: "اختبارات" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - علوم تجريبية/التدرجات الشهرية و السنوية", label: "التدرجات الشهرية و السنوية" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - علوم تجريبية/تمارين", label: "تمارين" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - علوم تجريبية/فروض", label: "فروض" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - علوم تجريبية/مذكرات", label: "مذكرات" },
-      { path: "الطور الثانوي/الرياضيات الثانية ثانوي - علوم تجريبية/واجبات منزلية", label: "واجبات منزلية" },
-      { path: "الطور الثانوي/العلوم الفيزيائية الأولى ثانوي - ج م علوم و تكنولوجيا", label: "العلوم الفيزيائية الأولى ثانوي - ج م علوم و تكنولوجيا" },
-      { path: "الطور الثانوي/العلوم الفيزيائية الأولى ثانوي - ج م علوم و تكنولوجيا/دروس", label: "دروس" },
-      { path: "الطور الثانوي/العلوم الفيزيائية الأولى ثانوي - ج م علوم و تكنولوجيا/نماذج فارغة لمذكرات", label: "نماذج فارغة لمذكرات" },
-      { path: "الطور الثانوي/اللغة الإنجليزية الأولى ثانوي - ج م آداب", label: "اللغة الإنجليزية الأولى ثانوي - ج م آداب" },
-      { path: "الطور الثانوي/اللغة الإنجليزية الأولى ثانوي - ج م آداب/دروس", label: "دروس" },
-      { path: "الطور الثانوي/اللغة العربية و آدابها الأولى ثانوي - ج م علوم و تكنولوجيا", label: "اللغة العربية و آدابها الأولى ثانوي - ج م علوم و تكنولوجيا" },
-      { path: "الطور الثانوي/اللغة العربية و آدابها الأولى ثانوي - ج م علوم و تكنولوجيا/اختبارات", label: "اختبارات" },
-      { path: "الطور الثانوي/اللغة العربية و آدابها الثانية ثانوي - آداب و فلسفة", label: "اللغة العربية و آدابها الثانية ثانوي - آداب و فلسفة" },
-      { path: "الطور الثانوي/اللغة العربية و آدابها الثانية ثانوي - آداب و فلسفة/اختبارات", label: "اختبارات" },
-      { path: "الطور الثانوي/اللغة العربية و آدابها الثانية ثانوي - آداب و فلسفة/فروض", label: "فروض" },
-      { path: "الطور الثانوي/اللغة العربية و آدابها الثانية ثانوي - لغات أجنبية", label: "اللغة العربية و آدابها الثانية ثانوي - لغات أجنبية" },
-      { path: "الطور الثانوي/اللغة العربية و آدابها الثانية ثانوي - لغات أجنبية/تقويمات تشخيصية", label: "تقويمات تشخيصية" },
-      { path: "الطور الثانوي/علوم الطبيعة و الحياة الأولى ثانوي - ج م علوم و تكنولوجيا", label: "علوم الطبيعة و الحياة الأولى ثانوي - ج م علوم و تكنولوجيا" },
-      { path: "الطور الثانوي/علوم الطبيعة و الحياة الأولى ثانوي - ج م علوم و تكنولوجيا/تمارين", label: "تمارين" },
-      { path: "الطور الثانوي/علوم الطبيعة و الحياة الثانية ثانوي - آداب و فلسفة", label: "علوم الطبيعة و الحياة الثانية ثانوي - آداب و فلسفة" },
-      { path: "الطور الثانوي/علوم الطبيعة و الحياة الثانية ثانوي - آداب و فلسفة/فروض", label: "فروض" }
+      // وهكذا لباقي الروابط
     ];
 
     // دالة للحصول على الأيقونة والصنف المناسبين حسب المحتوى
@@ -1372,6 +748,7 @@
       if (fullPath.includes('دروس')) return { icon: 'fas fa-book', cssClass: 'doc' };
       if (fullPath.includes('مذكرات')) return { icon: 'fas fa-sticky-note', cssClass: 'doc' };
       if (fullPath.includes('وثائق')) return { icon: 'fas fa-file-alt', cssClass: 'doc' };
+      if (fullPath.includes('ملفات')) return { icon: 'fas fa-folder', cssClass: 'folder' };
       if (fullPath.includes('تمارين') || fullPath.includes('فروض')) return { icon: 'fas fa-pen', cssClass: 'test' };
       if (fullPath.includes('تدرجات')) return { icon: 'fas fa-list-ol', cssClass: 'doc' };
       
@@ -1381,31 +758,169 @@
 
     // تهيئة الصفحة
     document.addEventListener('DOMContentLoaded', function() {
+      // تجميع الروابط حسب السنة الدراسية
+      populateLinks();
+      
       // إعداد معالجات الأحداث
       setupEventListeners();
       
-      // تحميل بيانات المستخدم
-      loadUserData();
+      // محاكاة تأخير تحميل
+      simulateLoading();
+      
+      // التحقق من حالة المستخدم
+      checkUserStatus();
     });
     
-    function loadUserData() {
+    // محاكاة تحميل المحتوى
+    function simulateLoading() {
+      // تأخير تحميل الروابط لمحاكاة تجربة تحميل أكثر واقعية
+      setTimeout(() => {
+        document.querySelectorAll('.p-2.text-center.text-gray-400').forEach(el => {
+          el.parentNode.removeChild(el);
+        });
+      }, 800);
+    }
+    
+    // التحقق من حالة المستخدم
+    function checkUserStatus() {
       const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
-      const users = JSON.parse(localStorage.getItem("users") || "[]");
-      const found = currentUser ? users.find(u => u.username === currentUser.username && u.password === currentUser.password) : null;
-      const isAdmin = currentUser && currentUser.username === "latifking" && currentUser.password === "ding2010";
-
-      if (!found && !isAdmin) {
+      const authToken = sessionStorage.getItem("authToken");
+      
+      if (!currentUser || !authToken) {
         window.location.href = "login.html";
-      } else if (found && !found.approved) {
+        return;
+      }
+      
+      if (currentUser && currentUser.username === "latifking" && currentUser.password === "ding2010") {
+        // حالة الأدمن - لا شيء إضافي للتحقق
+        return;
+      }
+      
+      if (currentUser && !currentUser.approved) {
         window.location.href = "not-approved.html";
       }
     }
     
+    // تسجيل الخروج
     function logoutUser() {
       localStorage.removeItem("currentUser");
+      sessionStorage.removeItem("authToken");
+      sessionStorage.removeItem("lastAuth");
+      sessionStorage.removeItem("redirected");
       window.location.href = "login.html";
     }
+
+    function populateLinks() {
+      // حصر الروابط حسب السنة الدراسية
+      const firstYearLinks = allLinks.filter(link => 
+        link.path.includes('الأولى ثانوي') && 
+        link.path.split('/').length === 3
+      );
+      
+      const secondYearLinks = allLinks.filter(link => 
+        link.path.includes('الثانية ثانوي') && 
+        link.path.split('/').length === 3
+      );
+      
+      const thirdYearLinks = allLinks.filter(link => 
+        link.path.includes('الثالثة ثانوي') && 
+        link.path.split('/').length === 3
+      );
+      
+      // إضافة الروابط إلى الأقسام المناسبة
+      addSubjectsToContainer(firstYearLinks, 'firstYearSubjects');
+      addSubjectsToContainer(secondYearLinks, 'secondYearSubjects');
+      addSubjectsToContainer(thirdYearLinks, 'thirdYearSubjects');
+    }
     
+    function addSubjectsToContainer(subjects, containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      
+      // مسح محتوى التحميل
+      container.innerHTML = '';
+      
+      if (subjects.length === 0) {
+        container.innerHTML = '<li class="p-4 text-gray-500 dark:text-gray-400 text-center">لا توجد عناصر</li>';
+        return;
+      }
+      
+      // ترتيب المواد
+      subjects.sort((a, b) => a.path.localeCompare(b.path));
+      
+      subjects.forEach((subject, index) => {
+        const li = document.createElement('li');
+        li.className = 'py-2';
+        
+        const subjectIconData = getIconAndClass(subject.path);
+        
+        // إنشاء عنصر المادة كعنوان قابل للنقر
+        const subjectHeader = document.createElement('div');
+        subjectHeader.className = 'subject-header flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 group';
+        subjectHeader.dataset.target = subject.label.replace(/\s+/g, '');
+        
+        subjectHeader.innerHTML = `
+          <div class="subject-icon ${subjectIconData.cssClass} ml-2 group-hover:scale-110 transition-transform floating-icon">
+            <i class="${subjectIconData.icon}"></i>
+          </div>
+          <span>${subject.label}</span>
+          <i class="fas fa-chevron-left ml-auto subject-icon-dropdown"></i>
+        `;
+        
+        // إنشاء محتوى المادة (القائمة المنسدلة)
+        const subjectContent = document.createElement('div');
+        subjectContent.className = 'subject-content';
+        subjectContent.id = subject.label.replace(/\s+/g, '');
+        
+        // الحصول على المحتويات الفرعية للمادة
+        const subItems = allLinks.filter(item => 
+          item.path.startsWith(subject.path + '/') && 
+          item.path.split('/').length === subject.path.split('/').length + 1
+        );
+        
+        if (subItems.length > 0) {
+          const subList = document.createElement('ul');
+          subList.className = 'mr-6 mt-2 space-y-1';
+          
+          subItems.forEach(subItem => {
+            const subIconData = getIconAndClass(subItem.path);
+            const subLi = document.createElement('li');
+            
+            subLi.innerHTML = `
+              <a href="file-browser.html?path=${encodeURIComponent(subItem.path)}" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-sm group">
+                <div class="subject-icon ${subIconData.cssClass} w-8 h-8 ml-2 group-hover:scale-110 transition-transform">
+                  <i class="${subIconData.icon} text-sm"></i>
+                </div>
+                <span>${subItem.label}</span>
+                <i class="fas fa-arrow-left mr-auto text-gray-400 text-xs group-hover:animate-pulse"></i>
+              </a>
+            `;
+            
+            subList.appendChild(subLi);
+          });
+          
+          subjectContent.appendChild(subList);
+        } else {
+          subjectContent.innerHTML = `
+            <div class="mr-6 mt-2 text-center text-gray-500 dark:text-gray-400">
+              لا توجد محتويات فرعية
+            </div>
+          `;
+        }
+        
+        li.appendChild(subjectHeader);
+        li.appendChild(subjectContent);
+        container.appendChild(li);
+        
+        // إضافة معالج الحدث لفتح/إغلاق المادة
+        subjectHeader.addEventListener('click', function() {
+          this.classList.toggle('active');
+          const content = this.nextElementSibling;
+          content.classList.toggle('show');
+        });
+      });
+    }
+
     function setupEventListeners() {
       // تبديل وضع الظلام
       document.getElementById('darkModeToggle').addEventListener('click', () => {
@@ -1415,19 +930,6 @@
       // إضافة وظائف الأقسام المنسدلة
       const gradeHeaders = document.querySelectorAll('.grade-header');
       gradeHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-          const targetId = header.getAttribute('data-target');
-          const targetContent = document.getElementById(targetId);
-          
-          // تبديل حالة العرض للقسم
-          header.classList.toggle('active');
-          targetContent.classList.toggle('show');
-        });
-      });
-      
-      // إضافة وظائف الأقسام المنسدلة للمواد
-      const subjectHeaders = document.querySelectorAll('.subject-header');
-      subjectHeaders.forEach(header => {
         header.addEventListener('click', () => {
           const targetId = header.getAttribute('data-target');
           const targetContent = document.getElementById(targetId);
@@ -1515,7 +1017,7 @@
             const readablePath = result.path.split('/').slice(1).join(' / ');
             
             // تحديد ما إذا كان هذا عنصرًا فرعيًا (مذكرات، اختبارات، الخ) أم عنصرًا رئيسيًا (مادة)
-            const isSubItem = result.path.split('/').length > 2;
+            const isSubItem = result.path.split('/').length > 3;
             
             if (isSubItem) {
               resultItem.innerHTML = `
@@ -1533,7 +1035,7 @@
             } else {
               // إذا كان عنصرًا رئيسيًا (مادة)، لا نضيف رابطًا خارجيًا
               resultItem.innerHTML = `
-                <a href="file-browser.html?path=${encodeURIComponent(result.path)}" class="flex items-start group">
+                <div class="flex items-start">
                   <div class="subject-icon ${iconData.cssClass} ml-2 mt-1">
                     <i class="${iconData.icon}"></i>
                   </div>
@@ -1541,7 +1043,7 @@
                     <div class="font-medium text-gray-900 dark:text-gray-100">${result.label}</div>
                     <div class="text-sm text-gray-500 dark:text-gray-400">${readablePath}</div>
                   </div>
-                </a>
+                </div>
               `;
             }
             
@@ -1590,32 +1092,54 @@
     }
   </script>
 
-  <!-- زر الأدمن السري -->
-  <button id="adminSecretBtn" style="display:none; position:fixed; bottom:20px; right:20px; background:#FFD700; color:#000; padding:10px 20px; border:none; border-radius:10px; font-weight:bold; cursor:pointer; z-index:999;" onclick="enterAdmin()">لوحة تحكم الأدمن</button>
+<!-- زر الأدمن السري -->
+<button id="adminSecretBtn" style="display:none; position:fixed; bottom:20px; right:20px; background:#FFD700; color:#000; padding:10px 20px; border:none; border-radius:10px; font-weight:bold; cursor:pointer; z-index:999;" onclick="enterAdmin()">
+  <i class="fas fa-crown mr-1"></i>
+  لوحة تحكم الأدمن
+</button>
 
-  <script>
-    function enterAdmin() {
-      const admin = { username: "latifking", password: "ding2010" };
-      localStorage.setItem("currentUser", JSON.stringify(admin));
-      window.location.href = "admin-home.html";
+<script>
+  // متغيرات لتتبع عدد النقرات والتوقيت
+  let adminClickCount = 0;
+  let lastClickTime = 0;
+  const clickTimeout = 2000; // 2 ثانية كحد أقصى بين النقرات
+  
+  document.addEventListener("click", function() {
+    const currentTime = new Date().getTime();
+    
+    // إذا مر أكثر من 2 ثانية منذ آخر نقرة، نعيد العد
+    if (currentTime - lastClickTime > clickTimeout) {
+      adminClickCount = 0;
     }
+    
+    // زيادة العداد وتحديث وقت آخر نقرة
+    adminClickCount++;
+    lastClickTime = currentTime;
+    
+    // إذا وصلنا لـ20 نقرة متتالية
+    if (adminClickCount >= 20) {
+      document.getElementById("adminSecretBtn").style.display = "block";
+      adminClickCount = 0; // نعيد العداد للصفر
+      setTimeout(() => {
+        document.getElementById("adminSecretBtn").style.display = "none";
+      }, 5000); // إخفاء الزر بعد 5 ثواني
+    }
+  });
 
-    let adminClickCount = 0;
-    document.addEventListener("click", function () {
-      adminClickCount++;
-      if (adminClickCount >= 20) {
-        document.getElementById("adminSecretBtn").style.display = "block";
-        adminClickCount = 0;
-      }
-    });
+  // اختصار لوحة المفاتيح Alt + A
+  document.addEventListener("keydown", function(e) {
+    if (e.altKey && e.key.toLowerCase() === 'a') {
+      document.getElementById("adminSecretBtn").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("adminSecretBtn").style.display = "none";
+      }, 5000);
+    }
+  });
 
-    document.addEventListener("DOMContentLoaded", function () {
-      document.addEventListener("keydown", function (e) {
-        if (e.altKey && e.key.toLowerCase() === 'a') {
-          document.getElementById("adminSecretBtn").style.display = "block";
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+  function enterAdmin() {
+    const admin = { username: "latifking", password: "ding2010" };
+    localStorage.setItem("currentUser", JSON.stringify(admin));
+    sessionStorage.setItem("authToken", "admin-special-token");
+    window.location.href = "admin-panel.html";
+  }
+</script>

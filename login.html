@@ -414,6 +414,74 @@
       background-color: rgba(255, 255, 255, 0.05);
       border-right: 3px solid #6e7681;
     }
+
+    /* File preview styles */
+    .file-preview {
+      max-width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .file-card {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .file-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .dark .file-card {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dark .file-card:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .file-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      margin-left: 12px;
+    }
+
+    .file-pdf {
+      background-color: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+    }
+
+    .file-doc {
+      background-color: rgba(59, 130, 246, 0.1);
+      color: #3b82f6;
+    }
+
+    .file-xls {
+      background-color: rgba(16, 185, 129, 0.1);
+      color: #10b981;
+    }
+
+    .file-img {
+      background-color: rgba(139, 92, 246, 0.1);
+      color: #8b5cf6;
+    }
+
+    .file-zip {
+      background-color: rgba(245, 158, 11, 0.1);
+      color: #f59e0b;
+    }
+
+    .file-default {
+      background-color: rgba(107, 114, 128, 0.1);
+      color: #6b7280;
+    }
   </style>
 </head>
 <body class="antialiased transition-colors duration-300">
@@ -575,6 +643,10 @@
               <i class="fas fa-users ml-1"></i>
               إدارة المستخدمين
             </button>
+            <button onclick="showAdminTab('files')" id="tab-btn-files" class="btn-secondary text-sm px-3 py-2">
+              <i class="fas fa-file-alt ml-1"></i>
+              إدارة الملفات
+            </button>
             <button onclick="showAdminTab('settings')" id="tab-btn-settings" class="btn-secondary text-sm px-3 py-2">
               <i class="fas fa-cog ml-1"></i>
               إعدادات GitHub
@@ -652,6 +724,73 @@
             </div>
           </div>
         </div>
+
+        <!-- files tab -->
+        <div id="tab-files" class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6 dashboard-card hidden">
+          <div class="flex flex-wrap justify-between items-center mb-6">
+            <h2 class="text-xl font-bold text-gray-800 dark:text-white flex items-center">
+              <i class="fas fa-file-alt ml-2 text-indigo-600 dark:text-indigo-400"></i>
+              إدارة الملفات المرفوعة
+            </h2>
+            <div class="relative mt-2 sm:mt-0">
+              <input type="text" id="searchFiles" placeholder="البحث في الملفات..." 
+                   class="input-animated pl-9 pr-4 py-2 text-sm w-full sm:w-auto">
+              <i class="fas fa-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+          </div>
+          
+          <div class="flex mb-4 justify-between items-center">
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+              <span id="filesCount">0</span> ملف مرفوع | 
+              <span id="pendingFilesCount">0</span> بانتظار المراجعة
+            </div>
+            <div class="flex gap-2">
+              <button onclick="refreshFileList()" class="btn-secondary text-sm px-3 py-2">
+                <i class="fas fa-sync-alt ml-1"></i>
+                <span>تحديث</span>
+              </button>
+              <a href="file-browser.html" class="btn-primary text-sm px-3 py-2">
+                <i class="fas fa-folder-open ml-1"></i>
+                <span>متصفح الملفات</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="overflow-x-auto rounded-lg">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <thead class="bg-gray-50 dark:bg-gray-700">
+                <tr>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">اسم الملف</th>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">المجلد</th>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">تاريخ الرفع</th>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">الحالة</th>
+                  <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">الإجراء</th>
+                </tr>
+              </thead>
+              <tbody id="fileTable" class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700"></tbody>
+            </table>
+            
+            <!-- loading state -->
+            <div id="files-loading" class="py-12 text-center hidden">
+              <div class="inline-block">
+                <div class="loading-dots text-indigo-600 dark:text-indigo-400">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <p class="mt-2 text-gray-500 dark:text-gray-400">جاري تحميل بيانات الملفات...</p>
+              </div>
+            </div>
+            
+            <!-- empty state -->
+            <div id="files-empty" class="py-12 text-center hidden">
+              <div class="inline-block">
+                <i class="fas fa-file-alt text-4xl text-gray-400 dark:text-gray-600 mb-3"></i>
+                <p class="text-gray-500 dark:text-gray-400">لا يوجد ملفات مرفوعة حاليًا</p>
+              </div>
+            </div>
+          </div>
+        </div>
         
         <!-- settings tab -->
         <div id="tab-settings" class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6 dashboard-card hidden">
@@ -671,17 +810,17 @@
             <div class="space-y-4">
               <div class="mb-4">
                 <label for="github-owner" class="block text-gray-700 dark:text-gray-300 mb-1">اسم المالك أو المنظمة</label>
-                <input type="text" id="github-owner" class="input-animated" placeholder="مثال: yourusername">
+                <input type="text" id="github-owner" class="input-animated" placeholder="مثال: linmkou" value="linmkou">
               </div>
 
               <div class="mb-4">
                 <label for="github-repo" class="block text-gray-700 dark:text-gray-300 mb-1">اسم المستودع</label>
-                <input type="text" id="github-repo" class="input-animated" placeholder="مثال: algerian-edu-platform">
+                <input type="text" id="github-repo" class="input-animated" placeholder="مثال: harikou" value="harikou">
               </div>
 
               <div class="mb-4">
                 <label for="github-path" class="block text-gray-700 dark:text-gray-300 mb-1">مسار ملف المستخدمين</label>
-                <input type="text" id="github-path" class="input-animated" placeholder="مثال: data/users.json">
+                <input type="text" id="github-path" class="input-animated" placeholder="مثال: users.json" value="users.json">
               </div>
 
               <div class="mb-4">
@@ -736,6 +875,7 @@
               <button onclick="filterLogs('all')" class="badge badge-info" id="filter-all">الكل</button>
               <button onclick="filterLogs('user')" class="badge badge-secondary" id="filter-user">المستخدمين</button>
               <button onclick="filterLogs('auth')" class="badge badge-secondary" id="filter-auth">تسجيل الدخول</button>
+              <button onclick="filterLogs('file')" class="badge badge-secondary" id="filter-file">الملفات</button>
               <button onclick="filterLogs('github')" class="badge badge-secondary" id="filter-github">GitHub</button>
             </div>
           </div>
@@ -802,6 +942,30 @@
       </div>
     </div>
 
+    <!-- file preview modal -->
+    <div id="filePreviewModal" class="modal">
+      <div class="modal-content bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full mx-4 p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white" id="filePreviewTitle">معاينة الملف</h3>
+          <button id="closeFilePreviewButton" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+        
+        <div class="mb-6 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg" id="filePreviewContent">
+          <!-- محتوى المعاينة سيعرض هنا -->
+        </div>
+        
+        <div class="flex justify-end space-x-2 space-x-reverse">
+          <button id="cancelFilePreviewButton" class="btn-secondary">إغلاق</button>
+          <button id="approveFileButton" class="btn-primary">
+            <i class="fas fa-check ml-1"></i>
+            الموافقة على الملف
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- notification -->
     <div id="notification" class="notification">
       <div class="flex items-center">
@@ -820,10 +984,11 @@
       currentUser: null,
       users: [],
       logs: [],
+      uploadedFiles: [],
       gitHubSettings: {
-        owner: '',
-        repo: '',
-        path: 'data/users.json',
+        owner: 'linmkou',
+        repo: 'harikou',
+        path: 'users.json',
         token: ''
       },
       filteredLogType: 'all',
@@ -833,7 +998,9 @@
         attemptCount: 0,
         isRedirecting: false,
         redirectCount: 0
-      }
+      },
+      // متغير للملف المحدد حاليًا
+      selectedFile: null
     };
 
     // دالة مساعدة لإنشاء معرف فريد
@@ -876,9 +1043,15 @@
       
       // إعداد محركات البحث
       document.getElementById('searchUsers').addEventListener('input', filterUsers);
+      document.getElementById('searchFiles').addEventListener('input', filterFiles);
       
       // إعداد أزرار التأكيد
       document.getElementById('cancelConfirmationButton').addEventListener('click', closeConfirmationModal);
+      
+      // إعداد أزرار معاينة الملف
+      document.getElementById('closeFilePreviewButton').addEventListener('click', closeFilePreviewModal);
+      document.getElementById('cancelFilePreviewButton').addEventListener('click', closeFilePreviewModal);
+      document.getElementById('approveFileButton').addEventListener('click', approveSelectedFile);
       
       // تحميل إعدادات GitHub
       loadGitHubSettings();
@@ -891,6 +1064,9 @@
           checkLoggedInUser(true);
         }, 500);
       }
+
+      // كشف عن الملفات المرفوعة في localStorage
+      loadUploadedFiles();
     });
 
     // تهيئة التطبيق
@@ -1063,6 +1239,7 @@
         // إذا كانت الصفحة هي لوحة التحكم، تحميل البيانات
         if (pageId === 'admin-panel-page') {
           loadUsers();
+          loadFilesList();
           loadLogs();
         }
       } else {
@@ -1319,12 +1496,15 @@
     function showAdminTab(tabId) {
       // إخفاء جميع علامات التبويب
       document.getElementById('tab-users').classList.add('hidden');
+      document.getElementById('tab-files').classList.add('hidden');
       document.getElementById('tab-settings').classList.add('hidden');
       document.getElementById('tab-logs').classList.add('hidden');
       
       // إعادة تعيين أزرار التبويب
       document.getElementById('tab-btn-users').classList.remove('btn-primary');
       document.getElementById('tab-btn-users').classList.add('btn-secondary');
+      document.getElementById('tab-btn-files').classList.remove('btn-primary');
+      document.getElementById('tab-btn-files').classList.add('btn-secondary');
       document.getElementById('tab-btn-settings').classList.remove('btn-primary');
       document.getElementById('tab-btn-settings').classList.add('btn-secondary');
       document.getElementById('tab-btn-logs').classList.remove('btn-primary');
@@ -1337,38 +1517,38 @@
       
       // تحديث علامة التبويب الحالية
       app.currentAdminTab = tabId;
+      
+      // تحديث بيانات علامة التبويب إذا لزم الأمر
+      if (tabId === 'files') {
+        loadFilesList();
+      }
     }
 
     // جلب المستخدمين من GitHub
     async function fetchUsersFromGitHub() {
       try {
         // التحقق من إعدادات GitHub
-        if (!app.gitHubSettings.owner || !app.gitHubSettings.repo || !app.gitHubSettings.path || !app.gitHubSettings.token) {
+        if (!app.gitHubSettings.owner || !app.gitHubSettings.repo || !app.gitHubSettings.path) {
           console.log('GitHub settings not configured, using demo mode');
           app.users = getDemoUsers();
           return;
         }
         
-        const apiUrl = `https://api.github.com/repos/${app.gitHubSettings.owner}/${app.gitHubSettings.repo}/contents/${app.gitHubSettings.path}`;
+        // هنا نستخدم fetch API مباشرة لملف users.json
+        // ملاحظة: عادة يجب استخدام GitHub API ولكن هذا للتبسيط
+        const rawUrl = `https://raw.githubusercontent.com/${app.gitHubSettings.owner}/${app.gitHubSettings.repo}/main/${app.gitHubSettings.path}`;
         
-        const response = await fetch(apiUrl, {
-          headers: {
-            'Authorization': `token ${app.gitHubSettings.token}`,
-            'Accept': 'application/vnd.github.v3+json'
-          }
-        });
+        const response = await fetch(rawUrl);
         
         if (!response.ok) {
           throw new Error(`GitHub API error: ${response.status}`);
         }
         
-        const data = await response.json();
+        const usersData = await response.json();
         
-        // فك ترميز المحتوى من Base64
-        const content = atob(data.content);
-        const usersData = JSON.parse(content);
+        // تعيين المستخدمين
+        app.users = usersData.users || getDemoUsers();
         
-        app.users = usersData.users || [];
         return true;
       } catch (error) {
         console.error('Error fetching users from GitHub:', error);
@@ -1442,40 +1622,20 @@
     // جلب سجل العمليات من GitHub
     async function fetchLogsFromGitHub() {
       try {
-        // التحقق من إعدادات GitHub
+        // استخدام سجلات افتراضية في حالة عدم تكوين GitHub
         if (!app.gitHubSettings.owner || !app.gitHubSettings.repo || !app.gitHubSettings.token) {
-          // إذا لم تكن الإعدادات متوفرة، استخدم سجلات افتراضية
           app.logs = getDemoLogs();
           return;
         }
         
-        const logsPath = 'data/logs.json';
-        const apiUrl = `https://api.github.com/repos/${app.gitHubSettings.owner}/${app.gitHubSettings.repo}/contents/${logsPath}`;
+        // محاولة الوصول إلى ملف سجلات في GitHub
+        // هنا نستخدم سجلات محلية للتبسيط
+        app.logs = JSON.parse(localStorage.getItem('appLogs') || '[]');
         
-        const response = await fetch(apiUrl, {
-          headers: {
-            'Authorization': `token ${app.gitHubSettings.token}`,
-            'Accept': 'application/vnd.github.v3+json'
-          }
-        });
-        
-        if (response.status === 404) {
-          // إذا لم يكن الملف موجوداً، أنشئ سجلات افتراضية
-          app.logs = [];
-          return;
+        if (app.logs.length === 0) {
+          app.logs = getDemoLogs();
+          localStorage.setItem('appLogs', JSON.stringify(app.logs));
         }
-        
-        if (!response.ok) {
-          throw new Error(`GitHub API error: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        
-        // فك ترميز المحتوى من Base64
-        const content = atob(data.content);
-        const logsData = JSON.parse(content);
-        
-        app.logs = logsData.logs || [];
       } catch (error) {
         console.error('Error fetching logs from GitHub:', error);
         
@@ -1494,79 +1654,52 @@
           ...logEntry
         };
         
+        // جلب السجلات الحالية
+        await fetchLogsFromGitHub();
+        
         // إضافة إلى السجلات المحلية
         app.logs.unshift(entry);
         
-        // التحقق من إعدادات GitHub
-        if (!app.gitHubSettings.owner || !app.gitHubSettings.repo || !app.gitHubSettings.token) {
-          console.log('GitHub settings not configured, using demo mode');
-          return true;
-        }
-        
-        const logsPath = 'data/logs.json';
-        const apiUrl = `https://api.github.com/repos/${app.gitHubSettings.owner}/${app.gitHubSettings.repo}/contents/${logsPath}`;
-        
-        // الحصول على SHA للملف الحالي (إذا كان موجوداً)
-        let sha = '';
-        let existingLogs = [];
-        
-        const getResponse = await fetch(apiUrl, {
-          headers: {
-            'Authorization': `token ${app.gitHubSettings.token}`,
-            'Accept': 'application/vnd.github.v3+json'
-          }
-        });
-        
-        if (getResponse.ok) {
-          const fileData = await getResponse.json();
-          sha = fileData.sha;
-          
-          // فك ترميز المحتوى من Base64
-          const content = atob(fileData.content);
-          const logsData = JSON.parse(content);
-          existingLogs = logsData.logs || [];
-        }
-        
-        // دمج السجل الجديد مع السجلات الموجودة
-        existingLogs.unshift(entry);
-        
-        // الاحتفاظ بآخر 100 سجل فقط
-        if (existingLogs.length > 100) {
-          existingLogs = existingLogs.slice(0, 100);
-        }
-        
-        // تجهيز البيانات للحفظ
-        const logsData = {
-          logs: existingLogs,
-          last_updated: new Date().toISOString()
-        };
-        
-        const content = JSON.stringify(logsData, null, 2);
-        const encodedContent = btoa(unescape(encodeURIComponent(content)));
-        
-        // حفظ السجلات
-        const updateResponse = await fetch(apiUrl, {
-          method: 'PUT',
-          headers: {
-            'Authorization': `token ${app.gitHubSettings.token}`,
-            'Accept': 'application/vnd.github.v3+json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            message: `إضافة سجل عملية جديد - ${new Date().toLocaleString('ar')}`,
-            content: encodedContent,
-            sha: sha
-          })
-        });
-        
-        if (!updateResponse.ok) {
-          throw new Error(`GitHub API error: ${updateResponse.status}`);
-        }
+        // حفظ السجلات محليًا للتبسيط
+        localStorage.setItem('appLogs', JSON.stringify(app.logs));
         
         return true;
       } catch (error) {
         console.error('Error adding log entry:', error);
         return false;
+      }
+    }
+
+    // تحميل الملفات المرفوعة
+    function loadUploadedFiles() {
+      try {
+        // جلب الملفات المرفوعة من التخزين المحلي
+        const files = JSON.parse(localStorage.getItem('browserFiles') || '[]');
+        app.uploadedFiles = files;
+        
+        // تحديث عدد الملفات المرفوعة
+        updateFilesCounts();
+        
+        return files;
+      } catch (error) {
+        console.error('Error loading uploaded files:', error);
+        app.uploadedFiles = [];
+        return [];
+      }
+    }
+
+    // تحديث عداد الملفات
+    function updateFilesCounts() {
+      const totalFiles = app.uploadedFiles.length;
+      const pendingFiles = app.uploadedFiles.filter(file => !file.approved).length;
+      
+      // تحديث العدادات في واجهة المستخدم
+      if (document.getElementById('filesCount')) {
+        document.getElementById('filesCount').textContent = totalFiles;
+      }
+      
+      if (document.getElementById('pendingFilesCount')) {
+        document.getElementById('pendingFilesCount').textContent = pendingFiles;
       }
     }
 
@@ -1661,6 +1794,354 @@
       }
     }
 
+    // تحميل قائمة الملفات
+    function loadFilesList() {
+      // عرض حالة التحميل
+      document.getElementById('fileTable').innerHTML = '';
+      document.getElementById('files-loading').classList.remove('hidden');
+      document.getElementById('files-empty').classList.add('hidden');
+      
+      try {
+        // جلب الملفات المرفوعة
+        loadUploadedFiles();
+        
+        // إخفاء حالة التحميل
+        document.getElementById('files-loading').classList.add('hidden');
+        
+        // التحقق مما إذا كان لا توجد ملفات
+        if (!app.uploadedFiles || app.uploadedFiles.length === 0) {
+          document.getElementById('files-empty').classList.remove('hidden');
+          return;
+        }
+        
+        // عرض الملفات
+        const tbody = document.getElementById('fileTable');
+        
+        app.uploadedFiles.forEach(file => {
+          const row = document.createElement('tr');
+          row.className = 'table-row';
+          row.setAttribute('data-file-id', file.id || generateUUID());
+          
+          const isApproved = file.approved || false;
+          const fileExt = (file.name || '').split('.').pop().toLowerCase();
+          
+          row.innerHTML = `
+            <td class="px-6 py-4 whitespace-nowrap">
+              <div class="flex items-center">
+                <div class="file-icon file-${getFileIconClass(fileExt)}">
+                  <i class="fas ${getFileIcon(fileExt)}"></i>
+                </div>
+                <div class="mr-2">
+                  <div class="text-sm font-medium text-gray-900 dark:text-white">${file.name || 'ملف بدون اسم'}</div>
+                  <div class="text-xs text-gray-500 dark:text-gray-400">${formatFileSize(file.size || 0)}</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <div class="text-sm text-gray-900 dark:text-gray-200">${file.path || 'المجلد الرئيسي'}</div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <div class="text-sm text-gray-500 dark:text-gray-400">${formatDate(file.timestamp)}</div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <span class="badge ${isApproved ? 'badge-success' : 'badge-warning'}">
+                <i class="fas ${isApproved ? 'fa-check-circle' : 'fa-clock'} ml-1"></i>
+                ${isApproved ? 'تمت الموافقة' : 'بانتظار المراجعة'}
+              </span>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-left space-x-2 space-x-reverse">
+              <button onclick="previewFile('${file.id || generateUUID()}')" class="btn-secondary text-xs px-2 py-1">
+                <i class="fas fa-eye ml-1"></i>
+                معاينة
+              </button>
+              ${isApproved ? `
+              <button onclick="rejectFile('${file.id || generateUUID()}')" class="btn-danger text-xs px-2 py-1">
+                <i class="fas fa-ban ml-1"></i>
+                إلغاء الموافقة
+              </button>` : `
+              <button onclick="approveFile('${file.id || generateUUID()}')" class="btn-primary text-xs px-2 py-1">
+                <i class="fas fa-check ml-1"></i>
+                موافقة
+              </button>`}
+              <button onclick="deleteFile('${file.id || generateUUID()}')" class="btn-danger text-xs px-2 py-1">
+                <i class="fas fa-trash-alt ml-1"></i>
+                حذف
+              </button>
+            </td>
+          `;
+          tbody.appendChild(row);
+        });
+        
+        // تعيين معرفات للملفات إذا لم تكن موجودة
+        app.uploadedFiles.forEach(file => {
+          if (!file.id) {
+            file.id = generateUUID();
+          }
+        });
+        localStorage.setItem('browserFiles', JSON.stringify(app.uploadedFiles));
+      } catch (error) {
+        console.error('Error loading files:', error);
+        document.getElementById('files-loading').classList.add('hidden');
+        showNotification('خطأ في تحميل بيانات الملفات', 'error');
+      }
+    }
+
+    // معاينة ملف
+    function previewFile(fileId) {
+      // البحث عن الملف
+      const file = app.uploadedFiles.find(f => f.id === fileId);
+      
+      if (!file) {
+        showNotification('لم يتم العثور على الملف', 'error');
+        return;
+      }
+      
+      // تعيين الملف المحدد
+      app.selectedFile = file;
+      
+      // تعيين عنوان المعاينة
+      document.getElementById('filePreviewTitle').textContent = file.name || 'معاينة ملف';
+      
+      // تعيين محتوى المعاينة
+      const previewContent = document.getElementById('filePreviewContent');
+      
+      // تحديد نوع الملف
+      const fileExt = (file.name || '').split('.').pop().toLowerCase();
+      
+      // عرض المعاينة حسب نوع الملف
+      if (['jpg', 'jpeg', 'png', 'gif'].includes(fileExt)) {
+        // صورة - ملاحظة: في هذا المثال لن تكون هناك صورة حقيقية لأنها محاكاة فقط
+        previewContent.innerHTML = `
+          <div class="text-center">
+            <div class="bg-gray-200 dark:bg-gray-700 rounded-lg w-full h-64 flex items-center justify-center">
+              <i class="fas ${getFileIcon(fileExt)} text-5xl text-gray-400 dark:text-gray-500"></i>
+            </div>
+            <p class="mt-4 text-sm text-gray-600 dark:text-gray-400">
+              ${file.name || 'ملف صورة'} (${formatFileSize(file.size || 0)})
+            </p>
+          </div>
+        `;
+      } else if (['pdf', 'doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx'].includes(fileExt)) {
+        // ملف مستند
+        previewContent.innerHTML = `
+          <div class="text-center">
+            <div class="bg-gray-200 dark:bg-gray-700 rounded-lg w-full h-64 flex flex-col items-center justify-center">
+              <i class="fas ${getFileIcon(fileExt)} text-5xl mb-4 ${getFileColor(fileExt)}"></i>
+              <p class="text-gray-600 dark:text-gray-400">لا يمكن عرض معاينة الملف</p>
+            </div>
+            <p class="mt-4 text-sm text-gray-600 dark:text-gray-400">
+              ${file.name || 'ملف مستند'} (${formatFileSize(file.size || 0)})
+            </p>
+          </div>
+        `;
+      } else {
+        // ملف آخر
+        previewContent.innerHTML = `
+          <div class="text-center">
+            <div class="bg-gray-200 dark:bg-gray-700 rounded-lg w-full h-64 flex flex-col items-center justify-center">
+              <i class="fas ${getFileIcon(fileExt)} text-5xl mb-4"></i>
+              <p class="text-gray-600 dark:text-gray-400">معلومات الملف</p>
+            </div>
+            <div class="mt-4 text-sm text-gray-600 dark:text-gray-400 text-right">
+              <p><strong>اسم الملف:</strong> ${file.name || 'ملف بدون اسم'}</p>
+              <p><strong>الحجم:</strong> ${formatFileSize(file.size || 0)}</p>
+              <p><strong>تاريخ الرفع:</strong> ${formatDate(file.timestamp)}</p>
+              <p><strong>المستخدم:</strong> ${file.uploadedBy || 'غير معروف'}</p>
+              <p><strong>المسار:</strong> ${file.path || 'المجلد الرئيسي'}</p>
+              <p><strong>الحالة:</strong> ${file.approved ? 'تمت الموافقة' : 'بانتظار المراجعة'}</p>
+            </div>
+          </div>
+        `;
+      }
+      
+      // تعيين زر الموافقة
+      const approveButton = document.getElementById('approveFileButton');
+      
+      if (file.approved) {
+        approveButton.innerHTML = `
+          <i class="fas fa-ban ml-1"></i>
+          إلغاء الموافقة على الملف
+        `;
+        approveButton.classList.remove('btn-primary');
+        approveButton.classList.add('btn-danger');
+        approveButton.onclick = () => {
+          rejectFile(fileId);
+          closeFilePreviewModal();
+        };
+      } else {
+        approveButton.innerHTML = `
+          <i class="fas fa-check ml-1"></i>
+          الموافقة على الملف
+        `;
+        approveButton.classList.remove('btn-danger');
+        approveButton.classList.add('btn-primary');
+        approveButton.onclick = approveSelectedFile;
+      }
+      
+      // عرض نافذة المعاينة
+      document.getElementById('filePreviewModal').classList.add('active');
+    }
+
+    // الموافقة على الملف المحدد
+    function approveSelectedFile() {
+      if (!app.selectedFile) {
+        showNotification('لم يتم تحديد ملف', 'error');
+        return;
+      }
+      
+      approveFile(app.selectedFile.id);
+      closeFilePreviewModal();
+    }
+
+    // الموافقة على ملف
+    function approveFile(fileId) {
+      // البحث عن الملف
+      const fileIndex = app.uploadedFiles.findIndex(f => f.id === fileId);
+      
+      if (fileIndex === -1) {
+        showNotification('لم يتم العثور على الملف', 'error');
+        return;
+      }
+      
+      try {
+        // تحديث حالة الملف
+        app.uploadedFiles[fileIndex].approved = true;
+        
+        // حفظ التغييرات
+        localStorage.setItem('browserFiles', JSON.stringify(app.uploadedFiles));
+        
+        // إضافة سجل بالعملية
+        addLogEntry({
+          type: 'file',
+          action: 'approve',
+          details: `الموافقة على الملف: ${app.uploadedFiles[fileIndex].name}`,
+          user_id: app.currentUser?.id || 'system',
+          user_name: app.currentUser?.name || 'النظام'
+        });
+        
+        // تحديث واجهة المستخدم
+        loadFilesList();
+        
+        showNotification('تمت الموافقة على الملف بنجاح', 'success');
+      } catch (error) {
+        console.error('Error approving file:', error);
+        showNotification('حدث خطأ أثناء الموافقة على الملف', 'error');
+      }
+    }
+
+    // إلغاء الموافقة على ملف
+    function rejectFile(fileId) {
+      // البحث عن الملف
+      const fileIndex = app.uploadedFiles.findIndex(f => f.id === fileId);
+      
+      if (fileIndex === -1) {
+        showNotification('لم يتم العثور على الملف', 'error');
+        return;
+      }
+      
+      try {
+        // تحديث حالة الملف
+        app.uploadedFiles[fileIndex].approved = false;
+        
+        // حفظ التغييرات
+        localStorage.setItem('browserFiles', JSON.stringify(app.uploadedFiles));
+        
+        // إضافة سجل بالعملية
+        addLogEntry({
+          type: 'file',
+          action: 'reject',
+          details: `إلغاء الموافقة على الملف: ${app.uploadedFiles[fileIndex].name}`,
+          user_id: app.currentUser?.id || 'system',
+          user_name: app.currentUser?.name || 'النظام'
+        });
+        
+        // تحديث واجهة المستخدم
+        loadFilesList();
+        
+        showNotification('تم إلغاء الموافقة على الملف بنجاح', 'success');
+      } catch (error) {
+        console.error('Error rejecting file:', error);
+        showNotification('حدث خطأ أثناء إلغاء الموافقة على الملف', 'error');
+      }
+    }
+
+    // حذف ملف
+    function deleteFile(fileId) {
+      // إعداد نافذة التأكيد
+      document.getElementById('confirmationModalTitle').textContent = 'تأكيد حذف الملف';
+      document.getElementById('confirmationModalContent').innerHTML = `
+        <p class="text-gray-700 dark:text-gray-300">هل أنت متأكد من رغبتك في حذف هذا الملف؟</p>
+        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">سيتم حذف الملف نهائيًا من النظام.</p>
+      `;
+      
+      // تعيين دالة التأكيد
+      document.getElementById('confirmButton').onclick = async () => {
+        closeConfirmationModal();
+        
+        // البحث عن الملف
+        const fileIndex = app.uploadedFiles.findIndex(f => f.id === fileId);
+        
+        if (fileIndex === -1) {
+          showNotification('لم يتم العثور على الملف', 'error');
+          return;
+        }
+        
+        try {
+          // حفظ اسم الملف قبل الحذف
+          const fileName = app.uploadedFiles[fileIndex].name;
+          
+          // حذف الملف
+          app.uploadedFiles.splice(fileIndex, 1);
+          
+          // حفظ التغييرات
+          localStorage.setItem('browserFiles', JSON.stringify(app.uploadedFiles));
+          
+          // إضافة سجل بالعملية
+          addLogEntry({
+            type: 'file',
+            action: 'delete',
+            details: `حذف الملف: ${fileName}`,
+            user_id: app.currentUser?.id || 'system',
+            user_name: app.currentUser?.name || 'النظام'
+          });
+          
+          // تحديث واجهة المستخدم
+          loadFilesList();
+          
+          showNotification('تم حذف الملف بنجاح', 'success');
+        } catch (error) {
+          console.error('Error deleting file:', error);
+          showNotification('حدث خطأ أثناء حذف الملف', 'error');
+        }
+      };
+      
+      // عرض نافذة التأكيد
+      document.getElementById('confirmationModal').classList.add('active');
+    }
+
+    // تصفية الملفات حسب البحث
+    function filterFiles() {
+      const searchTerm = document.getElementById('searchFiles').value.trim().toLowerCase();
+      const rows = document.getElementById('fileTable').querySelectorAll('tr');
+      
+      rows.forEach(row => {
+        const fileName = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+        const filePath = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+        
+        if (fileName.includes(searchTerm) || filePath.includes(searchTerm)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    // تحديث قائمة الملفات
+    function refreshFileList() {
+      loadFilesList();
+      showNotification('تم تحديث قائمة الملفات', 'success');
+    }
+
     // تحميل سجل العمليات
     async function loadLogs() {
       // عرض حالة التحميل
@@ -1720,6 +2201,9 @@
         } else if (log.type === 'auth') {
           typeClass = 'badge-info';
           typeIcon = 'fa-key';
+        } else if (log.type === 'file') {
+          typeClass = 'badge-warning';
+          typeIcon = 'fa-file-alt';
         } else if (log.type === 'github') {
           typeClass = 'badge-info';
           typeIcon = 'fa-github';
@@ -1759,6 +2243,8 @@
           return 'مستخدم';
         case 'auth':
           return 'تسجيل دخول';
+        case 'file':
+          return 'ملف';
         case 'github':
           return 'GitHub';
         default:
@@ -1768,7 +2254,7 @@
 
     // تصفية المستخدمين حسب البحث
     function filterUsers() {
-      const searchTerm = document.getElementById('searchUsers').value.toLowerCase();
+      const searchTerm = document.getElementById('searchUsers').value.trim().toLowerCase();
       const rows = document.getElementById('userTable').querySelectorAll('tr');
       
       rows.forEach(row => {
@@ -2023,7 +2509,7 @@
     // مزامنة مع GitHub
     async function syncWithGitHub() {
       // التحقق من إعدادات GitHub
-      if (!app.gitHubSettings.owner || !app.gitHubSettings.repo || !app.gitHubSettings.path || !app.gitHubSettings.token) {
+      if (!app.gitHubSettings.owner || !app.gitHubSettings.repo || !app.gitHubSettings.path) {
         showNotification('يرجى تكوين إعدادات GitHub أولاً', 'error');
         showAdminTab('settings');
         return;
@@ -2085,13 +2571,13 @@
       
       if (savedSettings) {
         app.gitHubSettings = JSON.parse(savedSettings);
-        
-        // تعبئة حقول النموذج
-        document.getElementById('github-owner').value = app.gitHubSettings.owner || '';
-        document.getElementById('github-repo').value = app.gitHubSettings.repo || '';
-        document.getElementById('github-path').value = app.gitHubSettings.path || 'data/users.json';
-        document.getElementById('github-token').value = app.gitHubSettings.token || '';
       }
+      
+      // تعبئة حقول النموذج
+      document.getElementById('github-owner').value = app.gitHubSettings.owner || '';
+      document.getElementById('github-repo').value = app.gitHubSettings.repo || '';
+      document.getElementById('github-path').value = app.gitHubSettings.path || 'users.json';
+      document.getElementById('github-token').value = app.gitHubSettings.token || '';
     }
 
     // حفظ إعدادات GitHub
@@ -2099,10 +2585,10 @@
       // قراءة القيم من النموذج
       const owner = document.getElementById('github-owner').value.trim();
       const repo = document.getElementById('github-repo').value.trim();
-      const path = document.getElementById('github-path').value.trim() || 'data/users.json';
+      const path = document.getElementById('github-path').value.trim() || 'users.json';
       const token = document.getElementById('github-token').value.trim();
       
-      if (!owner || !repo || !token) {
+      if (!owner || !repo) {
         showNotification('يرجى ملء جميع الحقول المطلوبة', 'error');
         return;
       }
@@ -2127,7 +2613,7 @@
       const repo = document.getElementById('github-repo').value.trim();
       const token = document.getElementById('github-token').value.trim();
       
-      if (!owner || !repo || !token) {
+      if (!owner || !repo) {
         showNotification('يرجى ملء جميع الحقول المطلوبة', 'error');
         return;
       }
@@ -2136,31 +2622,30 @@
       
       try {
         // محاولة الوصول إلى المستودع
-        const apiUrl = `https://api.github.com/repos/${owner}/${repo}`;
+        const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/users.json`;
         
-        const response = await fetch(apiUrl, {
-          headers: {
-            'Authorization': `token ${token}`,
-            'Accept': 'application/vnd.github.v3+json'
-          }
-        });
+        const response = await fetch(rawUrl);
         
         if (!response.ok) {
-          throw new Error(`GitHub API error: ${response.status}`);
+          throw new Error(`GitHub Raw error: ${response.status}`);
         }
         
-        const data = await response.json();
-        
-        showNotification(`تم الاتصال بنجاح بمستودع: ${data.name} ✓`, 'success');
+        showNotification(`تم الاتصال بنجاح بمستودع: ${repo} ✓`, 'success');
       } catch (error) {
         console.error('GitHub connection test error:', error);
-        showNotification('فشل الاتصال. تأكد من صحة المعلومات والتوكن', 'error');
+        showNotification('فشل الاتصال. تأكد من صحة المعلومات', 'error');
       }
     }
 
     // إغلاق نافذة التأكيد
     function closeConfirmationModal() {
       document.getElementById('confirmationModal').classList.remove('active');
+    }
+
+    // إغلاق نافذة معاينة الملف
+    function closeFilePreviewModal() {
+      document.getElementById('filePreviewModal').classList.remove('active');
+      app.selectedFile = null;
     }
 
     // تنسيق التاريخ
@@ -2181,6 +2666,86 @@
         minute: '2-digit'
       }).format(date);
     }
+    
+    // تنسيق حجم الملف
+    function formatFileSize(bytes) {
+      if (bytes === 0) return '0 بايت';
+      
+      const k = 1024;
+      const sizes = ['بايت', 'كيلوبايت', 'ميجابايت', 'جيجابايت'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    // الحصول على أيقونة الملف
+    function getFileIcon(extension) {
+      if (!extension) return 'fa-file';
+      
+      extension = extension.toLowerCase();
+      
+      if (['pdf'].includes(extension)) {
+        return 'fa-file-pdf';
+      } else if (['doc', 'docx'].includes(extension)) {
+        return 'fa-file-word';
+      } else if (['xls', 'xlsx'].includes(extension)) {
+        return 'fa-file-excel';
+      } else if (['ppt', 'pptx'].includes(extension)) {
+        return 'fa-file-powerpoint';
+      } else if (['jpg', 'jpeg', 'png', 'gif'].includes(extension)) {
+        return 'fa-file-image';
+      } else if (['zip', 'rar', '7z'].includes(extension)) {
+        return 'fa-file-archive';
+      } else if (['txt', 'rtf', 'md'].includes(extension)) {
+        return 'fa-file-alt';
+      } else {
+        return 'fa-file';
+      }
+    }
+
+    // الحصول على صنف الأيقونة
+    function getFileIconClass(extension) {
+      if (!extension) return 'default';
+      
+      extension = extension.toLowerCase();
+      
+      if (['pdf'].includes(extension)) {
+        return 'pdf';
+      } else if (['doc', 'docx'].includes(extension)) {
+        return 'doc';
+      } else if (['xls', 'xlsx'].includes(extension)) {
+        return 'xls';
+      } else if (['jpg', 'jpeg', 'png', 'gif'].includes(extension)) {
+        return 'img';
+      } else if (['zip', 'rar', '7z'].includes(extension)) {
+        return 'zip';
+      } else {
+        return 'default';
+      }
+    }
+
+    // الحصول على لون الملف
+    function getFileColor(extension) {
+      if (!extension) return 'text-gray-400';
+      
+      extension = extension.toLowerCase();
+      
+      if (['pdf'].includes(extension)) {
+        return 'text-red-500';
+      } else if (['doc', 'docx'].includes(extension)) {
+        return 'text-blue-500';
+      } else if (['xls', 'xlsx'].includes(extension)) {
+        return 'text-green-500';
+      } else if (['ppt', 'pptx'].includes(extension)) {
+        return 'text-orange-500';
+      } else if (['jpg', 'jpeg', 'png', 'gif'].includes(extension)) {
+        return 'text-purple-500';
+      } else if (['zip', 'rar', '7z'].includes(extension)) {
+        return 'text-amber-500';
+      } else {
+        return 'text-gray-400';
+      }
+    }
 
     // إنشاء مستخدمين افتراضيين للعرض التوضيحي
     function getDemoUsers() {
@@ -2188,20 +2753,20 @@
         {
           id: 'admin001',
           name: 'مدير النظام',
-          email: 'admin@example.com',
-          password: 'admin123',
+          email: 'latifboudihir1@gmail.com',
+          password: 'dingring2010',
           role: 'admin',
           approved: true,
           created_at: '2023-01-01T10:00:00Z'
         },
         {
-          id: 'user001',
-          name: 'أحمد محمد',
-          email: 'ahmed@example.com',
-          password: 'password123',
+          id: '1e0e0220-34ed-4691-9dca-b8a5c94cddf0',
+          name: 'binou',
+          email: 'latifboud@gmail.com',
+          password: '123456',
           role: 'user',
           approved: true,
-          created_at: '2023-01-15T14:30:00Z'
+          created_at: '2025-04-16T12:27:05.299Z'
         },
         {
           id: 'user002',
@@ -2244,6 +2809,24 @@
           details: 'تسجيل مستخدم جديد: فاطمة علي (fatima@example.com)',
           user_id: 'user002',
           user_name: 'فاطمة علي'
+        },
+        {
+          id: 'log004',
+          timestamp: '2023-05-20T11:45:00Z',
+          type: 'file',
+          action: 'approve',
+          details: 'الموافقة على الملف: دليل المستخدم.pdf',
+          user_id: 'admin001',
+          user_name: 'مدير النظام'
+        },
+        {
+          id: 'log005',
+          timestamp: '2023-05-15T08:30:00Z',
+          type: 'file',
+          action: 'upload',
+          details: 'رفع ملف جديد: الدرس الأول.docx',
+          user_id: 'user001',
+          user_name: 'أحمد محمد'
         }
       ];
     }
