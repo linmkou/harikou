@@ -5,23 +5,21 @@ const passport = require('passport');
 const GitHubStrategy = require('passport-github2').Strategy;
 const axios = require('axios');
 const path = require('path');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// إعداد الجلسة
 app.use(session({
   secret: 'secret-key',
   resave: false,
   saveUninitialized: true
 }));
 
-// إعداد Passport
 app.use(passport.initialize());
 app.use(passport.session());
-
-// المستخدمون من GitHub
-let usersByRole = {};
 
 passport.serializeUser((user, done) => {
   done(null, user);
@@ -54,18 +52,12 @@ passport.use(new GitHubStrategy({
   }
 }));
 
-// مسارات المصادقة
 app.get('/auth/github', passport.authenticate('github', { scope: [ 'user:email' ] }));
 
 app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/login.html' }),
   (req, res) => {
-    // التوجيه حسب الدور
-    const role = req.user.role;
-    if (role === 'primary') return res.redirect('/primary-school.html');
-    if (role === 'middle') return res.redirect('/middle-school.html');
-    if (role === 'secondary') return res.redirect('/secondary-school.html');
-    return res.redirect('/');
+    res.redirect('/');
   });
 
 app.get('/logout', (req, res) => {
@@ -74,18 +66,21 @@ app.get('/logout', (req, res) => {
   });
 });
 
-// حماية الصفحات
 const requireAuth = (req, res, next) => {
   if (req.isAuthenticated()) return next();
   res.redirect('/login.html');
 };
 
-// تقديم الملفات الثابتة
 app.use(express.static(path.join(__dirname, '../')));
 
-// حماية صفحات الأطوار والفايل بروزر
+// صفحات الأطوار والفايل بروزر
 app.get(['/primary-school.html', '/middle-school.html', '/secondary-school.html', '/file-browser.html'], requireAuth, (req, res) => {
   res.sendFile(path.join(__dirname, `../${req.path}`));
+});
+
+// صفحة index المخصصة حسب الدور
+app.get('/', requireAuth, (req, res) => {
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 app.listen(PORT, () => {
