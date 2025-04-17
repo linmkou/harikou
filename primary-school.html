@@ -393,9 +393,260 @@
     .card-effect:hover::after {
       opacity: 1;
     }
+    
+    /* Loading spinner */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.3s ease;
+    }
+    
+    .dark .loading-overlay {
+      background-color: rgba(24, 24, 24, 0.9);
+    }
+    
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(93, 92, 222, 0.2);
+      border-radius: 50%;
+      border-top-color: var(--primary-color);
+      animation: spinner-rotate 1s linear infinite;
+    }
+    
+    @keyframes spinner-rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Notification */
+    .notification {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      min-width: 280px;
+      max-width: 90%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+    
+    .notification.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .notification i {
+      font-size: 20px;
+      margin-left: 12px;
+    }
+    
+    .dark .notification {
+      background-color: #333;
+      color: white;
+    }
+    
+    .notification.success i {
+      color: var(--success-color);
+    }
+    
+    .notification.error i {
+      color: var(--danger-color);
+    }
+    
+    .notification.info i {
+      color: var(--info-color);
+    }
+    
+    .glow-text {
+      text-shadow: 0 0 10px rgba(93, 92, 222, 0.5);
+      transition: text-shadow 0.3s ease;
+    }
+    
+    .glow-text:hover {
+      text-shadow: 0 0 15px rgba(93, 92, 222, 0.8);
+    }
+    
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    
+    .pulse-effect {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .rotate-effect {
+      animation: rotate 10s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .gradient-border {
+      position: relative;
+      border: 3px solid transparent;
+      background-clip: padding-box;
+    }
+    
+    .gradient-border::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      background: linear-gradient(45deg, #5D5CDE, #03A9F4);
+      z-index: -1;
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .gradient-border:hover::after {
+      opacity: 1;
+    }
+    
+    /* تأثيرات متقدمة للبطاقات */
+    .card-3d {
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      transition: all 0.5s ease;
+    }
+    
+    .card-3d:hover {
+      transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* تأثيرات النص المتحرك */
+    .text-wave {
+      display: inline-block;
+      animation: wave 3s ease-in-out infinite;
+    }
+    
+    @keyframes wave {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    /* تأثيرات الخلفية الديناميكية */
+    .dynamic-bg {
+      background: linear-gradient(-45deg, #5D5CDE, #03A9F4, #E91E63, #FF9800);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+    
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    /* تأثيرات الظل المتحرك */
+    .moving-shadow {
+      animation: shadowMove 5s ease-in-out infinite alternate;
+    }
+    
+    @keyframes shadowMove {
+      0% { box-shadow: 0 10px 20px rgba(93, 92, 222, 0.3); }
+      100% { box-shadow: 0 20px 40px rgba(93, 92, 222, 0.5); }
+    }
+    
+    /* إضافة للشريط العلوي */
+    header.scrolled {
+      background: rgba(93, 92, 222, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    header.scrolled .container {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    
+    /* تأثيرات الطقس التفاعلية */
+    .weather-sunny {
+      background: radial-gradient(circle at 20% 20%, rgba(255,215,0,0.2) 0%, transparent 50%);
+    }
+    
+    .weather-rainy::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><line x1="1" y1="1" x2="3" y2="10" stroke="rgba(93,92,222,0.3)" stroke-width="0.5"/></svg>');
+      animation: rain 1s linear infinite;
+    }
+    
+    .weather-cloudy {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,50 Q30,30 50,30 Q60,10 80,20 Q90,40 80,60 Q90,80 70,80 Q50,90 30,70 Q10,70 20,50 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+      background-size: 200px 200px;
+      animation: clouds 60s linear infinite;
+    }
+    
+    .weather-stars {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><circle cx="5" cy="5" r="0.5" fill="rgba(255,255,255,0.3)"/></svg>');
+      background-size: 30px 30px;
+      animation: twinkle 3s ease-in-out infinite alternate;
+    }
+    
+    @keyframes rain {
+      to { background-position: 0 100vh; }
+    }
+    
+    @keyframes clouds {
+      to { background-position: 100% 0; }
+    }
+    
+    @keyframes twinkle {
+      to { opacity: 0.2; }
+    }
   </style>
 </head>
 <body class="bg-secondary text-gray-800 dark:bg-dark-background dark:text-gray-100 min-h-screen flex flex-col">
+
+  <!-- شاشة التحميل -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- الإشعارات -->
+  <div id="notification" class="notification">
+    <i id="notificationIcon" class="fas fa-info-circle"></i>
+    <span id="notificationText"></span>
+  </div>
 
   <!-- التحقق من وضع الظلام -->
   <script>
@@ -421,10 +672,14 @@
           <span class="md:hidden glowing-text">التعليم الجزائري</span>
         </div>
       </div>
-      <div class="flex items-center">
+      <div class="flex items-center space-x-4 space-x-reverse">
         <button id="darkModeToggle" class="p-2 rounded-full hover:bg-white/20 transition-all duration-300">
           <i class="fas fa-moon text-xl dark:hidden"></i>
           <i class="fas fa-sun text-xl hidden dark:block"></i>
+        </button>
+        <button id="logoutButton" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-all duration-300">
+          <i class="fas fa-sign-out-alt ml-2"></i>
+          <span>تسجيل الخروج</span>
         </button>
       </div>
     </div>
@@ -743,6 +998,17 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
+  <!-- زر الأدمن السري -->
+  <button id="adminSecretBtn" class="hidden fixed bottom-6 right-6 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 z-50" onclick="enterAdmin()">
+    <i class="fas fa-crown mr-1"></i> لوحة التحكم
+  </button>
+
+  <!-- تأثيرات الطقس التفاعلية -->
+  <div id="weather-effect" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-10 hidden md:block"></div>
+  
+  <!-- تأثيرات الجسور التعليمية -->
+  <div class="fixed bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-primary-600/10 to-transparent pointer-events-none z-40"></div>
+
   <!-- جافاسكريبت للوظائف -->
   <script>
     // بيانات الروابط الكاملة
@@ -987,6 +1253,531 @@
       { path: "الطور الإبتدائي/القسم التحضيري/محفوظات _ موسيقى القسم التحضيري/مذكرات", label: "مذكرات" }
     ];
 
+    // متغيرات وضع المستخدم
+    let appReady = false;
+    let isUserAuthenticated = false;
+    let redirectInProgress = false;
+    let authCheckAttempts = 0;
+    const MAX_AUTH_CHECK_ATTEMPTS = 3;
+    let currentUser = null;
+
+    // عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', function() {
+      // تهيئة التطبيق
+      initApp();
+    });
+
+    // تهيئة التطبيق
+    async function initApp() {
+      try {
+        console.log("تهيئة التطبيق...");
+        // التحقق من حالة المصادقة
+        await checkAuth();
+        // إعداد معالجات الأحداث
+        setupEventListeners();
+        // تحميل المحتوى
+        loadContent();
+        
+        // علامة اكتمال التهيئة
+        appReady = true;
+      } catch (error) {
+        console.error("خطأ في تهيئة التطبيق:", error);
+        // في حالة الخطأ، توجيه المستخدم إلى صفحة تسجيل الدخول
+        redirectToLogin();
+      }
+    }
+
+    // التحقق من حالة المصادقة
+    async function checkAuth() {
+      console.log("التحقق من حالة المصادقة...");
+      return new Promise((resolve, reject) => {
+        try {
+          authCheckAttempts++;
+          
+          // التحقق من وجود بيانات المستخدم في التخزين المحلي
+          const savedUser = localStorage.getItem('currentUser');
+          const authToken = sessionStorage.getItem('authToken');
+          const tokenExpiration = sessionStorage.getItem('lastAuth');
+          
+          if (!savedUser || !authToken) {
+            console.log("لم يتم العثور على معلومات المستخدم. إعادة التوجيه إلى صفحة تسجيل الدخول...");
+            throw new Error('User not authenticated');
+          }
+          
+          // التحقق من انتهاء صلاحية التوكن (إذا مر أكثر من 12 ساعة)
+          const currentTime = new Date().getTime();
+          const tokenTime = parseInt(tokenExpiration || '0');
+          const tokenAge = currentTime - tokenTime;
+          const MAX_TOKEN_AGE = 12 * 60 * 60 * 1000; // 12 ساعة
+          
+          if (tokenAge > MAX_TOKEN_AGE) {
+            console.log("انتهت صلاحية توكن المصادقة. إعادة التوجيه إلى صفحة تسجيل الدخول...");
+            throw new Error('Auth token expired');
+          }
+          
+          // تحميل بيانات المستخدم
+          currentUser = JSON.parse(savedUser);
+          console.log("تم التحقق من المصادقة بنجاح للمستخدم:", currentUser.name);
+          
+          // تحديث وقت آخر استخدام للتوكن
+          sessionStorage.setItem('lastAuth', currentTime.toString());
+          
+          isUserAuthenticated = true;
+          hideLoading();
+          resolve();
+        } catch (error) {
+          console.error("خطأ في التحقق من المصادقة:", error);
+          
+          // في حالة فشل المحاولات المتكررة
+          if (authCheckAttempts >= MAX_AUTH_CHECK_ATTEMPTS) {
+            reject(error);
+          } else {
+            // محاولة واحدة أخرى بعد تأخير قصير
+            setTimeout(() => {
+              checkAuth()
+                .then(resolve)
+                .catch(reject);
+            }, 500);
+          }
+        }
+      });
+    }
+
+    // إعادة التوجيه إلى صفحة تسجيل الدخول
+    function redirectToLogin() {
+      if (redirectInProgress) return;
+      
+      redirectInProgress = true;
+      console.log("إعادة التوجيه إلى صفحة تسجيل الدخول...");
+      
+      // حفظ المسار الحالي للعودة إليه بعد تسجيل الدخول
+      sessionStorage.setItem('returnTo', window.location.href);
+      
+      // تنظيف بيانات المصادقة
+      localStorage.removeItem('currentUser');
+      sessionStorage.removeItem('authToken');
+      sessionStorage.removeItem('lastAuth');
+      
+      // إظهار رسالة
+      showNotification("يرجى تسجيل الدخول للوصول إلى هذه الصفحة", "error");
+      
+      // تأخير قبل إعادة التوجيه
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 1500);
+    }
+
+    // تسجيل الخروج
+    function logoutUser() {
+      if (redirectInProgress) return;
+      
+      redirectInProgress = true;
+      console.log("تسجيل الخروج...");
+      
+      // تنظيف بيانات المصادقة
+      localStorage.removeItem('currentUser');
+      sessionStorage.removeItem('authToken');
+      sessionStorage.removeItem('lastAuth');
+      sessionStorage.removeItem('redirected');
+      sessionStorage.removeItem('redirectCount');
+      
+      // إظهار رسالة
+      showNotification("تم تسجيل الخروج بنجاح", "success");
+      
+      // تأخير قبل إعادة التوجيه
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 1000);
+    }
+
+    // إخفاء شاشة التحميل
+    function hideLoading() {
+      const loadingOverlay = document.getElementById('loadingOverlay');
+      if (loadingOverlay) {
+        loadingOverlay.style.opacity = '0';
+        setTimeout(() => {
+          loadingOverlay.style.display = 'none';
+        }, 300);
+      }
+    }
+
+    // عرض شاشة التحميل
+    function showLoading() {
+      const loadingOverlay = document.getElementById('loadingOverlay');
+      if (loadingOverlay) {
+        loadingOverlay.style.display = 'flex';
+        setTimeout(() => {
+          loadingOverlay.style.opacity = '1';
+        }, 10);
+      }
+    }
+
+    // تحميل المحتوى
+    function loadContent() {
+      console.log("تحميل المحتوى...");
+      try {
+        // تجميع الروابط حسب السنة الدراسية
+        populateLinks();
+        
+        // محاكاة تأخير تحميل
+        simulateLoading();
+        
+        // تحقق مما إذا كان هناك هاش في المسار (لفتح قسم معين)
+        checkForHashNavigation();
+        
+        // تحقق من وجود معلمة بحث في المسار
+        checkForSearchParam();
+        
+        // تأثيرات الطقس التفاعلية
+        setupWeatherEffects();
+        
+        // تأثيرات للأيقونات عند التحميل
+        setupIconEffects();
+        
+        // رسالة ترحيبية ديناميكية
+        showDynamicGreeting();
+      } catch (error) {
+        console.error("خطأ في تحميل المحتوى:", error);
+        showNotification("حدث خطأ أثناء تحميل المحتوى", "error");
+      }
+    }
+
+    // محاكاة تحميل المحتوى
+    function simulateLoading() {
+      // تأخير تحميل الروابط لمحاكاة تجربة تحميل أكثر واقعية
+      setTimeout(() => {
+        document.querySelectorAll('.p-2.text-center.text-gray-400').forEach(el => {
+          el.parentNode.removeChild(el);
+        });
+      }, 1000);
+    }
+    
+    // التحقق من وجود هاش في المسار
+    function checkForHashNavigation() {
+      if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          // التمرير إلى العنصر
+          setTimeout(() => {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            
+            // بالنسبة للأقسام المطوية، افتحها
+            const header = targetElement.querySelector('.grade-header');
+            const content = targetElement.querySelector('.collapsible-content');
+            
+            if (header && content) {
+              header.classList.add('active');
+              content.classList.add('show');
+            }
+          }, 500);
+        }
+      }
+    }
+    
+    // التحقق من وجود معلمة بحث في المسار
+    function checkForSearchParam() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchQuery = urlParams.get('search');
+      
+      if (searchQuery) {
+        // تعيين قيمة حقل البحث
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+          searchInput.value = searchQuery;
+          // تشغيل البحث
+          searchInput.dispatchEvent(new Event('input'));
+        }
+      }
+    }
+
+    // تأثيرات الطقس التفاعلية
+    function setupWeatherEffects() {
+      const weatherEffect = document.getElementById('weather-effect');
+      const weatherTypes = ['sunny', 'rainy', 'cloudy', 'stars'];
+      const currentWeather = weatherTypes[Math.floor(Math.random() * weatherTypes.length)];
+      
+      weatherEffect.className = `fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-10 hidden md:block weather-${currentWeather}`;
+    }
+
+    // تأثيرات للأيقونات عند التحميل
+    function setupIconEffects() {
+      // تأثير تسلسلي للأيقونات
+      const icons = document.querySelectorAll('.subject-icon');
+      icons.forEach((icon, index) => {
+        setTimeout(() => {
+          icon.classList.add('animate-bounce-slow');
+        }, index * 100);
+      });
+
+      // تأثير توهج للعناوين الرئيسية
+      const headings = document.querySelectorAll('h1, h2, h3');
+      headings.forEach(heading => {
+        heading.classList.add('glow-text');
+      });
+
+      // تأثيرات للبطاقات عند الظهور
+      const cards = document.querySelectorAll('.grade-card');
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add('animate-float');
+        }, index * 150);
+      });
+    }
+
+    // رسالة ترحيبية ديناميكية
+    function showDynamicGreeting() {
+      const greetings = [
+        "مرحباً بك في منصة التعليم الجزائري!",
+        "نتمنى لك تجربة تعليمية ممتعة!",
+        "اكتشف عالم المعرفة معنا!",
+        "منصة التعليم الجزائري - مستقبل مشرق!",
+        "نحو تعليم أفضل لأبنائنا!"
+      ];
+      
+      const greetingElement = document.createElement('div');
+      greetingElement.className = 'fixed top-4 left-1/2 transform -translate-x-1/2 bg-primary-600 text-white px-4 py-2 rounded-full shadow-lg z-50 animate-pulse hidden md:block';
+      greetingElement.textContent = greetings[Math.floor(Math.random() * greetings.length)];
+      document.body.appendChild(greetingElement);
+      
+      setTimeout(() => {
+        greetingElement.remove();
+      }, 5000);
+    }
+
+    // إعداد معالجات الأحداث
+    function setupEventListeners() {
+      console.log("إعداد معالجات الأحداث...");
+
+      // زر تبديل الوضع المظلم
+      document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+      
+      // زر تسجيل الخروج
+      document.getElementById('logoutButton').addEventListener('click', logoutUser);
+      
+      // الأقسام المنسدلة
+      const gradeHeaders = document.querySelectorAll('.grade-header');
+      gradeHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+          const targetId = header.getAttribute('data-target');
+          const targetContent = document.getElementById(targetId);
+          
+          // تبديل حالة العرض للقسم
+          header.classList.toggle('active');
+          targetContent.classList.toggle('show');
+        });
+      });
+      
+      // إعداد وظيفة البحث
+      setupSearch();
+      
+      // زر إغلاق البحث
+      document.getElementById('closeSearch').addEventListener('click', () => {
+        document.getElementById('searchResults').classList.add('hidden');
+        document.getElementById('searchInput').value = '';
+        document.getElementById('clearSearch').classList.add('hidden');
+        document.getElementById('searchCounter').classList.add('hidden');
+      });
+      
+      // زر مسح البحث
+      document.getElementById('clearSearch').addEventListener('click', () => {
+        document.getElementById('searchInput').value = '';
+        document.getElementById('searchInput').focus();
+        document.getElementById('searchResults').classList.add('hidden');
+        document.getElementById('clearSearch').classList.add('hidden');
+        document.getElementById('searchCounter').classList.add('hidden');
+      });
+      
+      // زر العودة للأعلى
+      const scrollToTopBtn = document.getElementById('scrollToTop');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+          scrollToTopBtn.classList.add('opacity-100', 'visible');
+        } else {
+          scrollToTopBtn.classList.add('opacity-0', 'invisible');
+          scrollToTopBtn.classList.remove('opacity-100', 'visible');
+        }
+      });
+      
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+      
+      // معالج أحداث الاتصال بالإنترنت
+      window.addEventListener('online', () => {
+        if (appReady) {
+          showNotification("تم استعادة الاتصال بالإنترنت", "success");
+        }
+      });
+      
+      window.addEventListener('offline', () => {
+        showNotification("انقطع الاتصال بالإنترنت", "error");
+      });
+      
+      // تغيير لون الشريط العلوي حسب التمرير
+      window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+      
+      // تأثيرات عند التحويم على العناصر
+      document.querySelectorAll('.card-hover').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px) rotate(1deg)';
+          this.style.boxShadow = '0 15px 30px rgba(93, 92, 222, 0.3)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = '';
+          this.style.boxShadow = '';
+        });
+      });
+
+      // تأثيرات للأزرار
+      document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('mousedown', function() {
+          this.style.transform = 'scale(0.95)';
+        });
+        
+        button.addEventListener('mouseup', function() {
+          this.style.transform = '';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+          this.style.transform = '';
+        });
+      });
+    }
+
+    // تبديل الوضع المظلم
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+
+    // إعداد وظيفة البحث
+    function setupSearch() {
+      const searchInput = document.getElementById('searchInput');
+      const searchResults = document.getElementById('searchResults');
+      const resultsContainer = document.getElementById('resultsContainer');
+      const searchCounter = document.getElementById('searchCounter');
+      const clearSearch = document.getElementById('clearSearch');
+      const noResultsMessage = document.getElementById('noResultsMessage');
+      const loadingResults = document.getElementById('loadingResults');
+      
+      searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.trim().toLowerCase();
+        
+        if (searchTerm.length < 2) {
+          searchResults.classList.add('hidden');
+          clearSearch.classList.add('hidden');
+          searchCounter.classList.add('hidden');
+          return;
+        }
+        
+        // عرض أيقونة المسح
+        clearSearch.classList.remove('hidden');
+        
+        // عرض حالة التحميل
+        searchResults.classList.remove('hidden');
+        noResultsMessage.classList.add('hidden');
+        loadingResults.classList.remove('hidden');
+        resultsContainer.querySelectorAll('.search-result-item').forEach(item => item.remove());
+        
+        // محاكاة تأخير البحث
+        setTimeout(() => {
+          // إجراء البحث
+          const results = allLinks.filter(link => 
+            link.path.toLowerCase().includes(searchTerm) || 
+            link.label.toLowerCase().includes(searchTerm)
+          );
+          
+          // إخفاء حالة التحميل
+          loadingResults.classList.add('hidden');
+          
+          // تحديث عداد النتائج
+          searchCounter.textContent = `${results.length} نتيجة`;
+          searchCounter.classList.remove('hidden');
+          
+          if (results.length === 0) {
+            noResultsMessage.classList.remove('hidden');
+            return;
+          }
+          
+          // عرض النتائج
+          results.slice(0, 20).forEach((result, index) => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'py-3 hover:bg-gray-50 dark:hover:bg-gray-800/40 transition-all duration-300 search-result-item';
+            
+            const iconData = getIconAndClass(result.path);
+            
+            // تحويل المسار إلى نص أكثر قابلية للقراءة
+            const readablePath = result.path.split('/').slice(1).join(' / ');
+            
+            // تحديد ما إذا كان هذا عنصرًا فرعيًا (مذكرات، اختبارات، الخ) أم عنصرًا رئيسيًا (مادة)
+            const isSubItem = result.path.split('/').length > 3;
+            
+            if (isSubItem) {
+              resultItem.innerHTML = `
+                <a href="file-browser.html?path=${encodeURIComponent(result.path)}" class="flex items-start group">
+                  <div class="subject-icon ${iconData.cssClass} ml-2 mt-1 group-hover:scale-110 transition-transform">
+                    <i class="${iconData.icon}"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-900 dark:text-gray-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">${result.label}</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400">${readablePath}</div>
+                  </div>
+                  <i class="fas fa-arrow-left text-gray-400 text-xs mt-1 group-hover:animate-pulse"></i>
+                </a>
+              `;
+            } else {
+              // إذا كان عنصرًا رئيسيًا (مادة)، لا نضيف رابطًا خارجيًا
+              resultItem.innerHTML = `
+                <div class="flex items-start">
+                  <div class="subject-icon ${iconData.cssClass} ml-2 mt-1">
+                    <i class="${iconData.icon}"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-900 dark:text-gray-100">${result.label}</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400">${readablePath}</div>
+                  </div>
+                </div>
+              `;
+            }
+            
+            resultsContainer.appendChild(resultItem);
+          });
+          
+          // إضافة إشعار إذا كانت هناك نتائج أكثر
+          if (results.length > 20) {
+            const moreResults = document.createElement('div');
+            moreResults.className = 'text-center p-2 text-gray-500 text-sm dark:text-gray-400 mt-2 bg-gray-50 dark:bg-gray-800/40 rounded-md';
+            moreResults.textContent = `تم عرض 20 نتيجة من أصل ${results.length}. يرجى تحديد البحث أكثر للحصول على نتائج أدق.`;
+            resultsContainer.appendChild(moreResults);
+          }
+        }, 500);
+      });
+      
+      // إعادة تعيين العرض عند مسح البحث
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          searchInput.value = '';
+          searchResults.classList.add('hidden');
+          clearSearch.classList.add('hidden');
+          searchCounter.classList.add('hidden');
+        }
+      });
+    }
+
     // دالة للحصول على الأيقونة والصنف المناسبين حسب المحتوى
     function getIconAndClass(path) {
       const segments = path.split('/');
@@ -1011,28 +1802,6 @@
       
       // أيقونة افتراضية للمسارات الأخرى
       return { icon: 'fas fa-file', cssClass: 'folder' };
-    }
-
-    // تهيئة الصفحة
-    document.addEventListener('DOMContentLoaded', function() {
-      // تجميع الروابط حسب السنة الدراسية
-      populateLinks();
-      
-      // إعداد معالجات الأحداث
-      setupEventListeners();
-      
-      // محاكاة تأخير تحميل
-      simulateLoading();
-    });
-    
-    // محاكاة تحميل المحتوى
-    function simulateLoading() {
-      // تأخير تحميل الروابط لمحاكاة تجربة تحميل أكثر واقعية
-      setTimeout(() => {
-        document.querySelectorAll('.p-2.text-center.text-gray-400').forEach(el => {
-          el.parentNode.removeChild(el);
-        });
-      }, 1000);
     }
 
     function populateLinks() {
@@ -1167,535 +1936,93 @@
       });
     }
 
-    function setupEventListeners() {
-      // تبديل وضع الظلام
-      document.getElementById('darkModeToggle').addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark');
-      });
+    // عرض الإشعارات
+    function showNotification(message, type = 'info') {
+      console.log(`الإشعار (${type}): ${message}`);
       
-      // إضافة وظائف الأقسام المنسدلة
-      const gradeHeaders = document.querySelectorAll('.grade-header');
-      gradeHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-          const targetId = header.getAttribute('data-target');
-          const targetContent = document.getElementById(targetId);
-          
-          // تبديل حالة العرض للقسم
-          header.classList.toggle('active');
-          targetContent.classList.toggle('show');
-        });
-      });
+      const notification = document.getElementById('notification');
+      const notificationText = document.getElementById('notificationText');
+      const notificationIcon = document.getElementById('notificationIcon');
       
-      // وظيفة البحث
-      const searchInput = document.getElementById('searchInput');
-      const searchResults = document.getElementById('searchResults');
-      const resultsContainer = document.getElementById('resultsContainer');
-      const searchCounter = document.getElementById('searchCounter');
-      const clearSearch = document.getElementById('clearSearch');
-      const noResultsMessage = document.getElementById('noResultsMessage');
-      const loadingResults = document.getElementById('loadingResults');
-      const closeSearch = document.getElementById('closeSearch');
+      // تعيين النص
+      notificationText.textContent = message;
       
-      // زر إغلاق البحث
-      closeSearch.addEventListener('click', () => {
-        searchResults.classList.add('hidden');
-        searchInput.value = '';
-        clearSearch.classList.add('hidden');
-        searchCounter.classList.add('hidden');
-      });
+      // تعيين النوع
+      notification.classList.remove('success', 'error', 'info');
+      notification.classList.add(type);
       
-      // زر مسح البحث
-      clearSearch.addEventListener('click', () => {
-        searchInput.value = '';
-        searchInput.focus();
-        searchResults.classList.add('hidden');
-        clearSearch.classList.add('hidden');
-        searchCounter.classList.add('hidden');
-      });
+      // تعيين الأيقونة
+      switch (type) {
+        case 'success':
+          notificationIcon.className = 'fas fa-check-circle';
+          break;
+        case 'error':
+          notificationIcon.className = 'fas fa-exclamation-circle';
+          break;
+        default:
+          notificationIcon.className = 'fas fa-info-circle';
+      }
       
-      searchInput.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.trim().toLowerCase();
-        
-        if (searchTerm.length < 2) {
-          searchResults.classList.add('hidden');
-          clearSearch.classList.add('hidden');
-          searchCounter.classList.add('hidden');
-          return;
-        }
-        
-        // عرض أيقونة المسح
-        clearSearch.classList.remove('hidden');
-        
-        // عرض حالة التحميل
-        searchResults.classList.remove('hidden');
-        noResultsMessage.classList.add('hidden');
-        loadingResults.classList.remove('hidden');
-        resultsContainer.querySelectorAll('.search-result-item').forEach(item => item.remove());
-        
-        // محاكاة تأخير البحث
+      // عرض الإشعار
+      notification.classList.add('show');
+      
+      // إخفاء الإشعار بعد 3 ثوان
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
+
+    // إظهار لوحة أدمن سرية على عدة نقرات متتالية
+    let adminClickCount = 0;
+    let lastClickTime = 0;
+    const clickTimeout = 2000; // 2 ثانية كحد أقصى بين النقرات
+    
+    document.addEventListener("click", function() {
+      const currentTime = new Date().getTime();
+      
+      // إذا مر أكثر من 2 ثانية منذ آخر نقرة، نعيد العد
+      if (currentTime - lastClickTime > clickTimeout) {
+        adminClickCount = 0;
+      }
+      
+      // زيادة العداد وتحديث وقت آخر نقرة
+      adminClickCount++;
+      lastClickTime = currentTime;
+      
+      // إذا وصلنا لـ20 نقرة متتالية
+      if (adminClickCount >= 20) {
+        document.getElementById("adminSecretBtn").classList.remove("hidden");
+        adminClickCount = 0; // نعيد العداد للصفر
         setTimeout(() => {
-          // إجراء البحث
-          const results = allLinks.filter(link => 
-            link.path.toLowerCase().includes(searchTerm) || 
-            link.label.toLowerCase().includes(searchTerm)
-          );
-          
-          // إخفاء حالة التحميل
-          loadingResults.classList.add('hidden');
-          
-          // تحديث عداد النتائج
-          searchCounter.textContent = `${results.length} نتيجة`;
-          searchCounter.classList.remove('hidden');
-          
-          if (results.length === 0) {
-            noResultsMessage.classList.remove('hidden');
-            return;
-          }
-          
-          // عرض النتائج
-          results.slice(0, 20).forEach((result, index) => {
-            const resultItem = document.createElement('div');
-            resultItem.className = 'py-3 hover:bg-gray-50 dark:hover:bg-gray-800/40 transition-all duration-300 search-result-item';
-            
-            const iconData = getIconAndClass(result.path);
-            
-            // تحويل المسار إلى نص أكثر قابلية للقراءة
-            const readablePath = result.path.split('/').slice(1).join(' / ');
-            
-            // تحديد ما إذا كان هذا عنصرًا فرعيًا (مذكرات، اختبارات، الخ) أم عنصرًا رئيسيًا (مادة)
-            const isSubItem = result.path.split('/').length > 3;
-            
-            if (isSubItem) {
-              resultItem.innerHTML = `
-                <a href="file-browser.html?path=${encodeURIComponent(result.path)}" class="flex items-start group">
-                  <div class="subject-icon ${iconData.cssClass} ml-2 mt-1 group-hover:scale-110 transition-transform">
-                    <i class="${iconData.icon}"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="font-medium text-gray-900 dark:text-gray-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">${result.label}</div>
-                    <div class="text-sm text-gray-500 dark:text-gray-400">${readablePath}</div>
-                  </div>
-                  <i class="fas fa-arrow-left text-gray-400 text-xs mt-1 group-hover:animate-pulse"></i>
-                </a>
-              `;
-            } else {
-              // إذا كان عنصرًا رئيسيًا (مادة)، لا نضيف رابطًا خارجيًا
-              resultItem.innerHTML = `
-                <div class="flex items-start">
-                  <div class="subject-icon ${iconData.cssClass} ml-2 mt-1">
-                    <i class="${iconData.icon}"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="font-medium text-gray-900 dark:text-gray-100">${result.label}</div>
-                    <div class="text-sm text-gray-500 dark:text-gray-400">${readablePath}</div>
-                  </div>
-                </div>
-              `;
-            }
-            
-            resultsContainer.appendChild(resultItem);
-          });
-          
-          // إضافة إشعار إذا كانت هناك نتائج أكثر
-          if (results.length > 20) {
-            const moreResults = document.createElement('div');
-            moreResults.className = 'text-center p-2 text-gray-500 text-sm dark:text-gray-400 mt-2 bg-gray-50 dark:bg-gray-800/40 rounded-md';
-            moreResults.textContent = `تم عرض 20 نتيجة من أصل ${results.length}. يرجى تحديد البحث أكثر للحصول على نتائج أدق.`;
-            resultsContainer.appendChild(moreResults);
-          }
-        }, 500);
-      });
-      
-      // إعادة تعيين العرض عند مسح البحث
-      searchInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          searchInput.value = '';
-          searchResults.classList.add('hidden');
-          clearSearch.classList.add('hidden');
-          searchCounter.classList.add('hidden');
-        }
-      });
-      
-      // زر العودة للأعلى
-      const scrollToTopBtn = document.getElementById('scrollToTop');
-      
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-          scrollToTopBtn.classList.remove('opacity-0', 'invisible');
-          scrollToTopBtn.classList.add('opacity-100', 'visible');
-        } else {
-          scrollToTopBtn.classList.add('opacity-0', 'invisible');
-          scrollToTopBtn.classList.remove('opacity-100', 'visible');
-        }
-      });
-      
-      scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
+          document.getElementById("adminSecretBtn").classList.add("hidden");
+        }, 5000); // إخفاء الزر بعد 5 ثواني
+      }
+    });
+
+    // اختصار لوحة المفاتيح Alt + A
+    document.addEventListener("keydown", function(e) {
+      if (e.altKey && e.key.toLowerCase() === 'a') {
+        document.getElementById("adminSecretBtn").classList.remove("hidden");
+        setTimeout(() => {
+          document.getElementById("adminSecretBtn").classList.add("hidden");
+        }, 5000);
+      }
+    });
+
+    function enterAdmin() {
+      const admin = { username: "latifking", password: "ding2010" };
+      localStorage.setItem("currentUser", JSON.stringify(admin));
+      window.location.href = "admin-panel.html";
     }
+
+    // معالجة الأخطاء غير المتوقعة
+    window.onerror = function(message, source, lineno, colno, error) {
+      console.error("خطأ:", message, "في:", source, "سطر:", lineno);
+      if (appReady) {
+        showNotification("حدث خطأ غير متوقع. يرجى تحديث الصفحة.", "error");
+      }
+      return false; // السماح للمتصفح بمتابعة معالجة الخطأ
+    };
   </script>
-
-<script>
-  const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
-  const users = JSON.parse(localStorage.getItem("users") || "[]");
-  const found = currentUser ? users.find(u => u.username === currentUser.username && u.password === currentUser.password) : null;
-  const isAdmin = currentUser && currentUser.username === "latifking" && currentUser.password === "ding2010";
-
-  if (!found && !isAdmin) {
-    window.location.href = "login.html";
-  } else if (found && !found.approved) {
-    window.location.href = "not-approved.html";
-  }
-
-  function logoutUser() {
-    localStorage.removeItem("currentUser");
-    window.location.href = "login.html";
-  }
-</script>
-<div style="position: fixed; top: 20px; left: 20px; z-index: 999;">
-  <button onclick="logoutUser()" style="padding: 10px 20px; background: #F44336; color: #fff; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">تسجيل الخروج</button>
-</div>
-<!-- زر الأدمن السري -->
-<button id="adminSecretBtn" class="hidden fixed bottom-6 right-6 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 z-50" onclick="enterAdmin()">
-  <i class="fas fa-crown mr-1"></i> لوحة التحكم
-</button>
-
-<script>
-  // متغيرات لتتبع عدد النقرات والتوقيت
-  let adminClickCount = 0;
-  let lastClickTime = 0;
-  const clickTimeout = 2000; // 2 ثانية كحد أقصى بين النقرات
-  
-  document.addEventListener("click", function() {
-    const currentTime = new Date().getTime();
-    
-    // إذا مر أكثر من 2 ثانية منذ آخر نقرة، نعيد العد
-    if (currentTime - lastClickTime > clickTimeout) {
-      adminClickCount = 0;
-    }
-    
-    // زيادة العداد وتحديث وقت آخر نقرة
-    adminClickCount++;
-    lastClickTime = currentTime;
-    
-    // إذا وصلنا لـ20 نقرة متتالية
-    if (adminClickCount >= 20) {
-      document.getElementById("adminSecretBtn").classList.remove("hidden");
-      adminClickCount = 0; // نعيد العداد للصفر
-      setTimeout(() => {
-        document.getElementById("adminSecretBtn").classList.add("hidden");
-      }, 5000); // إخفاء الزر بعد 5 ثواني
-    }
-  });
-
-  // اختصار لوحة المفاتيح Alt + A
-  document.addEventListener("keydown", function(e) {
-    if (e.altKey && e.key.toLowerCase() === 'a') {
-      document.getElementById("adminSecretBtn").classList.remove("hidden");
-      setTimeout(() => {
-        document.getElementById("adminSecretBtn").classList.add("hidden");
-      }, 5000);
-    }
-  });
-
-  function enterAdmin() {
-    const admin = { username: "latifking", password: "ding2010" };
-    localStorage.setItem("currentUser", JSON.stringify(admin));
-    window.location.href = "admin-panel.html";
-  }
-</script>
-
-<!-- تأثيرات إضافية للواجهة -->
-<script>
-  // تأثيرات للأيقونات عند التحميل
-  document.addEventListener('DOMContentLoaded', function() {
-    // تأثير تسلسلي للأيقونات
-    const icons = document.querySelectorAll('.subject-icon');
-    icons.forEach((icon, index) => {
-      setTimeout(() => {
-        icon.classList.add('animate-bounce-slow');
-      }, index * 100);
-    });
-
-    // تأثير توهج للعناوين الرئيسية
-    const headings = document.querySelectorAll('h1, h2, h3');
-    headings.forEach(heading => {
-      heading.classList.add('glow-text');
-    });
-
-    // تأثيرات للبطاقات عند الظهور
-    const cards = document.querySelectorAll('.grade-card');
-    cards.forEach((card, index) => {
-      setTimeout(() => {
-        card.classList.add('animate-float');
-      }, index * 150);
-    });
-  });
-
-  // تأثيرات عند التحويم على العناصر
-  document.querySelectorAll('.card-hover').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-10px) rotate(1deg)';
-      this.style.boxShadow = '0 15px 30px rgba(93, 92, 222, 0.3)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-      this.style.transform = '';
-      this.style.boxShadow = '';
-    });
-  });
-
-  // تأثيرات للأزرار
-  document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('mousedown', function() {
-      this.style.transform = 'scale(0.95)';
-    });
-    
-    button.addEventListener('mouseup', function() {
-      this.style.transform = '';
-    });
-    
-    button.addEventListener('mouseleave', function() {
-      this.style.transform = '';
-    });
-  });
-</script>
-
-<!-- أنماط إضافية -->
-<style>
-  .glow-text {
-    text-shadow: 0 0 10px rgba(93, 92, 222, 0.5);
-    transition: text-shadow 0.3s ease;
-  }
-  
-  .glow-text:hover {
-    text-shadow: 0 0 15px rgba(93, 92, 222, 0.8);
-  }
-  
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-  }
-  
-  .pulse-effect {
-    animation: pulse 2s infinite;
-  }
-  
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-  }
-  
-  .rotate-effect {
-    animation: rotate 10s linear infinite;
-  }
-  
-  @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-  
-  .gradient-border {
-    position: relative;
-    border: 3px solid transparent;
-    background-clip: padding-box;
-  }
-  
-  .gradient-border::after {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
-    background: linear-gradient(45deg, #5D5CDE, #03A9F4);
-    z-index: -1;
-    border-radius: inherit;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .gradient-border:hover::after {
-    opacity: 1;
-  }
-  
-  /* تأثيرات متقدمة للبطاقات */
-  .card-3d {
-    transform-style: preserve-3d;
-    perspective: 1000px;
-    transition: all 0.5s ease;
-  }
-  
-  .card-3d:hover {
-    transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* تأثيرات النص المتحرك */
-  .text-wave {
-    display: inline-block;
-    animation: wave 3s ease-in-out infinite;
-  }
-  
-  @keyframes wave {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-  
-  /* تأثيرات الخلفية الديناميكية */
-  .dynamic-bg {
-    background: linear-gradient(-45deg, #5D5CDE, #03A9F4, #E91E63, #FF9800);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-  }
-  
-  @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
-  /* تأثيرات الظل المتحرك */
-  .moving-shadow {
-    animation: shadowMove 5s ease-in-out infinite alternate;
-  }
-  
-  @keyframes shadowMove {
-    0% { box-shadow: 0 10px 20px rgba(93, 92, 222, 0.3); }
-    100% { box-shadow: 0 20px 40px rgba(93, 92, 222, 0.5); }
-  }
-</style>
-
-<!-- تحسينات إضافية للواجهة -->
-<div class="fixed bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-primary-600 to-primary-700 z-50"></div>
-
-<!-- رسالة ترحيبية ديناميكية -->
-<script>
-  const greetings = [
-    "مرحباً بك في منصة التعليم الجزائري!",
-    "نتمنى لك تجربة تعليمية ممتعة!",
-    "اكتشف عالم المعرفة معنا!",
-    "منصة التعليم الجزائري - مستقبل مشرق!",
-    "نحو تعليم أفضل لأبنائنا!"
-  ];
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    const greetingElement = document.createElement('div');
-    greetingElement.className = 'fixed top-4 left-1/2 transform -translate-x-1/2 bg-primary-600 text-white px-4 py-2 rounded-full shadow-lg z-50 animate-pulse hidden md:block';
-    greetingElement.textContent = greetings[Math.floor(Math.random() * greetings.length)];
-    document.body.appendChild(greetingElement);
-    
-    setTimeout(() => {
-      greetingElement.remove();
-    }, 5000);
-  });
-</script>
-
-<!-- تأثيرات الطقس التفاعلية -->
-<div id="weather-effect" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-10 hidden md:block"></div>
-
-<script>
-  // تأثيرات الطقس التفاعلية (يمكن تخصيصها حسب الموسم)
-  document.addEventListener('DOMContentLoaded', function() {
-    const weatherEffect = document.getElementById('weather-effect');
-    const weatherTypes = ['sunny', 'rainy', 'cloudy', 'stars'];
-    const currentWeather = weatherTypes[Math.floor(Math.random() * weatherTypes.length)];
-    
-    weatherEffect.className = `fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-10 hidden md:block weather-${currentWeather}`;
-    
-    // أنماط الطقس
-    const style = document.createElement('style');
-    style.textContent = `
-      .weather-sunny {
-        background: radial-gradient(circle at 20% 20%, rgba(255,215,0,0.2) 0%, transparent 50%);
-      }
-      .weather-rainy::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><line x1="1" y1="1" x2="3" y2="10" stroke="rgba(93,92,222,0.3)" stroke-width="0.5"/></svg>');
-        animation: rain 1s linear infinite;
-      }
-      .weather-cloudy {
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,50 Q30,30 50,30 Q60,10 80,20 Q90,40 80,60 Q90,80 70,80 Q50,90 30,70 Q10,70 20,50 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-        background-size: 200px 200px;
-        animation: clouds 60s linear infinite;
-      }
-      .weather-stars {
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><circle cx="5" cy="5" r="0.5" fill="rgba(255,255,255,0.3)"/></svg>');
-        background-size: 30px 30px;
-        animation: twinkle 3s ease-in-out infinite alternate;
-      }
-      @keyframes rain {
-        to { background-position: 0 100vh; }
-      }
-      @keyframes clouds {
-        to { background-position: 100% 0; }
-      }
-      @keyframes twinkle {
-        to { opacity: 0.2; }
-      }
-    `;
-    document.head.appendChild(style);
-  });
-</script>
-
-<!-- تأثيرات الجسور التعليمية -->
-<div class="fixed bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-primary-600/10 to-transparent pointer-events-none z-40"></div>
-
-<!-- تحسينات نهائية للواجهة -->
-<script>
-  // تغيير لون الشريط العلوي حسب التمرير
-  window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-
-  // إضافة صنف scrolled للشريط العلوي
-  const style = document.createElement('style');
-  style.textContent = `
-    header.scrolled {
-      background: rgba(93, 92, 222, 0.95) !important;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-    header.scrolled .container {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-    }
-  `;
-  document.head.appendChild(style);
-</script>
-<div style="position: fixed; top: 10px; right: 10px;">
-  <span id="user-role" style="margin-right: 20px;"></span>
-  <a href="/logout" style="text-decoration: none; color: white; background: #c00;
-    padding: 5px 10px; border-radius: 5px;">🚪 Logout</a>
-</div>
-<script>
-  fetch('/auth/user')
-    .then(res => res.json())
-    .then(data => {
-      if (data.username) {
-        document.getElementById('user-role').innerText = 
-          `👤 ${data.username} (Role: ${data.role})`;
-      }
-    })
-    .catch(() => {});
-</script>
 </body>
 </html>

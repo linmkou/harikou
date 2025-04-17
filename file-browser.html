@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>استعراض الملفات</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>مستعرض الملفات التعليمية</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
+        fontFamily: {
+          'sans': ['Tajawal', 'sans-serif'],
+        },
         extend: {
           colors: {
             primary: {
-              50: '#eef2ff',
-              100: '#e0e7ff',
-              200: '#c7d2fe',
-              300: '#a5b4fc',
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#5D5CDE',
-              700: '#4338ca',
-              800: '#3730a3',
-              900: '#312e81',
-              950: '#1e1b4b',
-            },
-            secondary: {
               50: '#f0f9ff',
               100: '#e0f2fe',
               200: '#bae6fd',
@@ -38,54 +29,147 @@
               900: '#0c4a6e',
               950: '#082f49',
             },
+            secondary: {
+              DEFAULT: '#FF6D00',
+              50: '#FFF2E6',
+              100: '#FFE5CC',
+              200: '#FFCC99',
+              300: '#FFB266',
+              400: '#FF9933',
+              500: '#FF8000',
+              600: '#FF6D00',
+              700: '#CC5800',
+              800: '#994200',
+              900: '#662C00',
+              950: '#331600',
+            },
             accent: {
-              50: '#fdf2f8',
-              100: '#fce7f3',
-              200: '#fbcfe8',
-              300: '#f9a8d4',
-              400: '#f472b6',
-              500: '#ec4899',
-              600: '#db2777',
-              700: '#be185d',
-              800: '#9d174d',
-              900: '#831843',
-              950: '#500724',
+              DEFAULT: '#9333EA',
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+              950: '#2e1065',
             },
             success: '#10b981',
             warning: '#f59e0b',
             error: '#ef4444',
             dark: {
-              background: '#121212',
-              surface: '#1e1e1e',
-              border: '#2e2e2e'
+              background: '#101827',
+              surface: '#1e293b',
+              border: '#334155'
             }
           },
           animation: {
             'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             'bounce-slow': 'bounce 2s infinite',
-            'fire': 'fire 1.5s ease-in-out infinite alternate',
-            'glow': 'glow 1.5s ease-in-out infinite alternate',
+            'float': 'float 3s ease-in-out infinite',
+            'shine': 'shine 1.5s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite',
+            'shimmer': 'shimmer 2s linear infinite',
+            'tilt': 'tilt 10s infinite linear',
           },
           keyframes: {
-            fire: {
-              '0%': { boxShadow: '0 0 5px #ff6b6b, 0 0 10px #ff6b6b, 0 0 15px #ff9e6b, 0 0 20px #ffbc6b' },
-              '100%': { boxShadow: '0 0 10px #ff6b6b, 0 0 20px #ff6b6b, 0 0 30px #ff9e6b, 0 0 40px #ffbc6b' },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            shine: {
+              '0%': { backgroundPosition: '0% 0%' },
+              '100%': { backgroundPosition: '200% 0%' },
             },
             glow: {
-              '0%': { filter: 'brightness(1)' },
-              '100%': { filter: 'brightness(1.2)' },
+              '0%, 100%': { filter: 'brightness(1)' },
+              '50%': { filter: 'brightness(1.2)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            },
+            tilt: {
+              '0%, 100%': { transform: 'rotate(0deg)' },
+              '25%': { transform: 'rotate(1deg)' },
+              '75%': { transform: 'rotate(-1deg)' },
             }
           }
         }
       }
     }
   </script>
-<style>
-    /* Estilos para el botón de carga */
+  <style>
+    /* تصميم أساسي */
+    * {
+      font-family: 'Tajawal', sans-serif;
+    }
+    
+    body {
+      background-color: #f0f9ff;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(236, 253, 245, 0.9) 0, transparent 50%), 
+        radial-gradient(at 100% 0%, rgba(224, 242, 254, 0.9) 0, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(237, 233, 254, 0.9) 0, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(239, 246, 255, 0.9) 0, transparent 50%);
+      background-attachment: fixed;
+    }
+    
+    .dark body {
+      background-color: #0f172a;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(15, 23, 42, 0.9) 0, transparent 50%), 
+        radial-gradient(at 100% 0%, rgba(15, 23, 42, 0.8) 0, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(14, 19, 36, 0.8) 0, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(12, 16, 31, 0.9) 0, transparent 50%);
+    }
+    
+    /* Header gradient */
+    .header-gradient {
+      background: linear-gradient(120deg, #0ea5e9, #6366f1);
+      box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.4);
+    }
+    
+    .dark .header-gradient {
+      background: linear-gradient(120deg, #0c4a6e, #4f46e5);
+      box-shadow: 0 10px 30px -10px rgba(12, 74, 110, 0.6);
+    }
+    
+    /* Hidden breadcrumb that's preserved in the system */
+    #breadcrumb {
+      display: none !important;
+    }
+    
+    /* Glassmorphism Cards */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      transition: all 0.3s ease;
+    }
+    
+    .dark .glass-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(51, 65, 85, 0.3);
+      box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.2),
+        0 10px 15px -3px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    }
+    
+    /* Animated Upload Button */
     .upload-btn {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(45deg, #ff3d00, #ff9e00);
+      background: linear-gradient(45deg, #FF6D00, #FF9933);
+      box-shadow: 0 4px 15px -2px rgba(255, 109, 0, 0.5);
       transition: all 0.3s ease;
     }
     
@@ -96,7 +180,12 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      background: linear-gradient(
+        90deg, 
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+      );
       transition: all 0.6s ease;
     }
     
@@ -105,1126 +194,797 @@
     }
     
     .upload-btn:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -4px rgba(255, 109, 0, 0.6);
     }
     
-    .fire-effect {
-      animation: fire 1.5s ease-in-out infinite alternate;
-    }
-    
-    .glow-text {
-      text-shadow: 0 0 5px rgba(255, 157, 0, 0.7), 0 0 10px rgba(255, 157, 0, 0.5);
-      animation: glow 1.5s ease-in-out infinite alternate;
-    }
-    
-    .flames {
-      position: absolute;
-      bottom: -15px;
+    /* Loading Animation */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
       left: 0;
-      right: 0;
-      height: 15px;
-      background-image: 
-        radial-gradient(circle at 20% 50%, #ff9d00 0%, transparent 50%),
-        radial-gradient(circle at 40% 50%, #ff7300 0%, transparent 50%),
-        radial-gradient(circle at 60% 50%, #ff5600 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, #ff3d00 0%, transparent 50%);
-      filter: blur(5px);
-      opacity: 0.8;
-      transform-origin: center bottom;
-      animation: flicker 0.5s ease-in-out infinite alternate;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: all 0.5s ease;
     }
     
-    @keyframes flicker {
-      0% { transform: scaleX(0.9) scaleY(0.9); opacity: 0.7; }
-      100% { transform: scaleX(1.1) scaleY(1.1); opacity: 0.9; }
+    .dark .loading-overlay {
+      background: rgba(15, 23, 42, 0.95);
     }
     
-    /* Mejora de apariencia de archivos y carpetas */
+    .spinner-container {
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+    
+    .spinner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 4px solid transparent;
+      border-top-color: #0ea5e9;
+      animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    }
+    
+    .spinner-inner {
+      width: 85%;
+      height: 85%;
+      border-top-color: #8b5cf6;
+      animation-duration: 1s;
+      animation-direction: reverse;
+    }
+    
+    .spinner-center {
+      width: 70%;
+      height: 70%;
+      border-top-color: #FF6D00;
+      animation-duration: 0.8s;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Glowing and Pulsing Effects */
+    .glow-effect {
+      animation: glow 2s ease-in-out infinite;
+    }
+    
+    .shimmer-effect {
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 2s linear infinite;
+    }
+    
+    .dark .shimmer-effect {
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background-size: 200% 100%;
+    }
+    
+    /* File Cards */
     .file-card {
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-origin: center bottom;
     }
     
     .file-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.1);
     }
     
     .dark .file-card:hover {
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.3);
     }
     
-    /* Efecto de carga ondulada */
-    .ripple-loader {
-      position: relative;
+    .file-icon-container {
+      transition: all 0.3s ease;
     }
     
-    .ripple-loader::after {
-      content: '';
-      position: absolute;
-      top: 50%;
+    .file-card:hover .file-icon-container {
+      transform: scale(1.1);
+    }
+    
+    /* Notification Styles */
+    .notification {
+      position: fixed;
+      top: 20px;
       left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background-color: rgba(99, 102, 241, 0.3);
-      transform: translate(-50%, -50%);
-      animation: ripple 1.5s ease-out infinite;
-    }
-    
-    @keyframes ripple {
-      0% { width: 0; height: 0; opacity: 1; }
-      100% { width: 200px; height: 200px; opacity: 0; }
-    }
-    
-    /* Notificaciones de usuario */
-    .custom-notification {
+      transform: translateX(-50%) translateY(-100px);
+      border-radius: 8px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      min-width: 280px;
+      max-width: 90%;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      visibility: hidden;
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     }
-
-    /* Mejora para visualización en dispositivos móviles */
+    
+    .notification.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* Responsive Adjustments */
     @media (max-width: 640px) {
       .file-card-content {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
       }
       
       .file-icon-container {
         margin-bottom: 0.5rem;
         margin-left: 0;
       }
-
-      .breadcrumb-container {
-        padding: 0.5rem;
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .mobile-full-width {
+      
+      .file-details {
         width: 100%;
+        text-align: center;
       }
     }
-
-    /* Estilo mejorado para el visualizador de archivos */
+    
+    /* Debug Console */
+    .debug-console {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #00ff00;
+      padding: 10px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 12px;
+      max-width: 400px;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 1000;
+      display: none;
+    }
+    
+    /* File Viewer Modal */
     .file-viewer-container {
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      transition: opacity 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-
+    
     .file-viewer-content {
-      transform: translateY(20px);
-      opacity: 0;
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      transition: all 0.3s ease;
+      transform: scale(0.9);
     }
-
-    .file-viewer-visible .file-viewer-content {
-      transform: translateY(0);
+    
+    .file-viewer-container.show .file-viewer-content {
+      transform: scale(1);
+    }
+    
+    /* Education Theme Elements */
+    .education-icon {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .education-icon:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .education-icon:hover:after {
       opacity: 1;
     }
-
-    /* Mostrar el camino de navegación */
-    #breadcrumb {
-      display: flex !important;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      scrollbar-width: thin;
-      padding-bottom: 0.5rem;
-    }
-
-    #breadcrumb::-webkit-scrollbar {
-      height: 4px;
-    }
-
-    #breadcrumb::-webkit-scrollbar-thumb {
-      background-color: rgba(156, 163, 175, 0.5);
-      border-radius: 2px;
-    }
-
-    /* Mejoras visuales adicionales */
-    .shimmer {
-      position: relative;
+    
+    /* Upload Progress */
+    .upload-progress {
+      height: 8px;
+      border-radius: 4px;
       overflow: hidden;
-      background: #f6f7f8;
+      background-color: #e2e8f0;
     }
     
-    .shimmer::after {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      transform: translateX(-100%);
-      background-image: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0) 0,
-        rgba(255, 255, 255, 0.2) 20%,
-        rgba(255, 255, 255, 0.5) 60%,
-        rgba(255, 255, 255, 0)
-      );
-      animation: shimmer 2s infinite;
-      content: '';
+    .dark .upload-progress {
+      background-color: #334155;
     }
     
-    @keyframes shimmer {
-      100% {
-        transform: translateX(100%);
-      }
-    }
-
-    .dark .shimmer {
-      background: #2a2a2a;
+    .upload-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #0ea5e9, #8b5cf6);
+      width: 0;
+      transition: width 0.3s ease;
     }
     
-    .dark .shimmer::after {
-      background-image: linear-gradient(
-        90deg,
-        rgba(40, 40, 40, 0) 0,
-        rgba(60, 60, 60, 0.2) 20%,
-        rgba(80, 80, 80, 0.5) 60%,
-        rgba(40, 40, 40, 0)
-      );
+    /* Floating Animation for Educational Elements */
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    /* Tilting Animation */
+    .tilt-animation {
+      animation: tilt 10s infinite linear;
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 dark:bg-dark-background dark:text-gray-100 min-h-screen transition-colors duration-200 flex flex-col">
-<!-- Verificar modo oscuro -->
-<script>
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
-    }
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-      if (event.matches) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    });
-  </script>
-<!-- Encabezado -->
-<header class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg dark:from-primary-800 dark:to-secondary-800 sticky top-0 z-10">
-<div class="container mx-auto py-4 px-4 sm:py-6">
-<div class="flex justify-between items-center">
-<h1 class="text-xl md:text-3xl font-bold flex items-center">
-<i class="fas fa-folder-open text-yellow-300 mr-3 animate-pulse-slow"></i>
-<span class="relative">
-            استعراض الملفات
-            <span class="absolute -bottom-1 left-0 w-full h-1 bg-yellow-300 rounded-full opacity-70"></span>
-</span>
-</h1>
-<div class="flex items-center space-x-4 space-x-reverse">
-<button class="p-2 rounded-full hover:bg-white/20 transition-colors" id="darkModeToggle" aria-label="تبديل الوضع المظلم">
-<i class="fas fa-moon text-xl dark:hidden"></i>
-<i class="fas fa-sun text-xl hidden dark:block"></i>
-</button>
-<a class="flex items-center bg-white/20 hover:bg-white/30 px-3 py-2 rounded-lg transition-colors" href="index.html">
-<i class="fas fa-home ml-2"></i>
-<span class="hidden md:inline">الرئيسية</span>
-</a>
-</div>
-</div>
-</div>
-</header>
-<!-- Ruta de navegación -->
-<div class="container mx-auto mt-4 px-4">
-<div class="bg-white dark:bg-dark-surface rounded-lg shadow p-3 flex items-center text-sm md:text-base gap-2 breadcrumb-container overflow-x-auto" id="breadcrumb">
-<a href="file-browser.html" class="flex items-center text-primary-600 dark:text-primary-400 hover:underline whitespace-nowrap">
-<i class="fas fa-home ml-1"></i> الرئيسية
-</a>
-<!-- JavaScript agregará el resto de la ruta -->
-</div>
-</div>
-<!-- Sección de búsqueda -->
-<div class="container mx-auto mt-4 px-4">
-<div class="relative">
-<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-<i class="fas fa-search text-gray-500 dark:text-gray-400"></i>
-</div>
-<input class="block w-full p-3 pr-10 text-base text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-primary-600 focus:border-primary-600 dark:bg-dark-surface dark:border-dark-border dark:placeholder-gray-400 dark:text-white transition-all duration-300" id="searchInput" placeholder="البحث في الملفات الحالية..." type="text"/>
-</div>
-</div>
-
-<!-- Sección de carga de archivos -->
-<div class="container mx-auto mt-4 px-4">
-  <!-- Botón de regreso a la página principal -->
-  <div class="mb-4">
-    <a href="index.html" class="inline-flex items-center px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
-      <i class="fas fa-arrow-right ml-2"></i>
-      <span>الرجوع إلى الرئيسية</span>
-    </a>
+<body class="min-h-screen flex flex-col">
+<!-- شاشة التحميل -->
+<div id="loadingOverlay" class="loading-overlay">
+  <div class="spinner-container mb-4">
+    <div class="spinner"></div>
+    <div class="spinner spinner-inner"></div>
+    <div class="spinner spinner-center"></div>
   </div>
+  <div class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-2 glow-effect">جاري التحميل</div>
+  <div class="text-gray-600 dark:text-gray-400">يرجى الانتظار قليلاً</div>
+</div>
 
-  <!-- Sección de carga de archivos original -->
-  <div id="uploadContainer" class="bg-gradient-to-r from-amber-700 to-orange-600 dark:from-amber-900 dark:to-orange-800 rounded-lg shadow-lg p-4 mb-6 relative overflow-hidden">
-    <div class="absolute inset-0 bg-black opacity-10 dark:opacity-30"></div>
-    <div class="relative z-10">
-      <div class="flex items-center mb-3">
-        <i class="fas fa-fire text-yellow-300 text-2xl ml-2 glow-text"></i>
-        <h3 class="font-bold text-xl text-white glow-text">رفع ملف جديد</h3>
+<!-- نظام الإشعارات -->
+<div id="notification" class="notification bg-white dark:bg-dark-surface p-4">
+  <i id="notificationIcon" class="fas fa-info-circle text-xl ml-3"></i>
+  <span id="notificationText" class="text-gray-800 dark:text-gray-200"></span>
+</div>
+
+<!-- وحدة تصحيح الأخطاء -->
+<div id="debugConsole" class="debug-console"></div>
+
+<!-- تفعيل الوضع المظلم تلقائيًا إذا كان مُفعلًا في المتصفح -->
+<script>
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.classList.add('dark');
+  }
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+    if (event.matches) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  });
+</script>
+
+<!-- الرأس -->
+<header class="header-gradient text-white sticky top-0 z-10 overflow-hidden">
+  <div class="container mx-auto py-4 px-4 relative">
+    <!-- أشكال زخرفية للخلفية -->
+    <div class="absolute -right-10 top-1/2 transform -translate-y-1/2 w-32 h-32 rounded-full bg-white opacity-10"></div>
+    <div class="absolute -left-10 top-1/3 transform -translate-y-1/2 w-20 h-20 rounded-full bg-white opacity-10"></div>
+    
+    <div class="flex justify-between items-center">
+      <a href="index.html" class="flex items-center space-x-3 space-x-reverse group">
+        <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all">
+          <i class="fas fa-home text-lg group-hover:scale-110 transition-all"></i>
+        </div>
+        <span class="text-lg font-bold md:block hidden">الرئيسية</span>
+      </a>
+      
+      <div class="flex items-center">
+        <h1 class="text-2xl md:text-3xl font-bold flex items-center">
+          <i class="fas fa-folder-open text-yellow-300 text-3xl ml-3 animate-pulse-slow float-animation"></i>
+          <span class="relative">
+            مستعرض الملفات
+            <span class="absolute -bottom-1 left-0 w-full h-1 bg-yellow-300 rounded-full opacity-70"></span>
+          </span>
+        </h1>
       </div>
-      <div class="flex flex-col sm:flex-row gap-3 items-center">
-        <div class="relative w-full sm:w-auto">
+      
+      <button class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-all" id="darkModeToggle" aria-label="تبديل الوضع المظلم">
+        <i class="fas fa-moon text-lg dark:hidden"></i>
+        <i class="fas fa-sun text-lg hidden dark:block"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- شريط المسار المخفي (للنظام فقط) -->
+<div class="container mx-auto mt-6 px-4">
+  <div class="bg-white dark:bg-dark-surface rounded-lg shadow-sm p-3 flex items-center text-sm md:text-base gap-2" id="breadcrumb">
+    <!-- يتم إنشاؤه بواسطة JavaScript لكنه مخفي -->
+  </div>
+</div>
+
+<!-- حقل البحث -->
+<div class="container mx-auto mt-4 px-4">
+  <div class="relative">
+    <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+      <i class="fas fa-search text-gray-500 dark:text-gray-400"></i>
+    </div>
+    <input class="block w-full p-4 pr-12 text-base text-gray-900 border-0 rounded-xl bg-white focus:ring-primary-500 focus:border-primary-500 dark:bg-dark-surface dark:placeholder-gray-400 dark:text-white transition-all duration-300 glass-card" id="searchInput" placeholder="البحث في الملفات الحالية..." type="text"/>
+  </div>
+</div>
+
+<!-- قسم رفع الملفات -->
+<div class="container mx-auto mt-6 px-4">
+  <div id="uploadContainer" class="rounded-2xl overflow-hidden relative shadow-lg">
+    <!-- خلفية متدرجة مع تأثيرات -->
+    <div class="absolute inset-0 bg-gradient-to-r from-secondary-700 to-secondary-500 dark:from-secondary-900 dark:to-secondary-700"></div>
+    <div class="absolute inset-0 opacity-30 dark:opacity-20" style="background-image: url('data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\' fill=\'%23ffffff\' fill-opacity=\'0.2\' fill-rule=\'evenodd\'/%3E%3C/svg%3E')"></div>
+    
+    <div class="relative z-10 p-5">
+      <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mr-3">
+          <i class="fas fa-graduation-cap text-yellow-300 text-xl glow-effect"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-xl text-white">رفع ملف تعليمي جديد</h3>
+          <p class="text-white/80 text-sm">يمكنك رفع ملفات المذكرات والاختبارات هنا</p>
+        </div>
+      </div>
+      
+      <div class="flex flex-col md:flex-row gap-4 items-center">
+        <div class="relative w-full md:w-auto bg-white/20 text-white rounded-xl overflow-hidden group">
           <input type="file" id="uploadInput" class="opacity-0 absolute inset-0 w-full h-full cursor-pointer z-20" multiple/>
-          <div class="bg-white/20 text-white px-4 py-2 rounded-lg flex items-center justify-center w-full">
-            <i class="fas fa-file-upload ml-2"></i>
+          <div class="px-5 py-3 flex items-center justify-center w-full">
+            <i class="fas fa-file-circle-plus ml-2 text-xl group-hover:scale-110 transition-all"></i>
             <span>اختر ملفات</span>
           </div>
-          <p id="fileNameDisplay" class="text-sm text-white/80 mt-1 h-5 overflow-hidden whitespace-nowrap overflow-ellipsis max-w-xs"></p>
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-white/30 scale-x-0 group-hover:scale-x-100 origin-left transition-transform"></div>
+          <p id="fileNameDisplay" class="text-sm text-white/80 mt-1 h-5 px-2 overflow-hidden whitespace-nowrap overflow-ellipsis max-w-full"></p>
         </div>
-        <button onclick="uploadFileToCurrent()" id="uploadButton" class="upload-btn text-white px-6 py-3 rounded-lg font-bold flex items-center justify-center relative fire-effect overflow-hidden w-full sm:w-auto">
-          <i class="fas fa-cloud-upload-alt ml-2"></i>
+        
+        <button onclick="uploadFileToCurrent()" id="uploadButton" class="upload-btn text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center relative w-full md:w-auto">
+          <i class="fas fa-cloud-arrow-up ml-2 text-xl"></i>
           <span>رفع إلى هذا المجلد</span>
-          <div class="flames"></div>
+          <div class="absolute inset-x-0 bottom-0 h-1 shimmer-effect"></div>
         </button>
       </div>
-      <p class="text-xs text-white/70 mt-3">الملفات المدعومة: doc, docx, pdf, ppt, pptx, xls, xlsx, txt, jpg, png, zip</p>
+      
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/20 text-white">
+          <i class="fas fa-file-word text-blue-300 ml-1"></i>doc, docx
+        </span>
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/20 text-white">
+          <i class="fas fa-file-pdf text-red-300 ml-1"></i>pdf
+        </span>
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/20 text-white">
+          <i class="fas fa-file-powerpoint text-orange-300 ml-1"></i>ppt, pptx
+        </span>
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/20 text-white">
+          <i class="fas fa-file-excel text-green-300 ml-1"></i>xls, xlsx
+        </span>
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/20 text-white">
+          <i class="fas fa-file-image text-purple-300 ml-1"></i>jpg, png
+        </span>
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/20 text-white">
+          <i class="fas fa-file-zipper text-yellow-300 ml-1"></i>zip
+        </span>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Contenido principal -->
-<main class="container mx-auto mt-2 px-4 pb-12 flex-grow">
-<!-- Estado de carga -->
-<div class="flex flex-col items-center justify-center py-16 ripple-loader" id="loadingState">
-<div class="w-16 h-16 border-4 border-primary-600 border-t-transparent rounded-full animate-spin"></div>
-<p class="mt-4 text-gray-600 dark:text-gray-300">جاري تحميل الملفات...</p>
-</div>
-<!-- Lista de archivos -->
-<div class="hidden" id="fileContent">
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="fileGrid">
-<!-- JavaScript agregará los archivos aquí -->
-</div>
-</div>
-<!-- Mensaje cuando no hay archivos -->
-<div class="hidden flex flex-col items-center justify-center py-16 text-center" id="emptyMessage">
-<div class="text-6xl mb-4 text-gray-400 dark:text-gray-600">
-<i class="fas fa-folder-open"></i>
-</div>
-<h2 class="text-xl font-bold text-gray-700 dark:text-gray-300 mb-2">المجلد فارغ</h2>
-<p class="text-gray-500 dark:text-gray-400 max-w-md">لا توجد ملفات في هذا المجلد. يمكنك رفع ملفات جديدة باستخدام زر الرفع أعلاه.</p>
-</div>
-<!-- Mensaje de error -->
-<div class="hidden flex flex-col items-center justify-center py-16 text-center" id="errorMessage">
-<div class="text-6xl mb-4 text-error">
-<i class="fas fa-exclamation-triangle"></i>
-</div>
-<h2 class="text-xl font-bold text-gray-700 dark:text-gray-300 mb-2">حدث خطأ</h2>
-<p class="text-gray-500 dark:text-gray-400 max-w-md">تعذر تحميل محتوى هذا المجلد. يرجى المحاولة مرة أخرى لاحقًا.</p>
-<button class="mt-4 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors" id="retryButton">
-<i class="fas fa-redo ml-1"></i>إعادة المحاولة
-      </button>
-</div>
-<!-- Modal de vista previa de archivo -->
-<div class="fixed inset-0 bg-black/70 dark:bg-black/80 z-50 flex items-center justify-center hidden file-viewer-container" id="fileViewerModal">
-<div class="relative bg-white dark:bg-dark-surface rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-hidden file-viewer-content">
-<div class="flex justify-between items-center p-4 border-b dark:border-dark-border">
-<h3 class="font-bold text-lg truncate" id="fileViewerTitle"></h3>
-<button class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200" id="closeFileViewer" aria-label="إغلاق">
-<i class="fas fa-times text-xl"></i>
-</button>
-</div>
-<div class="p-4 overflow-auto max-h-[calc(90vh-80px)]" id="fileViewerContent">
-<!-- JavaScript agregará el contenido del archivo aquí -->
-</div>
-<div class="p-4 border-t dark:border-dark-border flex justify-end">
-<a class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center" download="" href="#" id="downloadFileLink">
-<i class="fas fa-download ml-1"></i>تحميل الملف
-          </a>
-</div>
-</div>
-</div>
+<!-- المحتوى الرئيسي -->
+<main class="container mx-auto px-4 pb-12 flex-grow">
+  <!-- حالة التحميل -->
+  <div class="flex flex-col items-center justify-center py-16 ripple-loader" id="loadingState">
+    <div class="relative w-20 h-20">
+      <div class="absolute inset-0 rounded-full border-4 border-gray-200 dark:border-gray-700"></div>
+      <div class="absolute inset-0 rounded-full border-4 border-transparent border-t-primary-600 animate-spin"></div>
+      <div class="absolute inset-0 rounded-full border-4 border-transparent border-b-accent-600 animate-spin" style="animation-duration: 1.5s;"></div>
+    </div>
+    <p class="mt-5 text-xl font-medium text-gray-600 dark:text-gray-300">جاري تحميل الملفات...</p>
+    <p class="text-gray-500 dark:text-gray-400 max-w-sm text-center mt-2">نقوم بإحضار الملفات التعليمية من المستودع، يرجى الانتظار</p>
+  </div>
+  
+  <!-- قائمة الملفات -->
+  <div class="hidden" id="fileContent">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" id="fileGrid">
+      <!-- سيتم إضافة الملفات هنا عبر JavaScript -->
+    </div>
+  </div>
+  
+  <!-- رسالة عندما لا توجد ملفات -->
+  <div class="hidden flex flex-col items-center justify-center py-16 text-center" id="emptyMessage">
+    <div class="text-6xl mb-4 text-gray-400 dark:text-gray-600 float-animation">
+      <i class="fas fa-folder-open"></i>
+    </div>
+    <h2 class="text-xl font-bold text-gray-700 dark:text-gray-300 mb-2">المجلد فارغ</h2>
+    <p class="text-gray-500 dark:text-gray-400 max-w-md">لا توجد ملفات في هذا المجلد. يمكنك رفع ملفات جديدة باستخدام زر الرفع أعلاه.</p>
+    <button class="mt-5 px-5 py-2.5 bg-primary-600 hover:bg-primary-700 dark:bg-primary-700 dark:hover:bg-primary-600 text-white rounded-xl transition-all shadow-md hover:shadow-lg flex items-center">
+      <i class="fas fa-arrow-up-from-bracket ml-2"></i>
+      ابدأ برفع الملفات
+    </button>
+  </div>
+  
+  <!-- رسالة عند حدوث خطأ -->
+  <div class="hidden flex flex-col items-center justify-center py-16 text-center" id="errorMessage">
+    <div class="text-6xl mb-4 text-red-500 float-animation">
+      <i class="fas fa-triangle-exclamation"></i>
+    </div>
+    <h2 class="text-xl font-bold text-gray-700 dark:text-gray-300 mb-2">حدث خطأ</h2>
+    <p class="text-gray-500 dark:text-gray-400 max-w-md">تعذر تحميل محتوى هذا المجلد. يرجى المحاولة مرة أخرى لاحقًا.</p>
+    <button class="mt-5 px-5 py-2.5 bg-primary-600 hover:bg-primary-700 dark:bg-primary-700 dark:hover:bg-primary-600 text-white rounded-xl transition-all shadow-md hover:shadow-lg flex items-center" id="retryButton">
+      <i class="fas fa-rotate ml-2"></i>إعادة المحاولة
+    </button>
+  </div>
 </main>
-<!-- Pie de página -->
-<footer class="bg-white dark:bg-dark-surface border-t dark:border-dark-border py-4">
-<div class="container mx-auto px-4 text-center">
-<p class="text-gray-600 dark:text-gray-400">© 2025 منصة التعليم الجزائري - جميع الحقوق محفوظة</p>
+
+<!-- نافذة معاينة الملف -->
+<div class="fixed inset-0 bg-black/70 dark:bg-black/80 z-50 flex items-center justify-center hidden file-viewer-container" id="fileViewerModal">
+  <div class="relative bg-white dark:bg-dark-surface rounded-xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden file-viewer-content">
+    <div class="flex justify-between items-center p-4 border-b dark:border-dark-border">
+      <h3 class="font-bold text-lg truncate flex items-center" id="fileViewerTitle">
+        <span class="file-icon ml-2"><i class="fas fa-file"></i></span>
+        <span class="truncate">اسم الملف</span>
+      </h3>
+      <button class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-dark-border dark:hover:bg-gray-700 flex items-center justify-center transition-colors" id="closeFileViewer" aria-label="إغلاق">
+        <i class="fas fa-times text-gray-600 dark:text-gray-400"></i>
+      </button>
+    </div>
+    <div class="p-5 overflow-auto max-h-[calc(90vh-140px)]" id="fileViewerContent">
+      <!-- سيتم إضافة محتوى الملف هنا عبر JavaScript -->
+    </div>
+    <div class="p-4 border-t dark:border-dark-border flex justify-end">
+      <a class="px-5 py-2.5 bg-primary-600 hover:bg-primary-700 text-white rounded-xl transition-all shadow-md hover:shadow-lg flex items-center" download="" href="#" id="downloadFileLink">
+        <i class="fas fa-download ml-2"></i>تحميل الملف
+      </a>
+    </div>
+  </div>
 </div>
-</footer>
-<!-- Guía de iconos -->
-<div class="fixed bottom-4 right-4 z-40" id="iconGuide">
-<button class="bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-full shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary-400 dark:focus:ring-primary-600" aria-label="دليل الأيقونات">
-<i class="fas fa-question"></i>
-</button>
-<div class="absolute bottom-full right-0 mb-2 w-64 p-4 bg-white dark:bg-dark-surface rounded-lg shadow-xl hidden transition-opacity" id="iconGuideContent">
-<h3 class="font-bold mb-2 border-b pb-1 dark:border-dark-border">دليل الأيقونات</h3>
-<ul class="text-sm space-y-2">
-<li class="flex items-center"><i class="fas fa-folder text-yellow-500 ml-2"></i> مجلد</li>
-<li class="flex items-center"><i class="fas fa-file-pdf text-red-500 ml-2"></i> ملف PDF</li>
-<li class="flex items-center"><i class="fas fa-file-word text-blue-500 ml-2"></i> ملف Word</li>
-<li class="flex items-center"><i class="fas fa-file-excel text-green-500 ml-2"></i> ملف Excel</li>
-<li class="flex items-center"><i class="fas fa-file-powerpoint text-orange-500 ml-2"></i> ملف PowerPoint</li>
-<li class="flex items-center"><i class="fas fa-file-image text-purple-500 ml-2"></i> صورة</li>
-<li class="flex items-center"><i class="fas fa-file-alt text-gray-500 ml-2"></i> ملف نصي</li>
-<li class="flex items-center"><i class="fas fa-file-archive text-amber-600 ml-2"></i> ملف مضغوط</li>
-<li class="flex items-center"><i class="fas fa-file text-gray-400 ml-2"></i> ملف آخر</li>
-</ul>
-</div>
-</div>
-<script>
-    // Variables de inicialización
-    const username = "linnkou";
-    const repo = "majani";
-    const branch = "main";
 
-    // Obtener la ruta
-    const params = new URLSearchParams(window.location.search);
-    const path = params.get("path") || "";
-    
-    // Identificar elementos DOM
-    const breadcrumb = document.getElementById("breadcrumb");
-    const loadingState = document.getElementById("loadingState");
-    const fileContent = document.getElementById("fileContent");
-    const fileGrid = document.getElementById("fileGrid");
-    const emptyMessage = document.getElementById("emptyMessage");
-    const errorMessage = document.getElementById("errorMessage");
-    const searchInput = document.getElementById("searchInput");
-    const iconGuideButton = document.querySelector("#iconGuide button");
-    const iconGuideContent = document.getElementById("iconGuideContent");
-    const retryButton = document.getElementById("retryButton");
-    const darkModeToggle = document.getElementById("darkModeToggle");
-    const uploadInput = document.getElementById("uploadInput");
-    const fileNameDisplay = document.getElementById("fileNameDisplay");
-    const uploadButton = document.getElementById("uploadButton");
-    
-    // Elementos DOM para el modal
-    const fileViewerModal = document.getElementById("fileViewerModal");
-    const fileViewerTitle = document.getElementById("fileViewerTitle");
-    const fileViewerContent = document.getElementById("fileViewerContent");
-    const closeFileViewer = document.getElementById("closeFileViewer");
-    const downloadFileLink = document.getElementById("downloadFileLink");
-
-    // Almacenar datos de archivos y carpetas
-    let filesData = [];
-    let virtualFiles = []; // Para archivos simulados desde localStorage
-
-    // Función para verificar el estado de inicio de sesión
-    function isUserLoggedIn() {
-      const user = JSON.parse(localStorage.getItem("currentUser") || "null");
-      return user !== null;
-    }
-
-    // Función para obtener la ruta actual
-    function getCurrentPath() {
-      return path || "";
-    }
-
-    // Función para cargar archivos
-    function uploadFileToCurrent() {
-      const files = uploadInput.files;
-      if (!files || files.length === 0) {
-        showNotification("يرجى اختيار ملف أولاً", "error");
-        return;
-      }
-      
-      const user = JSON.parse(localStorage.getItem("currentUser") || "null");
-      if (!user) {
-        showNotification("يرجى تسجيل الدخول أولاً", "error");
-        return;
-      }
-
-      // Verificar extensiones de archivo
-      const validExtensions = ['.doc', '.docx', '.pdf', '.ppt', '.pptx', '.xls', '.xlsx', '.txt', '.jpg', '.jpeg', '.png', '.zip'];
-      let invalidFiles = [];
-      
-      // Mostrar efecto de carga en el botón
-      uploadButton.classList.add("opacity-70", "cursor-wait");
-      uploadButton.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i> جاري الرفع...';
-      
-      // Almacenar archivos
-      const storedFiles = JSON.parse(localStorage.getItem("browserFiles") || "[]");
-      let filesUploaded = 0;
-      
-      Array.from(files).forEach(file => {
-        const fileExt = '.' + file.name.split('.').pop().toLowerCase();
-        
-        if (!validExtensions.includes(fileExt)) {
-          invalidFiles.push(file.name);
-          return;
-        }
-        
-        storedFiles.push({
-          name: file.name,
-          path: getCurrentPath(),
-          approved: false,
-          uploadedBy: user.username,
-          timestamp: new Date().toISOString(),
-          size: file.size
-        });
-        
-        filesUploaded++;
-      });
-      
-      // Mostrar mensaje de error si hay archivos inválidos
-      if (invalidFiles.length > 0) {
-        showNotification(`الملفات التالية غير مدعومة: ${invalidFiles.join(', ')}`, "warning");
-      }
-      
-      // Guardar archivos y mostrar mensaje de éxito
-      if (filesUploaded > 0) {
-        localStorage.setItem("browserFiles", JSON.stringify(storedFiles));
-        
-        // Mostrar mensaje de éxito
-        setTimeout(() => {
-          uploadButton.classList.remove("opacity-70", "cursor-wait");
-          uploadButton.innerHTML = '<i class="fas fa-cloud-upload-alt ml-2"></i><span>رفع إلى هذا المجلد</span><div class="flames"></div>';
-          
-          const successMsg = filesUploaded === 1 
-            ? "✅ تم رفع الملف بنجاح! بانتظار موافقة الأدمن."
-            : `✅ تم رفع ${filesUploaded} ملفات بنجاح! بانتظار موافقة الأدمن.`;
-          
-          showNotification(successMsg, "success");
-          
-          // Restablecer campo de entrada
-          uploadInput.value = "";
-          fileNameDisplay.textContent = "";
-          
-          // Actualizar visualización de archivos pendientes
-          displayPendingFiles();
-        }, 1500);
-      } else if (invalidFiles.length === files.length) {
-        // Todos los archivos son inválidos
-        uploadButton.classList.remove("opacity-70", "cursor-wait");
-        uploadButton.innerHTML = '<i class="fas fa-cloud-upload-alt ml-2"></i><span>رفع إلى هذا المجلد</span><div class="flames"></div>';
-      }
-    }
-
-    // Mostrar notificación al usuario
-    function showNotification(message, type = "info") {
-      // Eliminar notificaciones anteriores
-      const existingNotifications = document.querySelectorAll('.custom-notification');
-      existingNotifications.forEach(notification => {
-        notification.remove();
-      });
-      
-      // Crear elemento de notificación
-      const notification = document.createElement('div');
-      notification.className = 'custom-notification fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-lg shadow-lg z-50 flex items-center';
-      
-      // Establecer colores según el tipo
-      let icon, bgColor, textColor;
-      switch(type) {
-        case 'success':
-          icon = 'fa-check-circle';
-          bgColor = 'bg-green-600';
-          textColor = 'text-white';
-          break;
-        case 'error':
-          icon = 'fa-exclamation-circle';
-          bgColor = 'bg-red-600';
-          textColor = 'text-white';
-          break;
-        case 'warning':
-          icon = 'fa-exclamation-triangle';
-          bgColor = 'bg-yellow-500';
-          textColor = 'text-white';
-          break;
-        default:
-          icon = 'fa-info-circle';
-          bgColor = 'bg-blue-600';
-          textColor = 'text-white';
-      }
-      
-      notification.classList.add(bgColor, textColor);
-      notification.innerHTML = `
-        <i class="fas ${icon} ml-2"></i>
-        <span>${message}</span>
-      `;
-      
-      // Agregar notificación a la página
-      document.body.appendChild(notification);
-      
-      // Efecto de aparición de la notificación
-      setTimeout(() => {
-        notification.style.opacity = '1';
-      }, 10);
-      
-      // Eliminar notificación después de 3 segundos
-      setTimeout(() => {
-        notification.style.opacity = '0';
-        setTimeout(() => {
-          notification.remove();
-        }, 300);
-      }, 3000);
-    }
-
-    // Mostrar archivos pendientes de aprobación
-    function displayPendingFiles() {
-      const storedFiles = JSON.parse(localStorage.getItem("browserFiles") || "[]");
-      const currentPathFiles = storedFiles.filter(file => file.path === getCurrentPath() && !file.approved);
-      
-      // Eliminar sección de archivos pendientes si existe
-      const existingPendingSection = document.getElementById("pendingFilesSection");
-      if (existingPendingSection) {
-        existingPendingSection.remove();
-      }
-      
-      // Si hay archivos pendientes, crear una nueva sección para ellos
-      if (currentPathFiles.length > 0) {
-        const pendingSection = document.createElement("div");
-        pendingSection.id = "pendingFilesSection";
-        pendingSection.className = "container mx-auto mt-6 px-4 mb-6";
-        pendingSection.innerHTML = `
-          <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
-            <h3 class="text-lg font-bold text-yellow-800 dark:text-yellow-300 mb-3 flex items-center">
-              <i class="fas fa-clock mr-2"></i>
-              ملفات بانتظار الموافقة (${currentPathFiles.length})
-            </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3" id="pendingFilesList">
-              ${currentPathFiles.map(file => `
-                <div class="bg-white dark:bg-dark-surface border border-yellow-200 dark:border-yellow-800/50 rounded-lg p-3 flex items-center file-card">
-                  <div class="${getFileIconAndColors({name: file.name, type: 'file'}).textColor} ml-3">
-                    <i class="${getFileIconAndColors({name: file.name, type: 'file'}).icon} text-2xl"></i>
-                  </div>
-                  <div class="flex-1 overflow-hidden">
-                    <h4 class="font-medium text-gray-800 dark:text-gray-200 truncate" title="${file.name}">${file.name || 'ملف بدون اسم'}</h4>
-                   <p class="text-xs text-gray-500 dark:text-gray-400">
-                     تم الرفع منذ ${getTimeAgo(file.timestamp)}
-                     <span class="bg-yellow-100 dark:bg-yellow-800/50 text-yellow-800 dark:text-yellow-300 text-xs px-2 py-0.5 rounded mr-1">قيد الانتظار</span>
-                   </p>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        `;
-        
-        // Agregar sección antes de la sección de contenido principal
-        document.querySelector("main").insertBefore(pendingSection, loadingState);
-      }
-    }
-
-    // Función para obtener el tiempo transcurrido desde una fecha
-    function getTimeAgo(timestamp) {
-      const now = new Date();
-      const date = new Date(timestamp);
-      const diffInSeconds = Math.floor((now - date) / 1000);
-      
-      if (diffInSeconds < 60) {
-        return "لحظات";
-      } else if (diffInSeconds < 3600) {
-        const minutes = Math.floor(diffInSeconds / 60);
-        return minutes + (minutes === 1 ? " دقيقة" : " دقائق");
-      } else if (diffInSeconds < 86400) {
-        const hours = Math.floor(diffInSeconds / 3600);
-        return hours + (hours === 1 ? " ساعة" : " ساعات");
-      } else if (diffInSeconds < 2592000) {
-        const days = Math.floor(diffInSeconds / 86400);
-        return days + (days === 1 ? " يوم" : " أيام");
-      } else if (diffInSeconds < 31536000) {
-        const months = Math.floor(diffInSeconds / 2592000);
-        return months + (months === 1 ? " شهر" : " أشهر");
-      } else {
-        const years = Math.floor(diffInSeconds / 31536000);
-        return years + (years === 1 ? " سنة" : " سنوات");
-      }
-    }
-
-    // Cargar archivos desde la API de GitHub
-    function loadFiles() {
-      // Mostrar estado de carga
-      loadingState.classList.remove("hidden");
-      fileContent.classList.add("hidden");
-      emptyMessage.classList.add("hidden");
-      errorMessage.classList.add("hidden");
-
-      // Preparar ruta de API
-      const fullPath = "educationdzwordland/" + path;
-      const encodedPath = fullPath.split("/").map(encodeURIComponent).join("/");
-      const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/${encodedPath}?ref=${branch}`;
-
-      // Preparar ruta de navegación (breadcrumb)
-      buildBreadcrumb();
-
-      // Obtener datos
-      fetch(apiUrl)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`استجابة غير ناجحة: ${response.status}`);
-          }
-          return response.json();
-        })
-        .then(data => {
-          // Ocultar estado de carga
-          loadingState.classList.add("hidden");
-          
-          if (!Array.isArray(data)) {
-            // Si la respuesta no es un array, significa que es un solo archivo
-            handleSingleFile(data);
-            return;
-          }
-
-          // Filtrar y almacenar archivos
-          // IMPORTANTE: Ahora procesamos todos los archivos, incluso los que comienzan con punto
-          filesData = data;
-          
-          // Crear elementos virtuales para archivos locales aprobados
-          addVirtualFiles();
-
-          if (filesData.length === 0 && virtualFiles.length === 0) {
-            emptyMessage.classList.remove("hidden");
-            return;
-          }
-
-          // Mostrar contenido
-          fileContent.classList.remove("hidden");
-          
-          // Ordenar elementos: carpetas primero, luego archivos, ambos alfabéticamente
-          const allFiles = [...filesData, ...virtualFiles].sort((a, b) => {
-            if (a.type !== b.type) {
-              return a.type === "dir" ? -1 : 1;
-            }
-            return a.name.localeCompare(b.name);
-          });
-
-          // Mostrar archivos
-          renderFiles(allFiles);
-
-          // Agregar manejador de búsqueda
-          setupSearch();
-          
-          // Mostrar archivos pendientes de aprobación
-          displayPendingFiles();
-        })
-        .catch(error => {
-          loadingState.classList.add("hidden");
-          errorMessage.classList.remove("hidden");
-          console.error("Error al cargar archivos:", error);
-        });
-    }
-
-    // Agregar archivos virtuales desde localStorage
-    function addVirtualFiles() {
-      // Obtener archivos almacenados
-      const storedFiles = JSON.parse(localStorage.getItem("browserFiles") || "[]");
-      
-      // Filtrar archivos aprobados en la ruta actual
-      const approvedFiles = storedFiles.filter(file => 
-        file.path === getCurrentPath() && file.approved === true
-      );
-      
-      // Convertir a formato compatible con la API
-      virtualFiles = approvedFiles.map(file => ({
-        name: file.name || 'unnamed_file' + (file.name ? file.name.substring(file.name.lastIndexOf('.')) : ''),
-        type: 'file',
-        size: file.size || 0,
-        path: file.path,
-        created_at: file.timestamp,
-        last_modified: file.timestamp,
-        virtual: true, // Marcar como archivo virtual
-        download_url: '#', // URL ficticia
-      }));
-    }
-
-    // Función para crear ruta de navegación (breadcrumb)
-    function buildBreadcrumb() {
-      // Limpiar contenido anterior
-      breadcrumb.innerHTML = `
-        <a href="file-browser.html" class="flex items-center text-primary-600 dark:text-primary-400 hover:underline">
-          <i class="fas fa-home ml-1"></i> الرئيسية
-        </a>
-      `;
-      
-      if (path) {
-        const segments = path.split('/');
-        let currentPath = '';
-        
-        segments.forEach((segment, index) => {
-          if (!segment) return;
-          
-          currentPath += segment;
-          
-          const divider = document.createElement('span');
-          divider.textContent = '/';
-          divider.className = 'text-gray-400 mx-1';
-          breadcrumb.appendChild(divider);
-          
-          const link = document.createElement('a');
-          link.href = `file-browser.html?path=${currentPath}`;
-          link.className = index === segments.length - 1 
-            ? 'text-gray-800 dark:text-gray-200 font-medium' 
-            : 'text-primary-600 dark:text-primary-400 hover:underline';
-          link.textContent = segment;
-          breadcrumb.appendChild(link);
-          
-          currentPath += '/';
-        });
-      }
-    }
-
-    // Función para mostrar archivos y carpetas
-    function renderFiles(files) {
-      fileGrid.innerHTML = '';
-      
-      files.forEach(item => {
-        const { icon, textColor, bgColor } = getFileIconAndColors(item);
-        
-        const card = document.createElement('div');
-        card.className = 'bg-white dark:bg-dark-surface border border-gray-200 dark:border-dark-border rounded-lg overflow-hidden file-card hover:border-primary-400 dark:hover:border-primary-600 transition-all shadow-sm hover:shadow';
-        
-        const isDirectory = item.type === 'dir';
-        const dateModified = new Date(item.last_modified || item.created_at || new Date());
-        const fileName = item.name || 'ملف بدون اسم';
-        
-        card.innerHTML = `
-          <div class="flex items-center p-4 file-card-content">
-            <div class="${bgColor} w-10 h-10 flex items-center justify-center rounded-lg ml-3 file-icon-container">
-              <i class="fas ${icon} ${textColor} text-xl"></i>
-            </div>
-            <div class="flex-grow min-w-0">
-              <h3 class="font-medium text-gray-800 dark:text-gray-200 truncate" title="${fileName}">${fileName}</h3>
-              <p class="text-xs text-gray-500 dark:text-gray-400">
-                ${isDirectory ? 'مجلد' : formatFileSize(item.size)}
-                <span class="mx-1">•</span>
-                ${formatDate(dateModified)}
-              </p>
-            </div>
-          </div>
-          <div class="bg-gray-50 dark:bg-dark-surface border-t dark:border-dark-border px-4 py-2 flex justify-end">
-            ${isDirectory ? 
-              `<a href="file-browser.html?path=${path ? path + '/' : ''}${item.name}" class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 flex items-center text-sm">
-                <span>فتح</span>
-                <i class="fas fa-chevron-left mr-1"></i>
-              </a>` : 
-              `<button class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 flex items-center text-sm view-file-btn" data-filename="${fileName}" data-download-url="${item.download_url || '#'}" data-virtual="${item.virtual || false}">
-                <span>عرض</span>
-                <i class="fas fa-eye mr-1"></i>
-              </button>`
-            }
-          </div>
-        `;
-        
-        fileGrid.appendChild(card);
-      });
-      
-      // Agregar eventos de clic a los botones de vista previa
-      document.querySelectorAll('.view-file-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const fileName = btn.getAttribute('data-filename');
-          const downloadUrl = btn.getAttribute('data-download-url');
-          const isVirtual = btn.getAttribute('data-virtual') === 'true';
-          
-          if (isVirtual) {
-            showNotification("هذا ملف محلي ولا يمكن عرضه. يرجى تحميله أولاً.", "info");
-          } else {
-            viewFile({ name: fileName, download_url: downloadUrl });
-          }
-        });
-      });
-    }
-
-    // Función para formatear tamaño de archivo
-    function formatFileSize(bytes) {
-      if (!bytes) return 'غير معروف';
-      if (bytes === 0) return '0 بايت';
-      
-      const sizes = ['بايت', 'كيلوبايت', 'ميجابايت', 'جيجابايت', 'تيرابايت'];
-      const i = Math.floor(Math.log(bytes) / Math.log(1024));
-      
-      return parseFloat((bytes / Math.pow(1024, i)).toFixed(2)) + ' ' + sizes[i];
-    }
-
-    // Función para formatear fecha
-    function formatDate(date) {
-      return date.toLocaleDateString('ar-SA', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric'
-      });
-    }
-
-    // Función para obtener icono y colores de archivo apropiados
-    function getFileIconAndColors(item) {
-      let icon = 'fa-file';
-      let textColor = 'text-gray-400';
-      let bgColor = 'bg-gray-100 dark:bg-gray-800';
-      
-      if (item.type === 'dir') {
-        icon = 'fa-folder';
-        textColor = 'text-yellow-500';
-        bgColor = 'bg-yellow-100 dark:bg-yellow-900/30';
-      } else if (item.name) {
-        // Extraer extensión incluso si el nombre comienza con punto
-        let ext = '';
-        const nameParts = item.name.split('.');
-        if (nameParts.length > 1) {
-          ext = nameParts[nameParts.length - 1].toLowerCase();
-        } else if (item.name.startsWith('.')) {
-          ext = item.name.substring(1);
-        }
-        
-        if (['pdf'].includes(ext)) {
-          icon = 'fa-file-pdf';
-          textColor = 'text-red-500';
-          bgColor = 'bg-red-100 dark:bg-red-900/30';
-        } else if (['doc', 'docx'].includes(ext)) {
-          icon = 'fa-file-word';
-          textColor = 'text-blue-500';
-          bgColor = 'bg-blue-100 dark:bg-blue-900/30';
-        } else if (['xls', 'xlsx'].includes(ext)) {
-          icon = 'fa-file-excel';
-          textColor = 'text-green-500';
-          bgColor = 'bg-green-100 dark:bg-green-900/30';
-        } else if (['ppt', 'pptx'].includes(ext)) {
-          icon = 'fa-file-powerpoint';
-          textColor = 'text-orange-500';
-          bgColor = 'bg-orange-100 dark:bg-orange-900/30';
-        } else if (['jpg', 'jpeg', 'png', 'gif', 'svg'].includes(ext)) {
-          icon = 'fa-file-image';
-          textColor = 'text-purple-500';
-          bgColor = 'bg-purple-100 dark:bg-purple-900/30';
-        } else if (['txt', 'md'].includes(ext)) {
-          icon = 'fa-file-alt';
-          textColor = 'text-gray-500';
-          bgColor = 'bg-gray-100 dark:bg-gray-800';
-        } else if (['zip', 'rar', '7z'].includes(ext)) {
-          icon = 'fa-file-archive';
-          textColor = 'text-amber-600';
-          bgColor = 'bg-amber-100 dark:bg-amber-900/30';
-        }
-      }
-      
-      return { icon, textColor, bgColor };
-    }
-
-    // Procesar un solo archivo (mostrar modal)
-    function handleSingleFile(file) {
-      showFileViewer(file);
-    }
-
-    // Configurar función de búsqueda
-    function setupSearch() {
-      searchInput.addEventListener('input', function() {
-        const query = this.value.trim().toLowerCase();
-        
-        if (query === '') {
-          renderFiles([...filesData, ...virtualFiles]);
-          return;
-        }
-        
-        const filteredFiles = [...filesData, ...virtualFiles].filter(item => 
-          (item.name || '').toLowerCase().includes(query)
-        );
-        
-        if (filteredFiles.length === 0) {
-          fileGrid.innerHTML = `
-            <div class="col-span-full text-center py-8">
-              <div class="text-4xl mb-3 text-gray-400 dark:text-gray-600">
-                <i class="fas fa-search"></i>
-              </div>
-              <h3 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-1">لا توجد نتائج مطابقة</h3>
-              <p class="text-gray-500 dark:text-gray-400">لم يتم العثور على ملفات أو مجلدات تطابق كلمة البحث "${query}"</p>
-            </div>
-          `;
-        } else {
-          renderFiles(filteredFiles);
-        }
-      });
-    }
-
-    // Mostrar modal de vista previa de archivo
-    function viewFile(item) {
-      // Establecer título del archivo
-      fileViewerTitle.textContent = item.name || 'ملف بدون اسم';
-      
-      // Establecer enlace de descarga
-      downloadFileLink.href = item.download_url;
-      downloadFileLink.setAttribute('download', item.name || 'download');
-      
-      // Establecer contenido del visor según el tipo de archivo
-      setFileViewerContent(item);
-      
-      // Mostrar modal con animación
-      fileViewerModal.classList.remove('hidden');
-      setTimeout(() => {
-        fileViewerModal.classList.add('file-viewer-visible');
-      }, 10);
-      
-      // Prevenir desplazamiento en la página principal
-      document.body.style.overflow = 'hidden';
-    }
-
-    // Establecer contenido del visor de archivos según el tipo de archivo
-    function setFileViewerContent(item) {
-      // Limpiar contenido anterior
-      fileViewerContent.innerHTML = '';
-      
-      // Mostrar estado de carga
-      fileViewerContent.innerHTML = `
-        <div class="flex flex-col items-center justify-center py-8">
-          <div class="w-12 h-12 border-4 border-primary-600 border-t-transparent rounded-full animate-spin"></div>
-          <p class="mt-4 text-gray-600 dark:text-gray-300">جاري تحميل محتوى الملف...</p>
+<!-- التذييل -->
+<footer class="bg-white dark:bg-dark-surface border-t dark:border-dark-border py-5 mt-auto">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0 flex items-center">
+        <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mr-2">
+          <i class="fas fa-graduation-cap text-primary-600 dark:text-primary-400"></i>
         </div>
-      `;
+        <div class="text-gray-700 dark:text-gray-300 font-bold">منصة التعليم الجزائري</div>
+      </div>
       
-      // Extraer extensión incluso si el nombre comienza con punto
-      let extension = '';
-      const nameParts = (item.name || '').split('.');
-      if (nameParts.length > 1) {
-        extension = nameParts[nameParts.length - 1].toLowerCase();
-      } else if (item.name && item.name.startsWith('.')) {
-        extension = item.name.substring(1);
-      }
+      <div class="flex space-x-4 space-x-reverse">
+        <a href="#" class="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-dark-border dark:hover:bg-gray-700 flex items-center justify-center transition-colors text-gray-600 dark:text-gray-400">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-dark-border dark:hover:bg-gray-700 flex items-center justify-center transition-colors text-gray-600 dark:text-gray-400">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-dark-border dark:hover:bg-gray-700 flex items-center justify-center transition-colors text-gray-600 dark:text-gray-400">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
       
-      // Mostrar archivo según su tipo
-      if (['jpg', 'jpeg', 'png', 'gif'].includes(extension)) {
-        // Imágenes
-        const img = document.createElement('img');
-        img.src = item.download_url;
-        img.className = 'max-w-full h-auto mx-auto rounded-lg';
-        img.alt = item.name || 'صورة';
-        
-        img.onload = () => {
-          fileViewerContent.innerHTML = '';
-          fileViewerContent.appendChild(img);
-        };
-        
-        img.onerror = () => {
-          fileViewerContent.innerHTML = `
-            <div class="text-center py-8">
-              <div class="text-4xl mb-4 text-error">
-                <i class="fas fa-exclamation-triangle"></i>
-              </div>
-              <p>تعذر تحميل الصورة. يرجى تجربة تحميل الملف مباشرة.</p>
-            </div>
-          `;
-        };
-      } else if (['pdf'].includes(extension)) {
-        // Archivos PDF
-        fileViewerContent.innerHTML = `
-          <div class="flex flex-col h-[500px]">
-            <iframe src="${item.download_url}" class="w-full h-full rounded border dark:border-dark-border"></iframe>
-          </div>
-        `;
-      } else if (['txt', 'md', 'json', 'xml', 'csv', 'html', 'css', 'js'].includes(extension)) {
-        // Archivos de texto
-        fetch(item.download_url)
-          .then(response => response.text())
-          .then(text => {
-            fileViewerContent.innerHTML = `
-              <pre class="bg-gray-100 dark:bg-gray-800 p-4 rounded overflow-x-auto whitespace-pre-wrap">${escapeHtml(text)}</pre>
-            `;
-          })
-          .catch(() => {
-            fileViewerContent.innerHTML = `
-              <div class="text-center py-8">
-                <div class="text-4xl mb-4 text-error">
-                  <i class="fas fa-exclamation-triangle"></i>
-                </div>
-                <p>تعذر تحميل محتوى الملف. يرجى تجربة تحميل الملف مباشرة.</p>
-              </div>
-            `;
-          });
-      } else if (['.gitignore', '.gitattributes', '.env'].includes(item.name)) {
-        // Archivos de configuración de Git/entorno
-        fetch(item.download_url)
-          .then(response => response.text())
-          .then(text => {
-            fileViewerContent.innerHTML = `
-              <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded">
-                <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">ملف تكوين: ${item.name}</div>
-                <pre class="overflow-x-auto whitespace-pre-wrap">${escapeHtml(text)}</pre>
-              </div>
-            `;
-          })
-          .catch(() => {
-            fileViewerContent.innerHTML = `
-              <div class="text-center py-8">
-                <div class="text-4xl mb-4 text-error">
-                  <i class="fas fa-exclamation-triangle"></i>
-                </div>
-                <p>تعذر تحميل محتوى الملف. يرجى تجربة تحميل الملف مباشرة.</p>
-              </div>
-            `;
-          });
-      } else {
-        // Otros tipos de archivo
-        fileViewerContent.innerHTML = `
-          <div class="text-center py-8">
-            <div class="text-6xl mb-4 ${getFileIconAndColors(item).textColor}">
-              <i class="${getFileIconAndColors(item).icon}"></i>
-            </div>
-            <p class="text-xl font-bold mb-2">${item.name || 'ملف'}</p>
-            <p class="mb-4">هذا النوع من الملفات لا يمكن عرضه مباشرة. يرجى تحميل الملف لعرضه.</p>
-            <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg text-left inline-block">
-              <p class="font-medium mb-1">معلومات الملف:</p>
-              <ul class="text-sm space-y-1">
-                <li><span class="font-medium ml-1">النوع:</span> ${extension || 'غير معروف'}</li>
-                <li><span class="font-medium ml-1">الحجم:</span> ${formatFileSize(item.size)}</li>
-              </ul>
-            </div>
-          </div>
-        `;
+      <div class="mt-4 md:mt-0 text-gray-500 dark:text-gray-400 text-sm">
+        © 2025 جميع الحقوق محفوظة
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- دليل الأيقونات -->
+<div class="fixed bottom-4 right-4 z-40" id="iconGuide">
+  <button class="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-full shadow-lg transition-transform hover:scale-110 focus:outline-none flex items-center justify-center" aria-label="دليل الأيقونات">
+    <i class="fas fa-question text-lg"></i>
+  </button>
+  <div class="absolute bottom-full right-0 mb-3 w-72 p-4 bg-white dark:bg-dark-surface rounded-xl shadow-2xl hidden transition-opacity glass-card" id="iconGuideContent">
+    <h3 class="font-bold mb-3 border-b pb-2 dark:border-dark-border flex items-center">
+      <i class="fas fa-book text-primary-600 dark:text-primary-400 ml-2"></i>
+      دليل الأيقونات
+    </h3>
+    <div class="grid grid-cols-2 gap-2">
+      <div class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-border transition-colors">
+        <div class="w-8 h-8 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center ml-2">
+          <i class="fas fa-folder text-yellow-500"></i>
+        </div>
+        <span class="text-sm">مجلد</span>
+      </div>
+      <div class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-border transition-colors">
+        <div class="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center ml-2">
+          <i class="fas fa-file-pdf text-red-500"></i>
+        </div>
+        <span class="text-sm">ملف PDF</span>
+      </div>
+      <div class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-border transition-colors">
+        <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center ml-2">
+          <i class="fas fa-file-word text-blue-500"></i>
+        </div>
+        <span class="text-sm">ملف Word</span>
+      </div>
+      <div class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-border transition-colors">
+        <div class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center ml-2">
+          <i class="fas fa-file-excel text-green-500"></i>
+        </div>
+        <span class="text-sm">ملف Excel</span>
+      </div>
+      <div class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-border transition-colors">
+        <div class="w-8 h-8 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center ml-2">
+          <i class="fas fa-file-powerpoint text-orange-500"></i>
+        </div>
+        <span class="text-sm">ملف PowerPoint</span>
+      </div>
+      <div class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-border transition-colors">
+        <div class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center ml-2">
+          <i class="fas fa-file-image text-purple-500"></i>
+        </div>
+        <span class="text-sm">صورة</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // متغيرات وضع المستخدم
+  let appReady = false;
+  let isUserAuthenticated = false;
+  let redirectInProgress = false;
+  let authCheckAttempts = 0;
+  const MAX_AUTH_CHECK_ATTEMPTS = 3;
+  let currentUser = null;
+  let isAdmin = false;
+  
+  // متغيرات التهيئة - مستودعين مختلفين: واحد للعرض وآخر للرفع
+  const displayConfig = {
+    username: "linnkou",
+    repo: "majani",
+    branch: "main",
+    basePath: "educationdzwordland/"
+  };
+  
+  const uploadConfig = {
+    username: "linnkou",
+    repo: "milafat",
+    branch: "main",
+    token: "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"
+  };
+
+  // الحصول على المسار
+  const params = new URLSearchParams(window.location.search);
+  const path = params.get("path") || "";
+  
+  // العناصر DOM
+  const breadcrumb = document.getElementById("breadcrumb");
+  const loadingState = document.getElementById("loadingState");
+  const fileContent = document.getElementById("fileContent");
+  const fileGrid = document.getElementById("fileGrid");
+  const emptyMessage = document.getElementById("emptyMessage");
+  const errorMessage = document.getElementById("errorMessage");
+  const searchInput = document.getElementById("searchInput");
+  const iconGuideButton = document.querySelector("#iconGuide button");
+  const iconGuideContent = document.getElementById("iconGuideContent");
+  const retryButton = document.getElementById("retryButton");
+  const darkModeToggle = document.getElementById("darkModeToggle");
+  const uploadInput = document.getElementById("uploadInput");
+  const fileNameDisplay = document.getElementById("fileNameDisplay");
+  const uploadButton = document.getElementById("uploadButton");
+  const loadingOverlay = document.getElementById("loadingOverlay");
+  const notification = document.getElementById("notification");
+  const notificationText = document.getElementById("notificationText");
+  const notificationIcon = document.getElementById("notificationIcon");
+  
+  // عناصر DOM للمودال
+  const fileViewerModal = document.getElementById("fileViewerModal");
+  const fileViewerTitle = document.getElementById("fileViewerTitle");
+  const fileViewerContent = document.getElementById("fileViewerContent");
+  const closeFileViewer = document.getElementById("closeFileViewer");
+  const downloadFileLink = document.getElementById("downloadFileLink");
+  
+  // عنصر وحدة تصحيح الأخطاء
+  const debugConsole = document.getElementById("debugConsole");
+
+  // تخزين بيانات الملفات
+  let filesData = [];
+  let isUploading = false;
+  let isDebugMode = false;
+
+  // تهيئة التطبيق
+  document.addEventListener('DOMContentLoaded', function() {
+    initApp();
+    
+    // اكتشاف وضع التصحيح من عنوان URL
+    if (new URLSearchParams(window.location.search).get('debug') === 'true') {
+      enableDebugMode();
+    }
+  });
+  
+  // تمكين وضع تصحيح الأخطاء
+  function enableDebugMode() {
+    isDebugMode = true;
+    debugConsole.style.display = 'block';
+    debugLog('تم تفعيل وضع تصحيح الأخطاء');
+  }
+  
+  // تسجيل رسائل تصحيح الأخطاء
+  function debugLog(message, data = null) {
+    if (!isDebugMode) return;
+    
+    const timestamp = new Date().toLocaleTimeString();
+    let logEntry = document.createElement('div');
+    logEntry.innerHTML = `<span style="color:#aaa">[${timestamp}]</span> ${message}`;
+    
+    if (data) {
+      let dataStr;
+      try {
+        dataStr = typeof data === 'object' ? JSON.stringify(data) : data.toString();
+        logEntry.innerHTML += `<pre style="margin-top:4px;color:#ff9;font-size:10px;overflow-x:auto;">${dataStr}</pre>`;
+      } catch (error) {
+        logEntry.innerHTML += `<pre style="margin-top:4px;color:#f99;font-size:10px;">[تعذر عرض البيانات]</pre>`;
       }
     }
-
-    // Escapar texto HTML
-    function escapeHtml(text) {
-      return text
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+    
+    debugConsole.appendChild(logEntry);
+    debugConsole.scrollTop = debugConsole.scrollHeight;
+    
+    // الاحتفاظ فقط بآخر 50 رسالة
+    while (debugConsole.children.length > 50) {
+      debugConsole.removeChild(debugConsole.firstChild);
     }
+  }
 
-    // Configurar manejadores de eventos
-    function setupEventListeners() {
-      // Botón de reintento
+  // وظيفة تهيئة التطبيق
+  async function initApp() {
+    try {
+      console.log("تهيئة التطبيق...");
+      showLoading();
+      
+      // التحقق من المصادقة
+      await checkAuth();
+      
+      // إعداد معالجات الأحداث
+      setupEventListeners();
+      
+      // تحميل الملفات
+      loadFiles();
+      
+      // تعيين علامة اكتمال التهيئة
+      appReady = true;
+    } catch (error) {
+      console.error("خطأ في تهيئة التطبيق:", error);
+      debugLog("خطأ في تهيئة التطبيق", error);
+      redirectToLogin();
+    }
+  }
+
+  // التحقق من حالة المصادقة
+  async function checkAuth() {
+    console.log("التحقق من حالة المصادقة...");
+    debugLog("التحقق من حالة المصادقة... (محاولة رقم " + authCheckAttempts + ")");
+    
+    return new Promise((resolve, reject) => {
+      try {
+        authCheckAttempts++;
+        
+        // التحقق من وجود بيانات المستخدم
+        const savedUser = localStorage.getItem('currentUser');
+        const authToken = sessionStorage.getItem('authToken');
+        const tokenExpiration = sessionStorage.getItem('lastAuth');
+        
+        if (!savedUser || !authToken) {
+          console.log("لم يتم العثور على معلومات المستخدم. إعادة التوجيه إلى صفحة تسجيل الدخول...");
+          debugLog("فشل التحقق: لم يتم العثور على معلومات المستخدم أو توكن المصادقة");
+          throw new Error('User not authenticated');
+        }
+        
+        // التحقق من صلاحية التوكن
+        const currentTime = new Date().getTime();
+        const tokenTime = parseInt(tokenExpiration || '0');
+        const tokenAge = currentTime - tokenTime;
+        const MAX_TOKEN_AGE = 12 * 60 * 60 * 1000; // 12 ساعة
+        
+        if (tokenAge > MAX_TOKEN_AGE) {
+          console.log("انتهت صلاحية توكن المصادقة. إعادة التوجيه إلى صفحة تسجيل الدخول...");
+          debugLog("فشل التحقق: انتهت صلاحية توكن المصادقة");
+          throw new Error('Auth token expired');
+        }
+        
+        // تحميل بيانات المستخدم
+        currentUser = JSON.parse(savedUser);
+        console.log("تم التحقق من المصادقة بنجاح للمستخدم:", currentUser.name || currentUser.username);
+        debugLog("تم التحقق من المصادقة بنجاح للمستخدم: " + (currentUser.name || currentUser.username));
+        
+        // تحديث وقت آخر استخدام للتوكن
+        sessionStorage.setItem('lastAuth', currentTime.toString());
+        
+        // التحقق من صلاحيات المشرف
+        isAdmin = currentUser.role === 'admin' || currentUser.isAdmin === true;
+        
+        isUserAuthenticated = true;
+        hideLoading();
+        resolve();
+      } catch (error) {
+        console.error("خطأ في التحقق من المصادقة:", error);
+        
+        if (authCheckAttempts >= MAX_AUTH_CHECK_ATTEMPTS) {
+          reject(error);
+        } else {
+          setTimeout(() => {
+            checkAuth()
+              .then(resolve)
+              .catch(reject);
+          }, 500);
+        }
+      }
+    });
+  }
+
+  // إعداد معالجات الأحداث
+  function setupEventListeners() {
+    // زر إعادة المحاولة
+    if (retryButton) {
       retryButton.addEventListener('click', loadFiles);
-      
-      // Botón de alternancia de modo oscuro
+    }
+    
+    // زر تبديل الوضع المظلم
+    if (darkModeToggle) {
       darkModeToggle.addEventListener('click', () => {
         document.documentElement.classList.toggle('dark');
         localStorage.setItem('color-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
       });
-      
-      // Guía de iconos
+    }
+    
+    // دليل الأيقونات
+    if (iconGuideButton) {
       iconGuideButton.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        iconGuideContent.classList.toggle('hidden');
-      });
-      
-      // Ocultar guía de iconos al hacer clic fuera
-      document.addEventListener('click', (e) => {
-        if (!iconGuide.contains(e.target)) {
-          iconGuideContent.classList.add('hidden');
+        if (iconGuideContent) {
+          iconGuideContent.classList.toggle('hidden');
         }
       });
-      
-      // Cerrar modal de visor de archivos
+    }
+    
+    // إخفاء دليل الأيقونات عند النقر خارجه
+    document.addEventListener('click', (e) => {
+      if (iconGuide && iconGuideContent && !iconGuide.contains(e.target)) {
+        iconGuideContent.classList.add('hidden');
+      }
+    });
+    
+    // إغلاق مودال عارض الملفات
+    if (closeFileViewer) {
       closeFileViewer.addEventListener('click', () => {
-        fileViewerModal.classList.remove('file-viewer-visible');
-        setTimeout(() => {
+        if (fileViewerModal) {
           fileViewerModal.classList.add('hidden');
           document.body.style.overflow = 'auto';
-        }, 300);
+        }
       });
-      
-      // Cerrar modal al hacer clic fuera del contenido
+    }
+    
+    // إغلاق المودال عند النقر خارج المحتوى
+    if (fileViewerModal) {
       fileViewerModal.addEventListener('click', (e) => {
         if (e.target === fileViewerModal) {
-          fileViewerModal.classList.remove('file-viewer-visible');
-          setTimeout(() => {
-            fileViewerModal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-          }, 300);
+          fileViewerModal.classList.add('hidden');
+          document.body.style.overflow = 'auto';
         }
       });
-      
-      // Cerrar modal con tecla Escape
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !fileViewerModal.classList.contains('hidden')) {
-          fileViewerModal.classList.remove('file-viewer-visible');
-          setTimeout(() => {
-            fileViewerModal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-          }, 300);
-        }
-      });
-      
-      // Actualizar visualización de nombre de archivo al seleccionarlo
+    }
+    
+    // إغلاق المودال بزر Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && fileViewerModal && !fileViewerModal.classList.contains('hidden')) {
+        fileViewerModal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    });
+    
+    // تحديث عرض اسم الملف عند اختياره
+    if (uploadInput) {
       uploadInput.addEventListener('change', () => {
         const files = uploadInput.files;
         if (files.length > 0) {
@@ -1235,91 +995,974 @@
           fileNameDisplay.textContent = '';
         }
       });
+    }
+    
+    // زر في مجلد فارغ
+    const emptyFolderBtn = document.querySelector("#emptyMessage button");
+    if (emptyFolderBtn) {
+      emptyFolderBtn.addEventListener('click', () => {
+        uploadInput.click();
+      });
+    }
+  }
+  
+  // دالة لتأخير تنفيذ الدالة (للاستخدام مع أحداث الإدخال)
+  function debounce(func, delay) {
+    let timeout;
+    return function() {
+      const context = this;
+      const args = arguments;
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(context, args), delay);
+    };
+  }
+
+  // إعادة التوجيه إلى صفحة تسجيل الدخول
+  function redirectToLogin() {
+    if (redirectInProgress) return;
+    
+    redirectInProgress = true;
+    console.log("إعادة التوجيه إلى صفحة تسجيل الدخول...");
+    debugLog("إعادة التوجيه إلى صفحة تسجيل الدخول...");
+    
+    // حفظ المسار الحالي للعودة إليه بعد تسجيل الدخول
+    sessionStorage.setItem('returnTo', window.location.href);
+    
+    // تنظيف بيانات المصادقة
+    localStorage.removeItem('currentUser');
+    sessionStorage.removeItem('authToken');
+    sessionStorage.removeItem('lastAuth');
+    
+    // إظهار رسالة
+    showNotification("يرجى تسجيل الدخول للوصول إلى هذه الصفحة", "error");
+    
+    // تأخير قبل إعادة التوجيه
+    setTimeout(() => {
+      window.location.href = "login.html";
+    }, 1500);
+  }
+
+  // إخفاء شاشة التحميل
+  function hideLoading() {
+    if (loadingOverlay) {
+      loadingOverlay.style.opacity = '0';
+      setTimeout(() => {
+        loadingOverlay.style.display = 'none';
+      }, 500);
+    }
+  }
+
+  // عرض شاشة التحميل
+  function showLoading() {
+    if (loadingOverlay) {
+      loadingOverlay.style.display = 'flex';
+      setTimeout(() => {
+        loadingOverlay.style.opacity = '1';
+      }, 10);
+    }
+  }
+
+  // التحقق من حالة تسجيل الدخول
+  function isUserLoggedIn() {
+    return isUserAuthenticated && currentUser !== null;
+  }
+
+  // الحصول على المسار الحالي
+  function getCurrentPath() {
+    return path || "";
+  }
+
+  // تشفير Base64 لرفع الملفات
+  function arrayBufferToBase64(buffer) {
+    let binary = '';
+    const bytes = new Uint8Array(buffer);
+    const len = bytes.byteLength;
+    for (let i = 0; i < len; i++) {
+        binary += String.fromCharCode(bytes[i]);
+    }
+    return btoa(binary);
+  }
+
+  // دالة موحدة لرفع ملف إلى GitHub
+  async function uploadFileToGitHub(file, targetPath) {
+    try {
+      let fileContent, fileName, uploadMessage;
       
-      // Optimizaciones para dispositivos móviles
-      if (window.innerWidth < 768) {
-        document.querySelectorAll('.file-card-content').forEach(card => {
-          card.classList.add('mobile-styling');
-        });
+      // التحقق من نوع الملف المدخل (ملف عادي أو كائن بيانات مخصص)
+      if (file instanceof File) {
+        debugLog(`بدء رفع الملف العادي "${file.name}" إلى المسار: ${targetPath || 'الجذر'}`);
+        // قراءة محتوى الملف العادي
+        const arrayBuffer = await file.arrayBuffer();
+        fileContent = arrayBufferToBase64(arrayBuffer);
+        fileName = file.name;
+        uploadMessage = `تم رفع ${fileName} بواسطة ${currentUser.name || currentUser.username || 'مستخدم'}`;
+      } else if (file.blob && file.name) {
+        debugLog(`بدء رفع ملف من كائن بيانات "${file.name}" إلى المسار: ${targetPath || file.uploadPath || 'الجذر'}`);
+        // قراءة محتوى الملف من كائن بيانات مخصص
+        const arrayBuffer = await file.blob.arrayBuffer();
+        fileContent = arrayBufferToBase64(arrayBuffer);
+        fileName = file.name;
+        uploadMessage = `تم رفع ${fileName} بواسطة ${file.uploadedBy?.name || currentUser.name || currentUser.username || 'مستخدم'}`;
+        targetPath = file.uploadPath || targetPath;
+      } else {
+        throw new Error('نوع ملف غير مدعوم للرفع');
       }
       
-      // Ajustar diseño en cambio de tamaño de ventana
-      window.addEventListener('resize', () => {
-        if (window.innerWidth < 768) {
-          document.querySelectorAll('.file-card-content').forEach(card => {
-            card.classList.add('mobile-styling');
-          });
+      // إعداد المسار الكامل للملف
+      const fullPath = targetPath ? targetPath + '/' + fileName : fileName;
+      debugLog(`المسار الكامل للرفع: ${fullPath}`);
+      
+      // تحضير بيانات الطلب
+      const requestData = {
+        message: uploadMessage,
+        content: fileContent,
+        branch: uploadConfig.branch
+      };
+      
+      // إرسال طلب إلى GitHub API - استخدام مستودع الرفع
+      debugLog("إرسال طلب API إلى GitHub...");
+      const response = await fetch(
+        `https://api.github.com/repos/${uploadConfig.username}/${uploadConfig.repo}/contents/${fullPath}`,
+        {
+          method: 'PUT',
+          headers: {
+            'Authorization': `token ${uploadConfig.token}`,
+            'Content-Type': 'application/json',
+            'Accept': 'application/vnd.github.v3+json'
+          },
+          body: JSON.stringify(requestData)
+        }
+      );
+      
+      // تحليل الاستجابة
+      if (!response.ok) {
+        const errorData = await response.json();
+        debugLog(`خطأ من GitHub API: ${response.status}`, errorData);
+        
+        // تحسين رسائل الخطأ
+        let errorMessage = '';
+        
+        if (response.status === 401) {
+          errorMessage = 'رمز الوصول غير صالح أو منتهي الصلاحية';
+        } else if (response.status === 404) {
+          errorMessage = 'المستودع أو المسار غير موجود';
+        } else if (response.status === 403 && response.headers.get('X-RateLimit-Remaining') === '0') {
+          const resetTime = new Date(parseInt(response.headers.get('X-RateLimit-Reset')) * 1000);
+          const resetTimeFormatted = resetTime.toLocaleTimeString();
+          errorMessage = `تم تجاوز حد معدل الطلبات. حاول مرة أخرى بعد ${resetTimeFormatted}`;
+        } else if (response.status === 422 && errorData.message && errorData.message.includes('sha')) {
+          errorMessage = 'يوجد ملف بنفس الاسم بالفعل. غيّر اسم الملف أو حذف الملف القديم أولاً';
         } else {
-          document.querySelectorAll('.file-card-content').forEach(card => {
-            card.classList.remove('mobile-styling');
-          });
+          errorMessage = errorData.message || 'خطأ غير معروف';
+        }
+        
+        throw new Error(errorMessage);
+      }
+      
+      // استجابة ناجحة
+      const responseData = await response.json();
+      debugLog("تم رفع الملف بنجاح", { fileName: responseData.content.name, url: responseData.content.html_url });
+      
+      // إعادة البيانات من الاستجابة
+      return responseData;
+    } catch (error) {
+      debugLog(`خطأ في رفع الملف: ${error.message}`);
+      throw error;
+    }
+  }
+
+  // رفع ملف إلى المجلد الحالي
+  async function uploadFileToCurrent() {
+    // إذا كانت العملية جارية بالفعل، تخطي
+    if (isUploading) {
+      debugLog("تجاهل طلب رفع جديد حيث أن هناك عملية رفع جارية");
+      return;
+    }
+    
+    const files = uploadInput.files;
+    if (!files || files.length === 0) {
+      showNotification("يرجى اختيار ملف أولاً", "error");
+      return;
+    }
+    
+    if (!isUserLoggedIn()) {
+      showNotification("يرجى تسجيل الدخول أولاً", "error");
+      redirectToLogin();
+      return;
+    }
+    
+    isUploading = true;
+    debugLog(`بدء عملية رفع ${files.length} ملفات`);
+
+    // التحقق من امتدادات الملفات
+    const validExtensions = ['.doc', '.docx', '.pdf', '.ppt', '.pptx', '.xls', '.xlsx', '.txt', '.jpg', '.jpeg', '.png', '.zip'];
+    let invalidFiles = [];
+    
+    // إظهار تأثير التحميل على الزر
+    uploadButton.classList.add("opacity-70", "cursor-wait");
+    uploadButton.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i> جاري الرفع...';
+    
+    // العدادات والمتغيرات للمتابعة
+    let successCount = 0;
+    let errorCount = 0;
+    const totalFiles = files.length;
+    
+    // إضافة قسم تقدم الرفع إذا كان هناك أكثر من ملف
+    const progressContainerId = 'uploadProgressContainer';
+    let progressContainer = document.getElementById(progressContainerId);
+    
+    if (!progressContainer && totalFiles > 1) {
+      progressContainer = document.createElement('div');
+      progressContainer.id = progressContainerId;
+      progressContainer.className = 'container mx-auto mt-4 px-4';
+      progressContainer.innerHTML = `
+        <div class="glass-card p-4 rounded-xl">
+          <h3 class="font-bold text-lg mb-3 flex items-center">
+            <i class="fas fa-cloud-arrow-up text-primary-600 dark:text-primary-400 ml-2"></i>
+            تقدم رفع الملفات
+          </h3>
+          <div class="flex items-center justify-between mb-2">
+            <div class="text-sm text-gray-600 dark:text-gray-400">
+              جاري الرفع: <span id="uploadSuccessCount" class="font-bold">0</span> / ${totalFiles} مكتمل
+            </div>
+            <div class="text-sm text-primary-600 dark:text-primary-400 font-medium">
+              <span id="uploadPercentage">0%</span>
+            </div>
+          </div>
+          <div class="upload-progress mb-4">
+            <div class="upload-progress-bar" id="totalUploadProgress"></div>
+          </div>
+          <div id="uploadFilesList" class="space-y-3 max-h-60 overflow-y-auto pr-2"></div>
+        </div>
+      `;
+      
+      // إضافة العنصر قبل قائمة الملفات
+      document.querySelector('main').insertBefore(progressContainer, loadingState);
+    }
+    
+    // قائمة الملفات المرفوعة
+    const uploadFilesList = document.getElementById('uploadFilesList') || document.createElement('div');
+    
+    // رفع الملفات واحدًا تلو الآخر
+    for (let i = 0; i < totalFiles; i++) {
+      const file = files[i];
+      const fileExt = '.' + file.name.split('.').pop().toLowerCase();
+      
+      // إضافة الملف إلى قائمة العرض إذا كان هناك أكثر من ملف
+      if (totalFiles > 1) {
+        const fileItemId = `file-upload-${i}`;
+        const fileItem = document.createElement('div');
+        fileItem.id = fileItemId;
+        fileItem.className = 'p-3 bg-white dark:bg-dark-surface rounded-lg';
+        fileItem.innerHTML = `
+          <div class="flex items-center mb-2">
+            <div class="w-8 h-8 ${getFileIconAndColors({name: file.name, type: 'file'}).bgColor} rounded-full flex items-center justify-center ml-2">
+              <i class="${getFileIconAndColors({name: file.name, type: 'file'}).icon} ${getFileIconAndColors({name: file.name, type: 'file'}).textColor}"></i>
+            </div>
+            <span class="text-gray-800 dark:text-gray-200 truncate flex-1">${file.name}</span>
+            <span class="text-xs text-gray-500 dark:text-gray-400" id="${fileItemId}-status">جاري التحضير...</span>
+          </div>
+          <div class="upload-progress">
+            <div class="upload-progress-bar" id="${fileItemId}-progress" style="width: 0%"></div>
+          </div>
+        `;
+        uploadFilesList.appendChild(fileItem);
+      }
+      
+      if (!validExtensions.includes(fileExt)) {
+        invalidFiles.push(file.name);
+        
+        // تحديث العنصر لإظهار خطأ
+        if (totalFiles > 1) {
+          const fileItem = document.getElementById(`file-upload-${i}`);
+          if (fileItem) {
+            const statusEl = document.getElementById(`file-upload-${i}-status`);
+            const progressEl = document.getElementById(`file-upload-${i}-progress`);
+            if (statusEl) statusEl.innerHTML = '<span class="text-red-500">امتداد غير مدعوم</span>';
+            if (progressEl) {
+              progressEl.style.width = '100%';
+              progressEl.style.background = 'linear-gradient(90deg, #ef4444, #f87171)';
+            }
+          }
+        }
+        
+        errorCount++;
+        updateTotalProgress(successCount, errorCount, totalFiles);
+        continue;
+      }
+      
+      try {
+        // تحديث حالة الرفع
+        if (totalFiles > 1) {
+          const statusEl = document.getElementById(`file-upload-${i}-status`);
+          const progressEl = document.getElementById(`file-upload-${i}-progress`);
+          if (statusEl) statusEl.textContent = 'جاري الرفع...';
+          if (progressEl) progressEl.style.width = '30%';
+        }
+        
+        // رفع الملف إلى GitHub - هنا نستخدم مستودع الرفع
+        await uploadFileToGitHub(file, getCurrentPath());
+        
+        // تسجيل نجاح الرفع
+        successCount++;
+        
+        // تحديث حالة الرفع
+        if (totalFiles > 1) {
+          const statusEl = document.getElementById(`file-upload-${i}-status`);
+          const progressEl = document.getElementById(`file-upload-${i}-progress`);
+          if (statusEl) statusEl.innerHTML = '<span class="text-green-500">تم الرفع</span>';
+          if (progressEl) progressEl.style.width = '100%';
+        }
+      } catch (error) {
+        console.error(`خطأ في رفع الملف ${file.name}:`, error);
+        debugLog(`خطأ في رفع الملف ${file.name}:`, error);
+        
+        // تحديث حالة الرفع لإظهار الخطأ
+        if (totalFiles > 1) {
+          const statusEl = document.getElementById(`file-upload-${i}-status`);
+          const progressEl = document.getElementById(`file-upload-${i}-progress`);
+          if (statusEl) statusEl.innerHTML = `<span class="text-red-500">خطأ: ${error.message.substring(0, 20)}...</span>`;
+          if (progressEl) {
+            progressEl.style.width = '100%';
+            progressEl.style.background = 'linear-gradient(90deg, #ef4444, #f87171)';
+          }
+        }
+        
+        errorCount++;
+      }
+      
+      // تحديث التقدم الإجمالي
+      updateTotalProgress(successCount, errorCount, totalFiles);
+    }
+    
+    // إعادة تعيين زر الرفع
+    uploadButton.classList.remove("opacity-70", "cursor-wait");
+    uploadButton.innerHTML = '<i class="fas fa-cloud-arrow-up ml-2 text-xl"></i><span>رفع إلى هذا المجلد</span><div class="absolute inset-x-0 bottom-0 h-1 shimmer-effect"></div>';
+    
+    // إظهار الرسائل المناسبة
+    if (invalidFiles.length > 0) {
+      showNotification(`الملفات التالية غير مدعومة: ${invalidFiles.join(', ')}`, "warning");
+    }
+    
+    if (successCount > 0) {
+      const successMsg = successCount === 1 
+        ? "✅ تم رفع الملف بنجاح!"
+        : `✅ تم رفع ${successCount} من ${totalFiles} ملفات بنجاح!`;
+      
+      showNotification(successMsg, "success");
+    } else if (errorCount > 0 && successCount === 0) {
+      showNotification("❌ فشل رفع جميع الملفات", "error");
+    }
+    
+    // إعادة تعيين حقل الإدخال وتغيير حالة الرفع
+    uploadInput.value = "";
+    fileNameDisplay.textContent = "";
+    isUploading = false;
+  }
+
+  // تحديث شريط التقدم الإجمالي
+  function updateTotalProgress(success, error, total) {
+    const totalProgressEl = document.getElementById('totalUploadProgress');
+    const successCountEl = document.getElementById('uploadSuccessCount');
+    const percentageEl = document.getElementById('uploadPercentage');
+    
+    if (totalProgressEl) {
+      const progress = Math.round(((success + error) / total) * 100);
+      totalProgressEl.style.width = `${progress}%`;
+      
+      if (percentageEl) {
+        percentageEl.textContent = `${progress}%`;
+      }
+    }
+    
+    if (successCountEl) {
+      successCountEl.textContent = success;
+    }
+  }
+
+  // إظهار إشعار للمستخدم
+  function showNotification(message, type = "info") {
+    console.log(`الإشعار (${type}): ${message}`);
+    debugLog(`إظهار إشعار (${type}): ${message}`);
+    
+    if (!notification || !notificationText || !notificationIcon) {
+      console.error("عناصر الإشعار غير موجودة");
+      return;
+    }
+    
+    // تعيين النص
+    notificationText.textContent = message;
+    
+    // تعيين النوع
+    notification.classList.remove('bg-green-600', 'bg-red-600', 'bg-blue-600', 'bg-yellow-500');
+    notificationIcon.classList.remove('text-green-300', 'text-red-300', 'text-blue-300', 'text-yellow-300');
+    
+    // تعيين الأيقونة والألوان
+    switch (type) {
+      case 'success':
+        notification.classList.add('bg-green-600');
+        notificationIcon.className = 'fas fa-check-circle text-xl ml-3 text-green-300';
+        break;
+      case 'error':
+        notification.classList.add('bg-red-600');
+        notificationIcon.className = 'fas fa-circle-exclamation text-xl ml-3 text-red-300';
+        break;
+      case 'warning':
+        notification.classList.add('bg-yellow-500');
+        notificationIcon.className = 'fas fa-triangle-exclamation text-xl ml-3 text-yellow-300';
+        break;
+      default:
+        notification.classList.add('bg-blue-600');
+        notificationIcon.className = 'fas fa-circle-info text-xl ml-3 text-blue-300';
+    }
+    
+    // عرض الإشعار
+    notification.classList.add('show');
+    
+    // إخفاء الإشعار بعد 3 ثوان
+    setTimeout(() => {
+      notification.classList.remove('show');
+    }, 4000);
+  }
+
+  // تحميل الملفات من GitHub API
+  function loadFiles() {
+    // إظهار حالة التحميل
+    if (loadingState) loadingState.classList.remove("hidden");
+    if (fileContent) fileContent.classList.add("hidden");
+    if (emptyMessage) emptyMessage.classList.add("hidden");
+    if (errorMessage) errorMessage.classList.add("hidden");
+
+    debugLog(`تحميل الملفات من المسار: ${path || 'الجذر'} [مستودع ${displayConfig.repo}]`);
+
+    // تحضير مسار API - استخدام مستودع العرض
+    const fullPath = displayConfig.basePath + path;
+    const encodedPath = fullPath.split("/").map(encodeURIComponent).join("/");
+    const apiUrl = `https://api.github.com/repos/${displayConfig.username}/${displayConfig.repo}/contents/${encodedPath}?ref=${displayConfig.branch}`;
+
+    // إعداد مسار التنقل (breadcrumb) - مخفي للمستخدم لكن يتم استخدامه داخليًا
+    buildBreadcrumb();
+
+    // إضافة توكن إلى الطلب إذا كان متاحًا
+    const headers = {};
+    if (uploadConfig.token) {
+      headers['Authorization'] = `token ${uploadConfig.token}`;
+    }
+
+    // جلب البيانات
+    fetch(apiUrl, { headers })
+      .then(response => {
+        if (!response.ok) {
+          debugLog(`استجابة GitHub غير ناجحة: ${response.status}`, response);
+          throw new Error(`استجابة غير ناجحة: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        // إخفاء حالة التحميل
+        if (loadingState) loadingState.classList.add("hidden");
+        
+        if (!Array.isArray(data)) {
+          // إذا كانت الاستجابة ليست مصفوفة، فهذا يعني أنه ملف واحد
+          debugLog("تم استلام ملف واحد بدلاً من دليل", data);
+          handleSingleFile(data);
+          return;
+        }
+
+        // تصفية ملفات .gitkeep
+        filesData = data.filter(item => item.name !== '.gitkeep');
+        debugLog(`تم تحميل ${filesData.length} ملفات/مجلدات`);
+
+        if (filesData.length === 0) {
+          if (emptyMessage) emptyMessage.classList.remove("hidden");
+          return;
+        }
+
+        // عرض المحتوى
+        if (fileContent) fileContent.classList.remove("hidden");
+        
+        // ترتيب العناصر: المجلدات أولاً، ثم الملفات، كلاهما أبجديًا
+        filesData.sort((a, b) => {
+          if (a.type !== b.type) {
+            return a.type === "dir" ? -1 : 1;
+          }
+          return a.name.localeCompare(b.name);
+        });
+
+        // عرض الملفات
+        renderFiles(filesData);
+
+        // إضافة معالج البحث
+        setupSearch();
+      })
+      .catch(error => {
+        if (loadingState) loadingState.classList.add("hidden");
+        if (errorMessage) errorMessage.classList.remove("hidden");
+        console.error("خطأ في تحميل الملفات:", error);
+        debugLog("خطأ في تحميل الملفات", error);
+      });
+  }
+
+  // بناء شريط المسار (breadcrumb) - مخفي للمستخدم ولكن يُستخدم داخليًا
+  function buildBreadcrumb() {
+    if (!breadcrumb) {
+      console.error("عنصر شريط المسار غير موجود");
+      return;
+    }
+    
+    // مسح المحتوى السابق
+    breadcrumb.innerHTML = '';
+    
+    // إنشاء رابط الصفحة الرئيسية
+    const homeLink = document.createElement('a');
+    homeLink.href = "file-browser.html";
+    homeLink.className = "flex items-center text-primary-600 dark:text-primary-400 hover:underline";
+    homeLink.innerHTML = '<i class="fas fa-home ml-2"></i> الرئيسية';
+    breadcrumb.appendChild(homeLink);
+    
+    // إذا كان المسار غير فارغ، أضف باقي العناصر
+    if (path) {
+      const segments = path.split('/');
+      let currentPath = '';
+      
+      segments.forEach((segment, index) => {
+        // إضافة فاصل
+        const divider = document.createElement('span');
+        divider.textContent = '/';
+        divider.className = "text-gray-400 mx-2";
+        breadcrumb.appendChild(divider);
+        
+        currentPath += (index > 0 ? '/' : '') + segment;
+        
+        if (index < segments.length - 1) {
+          // إنشاء رابط لكل جزء من المسار عدا الأخير
+          const segmentLink = document.createElement('a');
+          segmentLink.href = `file-browser.html?path=${currentPath}`;
+          segmentLink.className = "text-primary-600 dark:text-primary-400 hover:underline";
+          segmentLink.textContent = segment;
+          breadcrumb.appendChild(segmentLink);
+        } else {
+          // الجزء الأخير ليس رابطًا
+          const currentFolder = document.createElement('span');
+          currentFolder.className = "text-gray-800 dark:text-gray-200 font-medium";
+          currentFolder.textContent = segment;
+          breadcrumb.appendChild(currentFolder);
         }
       });
     }
+  }
 
-    // Cerrar sesión
-    function logoutUser() {
-      localStorage.removeItem("currentUser");
-      window.location.href = "login.html";
+  // عرض الملفات والمجلدات
+  function renderFiles(files) {
+    if (!fileGrid) {
+      console.error("عنصر شبكة الملفات غير موجود");
+      return;
     }
-
-    // Inicializar página
-    document.addEventListener('DOMContentLoaded', () => {
-      // Verificar inicio de sesión
-      const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
-      const users = JSON.parse(localStorage.getItem("users") || "[]");
-      const found = currentUser ? users.find(u => u.username === currentUser.username && u.password === currentUser.password) : null;
-      const isAdmin = currentUser && currentUser.username === "latifking" && currentUser.password === "ding2010";
-
-      if (!found && !isAdmin) {
-        window.location.href = "login.html";
-      } else if (found && !found.approved) {
-        window.location.href = "not-approved.html";
-      }
-
-      // Agregar botón de cierre de sesión
-      const logoutBtn = document.createElement('div');
-      logoutBtn.style.position = 'fixed';
-      logoutBtn.style.top = '20px';
-      logoutBtn.style.left = '20px';
-      logoutBtn.style.zIndex = '999';
-      logoutBtn.innerHTML = `
-        <button onclick="logoutUser()" class="px-4 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg shadow-lg font-bold cursor-pointer hover:from-red-700 hover:to-red-800 transition-all">
-          <i class="fas fa-sign-out-alt ml-1"></i>
-          تسجيل الخروج
-        </button>
+    
+    fileGrid.innerHTML = '';
+    
+    files.forEach(item => {
+      // تخطي ملفات .gitkeep
+      if (item.name === '.gitkeep') return;
+      
+      const { icon, textColor, bgColor } = getFileIconAndColors(item);
+      
+      const card = document.createElement('div');
+      card.className = 'glass-card rounded-xl overflow-hidden file-card shadow';
+      
+      const isDirectory = item.type === 'dir';
+      const dateModified = new Date(item.commit?.author?.date || item.last_modified || item.created_at || new Date());
+      const fileName = item.name || 'ملف بدون اسم';
+      
+      // تصميم جديد للبطاقات
+      card.innerHTML = `
+        <div class="p-5">
+          <div class="flex items-center mb-3 file-card-content">
+            <div class="${bgColor} w-12 h-12 flex items-center justify-center rounded-full ml-3 file-icon-container">
+              <i class="${icon} ${textColor} text-xl"></i>
+            </div>
+            <div class="flex-grow min-w-0 file-details">
+              <h3 class="font-bold text-gray-800 dark:text-gray-200 truncate" title="${fileName}">${fileName}</h3>
+              <div class="flex flex-wrap items-center text-xs text-gray-500 dark:text-gray-400 mt-1">
+                <span class="inline-flex items-center">
+                  <i class="fas ${isDirectory ? 'fa-folder' : 'fa-file'} ml-1 text-xs"></i>
+                  ${isDirectory ? 'مجلد' : formatFileSize(item.size)}
+                </span>
+                <span class="mx-1">•</span>
+                <span class="inline-flex items-center">
+                  <i class="fas fa-clock ml-1 text-xs"></i>
+                  ${formatDate(dateModified)}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 flex justify-center">
+            ${isDirectory ? 
+              `<a href="file-browser.html?path=${path ? path + '/' : ''}${item.name}" class="w-full py-2 rounded-lg bg-primary-600 hover:bg-primary-700 text-white transition-colors flex items-center justify-center">
+                <i class="fas fa-folder-open ml-2"></i>
+                <span>فتح المجلد</span>
+              </a>` : 
+              `<button class="w-full py-2 rounded-lg bg-secondary-600 hover:bg-secondary-700 text-white transition-colors flex items-center justify-center view-file-btn" data-filename="${fileName}" data-download-url="${item.download_url || '#'}">
+                <i class="fas fa-eye ml-2"></i>
+                <span>عرض الملف</span>
+              </button>`
+            }
+          </div>
+        </div>
       `;
-      document.body.appendChild(logoutBtn);
-
-      // Verificar modo de tema oscuro
-      if (localStorage.getItem('color-theme') === 'dark' || 
-          (!localStorage.getItem('color-theme') && 
-           window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      }
       
-      // Configurar manejadores de eventos
-      setupEventListeners();
-      
-      // Cargar archivos
-      loadFiles();
+      fileGrid.appendChild(card);
     });
-</script>
-    <div style="position: fixed; top: 10px; right: 10px;">
-  <span id="user-role" style="margin-right: 20px;"></span>
-  <a href="/logout" style="text-decoration: none; color: white; background: #c00;
-    padding: 5px 10px; border-radius: 5px;">🚪 Logout</a>
-</div>
-<script>
-  fetch('/auth/user')
-    .then(res => res.json())
-    .then(data => {
-      if (data.username) {
-        document.getElementById('user-role').innerText = 
-          `👤 ${data.username} (Role: ${data.role})`;
+    
+    // إضافة أحداث النقر إلى أزرار المعاينة
+    document.querySelectorAll('.view-file-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const fileName = btn.getAttribute('data-filename');
+        const downloadUrl = btn.getAttribute('data-download-url');
+        viewFile({ name: fileName, download_url: downloadUrl });
+      });
+    });
+  }
+
+  // تنسيق حجم الملف
+  function formatFileSize(bytes) {
+    if (!bytes) return 'غير معروف';
+    if (bytes === 0) return '0 بايت';
+    
+    const sizes = ['بايت', 'كيلوبايت', 'ميجابايت', 'جيجابايت', 'تيرابايت'];
+    const i = Math.floor(Math.log(bytes) / Math.log(1024));
+    
+    return parseFloat((bytes / Math.pow(1024, i)).toFixed(2)) + ' ' + sizes[i];
+  }
+
+  // تنسيق التاريخ
+  function formatDate(date) {
+    return date.toLocaleDateString('ar-SA', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+  }
+
+  // الحصول على أيقونة وألوان مناسبة للملف
+  function getFileIconAndColors(item) {
+    let icon = 'fa-file';
+    let textColor = 'text-gray-400';
+    let bgColor = 'bg-gray-100 dark:bg-gray-700';
+    
+    if (item.type === 'dir') {
+      icon = 'fa-folder';
+      textColor = 'text-yellow-500';
+      bgColor = 'bg-yellow-100 dark:bg-yellow-900/30';
+    } else if (item.name) {
+      // استخراج الامتداد
+      let ext = '';
+      const nameParts = item.name.split('.');
+      if (nameParts.length > 1) {
+        ext = nameParts[nameParts.length - 1].toLowerCase();
+      } else if (item.name.startsWith('.')) {
+        ext = item.name.substring(1);
       }
-    })
-    .catch(() => {});
+      
+      if (['pdf'].includes(ext)) {
+        icon = 'fa-file-pdf';
+        textColor = 'text-red-500';
+        bgColor = 'bg-red-100 dark:bg-red-900/30';
+      } else if (['doc', 'docx'].includes(ext)) {
+        icon = 'fa-file-word';
+        textColor = 'text-blue-500';
+        bgColor = 'bg-blue-100 dark:bg-blue-900/30';
+      } else if (['xls', 'xlsx'].includes(ext)) {
+        icon = 'fa-file-excel';
+        textColor = 'text-green-500';
+        bgColor = 'bg-green-100 dark:bg-green-900/30';
+      } else if (['ppt', 'pptx'].includes(ext)) {
+        icon = 'fa-file-powerpoint';
+        textColor = 'text-orange-500';
+        bgColor = 'bg-orange-100 dark:bg-orange-900/30';
+      } else if (['jpg', 'jpeg', 'png', 'gif', 'svg'].includes(ext)) {
+        icon = 'fa-file-image';
+        textColor = 'text-purple-500';
+        bgColor = 'bg-purple-100 dark:bg-purple-900/30';
+      } else if (['txt', 'md'].includes(ext)) {
+        icon = 'fa-file-lines';
+        textColor = 'text-gray-500';
+        bgColor = 'bg-gray-100 dark:bg-gray-700';
+      } else if (['zip', 'rar', '7z'].includes(ext)) {
+        icon = 'fa-file-zipper';
+        textColor = 'text-amber-600';
+        bgColor = 'bg-amber-100 dark:bg-amber-900/30';
+      }
+    }
+    
+    return { icon, textColor, bgColor };
+  }
+
+  // معالجة ملف واحد (عرض النافذة المنبثقة)
+  function handleSingleFile(file) {
+    viewFile(file);
+  }
+
+  // إعداد وظيفة البحث
+  function setupSearch() {
+    if (!searchInput || !fileGrid) {
+      console.error("عناصر البحث غير موجودة");
+      return;
+    }
+    
+    const debouncedSearch = debounce(function() {
+      const query = this.value.trim().toLowerCase();
+      
+      if (query === '') {
+        renderFiles(filesData);
+        return;
+      }
+      
+      const filteredFiles = filesData.filter(item => 
+        (item.name || '').toLowerCase().includes(query) && item.name !== '.gitkeep'
+      );
+      
+      if (filteredFiles.length === 0) {
+        fileGrid.innerHTML = `
+          <div class="col-span-full flex flex-col items-center justify-center py-16 text-center">
+            <div class="text-6xl mb-4 text-gray-400 dark:text-gray-600">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-700 dark:text-gray-300 mb-2">لا توجد نتائج مطابقة</h3>
+            <p class="text-gray-500 dark:text-gray-400 max-w-md">لم يتم العثور على ملفات أو مجلدات تطابق كلمة البحث "<span class="text-primary-600 dark:text-primary-400 font-bold">${query}</span>"</p>
+            <button class="mt-5 px-5 py-2.5 bg-primary-600 hover:bg-primary-700 dark:bg-primary-700 dark:hover:bg-primary-600 text-white rounded-xl transition-all shadow-md hover:shadow-lg flex items-center" onclick="searchInput.value=''; searchInput.dispatchEvent(new Event('input'));">
+              <i class="fas fa-arrow-rotate-left ml-2"></i>
+              العودة إلى جميع الملفات
+            </button>
+          </div>
+        `;
+      } else {
+        renderFiles(filteredFiles);
+      }
+    }, 300);
+    
+    searchInput.addEventListener('input', debouncedSearch);
+  }
+
+  // عرض نافذة معاينة الملف
+  function viewFile(item) {
+    if (!fileViewerModal || !fileViewerTitle || !fileViewerContent || !downloadFileLink) {
+      console.error("عناصر معاينة الملف غير موجودة");
+      return;
+    }
+    
+    // تعيين عنوان الملف
+    fileViewerTitle.innerHTML = `
+      <span class="file-icon ml-2">
+        <i class="${getFileIconAndColors({name: item.name, type: 'file'}).icon} ${getFileIconAndColors({name: item.name, type: 'file'}).textColor}"></i>
+      </span>
+      <span class="truncate">${item.name || 'ملف بدون اسم'}</span>
+    `;
+    
+    // تعيين رابط التنزيل
+    downloadFileLink.href = item.download_url;
+    downloadFileLink.setAttribute('download', item.name || 'download');
+    
+    // تعيين محتوى المعاينة حسب نوع الملف
+    setFileViewerContent(item);
+    
+    // عرض النافذة المنبثقة مع رسوم متحركة
+    fileViewerModal.classList.remove('hidden');
+    fileViewerModal.classList.add('show');
+    
+    // منع التمرير في الصفحة الرئيسية
+    document.body.style.overflow = 'hidden';
+  }
+
+  // تعيين محتوى معاينة الملف حسب نوع الملف
+  function setFileViewerContent(item) {
+    if (!fileViewerContent) {
+      console.error("عنصر محتوى معاينة الملف غير موجود");
+      return;
+    }
+    
+    // مسح المحتوى السابق
+    fileViewerContent.innerHTML = '';
+    
+    // عرض حالة التحميل
+    fileViewerContent.innerHTML = `
+      <div class="flex flex-col items-center justify-center py-8">
+        <div class="relative w-16 h-16">
+          <div class="absolute inset-0 rounded-full border-4 border-gray-200 dark:border-gray-700"></div>
+          <div class="absolute inset-0 rounded-full border-4 border-transparent border-t-primary-600 animate-spin"></div>
+          <div class="absolute inset-0 rounded-full border-4 border-transparent border-b-accent-600 animate-spin" style="animation-duration: 1.5s;"></div>
+        </div>
+        <p class="mt-4 text-gray-700 dark:text-gray-300 font-medium">جاري تحميل محتوى الملف...</p>
+      </div>
+    `;
+    
+    // استخراج الامتداد
+    let extension = '';
+    const nameParts = (item.name || '').split('.');
+    if (nameParts.length > 1) {
+      extension = nameParts[nameParts.length - 1].toLowerCase();
+    } else if (item.name && item.name.startsWith('.')) {
+      extension = item.name.substring(1);
+    }
+    
+    // عرض الملف حسب نوعه
+    if (['jpg', 'jpeg', 'png', 'gif'].includes(extension)) {
+      // الصور
+      const img = document.createElement('img');
+      img.src = item.download_url;
+      img.className = 'max-w-full h-auto mx-auto rounded-lg shadow-md';
+      img.alt = item.name || 'صورة';
+      
+      img.onload = () => {
+        fileViewerContent.innerHTML = '';
+        fileViewerContent.appendChild(img);
+      };
+      
+      img.onerror = () => {
+        fileViewerContent.innerHTML = `
+          <div class="text-center py-8">
+            <div class="text-6xl mb-4 text-red-500 float-animation">
+              <i class="fas fa-triangle-exclamation"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-700 dark:text-gray-300 mb-2">تعذر تحميل الصورة</h3>
+            <p class="text-gray-500 dark:text-gray-400 mb-4">يرجى تجربة تحميل الملف مباشرة.</p>
+            <a href="${item.download_url}" download="${item.name}" class="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors">
+              <i class="fas fa-download ml-2"></i>
+              تحميل الصورة
+            </a>
+          </div>
+        `;
+      };
+    } else if (['pdf'].includes(extension)) {
+      // ملفات PDF
+      fileViewerContent.innerHTML = `
+        <div class="flex flex-col h-[500px] rounded-lg overflow-hidden shadow-md">
+          <iframe src="${item.download_url}" class="w-full h-full rounded border-0 dark:border-dark-border"></iframe>
+        </div>
+      `;
+    } else if (['txt', 'md', 'json', 'xml', 'csv', 'html', 'css', 'js'].includes(extension)) {
+      // ملفات نصية
+      fetch(item.download_url)
+        .then(response => response.text())
+        .then(text => {
+          fileViewerContent.innerHTML = `
+            <div class="bg-gray-100 dark:bg-gray-800 p-5 rounded-lg shadow-inner">
+              <pre class="overflow-x-auto whitespace-pre-wrap text-gray-800 dark:text-gray-200 font-mono text-sm">${escapeHtml(text)}</pre>
+            </div>
+          `;
+        })
+        .catch(() => {
+          fileViewerContent.innerHTML = `
+            <div class="text-center py-8">
+              <div class="text-6xl mb-4 text-red-500 float-animation">
+                <i class="fas fa-triangle-exclamation"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-700 dark:text-gray-300 mb-2">تعذر تحميل محتوى الملف</h3>
+              <p class="text-gray-500 dark:text-gray-400 mb-4">يرجى تجربة تحميل الملف مباشرة.</p>
+              <a href="${item.download_url}" download="${item.name}" class="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors">
+                <i class="fas fa-download ml-2"></i>
+                تحميل الملف
+              </a>
+            </div>
+          `;
+        });
+    } else if (['.gitignore', '.gitattributes', '.env'].includes(item.name)) {
+      // ملفات تكوين Git/البيئة
+      fetch(item.download_url)
+        .then(response => response.text())
+        .then(text => {
+          fileViewerContent.innerHTML = `
+            <div class="bg-gray-100 dark:bg-gray-800 p-5 rounded-lg shadow-inner">
+              <div class="mb-3 text-sm text-gray-500 dark:text-gray-400 border-b border-gray-300 dark:border-gray-700 pb-2">ملف تكوين: ${item.name}</div>
+              <pre class="overflow-x-auto whitespace-pre-wrap text-gray-800 dark:text-gray-200 font-mono text-sm">${escapeHtml(text)}</pre>
+            </div>
+          `;
+        })
+        .catch(() => {
+          fileViewerContent.innerHTML = `
+            <div class="text-center py-8">
+              <div class="text-6xl mb-4 text-red-500 float-animation">
+                <i class="fas fa-triangle-exclamation"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-700 dark:text-gray-300 mb-2">تعذر تحميل محتوى الملف</h3>
+              <p class="text-gray-500 dark:text-gray-400 mb-4">يرجى تجربة تحميل الملف مباشرة.</p>
+              <a href="${item.download_url}" download="${item.name}" class="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors">
+                <i class="fas fa-download ml-2"></i>
+                تحميل الملف
+              </a>
+            </div>
+          `;
+        });
+    } else {
+      // أنواع أخرى من الملفات
+      fileViewerContent.innerHTML = `
+        <div class="text-center py-8">
+          <div class="text-6xl mb-6 ${getFileIconAndColors(item).textColor} float-animation">
+            <i class="${getFileIconAndColors(item).icon}"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-3">${item.name || 'ملف'}</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-5">هذا النوع من الملفات لا يمكن عرضه مباشرة. يرجى تحميل الملف لعرضه.</p>
+          
+          <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg inline-block text-left shadow-inner">
+            <p class="font-medium mb-2 text-gray-800 dark:text-gray-200">معلومات الملف:</p>
+            <ul class="space-y-2">
+              <li class="flex items-center">
+                <span class="w-24 font-medium text-gray-600 dark:text-gray-400">النوع:</span>
+                <span class="text-gray-800 dark:text-gray-200">${extension || 'غير معروف'}</span>
+              </li>
+              <li class="flex items-center">
+                <span class="w-24 font-medium text-gray-600 dark:text-gray-400">الحجم:</span>
+                <span class="text-gray-800 dark:text-gray-200">${formatFileSize(item.size)}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  // تجنب نصوص HTML ضارة
+  function escapeHtml(text) {
+    return text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  // تسجيل الخروج
+  function logoutUser() {
+    if (redirectInProgress) return;
+    
+    redirectInProgress = true;
+    console.log("تسجيل الخروج...");
+    debugLog("تسجيل الخروج...");
+    
+    // تنظيف بيانات المصادقة
+    localStorage.removeItem('currentUser');
+    sessionStorage.removeItem('authToken');
+    sessionStorage.removeItem('lastAuth');
+    
+    // إظهار رسالة
+    showNotification("تم تسجيل الخروج بنجاح", "success");
+    
+    // تأخير قبل إعادة التوجيه
+    setTimeout(() => {
+      window.location.href = "login.html";
+    }, 1000);
+  }
+
+  // معالجة الأخطاء غير المتوقعة
+  window.onerror = function(message, source, lineno, colno, error) {
+    console.error("خطأ:", message, "في:", source, "سطر:", lineno);
+    debugLog(`خطأ غير متوقع: ${message} (سطر ${lineno}, عمود ${colno})`, error);
+    
+    if (appReady) {
+      showNotification("حدث خطأ غير متوقع. يرجى تحديث الصفحة.", "error");
+    }
+    return false;
+  };
 </script>
 </body>
 </html>
