@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "admin001",
-      "name": "latif",
+      "name": "Admin User",
       "email": "latifboudihir1@gmail.com",
       "password": "dingring2010",
       "role": "admin",
@@ -19,86 +19,23 @@
       "created_at": "2025-04-16T12:27:05.299Z"
     },
     {
-      "id": "44ef2896-c4eb-46ce-a9c4-94535240f69a",
-      "name": "Zide",
-      "email": "zidesma@yahoo.fr",
-      "password": "24041987me",
+      "id": "user002",
+      "name": "Fatima Ali",
+      "email": "fatima@example.com",
+      "password": "password123",
       "role": "user",
-      "approved": true,
-      "created_at": "2025-04-19T19:50:57.485Z"
+      "approved": false,
+      "created_at": "2023-02-20T09:15:00Z"
     },
     {
-      "id": "d0983f92-860d-49b3-9d79-f7cc15ab1adf",
-      "name": "toufik",
-      "email": "bilaltawfik5@gmail.com",
-      "password": "tawfik@bilal@33",
+      "id": "5985827e-adef-4be1-ac27-2ed919f4ac7f",
+      "name": "Adel BOUNABAB",
+      "email": "adelbounabab@gmail.com",
+      "password": "AD1989ELBOU",
       "role": "user",
-      "approved": true,
-      "created_at": "2025-04-19T19:54:06.160Z"
-    },
-    {
-      "id": "cd47e6c2-258e-4eed-8674-932ad58f70b2",
-      "name": "math",
-      "email": "guerbouybillal@gmail.com",
-      "password": "math123",
-      "role": "user",
-      "approved": true,
-      "created_at": "2025-04-19T19:56:42.044Z"
-    },
-    {
-      "id": "3122b259-3f28-44c6-b398-a18be06eda25",
-      "name": "job",
-      "email": "jobsalmita@gmail.com",
-      "password": "123456789",
-      "role": "user",
-      "approved": true,
-      "created_at": "2025-04-19T20:03:31.106Z"
-    },
-    {
-      "id": "5e1e3d99-0e27-48b0-a59a-51ea10910571",
-      "name": "abbes",
-      "email": "titov@yopmail.com",
-      "password": "abbes22",
-      "role": "user",
-      "approved": true,
-      "created_at": "2025-04-19T20:04:32.087Z"
-    },
-    {
-      "id": "9c2cfa77-b300-4a86-bbe3-c7d258e0476d",
-      "name": "Abdelilah",
-      "email": "abdelilahderfouf0013@gmail.com",
-      "password": "azer1234",
-      "role": "user",
-      "approved": true,
-      "created_at": "2025-04-19T20:07:13.344Z"
-    },
-    {
-      "id": "97629f57-6b80-42fb-9570-fc30d3668009",
-      "name": "Settouti abdelkadet",
-      "email": "kaddiro999@gmail.com",
-      "password": "19042025",
-      "role": "user",
-      "approved": true,
-      "created_at": "2025-04-19T20:34:50.669Z"
-    },
-    {
-      "id": "d6e3d819-c72c-4853-b80a-1c2766bd3c9a",
-      "name": "Hicham abdellaoui",
-      "email": "habdellaoui496@gmail.com",
-      "password": "hicham1989",
-      "role": "user",
-      "approved": true,
-      "created_at": "2025-04-19T20:42:09.714Z"
-    },
-    {
-      "id": "94f688c7-8ef6-4f21-bae4-5e8e4539ad0e",
-      "name": "hanaa",
-      "email": "halhali.hanaa@gmail.com",
-      "password": "22092001",
-      "role": "user",
-      "approved": true,
-      "created_at": "2025-04-19T20:42:10.399Z"
+      "approved": false,
+      "created_at": "2025-04-19T20:43:16.499Z"
     }
   ],
-  "last_updated": "2025-04-19T20:42:28.448Z"
+  "last_updated": "2025-04-19T20:43:16.510Z"
 }
