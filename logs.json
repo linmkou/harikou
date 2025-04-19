@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "cf1bdce2-e0ba-47e9-b60f-4a1b5c9b28f0",
+      "timestamp": "2025-04-19T21:34:13.021Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Boukhelifa mohamed (boukhelifamohamed@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "8f319809-3b1a-4d59-ac98-a96cb0b6bdbd",
       "timestamp": "2025-04-19T21:34:05.923Z",
       "type": "user",
@@ -181,5 +190,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T21:34:06.404Z"
+  "last_updated": "2025-04-19T21:34:13.021Z"
 }
