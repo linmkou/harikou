@@ -44,7 +44,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-19T20:47:33.516Z"
+    },
+    {
+      "id": "abb9a68d-2b40-42d8-94d5-46fd91b104d6",
+      "name": "zeghoudi souhila",
+      "email": "zeghoudisouhila985@gmail.com",
+      "password": "1990Z1306",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-19T20:48:00.865Z"
     }
   ],
-  "last_updated": "2025-04-19T20:47:33.535Z"
+  "last_updated": "2025-04-19T20:48:00.875Z"
 }
