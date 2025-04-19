@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "7fc4c755-96bd-46ce-84c2-f374d55a29e5",
+      "timestamp": "2025-04-19T21:34:23.712Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Slim slimanov (brc88.vip@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "00eff97d-dd33-4297-8fd6-5ca706c0dcce",
       "timestamp": "2025-04-19T21:34:20.156Z",
       "type": "user",
@@ -199,5 +208,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T21:34:20.156Z"
+  "last_updated": "2025-04-19T21:34:23.712Z"
 }
