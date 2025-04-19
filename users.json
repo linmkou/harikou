@@ -69,9 +69,9 @@
       "email": "tawfikbilal5@gmail.com",
       "password": "tawfik@bilal@33",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-19T20:56:13.968Z"
     }
   ],
-  "last_updated": "2025-04-19T20:56:13.969Z"
+  "last_updated": "2025-04-19T20:57:01.361Z"
 }
