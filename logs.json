@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "75f26882-281f-48b6-a8ab-35cde27e8320",
+      "timestamp": "2025-04-19T20:49:40.687Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: abdelilahderfouf0013@gmail.com",
+      "user_id": "7a222ba6-7c22-48da-b57c-55fed4dcc0d9",
+      "user_name": "Derfouf Abdelilah"
+    },
+    {
       "id": "9b79acc9-c29c-4d62-bd56-79aa40802fc5",
       "timestamp": "2025-04-19T20:49:29.607Z",
       "type": "auth",
@@ -145,5 +154,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T20:49:30.393Z"
+  "last_updated": "2025-04-19T20:49:40.687Z"
 }
