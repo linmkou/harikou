@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "07418145-f202-4cfb-866e-10c6fed7ae7c",
+      "timestamp": "2025-04-19T20:50:17.020Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: faridlacado@gmail.com",
+      "user_id": "defc47d9-1dfc-4363-aef1-708b050ab5c3",
+      "user_name": "Lacado Farid"
+    },
+    {
       "id": "11e0e5d5-e21d-4208-930c-24314f78cdcf",
       "timestamp": "2025-04-19T20:50:13.282Z",
       "type": "auth",
@@ -136,5 +145,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T20:50:13.283Z"
+  "last_updated": "2025-04-19T20:50:17.020Z"
 }
