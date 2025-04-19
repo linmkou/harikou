@@ -60,9 +60,9 @@
       "email": "abdelilahderfouf0013@gmail.com",
       "password": "portsay75",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-19T20:52:56.710Z"
     }
   ],
-  "last_updated": "2025-04-19T20:52:56.719Z"
+  "last_updated": "2025-04-19T20:53:23.209Z"
 }
