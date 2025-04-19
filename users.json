@@ -71,7 +71,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-19T20:56:13.968Z"
+    },
+    {
+      "id": "ee229b1b-fcda-4a6e-820d-1ec6ebcab4e6",
+      "name": "Hanaa",
+      "email": "halhali.hanaa@gmail.com",
+      "password": "22092001",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-19T21:00:07.503Z"
     }
   ],
-  "last_updated": "2025-04-19T20:57:01.361Z"
+  "last_updated": "2025-04-19T21:00:07.512Z"
 }
