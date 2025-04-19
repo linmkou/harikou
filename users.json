@@ -53,7 +53,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-19T20:48:00.865Z"
+    },
+    {
+      "id": "afd30e63-051c-4664-8e41-957d8ba13317",
+      "name": "Abdelilah",
+      "email": "abdelilahderfouf0013@gmail.com",
+      "password": "portsay75",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-19T20:52:56.710Z"
     }
   ],
-  "last_updated": "2025-04-19T20:50:56.665Z"
+  "last_updated": "2025-04-19T20:52:56.719Z"
 }
