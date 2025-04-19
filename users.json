@@ -116,7 +116,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-19T21:19:39.388Z"
+    },
+    {
+      "id": "aa34955a-d783-43fa-af98-9e1474b17800",
+      "name": "Ailam Ibtissam",
+      "email": "ailamibtissam50@gmail.com",
+      "password": "Hanine",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-19T21:24:43.283Z"
     }
   ],
-  "last_updated": "2025-04-19T21:19:39.413Z"
+  "last_updated": "2025-04-19T21:24:43.285Z"
 }
