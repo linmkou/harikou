@@ -18,15 +18,7 @@
       "approved": true,
       "created_at": "2025-04-16T12:27:05.299Z"
     },
-    {
-      "id": "user002",
-      "name": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ·ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ© ÃÂÃÂÃÂÃÂ¹ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",
-      "email": "fatima@example.com",
-      "password": "password123",
-      "role": "user",
-      "approved": true,
-      "created_at": "2023-02-20T09:15:00Z"
-    },
+
     {
       "id": "44ef2896-c4eb-46ce-a9c4-94535240f69a",
       "name": "Zide",
@@ -38,7 +30,7 @@
     },
     {
       "id": "d0983f92-860d-49b3-9d79-f7cc15ab1adf",
-      "name": "ÃÂÃÂªÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ ÃÂÃÂ¨ÃÂÃÂÃÂÃÂ§ÃÂÃÂ",
+      "name": "toufik",
       "email": "bilaltawfik5@gmail.com",
       "password": "tawfik@bilal@33",
       "role": "user",
