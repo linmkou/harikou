@@ -33,9 +33,9 @@
       "email": "adelbounabab@gmail.com",
       "password": "AD1989ELBOU",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-19T20:43:16.499Z"
     }
   ],
-  "last_updated": "2025-04-19T20:44:14.096Z"
+  "last_updated": "2025-04-19T20:44:18.112Z"
 }
