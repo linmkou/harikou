@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "342de103-5a06-49fe-bc36-d54693db6be3",
+      "timestamp": "2025-04-19T21:27:53.870Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Ailam Ibtissam (ailamibtissam50@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "7b3ec84e-2563-482a-afe3-7f170f8105ff",
       "timestamp": "2025-04-19T21:27:43.350Z",
       "type": "user",
@@ -109,5 +118,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T21:27:43.758Z"
+  "last_updated": "2025-04-19T21:27:53.870Z"
 }
