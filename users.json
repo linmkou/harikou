@@ -188,7 +188,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-19T22:13:47.554Z"
+    },
+    {
+      "id": "6a7a081f-22a3-413c-a7aa-16755a37fdd8",
+      "name": "Victoria gacel",
+      "email": "camiliaestrellaaster@gmail.com",
+      "password": "24011991kami",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-19T22:24:31.473Z"
     }
   ],
-  "last_updated": "2025-04-19T22:17:00.938Z"
+  "last_updated": "2025-04-19T22:24:31.489Z"
 }
