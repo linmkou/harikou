@@ -1,11 +1,20 @@
 {
   "logs": [
     {
+      "id": "66f7526c-3788-41eb-8ee9-30e81001e91b",
+      "timestamp": "2025-04-19T22:02:19.527Z",
+      "type": "user",
+      "action": "register",
+      "details": "تسجيل مستخدم جديد: Ouar ilyes (ouarilyes1457@gmail.com)",
+      "user_id": "b60cc8e7-e459-40a7-89de-94ce0ba676af",
+      "user_name": "Ouar ilyes"
+    },
+    {
       "id": "aa519c3f-7a75-4a1d-9757-f6d9648ad87d",
       "timestamp": "2025-04-19T21:54:11.299Z",
       "type": "auth",
       "action": "login",
-      "details": "تسجيل دخول بالبريد الإلكتروني: khaledboughoufala@gmail.com",
+      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: khaledboughoufala@gmail.com",
       "user_id": "7f862ac4-72dc-4004-8ad6-2832142a0cc6",
       "user_name": "BIUGHOUFALA MORSLI"
     },
@@ -14,7 +23,7 @@
       "timestamp": "2025-04-19T21:43:45.571Z",
       "type": "auth",
       "action": "login",
-      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: hamidmath2025@gmail.com",
+      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂ¯ÃÂ®ÃÂÃÂ ÃÂ¨ÃÂ§ÃÂÃÂ¨ÃÂ±ÃÂÃÂ¯ ÃÂ§ÃÂÃÂ¥ÃÂÃÂÃÂªÃÂ±ÃÂÃÂÃÂ: hamidmath2025@gmail.com",
       "user_id": "d17d316e-00ef-4bec-8ded-edc7ce11f13f",
       "user_name": "hamidmajabri"
     },
@@ -23,7 +32,7 @@
       "timestamp": "2025-04-19T21:41:26.714Z",
       "type": "user",
       "action": "approve",
-      "details": "ÃÂ§ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂ© ÃÂ¹ÃÂÃÂ ÃÂ§ÃÂÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ: hamidmajabri (hamidmath2025@gmail.com)",
+      "details": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ© ÃÂÃÂ¹ÃÂÃÂÃÂÃÂ ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ³ÃÂÃÂªÃÂÃÂ®ÃÂÃÂ¯ÃÂÃÂ: hamidmajabri (hamidmath2025@gmail.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -32,7 +41,7 @@
       "timestamp": "2025-04-19T21:41:14.960Z",
       "type": "user",
       "action": "approve",
-      "details": "ÃÂ§ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂ© ÃÂ¹ÃÂÃÂ ÃÂ§ÃÂÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ: BIUGHOUFALA MORSLI (khaledboughoufala@gmail.com)",
+      "details": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ© ÃÂÃÂ¹ÃÂÃÂÃÂÃÂ ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ³ÃÂÃÂªÃÂÃÂ®ÃÂÃÂ¯ÃÂÃÂ: BIUGHOUFALA MORSLI (khaledboughoufala@gmail.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -41,7 +50,7 @@
       "timestamp": "2023-06-15T10:30:00Z",
       "type": "user",
       "action": "approve",
-      "details": "ÃÂ§ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂ© ÃÂ¹ÃÂÃÂ ÃÂ§ÃÂÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ: Mohammed Saeed (mohamed@example.com)",
+      "details": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ© ÃÂÃÂ¹ÃÂÃÂÃÂÃÂ ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ³ÃÂÃÂªÃÂÃÂ®ÃÂÃÂ¯ÃÂÃÂ: Mohammed Saeed (mohamed@example.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -50,7 +59,7 @@
       "timestamp": "2023-06-10T14:20:00Z",
       "type": "auth",
       "action": "login",
-      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂ¯ÃÂ®ÃÂÃÂ ÃÂ¨ÃÂ§ÃÂÃÂ¨ÃÂ±ÃÂÃÂ¯ ÃÂ§ÃÂÃÂ¥ÃÂÃÂÃÂªÃÂ±ÃÂÃÂÃÂ: admin@example.com",
+      "details": "ÃÂÃÂªÃÂÃÂ³ÃÂÃÂ¬ÃÂÃÂÃÂÃÂ ÃÂÃÂ¯ÃÂÃÂ®ÃÂÃÂÃÂÃÂ ÃÂÃÂ¨ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¨ÃÂÃÂ±ÃÂÃÂÃÂÃÂ¯ ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¥ÃÂÃÂÃÂÃÂÃÂÃÂªÃÂÃÂ±ÃÂÃÂÃÂÃÂÃÂÃÂ: admin@example.com",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -59,7 +68,7 @@
       "timestamp": "2023-06-05T09:15:00Z",
       "type": "user",
       "action": "register",
-      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ ÃÂ¬ÃÂ¯ÃÂÃÂ¯: Fatima Ali (fatima@example.com)",
+      "details": "ÃÂÃÂªÃÂÃÂ³ÃÂÃÂ¬ÃÂÃÂÃÂÃÂ ÃÂÃÂÃÂÃÂ³ÃÂÃÂªÃÂÃÂ®ÃÂÃÂ¯ÃÂÃÂ ÃÂÃÂ¬ÃÂÃÂ¯ÃÂÃÂÃÂÃÂ¯: Fatima Ali (fatima@example.com)",
       "user_id": "user002",
       "user_name": "Fatima Ali"
     },
@@ -68,10 +77,10 @@
       "timestamp": "2023-05-20T11:45:00Z",
       "type": "github",
       "action": "sync",
-      "details": "ÃÂÃÂ²ÃÂ§ÃÂÃÂÃÂ© ÃÂ§ÃÂÃÂ¨ÃÂÃÂ§ÃÂÃÂ§ÃÂª ÃÂÃÂ¹ GitHub",
+      "details": "ÃÂÃÂÃÂÃÂ²ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ© ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¨ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ§ÃÂÃÂª ÃÂÃÂÃÂÃÂ¹ GitHub",
       "user_id": "admin001",
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T21:54:11.954Z"
+  "last_updated": "2025-04-19T22:02:19.933Z"
 }
