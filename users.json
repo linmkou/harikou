@@ -114,7 +114,7 @@
       "email": "boukhelifamohamed@gmail.com",
       "password": "Bm240892",
       "role": "user",
-      "approved": true,
+      "approved": false,
       "created_at": "2025-04-19T21:19:39.388Z"
     },
     {
@@ -123,7 +123,7 @@
       "email": "ailamibtissam50@gmail.com",
       "password": "Hanine",
       "role": "user",
-      "approved": true,
+      "approved": false,
       "created_at": "2025-04-19T21:24:43.283Z"
     },
     {
@@ -132,9 +132,18 @@
       "email": "brc88.vip@gmail.com",
       "password": "Bs@8_8%?",
       "role": "user",
-      "approved": true,
+      "approved": false,
       "created_at": "2025-04-19T21:25:55.485Z"
+    },
+    {
+      "id": "d468fd3d-93f6-4d96-863b-f9418318d954",
+      "name": "Chouikrat Abdelkader",
+      "email": "skikinaim@gmail.com",
+      "password": "123456",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-19T21:30:09.579Z"
     }
   ],
-  "last_updated": "2025-04-19T21:28:00.050Z"
+  "last_updated": "2025-04-19T21:30:09.590Z"
 }
