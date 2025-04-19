@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "569cfb68-ae7a-4c85-ab4f-a466803a3b16",
+      "timestamp": "2025-04-19T22:25:09.484Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: camiliaestrellaaster@gmail.com",
+      "user_id": "6a7a081f-22a3-413c-a7aa-16755a37fdd8",
+      "user_name": "Victoria gacel"
+    },
+    {
       "id": "c42e708e-53c5-4f37-b1ce-324d92e3195d",
       "timestamp": "2025-04-19T22:24:32.190Z",
       "type": "user",
@@ -145,5 +154,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T22:24:32.746Z"
+  "last_updated": "2025-04-19T22:25:09.484Z"
 }
