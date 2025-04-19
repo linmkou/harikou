@@ -80,7 +80,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-19T20:34:50.669Z"
+    },
+    {
+      "id": "d6e3d819-c72c-4853-b80a-1c2766bd3c9a",
+      "name": "Hicham abdellaoui",
+      "email": "habdellaoui496@gmail.com",
+      "password": "hicham1989",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-19T20:42:09.714Z"
     }
   ],
-  "last_updated": "2025-04-19T20:35:37.992Z"
+  "last_updated": "2025-04-19T20:42:09.723Z"
 }
