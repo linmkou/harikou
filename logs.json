@@ -1,11 +1,20 @@
 {
   "logs": [
     {
+      "id": "a23ef1d8-c979-4c6e-9e03-a08bd6bfaacf",
+      "timestamp": "2025-04-19T21:43:45.571Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: hamidmath2025@gmail.com",
+      "user_id": "d17d316e-00ef-4bec-8ded-edc7ce11f13f",
+      "user_name": "hamidmajabri"
+    },
+    {
       "id": "62c38a1a-870d-46eb-9e4c-c20b701af4cf",
       "timestamp": "2025-04-19T21:41:26.714Z",
       "type": "user",
       "action": "approve",
-      "details": "الموافقة على المستخدم: hamidmajabri (hamidmath2025@gmail.com)",
+      "details": "Ø§ÙÙÙØ§ÙÙØ© Ø¹ÙÙ Ø§ÙÙØ³ØªØ®Ø¯Ù: hamidmajabri (hamidmath2025@gmail.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -14,7 +23,7 @@
       "timestamp": "2025-04-19T21:41:14.960Z",
       "type": "user",
       "action": "approve",
-      "details": "الموافقة على المستخدم: BIUGHOUFALA MORSLI (khaledboughoufala@gmail.com)",
+      "details": "Ø§ÙÙÙØ§ÙÙØ© Ø¹ÙÙ Ø§ÙÙØ³ØªØ®Ø¯Ù: BIUGHOUFALA MORSLI (khaledboughoufala@gmail.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -23,7 +32,7 @@
       "timestamp": "2023-06-15T10:30:00Z",
       "type": "user",
       "action": "approve",
-      "details": "الموافقة على المستخدم: Mohammed Saeed (mohamed@example.com)",
+      "details": "Ø§ÙÙÙØ§ÙÙØ© Ø¹ÙÙ Ø§ÙÙØ³ØªØ®Ø¯Ù: Mohammed Saeed (mohamed@example.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -32,7 +41,7 @@
       "timestamp": "2023-06-10T14:20:00Z",
       "type": "auth",
       "action": "login",
-      "details": "تسجيل دخول بالبريد الإلكتروني: admin@example.com",
+      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: admin@example.com",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -41,7 +50,7 @@
       "timestamp": "2023-06-05T09:15:00Z",
       "type": "user",
       "action": "register",
-      "details": "تسجيل مستخدم جديد: Fatima Ali (fatima@example.com)",
+      "details": "ØªØ³Ø¬ÙÙ ÙØ³ØªØ®Ø¯Ù Ø¬Ø¯ÙØ¯: Fatima Ali (fatima@example.com)",
       "user_id": "user002",
       "user_name": "Fatima Ali"
     },
@@ -50,10 +59,10 @@
       "timestamp": "2023-05-20T11:45:00Z",
       "type": "github",
       "action": "sync",
-      "details": "مزامنة البيانات مع GitHub",
+      "details": "ÙØ²Ø§ÙÙØ© Ø§ÙØ¨ÙØ§ÙØ§Øª ÙØ¹ GitHub",
       "user_id": "admin001",
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T21:41:26.714Z"
+  "last_updated": "2025-04-19T21:43:46.083Z"
 }
