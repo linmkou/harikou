@@ -91,23 +91,14 @@
       "created_at": "2025-04-19T21:00:29.512Z"
     },
     {
-      "id": "2c9f3846-3fc5-4f84-91e7-99517f923da7",
-      "name": "salmi tahar",
-      "email": "jobsalmita@gmail.com",
-      "password": "123456789",
+      "id": "0d976672-9b38-445b-bbfa-fb4c34367254",
+      "name": "Benlaib bachir",
+      "email": "bachir91benlaib@gmail.com",
+      "password": "bachir91benlaib@gmail.com",
       "role": "user",
       "approved": false,
-      "created_at": "2025-04-19T21:07:29.700Z"
-    },
-    {
-      "id": "44fc24f8-13e5-40b8-a892-cd4bc29e8591",
-      "name": "Chouikrat Abdelkader",
-      "email": "skikinaim@gmail.com",
-      "password": "Nazihmaths2025$",
-      "role": "user",
-      "approved": false,
-      "created_at": "2025-04-19T21:08:06.143Z"
+      "created_at": "2025-04-19T21:07:47.644Z"
     }
   ],
-  "last_updated": "2025-04-19T21:08:06.152Z"
+  "last_updated": "2025-04-19T21:07:47.671Z"
 }
