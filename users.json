@@ -197,7 +197,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-19T22:24:31.473Z"
+    },
+    {
+      "id": "73af0025-edac-4a98-8075-498531a05aeb",
+      "name": "Kaouther Bedief",
+      "email": "bediefkaouther@gmail.com",
+      "password": "31031994moi",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-19T22:32:24.995Z"
     }
   ],
-  "last_updated": "2025-04-19T22:29:33.635Z"
+  "last_updated": "2025-04-19T22:32:25.014Z"
 }
