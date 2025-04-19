@@ -161,7 +161,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-19T21:39:24.713Z"
+    },
+    {
+      "id": "b60cc8e7-e459-40a7-89de-94ce0ba676af",
+      "name": "Ouar ilyes",
+      "email": "ouarilyes1457@gmail.com",
+      "password": "ilyes1457",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-19T22:02:18.856Z"
     }
   ],
-  "last_updated": "2025-04-19T21:41:25.882Z"
+  "last_updated": "2025-04-19T22:02:18.865Z"
 }
