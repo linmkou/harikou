@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "15747ffb-0c38-4206-871b-376d8c23dd8b",
+      "timestamp": "2025-04-19T22:32:45.236Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: bediefkaouther@gmail.com",
+      "user_id": "73af0025-edac-4a98-8075-498531a05aeb",
+      "user_name": "Kaouther Bedief"
+    },
+    {
       "id": "03a9ba1c-4262-43cd-902d-9f0de80cd095",
       "timestamp": "2025-04-19T22:32:25.796Z",
       "type": "user",
@@ -190,5 +199,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T22:32:26.418Z"
+  "last_updated": "2025-04-19T22:32:45.236Z"
 }
