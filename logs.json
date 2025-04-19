@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "6d3bb106-b4d5-4b39-be00-16ceeb2bf486",
+      "timestamp": "2025-04-19T22:17:01.701Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Abdellaoui ahmed (abdellaoui.22.med@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "3ae38acf-21ae-4de3-995c-f64a1a836379",
       "timestamp": "2025-04-19T22:16:55.296Z",
       "type": "user",
@@ -127,5 +136,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T22:16:55.741Z"
+  "last_updated": "2025-04-19T22:17:01.701Z"
 }
