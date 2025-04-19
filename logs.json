@@ -1,6 +1,24 @@
 {
   "logs": [
     {
+      "id": "9211351d-c052-4281-9e96-4f20e3ec9a7f",
+      "timestamp": "2025-04-19T21:09:36.615Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: bachir91benlaib@gmail.com",
+      "user_id": "0d976672-9b38-445b-bbfa-fb4c34367254",
+      "user_name": "Benlaib bachir"
+    },
+    {
+      "id": "56e6ab1a-abcc-4a02-bcf8-0e1ed811b789",
+      "timestamp": "2025-04-19T21:09:25.947Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: bachir91benlaib@gmail.com",
+      "user_id": "0d976672-9b38-445b-bbfa-fb4c34367254",
+      "user_name": "Benlaib bachir"
+    },
+    {
       "id": "2c41fb65-3b72-42f1-8899-ec0e39f53ead",
       "timestamp": "2025-04-19T21:09:21.759Z",
       "type": "auth",
@@ -226,5 +244,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T21:09:21.759Z"
+  "last_updated": "2025-04-19T21:09:36.615Z"
 }
