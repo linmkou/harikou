@@ -51,9 +51,9 @@
       "email": "zeghoudisouhila985@gmail.com",
       "password": "1990Z1306",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-19T20:48:00.865Z"
     }
   ],
-  "last_updated": "2025-04-19T20:50:53.969Z"
+  "last_updated": "2025-04-19T20:50:56.665Z"
 }
