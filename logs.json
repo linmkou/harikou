@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "ab3d5233-d598-4539-b046-eff24035a936",
+      "timestamp": "2025-04-19T20:42:29.572Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: hanaa (halhali.hanaa@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "latif"
+    },
+    {
       "id": "a8c1a568-82b3-4ec8-b5b6-194559d235b5",
       "timestamp": "2025-04-19T20:42:26.466Z",
       "type": "user",
@@ -82,5 +91,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T20:42:26.975Z"
+  "last_updated": "2025-04-19T20:42:29.572Z"
 }
