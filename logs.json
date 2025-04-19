@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "be8dce39-6c0b-4ab3-aeb3-f18e79915037",
+      "timestamp": "2025-04-19T20:09:40.089Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: abdelilahderfouf0013@gmail.com",
+      "user_id": "9c2cfa77-b300-4a86-bbe3-c7d258e0476d",
+      "user_name": "Abdelilah"
+    },
+    {
       "id": "24d27fe7-ac61-4e26-a32e-4592c916db81",
       "timestamp": "2025-04-19T20:09:30.971Z",
       "type": "auth",
@@ -82,5 +91,5 @@
       "user_name": "ÃÂÃÂ¯ÃÂÃÂ± ÃÂ§ÃÂÃÂÃÂ¸ÃÂ§ÃÂ"
     }
   ],
-  "last_updated": "2025-04-19T20:09:30.971Z"
+  "last_updated": "2025-04-19T20:09:40.089Z"
 }
