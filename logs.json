@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "0bc12567-4c0b-401f-b8fd-0bbab6328d4b",
+      "timestamp": "2025-04-19T20:56:59.105Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: tawfikbilal5@gmail.com",
+      "user_id": "3094966c-d7d3-4266-8a03-5d3eb171074b",
+      "user_name": "Tawfik bilal"
+    },
+    {
       "id": "69effa59-c17b-4525-9a89-b6575ec0d2a1",
       "timestamp": "2025-04-19T20:56:14.689Z",
       "type": "user",
@@ -136,5 +145,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T20:56:15.297Z"
+  "last_updated": "2025-04-19T20:56:59.105Z"
 }
