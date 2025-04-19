@@ -1,11 +1,20 @@
 {
   "logs": [
     {
+      "id": "236afcab-aa69-456c-87e1-b6bf6d7869f2",
+      "timestamp": "2025-04-19T19:46:44.104Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: kaddiro999@gmail.com",
+      "user_id": "7931ab05-5c36-4dde-bb93-bce6969ec39b",
+      "user_name": "Ø³ØªÙØªÙ Ø¹Ø¨Ø¯ Ø§ÙÙØ§Ø¯Ø±"
+    },
+    {
       "id": "6cd477f9-e59a-4bf6-ae39-c4e357b7c1e5",
       "timestamp": "2025-04-19T19:39:37.280Z",
       "type": "auth",
       "action": "login",
-      "details": "تسجيل دخول بالبريد الإلكتروني: latifboud@gmail.com",
+      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: latifboud@gmail.com",
       "user_id": "1e0e0220-34ed-4691-9dca-b8a5c94cddf0",
       "user_name": "binou"
     },
@@ -14,37 +23,37 @@
       "timestamp": "2023-06-15T10:30:00Z",
       "type": "user",
       "action": "approve",
-      "details": "الموافقة على المستخدم: محمد سعيد (mohamed@example.com)",
+      "details": "Ø§ÙÙÙØ§ÙÙØ© Ø¹ÙÙ Ø§ÙÙØ³ØªØ®Ø¯Ù: ÙØ­ÙØ¯ Ø³Ø¹ÙØ¯ (mohamed@example.com)",
       "user_id": "admin001",
-      "user_name": "مدير النظام"
+      "user_name": "ÙØ¯ÙØ± Ø§ÙÙØ¸Ø§Ù"
     },
     {
       "id": "log002",
       "timestamp": "2023-06-10T14:20:00Z",
       "type": "auth",
       "action": "login",
-      "details": "تسجيل دخول بالبريد الإلكتروني: admin@example.com",
+      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: admin@example.com",
       "user_id": "admin001",
-      "user_name": "مدير النظام"
+      "user_name": "ÙØ¯ÙØ± Ø§ÙÙØ¸Ø§Ù"
     },
     {
       "id": "log003",
       "timestamp": "2023-06-05T09:15:00Z",
       "type": "user",
       "action": "register",
-      "details": "تسجيل مستخدم جديد: فاطمة علي (fatima@example.com)",
+      "details": "ØªØ³Ø¬ÙÙ ÙØ³ØªØ®Ø¯Ù Ø¬Ø¯ÙØ¯: ÙØ§Ø·ÙØ© Ø¹ÙÙ (fatima@example.com)",
       "user_id": "user002",
-      "user_name": "فاطمة علي"
+      "user_name": "ÙØ§Ø·ÙØ© Ø¹ÙÙ"
     },
     {
       "id": "log004",
       "timestamp": "2023-05-20T11:45:00Z",
       "type": "github",
       "action": "sync",
-      "details": "مزامنة البيانات مع GitHub",
+      "details": "ÙØ²Ø§ÙÙØ© Ø§ÙØ¨ÙØ§ÙØ§Øª ÙØ¹ GitHub",
       "user_id": "admin001",
-      "user_name": "مدير النظام"
+      "user_name": "ÙØ¯ÙØ± Ø§ÙÙØ¸Ø§Ù"
     }
   ],
-  "last_updated": "2025-04-19T19:39:38.107Z"
+  "last_updated": "2025-04-19T19:46:44.522Z"
 }
