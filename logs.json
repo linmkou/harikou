@@ -1,11 +1,20 @@
 {
   "logs": [
     {
+      "id": "746181a8-1604-4949-9dec-c217ada354e6",
+      "timestamp": "2025-04-19T20:42:10.372Z",
+      "type": "user",
+      "action": "register",
+      "details": "تسجيل مستخدم جديد: Hicham abdellaoui (habdellaoui496@gmail.com)",
+      "user_id": "d6e3d819-c72c-4853-b80a-1c2766bd3c9a",
+      "user_name": "Hicham abdellaoui"
+    },
+    {
       "id": "6a9160ac-faa8-41b5-8b46-efb9a94aef8a",
       "timestamp": "2025-04-19T20:41:51.136Z",
       "type": "auth",
       "action": "login",
-      "details": "تسجيل دخول بالبريد الإلكتروني: bilaltawfik5@gmail.com",
+      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: bilaltawfik5@gmail.com",
       "user_id": "d0983f92-860d-49b3-9d79-f7cc15ab1adf",
       "user_name": "toufik"
     },
@@ -14,7 +23,7 @@
       "timestamp": "2025-04-19T20:37:05.819Z",
       "type": "auth",
       "action": "login",
-      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: kaddiro999@gmail.com",
+      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂ¯ÃÂ®ÃÂÃÂ ÃÂ¨ÃÂ§ÃÂÃÂ¨ÃÂ±ÃÂÃÂ¯ ÃÂ§ÃÂÃÂ¥ÃÂÃÂÃÂªÃÂ±ÃÂÃÂÃÂ: kaddiro999@gmail.com",
       "user_id": "97629f57-6b80-42fb-9570-fc30d3668009",
       "user_name": "Settouti abdelkadet"
     },
@@ -23,7 +32,7 @@
       "timestamp": "2023-06-15T10:30:00Z",
       "type": "user",
       "action": "approve",
-      "details": "Ø§ÙÙÙØ§ÙÙØ© Ø¹ÙÙ Ø§ÙÙØ³ØªØ®Ø¯Ù: Mohammed Saeed (mohamed@example.com)",
+      "details": "ÃÂ§ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂ© ÃÂ¹ÃÂÃÂ ÃÂ§ÃÂÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ: Mohammed Saeed (mohamed@example.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -32,7 +41,7 @@
       "timestamp": "2023-06-10T14:20:00Z",
       "type": "auth",
       "action": "login",
-      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: admin@example.com",
+      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂ¯ÃÂ®ÃÂÃÂ ÃÂ¨ÃÂ§ÃÂÃÂ¨ÃÂ±ÃÂÃÂ¯ ÃÂ§ÃÂÃÂ¥ÃÂÃÂÃÂªÃÂ±ÃÂÃÂÃÂ: admin@example.com",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -41,7 +50,7 @@
       "timestamp": "2023-06-05T09:15:00Z",
       "type": "user",
       "action": "register",
-      "details": "ØªØ³Ø¬ÙÙ ÙØ³ØªØ®Ø¯Ù Ø¬Ø¯ÙØ¯: Fatima Ali (fatima@example.com)",
+      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ ÃÂ¬ÃÂ¯ÃÂÃÂ¯: Fatima Ali (fatima@example.com)",
       "user_id": "user002",
       "user_name": "Fatima Ali"
     },
@@ -50,10 +59,10 @@
       "timestamp": "2023-05-20T11:45:00Z",
       "type": "github",
       "action": "sync",
-      "details": "ÙØ²Ø§ÙÙØ© Ø§ÙØ¨ÙØ§ÙØ§Øª ÙØ¹ GitHub",
+      "details": "ÃÂÃÂ²ÃÂ§ÃÂÃÂÃÂ© ÃÂ§ÃÂÃÂ¨ÃÂÃÂ§ÃÂÃÂ§ÃÂª ÃÂÃÂ¹ GitHub",
       "user_id": "admin001",
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T20:41:51.603Z"
+  "last_updated": "2025-04-19T20:42:10.843Z"
 }
