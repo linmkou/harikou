@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "c4f347dc-7cd4-4099-bcb8-ad1ab66cb6b5",
+      "timestamp": "2025-04-19T22:58:08.002Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: ramzidalila6@gmail.com",
+      "user_id": "53848199-83e2-479a-93fd-52a93dd2fb97",
+      "user_name": "Ramzi Dalila"
+    },
+    {
       "id": "b65c64f0-289e-4d22-972d-1656216fc1bd",
       "timestamp": "2025-04-19T22:57:33.374Z",
       "type": "user",
@@ -82,5 +91,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T22:57:33.942Z"
+  "last_updated": "2025-04-19T22:58:08.002Z"
 }
