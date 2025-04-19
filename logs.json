@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "5cee6fb4-bee2-4778-84dd-8781d4c2895a",
+      "timestamp": "2025-04-19T21:00:59.369Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: abnes moh (titov@yopmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "9a5732eb-41df-43a4-b89f-30c1a4414850",
       "timestamp": "2025-04-19T21:00:51.204Z",
       "type": "user",
@@ -199,5 +208,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T21:00:51.797Z"
+  "last_updated": "2025-04-19T21:00:59.369Z"
 }
