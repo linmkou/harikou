@@ -35,7 +35,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-19T20:43:16.499Z"
+    },
+    {
+      "id": "defc47d9-1dfc-4363-aef1-708b050ab5c3",
+      "name": "Lacado Farid",
+      "email": "faridlacado@gmail.com",
+      "password": "Azert2025",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-19T20:47:33.516Z"
     }
   ],
-  "last_updated": "2025-04-19T20:44:18.112Z"
+  "last_updated": "2025-04-19T20:47:33.535Z"
 }
