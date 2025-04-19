@@ -78,7 +78,7 @@
       "email": "halhali.hanaa@gmail.com",
       "password": "22092001",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-19T21:00:07.503Z"
     },
     {
@@ -91,5 +91,5 @@
       "created_at": "2025-04-19T21:00:29.512Z"
     }
   ],
-  "last_updated": "2025-04-19T21:00:29.513Z"
+  "last_updated": "2025-04-19T21:00:50.602Z"
 }
