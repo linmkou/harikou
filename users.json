@@ -53,7 +53,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-19T20:48:00.865Z"
+    },
+    {
+      "id": "e40fad9a-fee6-4fbc-a3e6-9a42ca727c9a",
+      "name": "Benlaib bachir",
+      "email": "bachir91benlaib@gmail.com",
+      "password": "bachir91benlaib@gmail.com",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-19T20:49:44.158Z"
     }
   ],
-  "last_updated": "2025-04-19T20:48:00.875Z"
+  "last_updated": "2025-04-19T20:49:44.184Z"
 }
