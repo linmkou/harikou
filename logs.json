@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "a66c21ee-65f9-4bca-a70b-b386629837eb",
+      "timestamp": "2025-04-19T21:25:14.951Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: ailamibtissam50@gmail.com",
+      "user_id": "aa34955a-d783-43fa-af98-9e1474b17800",
+      "user_name": "Ailam Ibtissam"
+    },
+    {
       "id": "8d73a67a-3c31-4051-9df2-47e82c94ab65",
       "timestamp": "2025-04-19T21:24:44.010Z",
       "type": "user",
@@ -82,5 +91,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T21:24:44.503Z"
+  "last_updated": "2025-04-19T21:25:14.951Z"
 }
