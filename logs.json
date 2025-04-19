@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "767fd2e8-2284-44ec-809e-ac7da375a6e1",
+      "timestamp": "2025-04-19T22:03:05.827Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: ouarilyes1457@gmail.com",
+      "user_id": "b60cc8e7-e459-40a7-89de-94ce0ba676af",
+      "user_name": "Ouar ilyes"
+    },
+    {
       "id": "66f7526c-3788-41eb-8ee9-30e81001e91b",
       "timestamp": "2025-04-19T22:02:19.527Z",
       "type": "user",
@@ -82,5 +91,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T22:02:19.933Z"
+  "last_updated": "2025-04-19T22:03:05.827Z"
 }
