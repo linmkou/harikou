@@ -143,7 +143,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-19T21:30:09.579Z"
+    },
+    {
+      "id": "7f862ac4-72dc-4004-8ad6-2832142a0cc6",
+      "name": "BIUGHOUFALA MORSLI",
+      "email": "khaledboughoufala@gmail.com",
+      "password": "morslihamzamostafa",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-19T21:34:57.983Z"
     }
   ],
-  "last_updated": "2025-04-19T21:34:22.946Z"
+  "last_updated": "2025-04-19T21:34:57.999Z"
 }
