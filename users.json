@@ -231,9 +231,9 @@
       "email": "abdallahnasser021@gmail.com",
       "password": "Abdallah21#",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-19T23:46:59.373Z"
     }
   ],
-  "last_updated": "2025-04-19T23:46:59.393Z"
+  "last_updated": "2025-04-19T23:55:20.156Z"
 }
