@@ -170,7 +170,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-19T22:02:18.856Z"
+    },
+    {
+      "id": "662ba12a-8dd5-48ef-8b24-3539440a5c52",
+      "name": "HECHOUME SID AHMED",
+      "email": "sido22he@gmail.com",
+      "password": "yes22we37",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-19T22:12:29.912Z"
     }
   ],
-  "last_updated": "2025-04-19T22:04:23.627Z"
+  "last_updated": "2025-04-19T22:12:29.968Z"
 }
