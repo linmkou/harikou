@@ -168,9 +168,9 @@
       "email": "ouarilyes1457@gmail.com",
       "password": "ilyes1457",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-19T22:02:18.856Z"
     }
   ],
-  "last_updated": "2025-04-19T22:02:18.865Z"
+  "last_updated": "2025-04-19T22:04:23.627Z"
 }
