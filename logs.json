@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "a227051b-7095-493d-9f8b-bcf98185f12f",
+      "timestamp": "2025-04-19T21:32:54.800Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: skikinaim@gmail.com",
+      "user_id": "d468fd3d-93f6-4d96-863b-f9418318d954",
+      "user_name": "Chouikrat Abdelkader"
+    },
+    {
       "id": "f67a5804-a76a-4073-8945-8b717f9a5ae1",
       "timestamp": "2025-04-19T21:32:34.297Z",
       "type": "auth",
@@ -163,5 +172,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T21:32:34.751Z"
+  "last_updated": "2025-04-19T21:32:54.800Z"
 }
