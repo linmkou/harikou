@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "ea68075e-1edf-4449-9b5c-4ca7884b8ef7",
+      "timestamp": "2025-04-19T20:50:57.386Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: zeghoudi souhila (zeghoudisouhila985@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "latif"
+    },
+    {
       "id": "975c4249-8647-45be-b0f7-bf36442f2544",
       "timestamp": "2025-04-19T20:50:55.094Z",
       "type": "user",
@@ -163,5 +172,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-19T20:50:55.558Z"
+  "last_updated": "2025-04-19T20:50:57.386Z"
 }
