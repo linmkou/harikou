@@ -177,7 +177,7 @@
       "email": "sido22he@gmail.com",
       "password": "yes22we37",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-19T22:12:29.912Z"
     },
     {
@@ -190,5 +190,5 @@
       "created_at": "2025-04-19T22:13:47.554Z"
     }
   ],
-  "last_updated": "2025-04-19T22:13:47.561Z"
+  "last_updated": "2025-04-19T22:16:54.747Z"
 }
