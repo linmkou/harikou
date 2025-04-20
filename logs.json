@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "5248772f-f9b9-4883-8a9e-663b526fa902",
+      "timestamp": "2025-04-20T22:32:12.555Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: medfarouk576@gmail.com",
+      "user_id": "7525f8e4-b9c5-4836-8627-aa72efc1173a",
+      "user_name": "Aouissi miloud"
+    },
+    {
       "id": "40c9cf1b-9de0-4029-8f42-ccfc319c8a04",
       "timestamp": "2025-04-20T22:31:35.943Z",
       "type": "user",
@@ -145,5 +154,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-20T22:31:38.730Z"
+  "last_updated": "2025-04-20T22:32:12.555Z"
 }
