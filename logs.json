@@ -1,15 +1,6 @@
 {
   "logs": [
     {
-      "id": "1ef59472-c382-44f6-af4c-57d1bd863e65",
-      "timestamp": "2025-04-20T20:18:36.299Z",
-      "type": "auth",
-      "action": "login",
-      "details": "تسجيل دخول بالبريد الإلكتروني: latifboudihir1@gmail.com",
-      "user_id": "admin001",
-      "user_name": "Admin User"
-    },
-    {
       "id": "log001",
       "timestamp": "2023-06-15T10:30:00Z",
       "type": "user",
