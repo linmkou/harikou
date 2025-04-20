@@ -1,6 +1,24 @@
 {
   "logs": [
     {
+      "id": "43790e73-bc7a-49de-9937-8dd643dc1c9c",
+      "timestamp": "2025-04-20T05:28:33.353Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: jobsalmita@gmail.com",
+      "user_id": "2c9f3846-3fc5-4f84-91e7-99517f923da7",
+      "user_name": "salmi tahar"
+    },
+    {
+      "id": "ee7610b4-0b5c-477d-9c53-7aea144016a2",
+      "timestamp": "2025-04-20T05:28:29.821Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: jobsalmita@gmail.com",
+      "user_id": "2c9f3846-3fc5-4f84-91e7-99517f923da7",
+      "user_name": "salmi tahar"
+    },
+    {
       "id": "8c96ddee-5277-4289-878d-635a11cbf642",
       "timestamp": "2025-04-20T05:28:26.749Z",
       "type": "auth",
@@ -208,5 +226,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-20T05:28:26.749Z"
+  "last_updated": "2025-04-20T05:28:33.353Z"
 }
