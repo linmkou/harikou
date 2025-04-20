@@ -9,16 +9,7 @@
       "user_id": "73af0025-edac-4a98-8075-498531a05aeb",
       "user_name": "Kaouther Bedief"
     },
-    {
-      "id": "8fe9d0d1-f619-4253-a48d-1dbf07ae11ba",
-      "timestamp": "2025-04-20T16:46:01.274Z",
-      "type": "auth",
-      "action": "login",
-      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: latifboudihir1@gmail.com",
-      "user_id": "admin001",
-      "user_name": "Admin User"
-    },
-    {
+     {
       "id": "db05529c-1cce-46d1-952a-7068e55a75c5",
       "timestamp": "2025-04-20T17:25:40.048Z",
       "type": "auth",
