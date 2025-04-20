@@ -251,7 +251,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-20T08:28:31.140Z"
+    },
+    {
+      "id": "b949dc02-ddf0-4667-96ac-512410b5f0f1",
+      "name": "sophia",
+      "email": "sophia25@gmail.com",
+      "password": "sophia25",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-20T08:57:34.335Z"
     }
   ],
-  "last_updated": "2025-04-20T08:49:05.265Z"
+  "last_updated": "2025-04-20T08:57:34.338Z"
 }
