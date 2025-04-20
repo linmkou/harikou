@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "76272853-bc82-418a-a157-05acab780108",
+      "timestamp": "2025-04-20T05:32:58.438Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: latifboudihir1@gmail.com",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "43790e73-bc7a-49de-9937-8dd643dc1c9c",
       "timestamp": "2025-04-20T05:28:33.353Z",
       "type": "auth",
@@ -226,5 +235,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-20T05:28:33.353Z"
+  "last_updated": "2025-04-20T05:32:58.438Z"
 }
