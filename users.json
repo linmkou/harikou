@@ -296,7 +296,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-20T15:40:50.883Z"
+    },
+    {
+      "id": "44788c79-2fb4-46f7-b115-f36c5e316b45",
+      "name": "Settouti abdelkader",
+      "email": "kaddiro999@gmail.com",
+      "password": "19042025",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-20T19:22:50.811Z"
     }
   ],
-  "last_updated": "2025-04-20T15:40:50.896Z"
+  "last_updated": "2025-04-20T19:22:50.816Z"
 }
