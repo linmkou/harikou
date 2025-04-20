@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "dbbd66b1-cd49-483a-b5b1-2490eb46a561",
+      "timestamp": "2025-04-20T20:42:25.782Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Settouti abdelkader (kaddiro999@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "f677987e-04aa-4141-b913-332ee8e04166",
       "timestamp": "2025-04-20T20:42:13.776Z",
       "type": "user",
@@ -64,5 +73,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-20T20:42:13.776Z"
+  "last_updated": "2025-04-20T20:42:25.782Z"
 }
