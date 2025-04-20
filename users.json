@@ -278,7 +278,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-20T10:54:43.564Z"
+    },
+    {
+      "id": "99183adc-9bd8-461a-8502-4133fa375da3",
+      "name": "Asraoui",
+      "email": "hindoudia9@gmail.com",
+      "password": "hadjer",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-20T12:44:19.258Z"
     }
   ],
-  "last_updated": "2025-04-20T10:59:51.665Z"
+  "last_updated": "2025-04-20T12:44:19.293Z"
 }
