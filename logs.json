@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "72c51b2e-2a94-44e5-90b3-8fb62b6c2f9a",
+      "timestamp": "2025-04-20T12:44:34.016Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: hindoudia9@gmail.com",
+      "user_id": "99183adc-9bd8-461a-8502-4133fa375da3",
+      "user_name": "Asraoui"
+    },
+    {
       "id": "527959ee-afcf-44e4-9008-256a7532a97a",
       "timestamp": "2025-04-20T12:44:20.066Z",
       "type": "user",
@@ -73,5 +82,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-20T12:44:20.543Z"
+  "last_updated": "2025-04-20T12:44:34.017Z"
 }
