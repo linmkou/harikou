@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "544df0ea-8978-4d9e-adee-df47455c7b35",
+      "timestamp": "2025-04-20T20:42:07.589Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Asraoui (hindoudia9@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "d128994b-2394-412f-8fe3-8f53476a2f3d",
       "timestamp": "2025-04-20T20:41:53.923Z",
       "type": "auth",
@@ -46,5 +55,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-20T20:41:54.354Z"
+  "last_updated": "2025-04-20T20:42:07.589Z"
 }
