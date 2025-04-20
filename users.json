@@ -305,7 +305,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-20T19:22:50.811Z"
+    },
+    {
+      "id": "1b5a702b-8088-427e-b1a4-d37142ec8d8b",
+      "name": "Mahdia",
+      "email": "mahdiaguern@gmail.com",
+      "password": "0561166077m",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-20T22:12:34.555Z"
     }
   ],
-  "last_updated": "2025-04-20T20:42:24.938Z"
+  "last_updated": "2025-04-20T22:12:34.562Z"
 }
