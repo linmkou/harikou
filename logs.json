@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "0996a54a-a0b3-4479-8767-6338dd5dc039",
+      "timestamp": "2025-04-20T09:45:34.619Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: sophia (sophia25@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "9d22b53a-d783-422d-ad50-4ceb38ad79d7",
       "timestamp": "2025-04-20T09:45:20.867Z",
       "type": "auth",
@@ -100,5 +109,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-20T09:45:22.573Z"
+  "last_updated": "2025-04-20T09:45:34.619Z"
 }
