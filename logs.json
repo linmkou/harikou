@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "1de6a79f-f20f-4b8d-b3e0-2b29f9359d14",
+      "timestamp": "2025-04-20T15:41:19.480Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: zaid@gmail.com",
+      "user_id": "f1822833-1e82-4e7a-a1c6-cc801a7def88",
+      "user_name": "Zaid hf"
+    },
+    {
       "id": "36a5126a-2424-4e88-9c0a-ec9f51dbb2ba",
       "timestamp": "2025-04-20T15:40:52.499Z",
       "type": "user",
@@ -46,5 +55,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-20T15:40:53.004Z"
+  "last_updated": "2025-04-20T15:41:19.480Z"
 }
