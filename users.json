@@ -314,7 +314,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-20T22:12:34.555Z"
+    },
+    {
+      "id": "7525f8e4-b9c5-4836-8627-aa72efc1173a",
+      "name": "Aouissi miloud",
+      "email": "medfarouk576@gmail.com",
+      "password": "0311869600",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-20T22:31:34.299Z"
     }
   ],
-  "last_updated": "2025-04-20T22:22:28.533Z"
+  "last_updated": "2025-04-20T22:31:34.308Z"
 }
