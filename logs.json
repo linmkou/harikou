@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "7067866e-79ec-4a34-aa28-8fe1da5064f0",
+      "timestamp": "2025-04-20T08:49:02.974Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Asma zaoui (asmazaouimath@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "8bb3a88c-87a3-4254-8b1c-2ac40ae60678",
       "timestamp": "2025-04-20T08:48:42.246Z",
       "type": "auth",
@@ -271,5 +280,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-20T08:48:43.806Z"
+  "last_updated": "2025-04-20T08:49:02.976Z"
 }
