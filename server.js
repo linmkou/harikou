@@ -82,7 +82,7 @@ app.get(['/file-browser.html', '/middle-school.html', '/primary-school.html', '/
   res.sendFile(path.join(__dirname, req.path));
 });
 
-// Default route
+// Default route 200
 app.get('/', (req, res) => {
   if (req.isAuthenticated()) {
     const role = req.user.role;
