@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "f7b4d932-3d04-44af-8356-6f5d115117b6",
+      "timestamp": "2025-04-20T23:54:27.570Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: abdelkarimbouzaher52@gmail.com",
+      "user_id": "1b6effa1-7d1f-4a80-9c51-e2094487756d",
+      "user_name": "Sara Bouzaher"
+    },
+    {
       "id": "80cee295-1dc4-4039-8be1-0b42387bfb50",
       "timestamp": "2025-04-20T23:53:45.090Z",
       "type": "user",
@@ -172,5 +181,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-20T23:53:45.636Z"
+  "last_updated": "2025-04-20T23:54:27.570Z"
 }
