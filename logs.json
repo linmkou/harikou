@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "f677987e-04aa-4141-b913-332ee8e04166",
+      "timestamp": "2025-04-20T20:42:13.776Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Zaid hf (zaid@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "544df0ea-8978-4d9e-adee-df47455c7b35",
       "timestamp": "2025-04-20T20:42:07.589Z",
       "type": "user",
@@ -55,5 +64,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-20T20:42:07.589Z"
+  "last_updated": "2025-04-20T20:42:13.776Z"
 }
