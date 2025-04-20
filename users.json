@@ -287,7 +287,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-20T12:44:19.258Z"
+    },
+    {
+      "id": "f1822833-1e82-4e7a-a1c6-cc801a7def88",
+      "name": "Zaid hf",
+      "email": "zaid@gmail.com",
+      "password": "Zaid24h@",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-20T15:40:50.883Z"
     }
   ],
-  "last_updated": "2025-04-20T12:44:19.293Z"
+  "last_updated": "2025-04-20T15:40:50.896Z"
 }
