@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "e7a040df-5327-4161-9565-94081973f4ec",
+      "timestamp": "2025-04-21T00:03:50.461Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Sara Bouzaher (abdelkarimbouzaher52@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "ebfdf898-e9ac-466e-89b2-b60d75efc169",
       "timestamp": "2025-04-21T00:03:41.511Z",
       "type": "user",
@@ -190,5 +199,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-21T00:03:42.101Z"
+  "last_updated": "2025-04-21T00:03:50.461Z"
 }
