@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "2a135ed4-3354-4b4c-a405-5699727c73a0",
+      "timestamp": "2025-04-21T14:43:35.911Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Ikram TAHAR BELKACEM (ikramtaharbelkacem@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "43a2c91f-3c62-466d-8dd5-354e285fb547",
       "timestamp": "2025-04-21T14:43:27.950Z",
       "type": "user",
@@ -181,5 +190,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-21T14:43:27.950Z"
+  "last_updated": "2025-04-21T14:43:35.911Z"
 }
