@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "1efc042c-7bf3-468c-b7f6-e0be26312e94",
+      "timestamp": "2025-04-21T15:17:19.866Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: assiasmahi56@gmail.com",
+      "user_id": "933778cd-470a-4834-b4c4-6e09e7f55ea3",
+      "user_name": "Assia Smahi"
+    },
+    {
       "id": "cefa2894-c5b2-4eee-a3f7-4a8e0cbff301",
       "timestamp": "2025-04-21T15:05:41.298Z",
       "type": "auth",
@@ -46,5 +55,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-21T15:05:41.852Z"
+  "last_updated": "2025-04-21T15:17:19.869Z"
 }
