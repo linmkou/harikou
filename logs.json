@@ -1,11 +1,20 @@
 {
   "logs": [
     {
+      "id": "71d0e5c7-4331-4bb0-a7ee-4be1b33c40d7",
+      "timestamp": "2025-04-21T16:15:25.040Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: assiasmahi56@gmail.com",
+      "user_id": "933778cd-470a-4834-b4c4-6e09e7f55ea3",
+      "user_name": "Assia Smahi"
+    },
+    {
       "id": "d522803d-997e-42cf-9525-92768ee2e1e0",
       "timestamp": "2025-04-21T15:38:54.558Z",
       "type": "auth",
       "action": "login",
-      "details": "تسجيل دخول بالبريد الإلكتروني: assiasmahi56@gmail.com",
+      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: assiasmahi56@gmail.com",
       "user_id": "933778cd-470a-4834-b4c4-6e09e7f55ea3",
       "user_name": "Assia Smahi"
     },
@@ -14,7 +23,7 @@
       "timestamp": "2025-04-21T15:17:19.866Z",
       "type": "auth",
       "action": "login",
-      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: assiasmahi56@gmail.com",
+      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂ¯ÃÂ®ÃÂÃÂ ÃÂ¨ÃÂ§ÃÂÃÂ¨ÃÂ±ÃÂÃÂ¯ ÃÂ§ÃÂÃÂ¥ÃÂÃÂÃÂªÃÂ±ÃÂÃÂÃÂ: assiasmahi56@gmail.com",
       "user_id": "933778cd-470a-4834-b4c4-6e09e7f55ea3",
       "user_name": "Assia Smahi"
     },
@@ -23,7 +32,7 @@
       "timestamp": "2025-04-21T15:05:41.298Z",
       "type": "auth",
       "action": "login",
-      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: assiasmahi56@gmail.com",
+      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂ¯ÃÂ®ÃÂÃÂ ÃÂ¨ÃÂ§ÃÂÃÂ¨ÃÂ±ÃÂÃÂ¯ ÃÂ§ÃÂÃÂ¥ÃÂÃÂÃÂªÃÂ±ÃÂÃÂÃÂ: assiasmahi56@gmail.com",
       "user_id": "933778cd-470a-4834-b4c4-6e09e7f55ea3",
       "user_name": "Assia Smahi"
     },
@@ -32,7 +41,7 @@
       "timestamp": "2023-06-15T10:30:00Z",
       "type": "user",
       "action": "approve",
-      "details": "Ø§ÙÙÙØ§ÙÙØ© Ø¹ÙÙ Ø§ÙÙØ³ØªØ®Ø¯Ù: Mohammed Saeed (mohamed@example.com)",
+      "details": "ÃÂ§ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂ© ÃÂ¹ÃÂÃÂ ÃÂ§ÃÂÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ: Mohammed Saeed (mohamed@example.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -41,7 +50,7 @@
       "timestamp": "2023-06-10T14:20:00Z",
       "type": "auth",
       "action": "login",
-      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: admin@example.com",
+      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂ¯ÃÂ®ÃÂÃÂ ÃÂ¨ÃÂ§ÃÂÃÂ¨ÃÂ±ÃÂÃÂ¯ ÃÂ§ÃÂÃÂ¥ÃÂÃÂÃÂªÃÂ±ÃÂÃÂÃÂ: admin@example.com",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -50,7 +59,7 @@
       "timestamp": "2023-06-05T09:15:00Z",
       "type": "user",
       "action": "register",
-      "details": "ØªØ³Ø¬ÙÙ ÙØ³ØªØ®Ø¯Ù Ø¬Ø¯ÙØ¯: Fatima Ali (fatima@example.com)",
+      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ ÃÂ¬ÃÂ¯ÃÂÃÂ¯: Fatima Ali (fatima@example.com)",
       "user_id": "user002",
       "user_name": "Fatima Ali"
     },
@@ -59,10 +68,10 @@
       "timestamp": "2023-05-20T11:45:00Z",
       "type": "github",
       "action": "sync",
-      "details": "ÙØ²Ø§ÙÙØ© Ø§ÙØ¨ÙØ§ÙØ§Øª ÙØ¹ GitHub",
+      "details": "ÃÂÃÂ²ÃÂ§ÃÂÃÂÃÂ© ÃÂ§ÃÂÃÂ¨ÃÂÃÂ§ÃÂÃÂ§ÃÂª ÃÂÃÂ¹ GitHub",
       "user_id": "admin001",
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-21T15:38:55.223Z"
+  "last_updated": "2025-04-21T16:15:25.658Z"
 }
