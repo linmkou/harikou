@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "18e0887a-cba9-4d07-9faa-9f822c92b049",
+      "timestamp": "2025-04-21T22:59:56.297Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Ben kerrouche Dounia (benkerouchedounia@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "58eaea56-2178-4fa8-b9ae-ae9c1cce78d3",
       "timestamp": "2025-04-21T22:58:44.249Z",
       "type": "auth",
@@ -100,5 +109,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-21T22:58:44.744Z"
+  "last_updated": "2025-04-21T22:59:56.297Z"
 }
