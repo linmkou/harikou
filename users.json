@@ -359,7 +359,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-21T07:37:48.103Z"
+    },
+    {
+      "id": "76a40f9d-1cec-43d9-ae7e-8be9fa27246a",
+      "name": "Ikram TAHAR BELKACEM",
+      "email": "ikramtaharbelkacem@gmail.com",
+      "password": "azert12345",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-21T08:57:02.488Z"
     }
   ],
-  "last_updated": "2025-04-21T07:37:48.118Z"
+  "last_updated": "2025-04-21T08:57:02.497Z"
 }
