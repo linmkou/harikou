@@ -366,7 +366,7 @@
       "email": "ikramtaharbelkacem@gmail.com",
       "password": "azert12345",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-21T08:57:02.488Z"
     },
     {
@@ -379,5 +379,5 @@
       "created_at": "2025-04-21T14:16:41.165Z"
     }
   ],
-  "last_updated": "2025-04-21T14:43:26.808Z"
+  "last_updated": "2025-04-21T14:43:35.096Z"
 }
