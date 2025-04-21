@@ -1,6 +1,24 @@
 {
   "logs": [
     {
+      "id": "7b753b6b-5d1d-4146-b3b6-b08a2910b0cd",
+      "timestamp": "2025-04-21T18:34:12.289Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: benkerouchedounia@gmail.com",
+      "user_id": "aeff9d3f-3bc4-4eba-b7f0-11ba84323e4b",
+      "user_name": "Ben kerrouche Dounia"
+    },
+    {
+      "id": "f79aac3c-b250-4003-8b6d-51a84028b632",
+      "timestamp": "2025-04-21T18:29:07.988Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: benkerouchedounia@gmail.com",
+      "user_id": "aeff9d3f-3bc4-4eba-b7f0-11ba84323e4b",
+      "user_name": "Ben kerrouche Dounia"
+    },
+    {
       "id": "0980caa7-fe0b-46d5-8391-d4b31c18eb8f",
       "timestamp": "2025-04-21T18:27:52.340Z",
       "type": "auth",
@@ -190,5 +208,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-21T18:27:52.961Z"
+  "last_updated": "2025-04-21T18:34:12.289Z"
 }
