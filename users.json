@@ -384,7 +384,7 @@
       "email": "assiasmahi56@gmail.com",
       "password": "0673666666",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-21T14:53:46.803Z"
     },
     {
@@ -397,5 +397,5 @@
       "created_at": "2025-04-21T17:55:14.023Z"
     }
   ],
-  "last_updated": "2025-04-21T17:55:14.046Z"
+  "last_updated": "2025-04-21T18:05:41.464Z"
 }
