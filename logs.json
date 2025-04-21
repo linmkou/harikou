@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "70285611-c079-4e52-b92d-20b0b1219ee7",
+      "timestamp": "2025-04-21T08:57:25.843Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: ikramtaharbelkacem@gmail.com",
+      "user_id": "76a40f9d-1cec-43d9-ae7e-8be9fa27246a",
+      "user_name": "Ikram TAHAR BELKACEM"
+    },
+    {
       "id": "547c7fa7-76f3-4e32-a601-bb3824026b43",
       "timestamp": "2025-04-21T08:57:03.813Z",
       "type": "user",
@@ -64,5 +73,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-21T08:57:04.293Z"
+  "last_updated": "2025-04-21T08:57:25.843Z"
 }
