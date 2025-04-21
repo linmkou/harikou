@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "7832f42b-d5f3-421a-985e-c25622a29db5",
+      "timestamp": "2025-04-21T14:17:17.808Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: bengharbi93@gmail.com",
+      "user_id": "42197e42-3b76-4d1a-b957-ff56904f2270",
+      "user_name": "Bengharbi Bachir"
+    },
+    {
       "id": "9c45340d-a130-409f-9bf8-e78da830c382",
       "timestamp": "2025-04-21T14:16:41.902Z",
       "type": "user",
@@ -154,5 +163,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-21T14:16:42.548Z"
+  "last_updated": "2025-04-21T14:17:17.808Z"
 }
