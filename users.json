@@ -341,7 +341,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-20T23:53:43.941Z"
+    },
+    {
+      "id": "c133fc7b-2e83-4e03-b1b7-2d747193115b",
+      "name": "gouder Assia",
+      "email": "goudera1978@gmail.com",
+      "password": "ga20251978@",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-21T02:48:55.313Z"
     }
   ],
-  "last_updated": "2025-04-21T00:03:49.582Z"
+  "last_updated": "2025-04-21T02:48:55.323Z"
 }
