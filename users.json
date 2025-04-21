@@ -330,7 +330,7 @@
       "email": "youcefkada41@gmail.com",
       "password": "123456789",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-20T22:47:32.024Z"
     },
     {
@@ -343,5 +343,5 @@
       "created_at": "2025-04-20T23:53:43.941Z"
     }
   ],
-  "last_updated": "2025-04-20T23:53:43.967Z"
+  "last_updated": "2025-04-21T00:03:40.910Z"
 }
