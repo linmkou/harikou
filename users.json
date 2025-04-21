@@ -375,9 +375,9 @@
       "email": "bengharbi93@gmail.com",
       "password": "bachir1993",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-21T14:16:41.165Z"
     }
   ],
-  "last_updated": "2025-04-21T14:43:35.096Z"
+  "last_updated": "2025-04-21T14:43:39.199Z"
 }
