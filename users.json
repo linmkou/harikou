@@ -404,7 +404,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-21T18:27:12.641Z"
+    },
+    {
+      "id": "21b275cd-7fa7-4e5a-9f39-ca90bd73e64b",
+      "name": "Mohamed mezhoudi",
+      "email": "mohamedmezhoudi05@gmail.com",
+      "password": "mohmez05",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-21T21:35:23.390Z"
     }
   ],
-  "last_updated": "2025-04-21T18:27:12.641Z"
+  "last_updated": "2025-04-21T21:35:23.400Z"
 }
