@@ -348,7 +348,7 @@
       "email": "goudera1978@gmail.com",
       "password": "ga20251978@",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-21T02:48:55.313Z"
     },
     {
@@ -379,5 +379,5 @@
       "created_at": "2025-04-21T14:16:41.165Z"
     }
   ],
-  "last_updated": "2025-04-21T14:16:41.171Z"
+  "last_updated": "2025-04-21T14:43:18.402Z"
 }
