@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "43a2c91f-3c62-466d-8dd5-354e285fb547",
+      "timestamp": "2025-04-21T14:43:27.950Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: CHERIFI Mohamed (midou.wolf89@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "912ea844-ca16-4775-973e-affb2e509f77",
       "timestamp": "2025-04-21T14:43:19.071Z",
       "type": "user",
@@ -172,5 +181,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-21T14:43:19.777Z"
+  "last_updated": "2025-04-21T14:43:27.950Z"
 }
