@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "8622399b-927e-4865-bbf4-f1c4ad85f8b7",
+      "timestamp": "2025-04-21T22:59:59.016Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Mohamed mezhoudi (mohamedmezhoudi05@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "18e0887a-cba9-4d07-9faa-9f822c92b049",
       "timestamp": "2025-04-21T22:59:56.297Z",
       "type": "user",
@@ -109,5 +118,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-21T22:59:56.297Z"
+  "last_updated": "2025-04-21T22:59:59.016Z"
 }
