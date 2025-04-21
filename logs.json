@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "39ce6fa8-bb1e-42df-b69d-492e7544d35f",
+      "timestamp": "2025-04-21T18:05:47.589Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Koiider mohamed (kouidermohamed831@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "34aef04f-6a9b-4db5-bf64-9e30db63d9a0",
       "timestamp": "2025-04-21T18:05:42.425Z",
       "type": "user",
@@ -154,5 +163,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-21T18:05:42.425Z"
+  "last_updated": "2025-04-21T18:05:47.589Z"
 }
