@@ -386,7 +386,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-21T14:53:46.803Z"
+    },
+    {
+      "id": "8ff0c16b-97f6-46d3-b0c8-f9cd51e00240",
+      "name": "Koiider mohamed",
+      "email": "kouidermohamed831@gmail.com",
+      "password": "kouidermohamed1988",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-21T17:55:14.023Z"
     }
   ],
-  "last_updated": "2025-04-21T14:53:46.817Z"
+  "last_updated": "2025-04-21T17:55:14.046Z"
 }
