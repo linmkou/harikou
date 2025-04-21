@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "34aef04f-6a9b-4db5-bf64-9e30db63d9a0",
+      "timestamp": "2025-04-21T18:05:42.425Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Assia Smahi (assiasmahi56@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "0112d17a-0cdf-4d15-b161-51762b6ead62",
       "timestamp": "2025-04-21T18:05:31.474Z",
       "type": "auth",
@@ -145,5 +154,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-21T18:05:32.568Z"
+  "last_updated": "2025-04-21T18:05:42.425Z"
 }
