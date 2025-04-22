@@ -420,9 +420,9 @@
       "email": "mamateiline@gmail.com",
       "password": "si4ever",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-22T13:20:51.058Z"
     }
   ],
-  "last_updated": "2025-04-22T13:20:51.066Z"
+  "last_updated": "2025-04-22T18:47:27.623Z"
 }
