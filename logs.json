@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "2407e99f-5693-4a07-a6b7-11c69d0eedee",
+      "timestamp": "2025-04-24T14:53:45.561Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Yasmin (yasmine22@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "76ef4be7-a474-4167-9bfa-c919bd554279",
       "timestamp": "2025-04-24T14:53:31.747Z",
       "type": "auth",
@@ -100,5 +109,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-24T14:53:32.588Z"
+  "last_updated": "2025-04-24T14:53:45.561Z"
 }
