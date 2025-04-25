@@ -620,7 +620,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-25T21:29:10.692Z"
+    },
+    {
+      "id": "2ba34cfa-ca33-4bfb-b942-76dfef4e239a",
+      "name": "Mostefai djelloul",
+      "email": "mostefaidjelloul@gmail.com",
+      "password": "DiRbA6931",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-25T21:52:27.422Z"
     }
   ],
-  "last_updated": "2025-04-25T21:32:31.255Z"
+  "last_updated": "2025-04-25T21:52:27.428Z"
 }
