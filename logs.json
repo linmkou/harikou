@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "ab490ef5-b9d0-42c9-b52b-5e24e9bc21ec",
+      "timestamp": "2025-04-25T20:14:31.780Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: Profmohamath@gmail.com",
+      "user_id": "2caa048f-06bf-4e9f-83c2-745b42d68191",
+      "user_name": "Mohamed taher"
+    },
+    {
       "id": "351d3d7d-787a-4055-b6e1-a68cc3363353",
       "timestamp": "2025-04-25T20:12:29.532Z",
       "type": "user",
@@ -190,5 +199,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-25T20:12:30.104Z"
+  "last_updated": "2025-04-25T20:14:31.784Z"
 }
