@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "384c4d57-d892-4070-a876-1666b13177f8",
+      "timestamp": "2025-04-25T20:02:04.045Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Ahmedsidahmed (merabetsdhm@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "3f11eca2-ee18-4e45-be83-f8f25b039bc8",
       "timestamp": "2025-04-25T20:01:55.470Z",
       "type": "user",
@@ -145,5 +154,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-25T20:01:55.907Z"
+  "last_updated": "2025-04-25T20:02:04.045Z"
 }
