@@ -494,7 +494,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-25T19:54:45.392Z"
+    },
+    {
+      "id": "35690c4d-e771-4f1b-9a68-385e8b53dba6",
+      "name": "Fekirine Fateh",
+      "email": "fatehjo91@gmail.com",
+      "password": "fateh19910782195020",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-25T19:55:00.586Z"
     }
   ],
-  "last_updated": "2025-04-25T19:54:45.401Z"
+  "last_updated": "2025-04-25T19:55:00.590Z"
 }
