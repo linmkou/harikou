@@ -512,7 +512,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-25T19:56:21.098Z"
+    },
+    {
+      "id": "bbd1f340-7ec9-487e-9971-f9f41919de68",
+      "name": "Slimane bendelhoum",
+      "email": "sifosse22@gmail.com",
+      "password": "slim0922",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-25T20:00:42.516Z"
     }
   ],
-  "last_updated": "2025-04-25T19:58:26.558Z"
+  "last_updated": "2025-04-25T20:00:42.539Z"
 }
