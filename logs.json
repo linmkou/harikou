@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "be521e00-61e9-441d-ad18-938aaf61dbf0",
+      "timestamp": "2025-04-25T20:42:40.673Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Fares (ali20070024@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "735f0d43-cdd0-4ec9-b5f0-9909e13521c1",
       "timestamp": "2025-04-25T20:42:31.160Z",
       "type": "user",
@@ -118,5 +127,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-25T20:42:31.684Z"
+  "last_updated": "2025-04-25T20:42:40.673Z"
 }
