@@ -557,7 +557,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-25T20:22:36.191Z"
+    },
+    {
+      "id": "a330fd7e-1f36-418a-b429-801317d61e86",
+      "name": "Mohamed Salah",
+      "email": "salahseid@gmail.com",
+      "password": "msalah0697",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-25T20:34:39.873Z"
     }
   ],
-  "last_updated": "2025-04-25T20:29:19.031Z"
+  "last_updated": "2025-04-25T20:34:39.883Z"
 }
