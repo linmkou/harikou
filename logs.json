@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "e28b39b4-4ac8-4337-83b5-31f0f7928dfe",
+      "timestamp": "2025-04-25T19:56:56.137Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: abderrahimmaachou22@gmail.com",
+      "user_id": "1bd6a0bd-aa23-4a68-9d84-17715c9af723",
+      "user_name": "Maachou Abderrahim"
+    },
+    {
       "id": "98833f25-1214-4f56-8fdc-8c5951d2ae38",
       "timestamp": "2025-04-25T19:56:22.347Z",
       "type": "user",
@@ -82,5 +91,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-25T19:56:22.882Z"
+  "last_updated": "2025-04-25T19:56:56.137Z"
 }
