@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "a5f435e4-f526-4612-8719-3ece867dd90c",
+      "timestamp": "2025-04-25T20:35:53.665Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: salahseid@gmail.com",
+      "user_id": "a330fd7e-1f36-418a-b429-801317d61e86",
+      "user_name": "Mohamed Salah"
+    },
+    {
       "id": "a4c20780-4930-49f8-81f8-45f15717e807",
       "timestamp": "2025-04-25T20:34:40.565Z",
       "type": "user",
@@ -64,5 +73,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-25T20:34:41.428Z"
+  "last_updated": "2025-04-25T20:35:53.665Z"
 }
