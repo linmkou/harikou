@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "cf15fd12-13cc-4cc2-8571-554205c79e93",
+      "timestamp": "2025-04-25T20:42:48.060Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Fleur printemps (fleurprintemps@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "be521e00-61e9-441d-ad18-938aaf61dbf0",
       "timestamp": "2025-04-25T20:42:40.673Z",
       "type": "user",
@@ -127,5 +136,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-25T20:42:40.673Z"
+  "last_updated": "2025-04-25T20:42:48.060Z"
 }
