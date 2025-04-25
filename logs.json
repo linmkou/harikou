@@ -1,11 +1,20 @@
 {
   "logs": [
     {
+      "id": "0b6fd0cd-dc90-4ef5-a687-7c5725a75757",
+      "timestamp": "2025-04-25T20:40:39.718Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Mohamed Salah (salahseid@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "a5f435e4-f526-4612-8719-3ece867dd90c",
       "timestamp": "2025-04-25T20:35:53.665Z",
       "type": "auth",
       "action": "login",
-      "details": "تسجيل دخول بالبريد الإلكتروني: salahseid@gmail.com",
+      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: salahseid@gmail.com",
       "user_id": "a330fd7e-1f36-418a-b429-801317d61e86",
       "user_name": "Mohamed Salah"
     },
@@ -14,7 +23,7 @@
       "timestamp": "2025-04-25T20:34:40.565Z",
       "type": "user",
       "action": "register",
-      "details": "تسجيل مستخدم جديد: Mohamed Salah (salahseid@gmail.com)",
+      "details": "ØªØ³Ø¬ÙÙ ÙØ³ØªØ®Ø¯Ù Ø¬Ø¯ÙØ¯: Mohamed Salah (salahseid@gmail.com)",
       "user_id": "a330fd7e-1f36-418a-b429-801317d61e86",
       "user_name": "Mohamed Salah"
     },
@@ -23,7 +32,7 @@
       "timestamp": "2025-04-25T20:29:19.790Z",
       "type": "user",
       "action": "approve",
-      "details": "Ø§ÙÙÙØ§ÙÙØ© Ø¹ÙÙ Ø§ÙÙØ³ØªØ®Ø¯Ù: Saidi youcef (fcbyoucef@gmail.com)",
+      "details": "ÃÂ§ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂ© ÃÂ¹ÃÂÃÂ ÃÂ§ÃÂÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ: Saidi youcef (fcbyoucef@gmail.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -32,7 +41,7 @@
       "timestamp": "2025-04-25T20:22:49.749Z",
       "type": "auth",
       "action": "login",
-      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂ¯ÃÂ®ÃÂÃÂ ÃÂ¨ÃÂ§ÃÂÃÂ¨ÃÂ±ÃÂÃÂ¯ ÃÂ§ÃÂÃÂ¥ÃÂÃÂÃÂªÃÂ±ÃÂÃÂÃÂ: Profmohamath@gmail.com",
+      "details": "ÃÂÃÂªÃÂÃÂ³ÃÂÃÂ¬ÃÂÃÂÃÂÃÂ ÃÂÃÂ¯ÃÂÃÂ®ÃÂÃÂÃÂÃÂ ÃÂÃÂ¨ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¨ÃÂÃÂ±ÃÂÃÂÃÂÃÂ¯ ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¥ÃÂÃÂÃÂÃÂÃÂÃÂªÃÂÃÂ±ÃÂÃÂÃÂÃÂÃÂÃÂ: Profmohamath@gmail.com",
       "user_id": "2caa048f-06bf-4e9f-83c2-745b42d68191",
       "user_name": "Mohamed taher"
     },
@@ -41,7 +50,7 @@
       "timestamp": "2023-06-15T10:30:00Z",
       "type": "user",
       "action": "approve",
-      "details": "ÃÂ§ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂ© ÃÂ¹ÃÂÃÂ ÃÂ§ÃÂÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ: Mohammed Saeed (mohamed@example.com)",
+      "details": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ© ÃÂÃÂ¹ÃÂÃÂÃÂÃÂ ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ³ÃÂÃÂªÃÂÃÂ®ÃÂÃÂ¯ÃÂÃÂ: Mohammed Saeed (mohamed@example.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -50,7 +59,7 @@
       "timestamp": "2023-06-10T14:20:00Z",
       "type": "auth",
       "action": "login",
-      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂ¯ÃÂ®ÃÂÃÂ ÃÂ¨ÃÂ§ÃÂÃÂ¨ÃÂ±ÃÂÃÂ¯ ÃÂ§ÃÂÃÂ¥ÃÂÃÂÃÂªÃÂ±ÃÂÃÂÃÂ: admin@example.com",
+      "details": "ÃÂÃÂªÃÂÃÂ³ÃÂÃÂ¬ÃÂÃÂÃÂÃÂ ÃÂÃÂ¯ÃÂÃÂ®ÃÂÃÂÃÂÃÂ ÃÂÃÂ¨ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¨ÃÂÃÂ±ÃÂÃÂÃÂÃÂ¯ ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¥ÃÂÃÂÃÂÃÂÃÂÃÂªÃÂÃÂ±ÃÂÃÂÃÂÃÂÃÂÃÂ: admin@example.com",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -59,7 +68,7 @@
       "timestamp": "2023-06-05T09:15:00Z",
       "type": "user",
       "action": "register",
-      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ ÃÂ¬ÃÂ¯ÃÂÃÂ¯: Fatima Ali (fatima@example.com)",
+      "details": "ÃÂÃÂªÃÂÃÂ³ÃÂÃÂ¬ÃÂÃÂÃÂÃÂ ÃÂÃÂÃÂÃÂ³ÃÂÃÂªÃÂÃÂ®ÃÂÃÂ¯ÃÂÃÂ ÃÂÃÂ¬ÃÂÃÂ¯ÃÂÃÂÃÂÃÂ¯: Fatima Ali (fatima@example.com)",
       "user_id": "user002",
       "user_name": "Fatima Ali"
     },
@@ -68,10 +77,10 @@
       "timestamp": "2023-05-20T11:45:00Z",
       "type": "github",
       "action": "sync",
-      "details": "ÃÂÃÂ²ÃÂ§ÃÂÃÂÃÂ© ÃÂ§ÃÂÃÂ¨ÃÂÃÂ§ÃÂÃÂ§ÃÂª ÃÂÃÂ¹ GitHub",
+      "details": "ÃÂÃÂÃÂÃÂ²ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ© ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¨ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ§ÃÂÃÂª ÃÂÃÂÃÂÃÂ¹ GitHub",
       "user_id": "admin001",
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-25T20:35:53.665Z"
+  "last_updated": "2025-04-25T20:40:40.157Z"
 }
