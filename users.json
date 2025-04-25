@@ -593,7 +593,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-25T20:42:07.989Z"
+    },
+    {
+      "id": "831b8351-f902-49b4-899a-b20da0306c01",
+      "name": "Khodja nadir",
+      "email": "kh.nadir69@gmail.com",
+      "password": "Ousted22",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-25T20:57:20.598Z"
     }
   ],
-  "last_updated": "2025-04-25T20:57:12.471Z"
+  "last_updated": "2025-04-25T20:57:20.604Z"
 }
