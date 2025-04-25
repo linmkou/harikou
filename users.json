@@ -537,9 +537,9 @@
       "email": "yacinedjarir0@gmail.com",
       "password": "26111994",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-25T20:10:26.409Z"
     }
   ],
-  "last_updated": "2025-04-25T20:10:26.483Z"
+  "last_updated": "2025-04-25T20:11:20.654Z"
 }
