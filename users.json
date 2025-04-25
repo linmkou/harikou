@@ -548,7 +548,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-25T20:12:28.691Z"
+    },
+    {
+      "id": "65110c08-8c52-49d9-9818-95577ad9ee37",
+      "name": "Saidi youcef",
+      "email": "fcbyoucef@gmail.com",
+      "password": "fcbyoucef",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-25T20:22:36.191Z"
     }
   ],
-  "last_updated": "2025-04-25T20:21:35.143Z"
+  "last_updated": "2025-04-25T20:22:36.194Z"
 }
