@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "4e06882b-64bf-4bd1-a0d5-634d32ccf383",
+      "timestamp": "2025-04-25T22:47:04.895Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Youcef Atman (yyyoucef22@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "80730125-eb71-48ef-a929-17933378ee22",
       "timestamp": "2025-04-25T22:46:56.773Z",
       "type": "user",
@@ -118,5 +127,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-25T22:46:57.210Z"
+  "last_updated": "2025-04-25T22:47:04.895Z"
 }
