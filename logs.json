@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "3f46706c-799b-431b-b324-1cf0efdd6d74",
+      "timestamp": "2025-04-25T19:55:49.103Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Fekirine Fateh (fatehjo91@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "8d5ccab5-db2e-4f8c-bfb9-17ce94475238",
       "timestamp": "2025-04-25T19:55:41.036Z",
       "type": "user",
@@ -64,5 +73,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-25T19:55:41.592Z"
+  "last_updated": "2025-04-25T19:55:49.103Z"
 }
