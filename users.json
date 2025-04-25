@@ -584,7 +584,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-25T20:42:04.913Z"
+    },
+    {
+      "id": "390271b6-7971-43f4-a8fe-b61fa2d113fd",
+      "name": "Fleur printemps",
+      "email": "fleurprintemps@gmail.com",
+      "password": "fleurprintemps",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-25T20:42:07.989Z"
     }
   ],
-  "last_updated": "2025-04-25T20:42:04.936Z"
+  "last_updated": "2025-04-25T20:42:08.006Z"
 }
