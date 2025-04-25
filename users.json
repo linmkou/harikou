@@ -627,7 +627,7 @@
       "email": "mostefaidjelloul@gmail.com",
       "password": "DiRbA6931",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-25T21:52:27.422Z"
     },
     {
@@ -640,5 +640,5 @@
       "created_at": "2025-04-25T22:15:44.283Z"
     }
   ],
-  "last_updated": "2025-04-25T22:15:44.284Z"
+  "last_updated": "2025-04-25T22:46:55.864Z"
 }
