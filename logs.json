@@ -1,11 +1,20 @@
 {
   "logs": [
     {
+      "id": "98833f25-1214-4f56-8fdc-8c5951d2ae38",
+      "timestamp": "2025-04-25T19:56:22.347Z",
+      "type": "user",
+      "action": "register",
+      "details": "تسجيل مستخدم جديد: Maachou Abderrahim (abderrahimmaachou22@gmail.com)",
+      "user_id": "1bd6a0bd-aa23-4a68-9d84-17715c9af723",
+      "user_name": "Maachou Abderrahim"
+    },
+    {
       "id": "3f46706c-799b-431b-b324-1cf0efdd6d74",
       "timestamp": "2025-04-25T19:55:49.103Z",
       "type": "user",
       "action": "approve",
-      "details": "الموافقة على المستخدم: Fekirine Fateh (fatehjo91@gmail.com)",
+      "details": "Ø§ÙÙÙØ§ÙÙØ© Ø¹ÙÙ Ø§ÙÙØ³ØªØ®Ø¯Ù: Fekirine Fateh (fatehjo91@gmail.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -14,7 +23,7 @@
       "timestamp": "2025-04-25T19:55:41.036Z",
       "type": "user",
       "action": "approve",
-      "details": "الموافقة على المستخدم: Sadika math (zerouali.sadika96@gmail.com)",
+      "details": "Ø§ÙÙÙØ§ÙÙØ© Ø¹ÙÙ Ø§ÙÙØ³ØªØ®Ø¯Ù: Sadika math (zerouali.sadika96@gmail.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -23,7 +32,7 @@
       "timestamp": "2025-04-25T19:55:01.326Z",
       "type": "user",
       "action": "register",
-      "details": "ØªØ³Ø¬ÙÙ ÙØ³ØªØ®Ø¯Ù Ø¬Ø¯ÙØ¯: Fekirine Fateh (fatehjo91@gmail.com)",
+      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ ÃÂ¬ÃÂ¯ÃÂÃÂ¯: Fekirine Fateh (fatehjo91@gmail.com)",
       "user_id": "35690c4d-e771-4f1b-9a68-385e8b53dba6",
       "user_name": "Fekirine Fateh"
     },
@@ -32,7 +41,7 @@
       "timestamp": "2025-04-25T19:54:47.061Z",
       "type": "user",
       "action": "register",
-      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ ÃÂ¬ÃÂ¯ÃÂÃÂ¯: Sadika math (zerouali.sadika96@gmail.com)",
+      "details": "ÃÂÃÂªÃÂÃÂ³ÃÂÃÂ¬ÃÂÃÂÃÂÃÂ ÃÂÃÂÃÂÃÂ³ÃÂÃÂªÃÂÃÂ®ÃÂÃÂ¯ÃÂÃÂ ÃÂÃÂ¬ÃÂÃÂ¯ÃÂÃÂÃÂÃÂ¯: Sadika math (zerouali.sadika96@gmail.com)",
       "user_id": "7c6c80d9-cd9c-491c-bcc3-5c8c6297862f",
       "user_name": "Sadika math"
     },
@@ -41,7 +50,7 @@
       "timestamp": "2023-06-15T10:30:00Z",
       "type": "user",
       "action": "approve",
-      "details": "ÃÂ§ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂ© ÃÂ¹ÃÂÃÂ ÃÂ§ÃÂÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ: Mohammed Saeed (mohamed@example.com)",
+      "details": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ© ÃÂÃÂ¹ÃÂÃÂÃÂÃÂ ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ³ÃÂÃÂªÃÂÃÂ®ÃÂÃÂ¯ÃÂÃÂ: Mohammed Saeed (mohamed@example.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -50,7 +59,7 @@
       "timestamp": "2023-06-10T14:20:00Z",
       "type": "auth",
       "action": "login",
-      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂ¯ÃÂ®ÃÂÃÂ ÃÂ¨ÃÂ§ÃÂÃÂ¨ÃÂ±ÃÂÃÂ¯ ÃÂ§ÃÂÃÂ¥ÃÂÃÂÃÂªÃÂ±ÃÂÃÂÃÂ: admin@example.com",
+      "details": "ÃÂÃÂªÃÂÃÂ³ÃÂÃÂ¬ÃÂÃÂÃÂÃÂ ÃÂÃÂ¯ÃÂÃÂ®ÃÂÃÂÃÂÃÂ ÃÂÃÂ¨ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¨ÃÂÃÂ±ÃÂÃÂÃÂÃÂ¯ ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¥ÃÂÃÂÃÂÃÂÃÂÃÂªÃÂÃÂ±ÃÂÃÂÃÂÃÂÃÂÃÂ: admin@example.com",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -59,7 +68,7 @@
       "timestamp": "2023-06-05T09:15:00Z",
       "type": "user",
       "action": "register",
-      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ ÃÂ¬ÃÂ¯ÃÂÃÂ¯: Fatima Ali (fatima@example.com)",
+      "details": "ÃÂÃÂªÃÂÃÂ³ÃÂÃÂ¬ÃÂÃÂÃÂÃÂ ÃÂÃÂÃÂÃÂ³ÃÂÃÂªÃÂÃÂ®ÃÂÃÂ¯ÃÂÃÂ ÃÂÃÂ¬ÃÂÃÂ¯ÃÂÃÂÃÂÃÂ¯: Fatima Ali (fatima@example.com)",
       "user_id": "user002",
       "user_name": "Fatima Ali"
     },
@@ -68,10 +77,10 @@
       "timestamp": "2023-05-20T11:45:00Z",
       "type": "github",
       "action": "sync",
-      "details": "ÃÂÃÂ²ÃÂ§ÃÂÃÂÃÂ© ÃÂ§ÃÂÃÂ¨ÃÂÃÂ§ÃÂÃÂ§ÃÂª ÃÂÃÂ¹ GitHub",
+      "details": "ÃÂÃÂÃÂÃÂ²ÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂ© ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¨ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ§ÃÂÃÂª ÃÂÃÂÃÂÃÂ¹ GitHub",
       "user_id": "admin001",
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-25T19:55:49.103Z"
+  "last_updated": "2025-04-25T19:56:22.882Z"
 }
