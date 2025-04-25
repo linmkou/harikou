@@ -1,11 +1,20 @@
 {
   "logs": [
     {
+      "id": "25131e7f-77c0-4239-aea2-564a475e5bb7",
+      "timestamp": "2025-04-25T20:29:19.790Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Saidi youcef (fcbyoucef@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "4c316cea-6602-4cc6-986a-b743c7b78fb3",
       "timestamp": "2025-04-25T20:22:49.749Z",
       "type": "auth",
       "action": "login",
-      "details": "تسجيل دخول بالبريد الإلكتروني: Profmohamath@gmail.com",
+      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: Profmohamath@gmail.com",
       "user_id": "2caa048f-06bf-4e9f-83c2-745b42d68191",
       "user_name": "Mohamed taher"
     },
@@ -14,7 +23,7 @@
       "timestamp": "2023-06-15T10:30:00Z",
       "type": "user",
       "action": "approve",
-      "details": "الموافقة على المستخدم: Mohammed Saeed (mohamed@example.com)",
+      "details": "Ø§ÙÙÙØ§ÙÙØ© Ø¹ÙÙ Ø§ÙÙØ³ØªØ®Ø¯Ù: Mohammed Saeed (mohamed@example.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -23,7 +32,7 @@
       "timestamp": "2023-06-10T14:20:00Z",
       "type": "auth",
       "action": "login",
-      "details": "تسجيل دخول بالبريد الإلكتروني: admin@example.com",
+      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: admin@example.com",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -32,7 +41,7 @@
       "timestamp": "2023-06-05T09:15:00Z",
       "type": "user",
       "action": "register",
-      "details": "تسجيل مستخدم جديد: Fatima Ali (fatima@example.com)",
+      "details": "ØªØ³Ø¬ÙÙ ÙØ³ØªØ®Ø¯Ù Ø¬Ø¯ÙØ¯: Fatima Ali (fatima@example.com)",
       "user_id": "user002",
       "user_name": "Fatima Ali"
     },
@@ -41,10 +50,10 @@
       "timestamp": "2023-05-20T11:45:00Z",
       "type": "github",
       "action": "sync",
-      "details": "مزامنة البيانات مع GitHub",
+      "details": "ÙØ²Ø§ÙÙØ© Ø§ÙØ¨ÙØ§ÙØ§Øª ÙØ¹ GitHub",
       "user_id": "admin001",
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-25T20:22:50.221Z"
+  "last_updated": "2025-04-25T20:29:20.223Z"
 }
