@@ -1,11 +1,20 @@
 {
   "logs": [
     {
+      "id": "e4daec4f-5065-4bd8-8046-8368d75ab9a7",
+      "timestamp": "2025-04-25T21:26:34.204Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: djelloulimoha22@gmail.com",
+      "user_id": "e38f6397-e426-4f6b-b023-d16c4b14fd0a",
+      "user_name": "mohamed djellouli"
+    },
+    {
       "id": "dac9fffc-b9fb-4b61-bafb-b28b4c933503",
       "timestamp": "2025-04-25T21:19:28.515Z",
       "type": "auth",
       "action": "login",
-      "details": "تسجيل دخول بالبريد الإلكتروني: fcbyoucef@gmail.com",
+      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: fcbyoucef@gmail.com",
       "user_id": "65110c08-8c52-49d9-9818-95577ad9ee37",
       "user_name": "Saidi youcef"
     },
@@ -14,7 +23,7 @@
       "timestamp": "2025-04-25T21:12:36.843Z",
       "type": "auth",
       "action": "login",
-      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: fleurprintemps@gmail.com",
+      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂ¯ÃÂ®ÃÂÃÂ ÃÂ¨ÃÂ§ÃÂÃÂ¨ÃÂ±ÃÂÃÂ¯ ÃÂ§ÃÂÃÂ¥ÃÂÃÂÃÂªÃÂ±ÃÂÃÂÃÂ: fleurprintemps@gmail.com",
       "user_id": "390271b6-7971-43f4-a8fe-b61fa2d113fd",
       "user_name": "Fleur printemps"
     },
@@ -23,7 +32,7 @@
       "timestamp": "2023-06-15T10:30:00Z",
       "type": "user",
       "action": "approve",
-      "details": "Ø§ÙÙÙØ§ÙÙØ© Ø¹ÙÙ Ø§ÙÙØ³ØªØ®Ø¯Ù: Mohammed Saeed (mohamed@example.com)",
+      "details": "ÃÂ§ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂ© ÃÂ¹ÃÂÃÂ ÃÂ§ÃÂÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ: Mohammed Saeed (mohamed@example.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -32,7 +41,7 @@
       "timestamp": "2023-06-10T14:20:00Z",
       "type": "auth",
       "action": "login",
-      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: admin@example.com",
+      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂ¯ÃÂ®ÃÂÃÂ ÃÂ¨ÃÂ§ÃÂÃÂ¨ÃÂ±ÃÂÃÂ¯ ÃÂ§ÃÂÃÂ¥ÃÂÃÂÃÂªÃÂ±ÃÂÃÂÃÂ: admin@example.com",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -41,7 +50,7 @@
       "timestamp": "2023-06-05T09:15:00Z",
       "type": "user",
       "action": "register",
-      "details": "ØªØ³Ø¬ÙÙ ÙØ³ØªØ®Ø¯Ù Ø¬Ø¯ÙØ¯: Fatima Ali (fatima@example.com)",
+      "details": "ÃÂªÃÂ³ÃÂ¬ÃÂÃÂ ÃÂÃÂ³ÃÂªÃÂ®ÃÂ¯ÃÂ ÃÂ¬ÃÂ¯ÃÂÃÂ¯: Fatima Ali (fatima@example.com)",
       "user_id": "user002",
       "user_name": "Fatima Ali"
     },
@@ -50,10 +59,10 @@
       "timestamp": "2023-05-20T11:45:00Z",
       "type": "github",
       "action": "sync",
-      "details": "ÙØ²Ø§ÙÙØ© Ø§ÙØ¨ÙØ§ÙØ§Øª ÙØ¹ GitHub",
+      "details": "ÃÂÃÂ²ÃÂ§ÃÂÃÂÃÂ© ÃÂ§ÃÂÃÂ¨ÃÂÃÂ§ÃÂÃÂ§ÃÂª ÃÂÃÂ¹ GitHub",
       "user_id": "admin001",
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-25T21:19:28.843Z"
+  "last_updated": "2025-04-25T21:26:34.763Z"
 }
