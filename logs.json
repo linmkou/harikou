@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "0776fb4e-1cc2-4fbb-8ad9-01f9f4d6c66a",
+      "timestamp": "2025-04-25T20:01:06.225Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: sifosse22@gmail.com",
+      "user_id": "bbd1f340-7ec9-487e-9971-f9f41919de68",
+      "user_name": "Slimane bendelhoum"
+    },
+    {
       "id": "8ceda842-97b1-4140-b819-381b6a753e8c",
       "timestamp": "2025-04-25T20:00:43.295Z",
       "type": "user",
@@ -118,5 +127,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-25T20:00:43.753Z"
+  "last_updated": "2025-04-25T20:01:06.225Z"
 }
