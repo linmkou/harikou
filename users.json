@@ -546,9 +546,9 @@
       "email": "Profmohamath@gmail.com",
       "password": "Moha2323",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-25T20:12:28.691Z"
     }
   ],
-  "last_updated": "2025-04-25T20:12:28.706Z"
+  "last_updated": "2025-04-25T20:21:35.143Z"
 }
