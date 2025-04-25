@@ -600,9 +600,9 @@
       "email": "kh.nadir69@gmail.com",
       "password": "Ousted22",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-25T20:57:20.598Z"
     }
   ],
-  "last_updated": "2025-04-25T20:57:20.604Z"
+  "last_updated": "2025-04-25T21:03:14.478Z"
 }
