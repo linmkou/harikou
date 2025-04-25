@@ -276,7 +276,7 @@
       "email": "okbanoui0747@gmail.com",
       "password": "19930214",
       "role": "user",
-      "approved": true,
+      "approved": false,
       "created_at": "2025-04-20T10:54:43.564Z"
     },
     {
@@ -460,5 +460,5 @@
       "created_at": "2025-04-25T19:28:56.661Z"
     }
   ],
-  "last_updated": "2025-04-25T19:30:30.701Z"
+  "last_updated": "2025-04-25T19:34:08.398Z"
 }
