@@ -566,7 +566,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-25T20:34:39.873Z"
+    },
+    {
+      "id": "e38f6397-e426-4f6b-b023-d16c4b14fd0a",
+      "name": "mohamed djellouli",
+      "email": "djelloulimoha22@gmail.com",
+      "password": "Moh@med 1994",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-25T20:41:32.973Z"
     }
   ],
-  "last_updated": "2025-04-25T20:40:38.759Z"
+  "last_updated": "2025-04-25T20:41:32.974Z"
 }
