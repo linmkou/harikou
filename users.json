@@ -501,9 +501,9 @@
       "email": "fatehjo91@gmail.com",
       "password": "fateh19910782195020",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-25T19:55:00.586Z"
     }
   ],
-  "last_updated": "2025-04-25T19:55:40.334Z"
+  "last_updated": "2025-04-25T19:55:48.287Z"
 }
