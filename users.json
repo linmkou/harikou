@@ -564,9 +564,9 @@
       "email": "salahseid@gmail.com",
       "password": "msalah0697",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-25T20:34:39.873Z"
     }
   ],
-  "last_updated": "2025-04-25T20:34:39.883Z"
+  "last_updated": "2025-04-25T20:40:38.759Z"
 }
