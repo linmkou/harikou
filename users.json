@@ -530,7 +530,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-25T20:01:20.796Z"
+    },
+    {
+      "id": "881f3152-3f2b-4b9f-88af-11d26dbf01c3",
+      "name": "Djarir Yassine",
+      "email": "yacinedjarir0@gmail.com",
+      "password": "26111994",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-25T20:10:26.409Z"
     }
   ],
-  "last_updated": "2025-04-25T20:08:24.583Z"
+  "last_updated": "2025-04-25T20:10:26.483Z"
 }
