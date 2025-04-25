@@ -575,7 +575,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-25T20:41:32.973Z"
+    },
+    {
+      "id": "4145bb1c-85ba-427b-bf18-d259b3cd249f",
+      "name": "Fares",
+      "email": "ali20070024@gmail.com",
+      "password": "fog@1991",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-25T20:42:04.913Z"
     }
   ],
-  "last_updated": "2025-04-25T20:41:32.974Z"
+  "last_updated": "2025-04-25T20:42:04.936Z"
 }
