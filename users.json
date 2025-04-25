@@ -602,7 +602,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-25T20:57:20.598Z"
+    },
+    {
+      "id": "e4ec107c-0b14-45ab-8e81-5d9721ba21a9",
+      "name": "Rida mecherfi",
+      "email": "redamecherfi13@gmail.com",
+      "password": "rida_maths",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-25T21:04:29.943Z"
     }
   ],
-  "last_updated": "2025-04-25T21:03:14.478Z"
+  "last_updated": "2025-04-25T21:04:29.956Z"
 }
