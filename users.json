@@ -521,7 +521,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-25T20:00:42.516Z"
+    },
+    {
+      "id": "43c5f43a-a5b1-436b-b797-0c8f9c354377",
+      "name": "Ahmedsidahmed",
+      "email": "merabetsdhm@gmail.com",
+      "password": "1993sidahmed",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-25T20:01:20.796Z"
     }
   ],
-  "last_updated": "2025-04-25T20:00:42.539Z"
+  "last_updated": "2025-04-25T20:01:20.809Z"
 }
