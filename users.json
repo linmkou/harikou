@@ -440,7 +440,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-25T10:13:05.150Z"
+    },
+    {
+      "id": "47538aa1-1ec6-4e8f-9676-2474b20b1cac",
+      "name": "Touati Nadjib",
+      "email": "nadjibtouati03@gmail.com",
+      "password": "nadjib1992",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-25T19:16:19.224Z"
     }
   ],
-  "last_updated": "2025-04-25T12:45:10.057Z"
+  "last_updated": "2025-04-25T19:16:19.276Z"
 }
