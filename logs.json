@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "6f56eda3-add2-4219-8473-3ae79bbb3c95",
+      "timestamp": "2025-04-25T19:29:12.929Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: benzarfakaddour71@gmail.com",
+      "user_id": "fa12a2cc-aa8d-4506-a41f-ee8cf4e0575d",
+      "user_name": "Bengoufa kamel"
+    },
+    {
       "id": "a7a3d7cf-9b1a-47dd-8b37-1e45ec20cce9",
       "timestamp": "2025-04-25T19:28:58.524Z",
       "type": "user",
@@ -118,5 +127,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-25T19:28:59.121Z"
+  "last_updated": "2025-04-25T19:29:12.929Z"
 }
