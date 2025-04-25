@@ -645,9 +645,9 @@
       "email": "medmechai@gmail.com",
       "password": "@Mechai1985",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-25T23:16:28.736Z"
     }
   ],
-  "last_updated": "2025-04-25T23:16:28.773Z"
+  "last_updated": "2025-04-25T23:57:05.913Z"
 }
