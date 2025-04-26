@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "469398a7-c87c-4fff-a72d-64fa5ac09c92",
+      "timestamp": "2025-04-26T08:57:11.561Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: souleh Mohamed (soulehmohammedabdou@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "2442e962-b128-41c6-896b-8b62a3011d58",
       "timestamp": "2025-04-26T08:57:09.563Z",
       "type": "user",
@@ -100,5 +109,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-26T08:57:09.563Z"
+  "last_updated": "2025-04-26T08:57:11.561Z"
 }
