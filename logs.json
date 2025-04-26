@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "99be4e8d-c9e9-49ca-b41a-090b10aebdc4",
+      "timestamp": "2025-04-26T08:35:39.135Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: soulehmohammedabdou@gmail.com",
+      "user_id": "b1cb8763-8fd1-4017-8e31-314d9310d639",
+      "user_name": "souleh Mohamed"
+    },
+    {
       "id": "c15a8c2c-af41-4327-9c91-e8ff1d8daf47",
       "timestamp": "2025-04-26T08:35:22.927Z",
       "type": "user",
@@ -55,5 +64,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-26T08:35:23.453Z"
+  "last_updated": "2025-04-26T08:35:39.135Z"
 }
