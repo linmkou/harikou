@@ -665,7 +665,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-26T04:00:57.773Z"
+    },
+    {
+      "id": "c21ceeeb-6c19-454d-b21f-c7bd764a89e7",
+      "name": "Mustapha amine",
+      "email": "mustaphabensaad2@gmail.com",
+      "password": "Azerty22",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-26T07:27:01.194Z"
     }
   ],
-  "last_updated": "2025-04-26T04:00:57.800Z"
+  "last_updated": "2025-04-26T07:27:01.197Z"
 }
