@@ -1,6 +1,24 @@
 {
   "logs": [
     {
+      "id": "e2941111-c5af-4204-b62c-64ade9d8b4a1",
+      "timestamp": "2025-04-26T14:08:17.188Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: mennadkada4@gmail.com",
+      "user_id": "7f53fb98-9147-428b-8806-ff8006a608cb",
+      "user_name": "sofiane abbes"
+    },
+    {
+      "id": "8253aca4-ed1e-4f02-9e8e-c98036225243",
+      "timestamp": "2025-04-26T14:03:34.989Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: mennadkada4@gmail.com",
+      "user_id": "7f53fb98-9147-428b-8806-ff8006a608cb",
+      "user_name": "sofiane abbes"
+    },
+    {
       "id": "7dc903ad-9bc0-4444-a06d-4cbbf985bdc9",
       "timestamp": "2025-04-26T14:03:30.565Z",
       "type": "auth",
@@ -235,5 +253,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-26T14:03:30.565Z"
+  "last_updated": "2025-04-26T14:08:17.188Z"
 }
