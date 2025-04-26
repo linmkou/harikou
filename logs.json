@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "69e36a4e-0f92-4706-86c6-579a9969fdec",
+      "timestamp": "2025-04-26T11:55:30.714Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: amazouz.kahina@gmail.com",
+      "user_id": "fb351f65-d460-4085-b167-9bd1b31bbd2b",
+      "user_name": "Amazouz  kahina"
+    },
+    {
       "id": "45039025-3b02-43ec-a3f8-f31ad6a1222a",
       "timestamp": "2025-04-26T11:55:20.768Z",
       "type": "auth",
@@ -172,5 +181,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-26T11:55:21.174Z"
+  "last_updated": "2025-04-26T11:55:30.714Z"
 }
