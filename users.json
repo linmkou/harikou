@@ -656,7 +656,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-26T00:09:52.033Z"
+    },
+    {
+      "id": "ec064823-8b59-4cc5-90c5-f7a77e701ea2",
+      "name": "Hamiche Yasser",
+      "email": "hamicheyassermath1@gmail.com",
+      "password": "123456789",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-26T04:00:57.773Z"
     }
   ],
-  "last_updated": "2025-04-26T00:09:52.048Z"
+  "last_updated": "2025-04-26T04:00:57.800Z"
 }
