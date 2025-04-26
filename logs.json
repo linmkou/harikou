@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "c8e5a1f1-3556-4e87-9ba9-e9299cf068d7",
+      "timestamp": "2025-04-26T08:57:13.782Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Manel ben (atikabenaissa04@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "469398a7-c87c-4fff-a72d-64fa5ac09c92",
       "timestamp": "2025-04-26T08:57:11.561Z",
       "type": "user",
@@ -109,5 +118,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-26T08:57:11.561Z"
+  "last_updated": "2025-04-26T08:57:13.782Z"
 }
