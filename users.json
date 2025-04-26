@@ -717,9 +717,9 @@
       "email": "amazouz.kahina@gmail.com",
       "password": "kwikwikoci88",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-26T11:53:12.186Z"
     }
   ],
-  "last_updated": "2025-04-26T12:56:16.863Z"
+  "last_updated": "2025-04-26T12:56:28.783Z"
 }
