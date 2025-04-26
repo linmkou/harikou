@@ -683,7 +683,16 @@
       "role": "user",
       "approved": false,
       "created_at": "2025-04-26T08:35:22.168Z"
+    },
+    {
+      "id": "f06b9c7b-4e3e-4529-93d1-d88b13ad3117",
+      "name": "Manel ben",
+      "email": "atikabenaissa04@gmail.com",
+      "password": "atika1991*",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-26T08:45:50.256Z"
     }
   ],
-  "last_updated": "2025-04-26T08:35:22.180Z"
+  "last_updated": "2025-04-26T08:45:50.271Z"
 }
