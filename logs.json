@@ -1,11 +1,20 @@
 {
   "logs": [
     {
+      "id": "c15a8c2c-af41-4327-9c91-e8ff1d8daf47",
+      "timestamp": "2025-04-26T08:35:22.927Z",
+      "type": "user",
+      "action": "register",
+      "details": "تسجيل مستخدم جديد: souleh Mohamed (soulehmohammedabdou@gmail.com)",
+      "user_id": "b1cb8763-8fd1-4017-8e31-314d9310d639",
+      "user_name": "souleh Mohamed"
+    },
+    {
       "id": "eec6db4c-191d-4883-82c8-b77254bc8f7a",
       "timestamp": "2025-04-26T08:07:24.236Z",
       "type": "auth",
       "action": "login",
-      "details": "تسجيل دخول بالبريد الإلكتروني: yacinedjarir0@gmail.com",
+      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: yacinedjarir0@gmail.com",
       "user_id": "881f3152-3f2b-4b9f-88af-11d26dbf01c3",
       "user_name": "Djarir Yassine"
     },
@@ -14,7 +23,7 @@
       "timestamp": "2023-06-15T10:30:00Z",
       "type": "user",
       "action": "approve",
-      "details": "الموافقة على المستخدم: Mohammed Saeed (mohamed@example.com)",
+      "details": "Ø§ÙÙÙØ§ÙÙØ© Ø¹ÙÙ Ø§ÙÙØ³ØªØ®Ø¯Ù: Mohammed Saeed (mohamed@example.com)",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -23,7 +32,7 @@
       "timestamp": "2023-06-10T14:20:00Z",
       "type": "auth",
       "action": "login",
-      "details": "تسجيل دخول بالبريد الإلكتروني: admin@example.com",
+      "details": "ØªØ³Ø¬ÙÙ Ø¯Ø®ÙÙ Ø¨Ø§ÙØ¨Ø±ÙØ¯ Ø§ÙØ¥ÙÙØªØ±ÙÙÙ: admin@example.com",
       "user_id": "admin001",
       "user_name": "Admin User"
     },
@@ -32,7 +41,7 @@
       "timestamp": "2023-06-05T09:15:00Z",
       "type": "user",
       "action": "register",
-      "details": "تسجيل مستخدم جديد: Fatima Ali (fatima@example.com)",
+      "details": "ØªØ³Ø¬ÙÙ ÙØ³ØªØ®Ø¯Ù Ø¬Ø¯ÙØ¯: Fatima Ali (fatima@example.com)",
       "user_id": "user002",
       "user_name": "Fatima Ali"
     },
@@ -41,10 +50,10 @@
       "timestamp": "2023-05-20T11:45:00Z",
       "type": "github",
       "action": "sync",
-      "details": "مزامنة البيانات مع GitHub",
+      "details": "ÙØ²Ø§ÙÙØ© Ø§ÙØ¨ÙØ§ÙØ§Øª ÙØ¹ GitHub",
       "user_id": "admin001",
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-26T08:07:24.854Z"
+  "last_updated": "2025-04-26T08:35:23.453Z"
 }
