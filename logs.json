@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "c8e2bbea-3e2f-4aac-a991-f37591ac338d",
+      "timestamp": "2025-04-26T12:56:17.726Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Elhadje Bellaha (elhadjebellaha@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "55feaf14-7149-4883-a6af-7c431a051edc",
       "timestamp": "2025-04-26T12:56:08.656Z",
       "type": "user",
@@ -190,5 +199,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-26T12:56:09.150Z"
+  "last_updated": "2025-04-26T12:56:17.726Z"
 }
