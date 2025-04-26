@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "c761081b-6059-461e-b063-2c361fc85ad4",
+      "timestamp": "2025-04-26T14:09:49.066Z",
+      "type": "auth",
+      "action": "login",
+      "details": "تسجيل دخول بالبريد الإلكتروني: mennadkada4@gmail.com",
+      "user_id": "7f53fb98-9147-428b-8806-ff8006a608cb",
+      "user_name": "sofiane abbes"
+    },
+    {
       "id": "e2941111-c5af-4204-b62c-64ade9d8b4a1",
       "timestamp": "2025-04-26T14:08:17.188Z",
       "type": "auth",
@@ -253,5 +262,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-26T14:08:17.188Z"
+  "last_updated": "2025-04-26T14:09:49.066Z"
 }
