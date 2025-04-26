@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "6f08e2e1-03ae-42c0-aa00-c6449c07fd41",
+      "timestamp": "2025-04-26T08:57:01.622Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Hamiche Yasser (hamicheyassermath1@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "111f4ffb-1acd-49d8-8392-688964b560bc",
       "timestamp": "2025-04-26T08:56:59.912Z",
       "type": "user",
@@ -82,5 +91,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-26T08:57:00.351Z"
+  "last_updated": "2025-04-26T08:57:01.622Z"
 }
