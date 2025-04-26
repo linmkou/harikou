@@ -692,7 +692,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-26T08:45:50.256Z"
+    },
+    {
+      "id": "a7a0e8f0-41de-45c3-bdfe-fe5e185ca4c7",
+      "name": "Faiza kaddour",
+      "email": "fkaddour99@gmail.com",
+      "password": "nchlhnchlhnchlh",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-26T09:10:14.327Z"
     }
   ],
-  "last_updated": "2025-04-26T08:57:12.794Z"
+  "last_updated": "2025-04-26T09:10:14.336Z"
 }
