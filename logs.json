@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "bbe01c2e-42bc-453e-b82d-cc379425b3d5",
+      "timestamp": "2025-04-27T19:55:08.884Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: wahiba remadna (wahiba.04@hotmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "463ab922-69c4-4531-bb7e-edf88a526eb0",
       "timestamp": "2025-04-27T19:55:05.931Z",
       "type": "user",
@@ -109,5 +118,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-27T19:55:06.801Z"
+  "last_updated": "2025-04-27T19:55:08.884Z"
 }
