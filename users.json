@@ -753,9 +753,9 @@
       "email": "saif407@gmail.com",
       "password": "11223344556677@",
       "role": "user",
-      "approved": false,
+      "approved": true,
       "created_at": "2025-04-27T15:26:22.733Z"
     }
   ],
-  "last_updated": "2025-04-27T19:55:07.125Z"
+  "last_updated": "2025-04-27T19:55:19.069Z"
 }
