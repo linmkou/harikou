@@ -1,6 +1,15 @@
 {
   "logs": [
     {
+      "id": "8f4be1d4-5a9c-4c82-8dc3-86a6a17af3df",
+      "timestamp": "2025-04-27T19:55:20.017Z",
+      "type": "user",
+      "action": "approve",
+      "details": "الموافقة على المستخدم: Saifsifo (saif407@gmail.com)",
+      "user_id": "admin001",
+      "user_name": "Admin User"
+    },
+    {
       "id": "bbe01c2e-42bc-453e-b82d-cc379425b3d5",
       "timestamp": "2025-04-27T19:55:08.884Z",
       "type": "user",
@@ -118,5 +127,5 @@
       "user_name": "Admin User"
     }
   ],
-  "last_updated": "2025-04-27T19:55:08.884Z"
+  "last_updated": "2025-04-27T19:55:20.017Z"
 }
