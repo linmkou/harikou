@@ -755,7 +755,16 @@
       "role": "user",
       "approved": true,
       "created_at": "2025-04-27T15:26:22.733Z"
+    },
+    {
+      "id": "a6d46146-53fa-4d8b-b602-f382a4b44f20",
+      "name": "Hakim",
+      "email": "hbouzourdaz@gmail.com",
+      "password": "Hakim@100",
+      "role": "user",
+      "approved": false,
+      "created_at": "2025-04-29T19:59:41.986Z"
     }
   ],
-  "last_updated": "2025-04-27T19:55:19.069Z"
+  "last_updated": "2025-04-29T19:59:41.986Z"
 }
